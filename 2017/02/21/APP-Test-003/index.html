@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>APP测试总结（三） | hannie&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="软件测试类型单元测试单元测试并不是对整个程序进行测试，而是对构成程序的较小模块进行测试。单元测试减小了调试的难度（一旦某个错误被发现出来，我们就知道它在哪个具体的模块中）；单元测试提供了同时测试多个模块的可能，将并行工程引入软件测试中。
+在为模块单元测试设计测试用例时，需要使用两种类型的信息：模块的规格说明和模块的源代码。规格说明一般都规定了模块的输入和输出参数以及模块的功能。单元测试总体上是面向">
+<meta property="og:type" content="article">
+<meta property="og:title" content="APP测试总结（三）">
+<meta property="og:url" content="http://softwaretest.cn/2017/02/21/APP-Test-003/index.html">
+<meta property="og:site_name" content="hannie's blog">
+<meta property="og:description" content="软件测试类型单元测试单元测试并不是对整个程序进行测试，而是对构成程序的较小模块进行测试。单元测试减小了调试的难度（一旦某个错误被发现出来，我们就知道它在哪个具体的模块中）；单元测试提供了同时测试多个模块的可能，将并行工程引入软件测试中。
+在为模块单元测试设计测试用例时，需要使用两种类型的信息：模块的规格说明和模块的源代码。规格说明一般都规定了模块的输入和输出参数以及模块的功能。单元测试总体上是面向">
+<meta property="og:updated_time" content="2017-03-19T10:10:02.323Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="APP测试总结（三）">
+<meta name="twitter:description" content="软件测试类型单元测试单元测试并不是对整个程序进行测试，而是对构成程序的较小模块进行测试。单元测试减小了调试的难度（一旦某个错误被发现出来，我们就知道它在哪个具体的模块中）；单元测试提供了同时测试多个模块的可能，将并行工程引入软件测试中。
+在为模块单元测试设计测试用例时，需要使用两种类型的信息：模块的规格说明和模块的源代码。规格说明一般都规定了模块的输入和输出参数以及模块的功能。单元测试总体上是面向">
+  
+    <link rel="alternate" href="/atom.xml" title="hannie&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">hannie&#39;s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://softwaretest.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-APP-Test-003" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/21/APP-Test-003/" class="article-date">
+  <time datetime="2017-02-21T09:23:55.000Z" itemprop="datePublished">2017-02-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      APP测试总结（三）
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="软件测试类型"><a href="#软件测试类型" class="headerlink" title="软件测试类型"></a>软件测试类型</h2><h2 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h2><p>单元测试并不是对整个程序进行测试，而是对构成程序的较小模块进行测试。单元测试减小了调试的难度（一旦某个错误被发现出来，我们就知道它在哪个具体的模块中）；单元测试提供了同时测试多个模块的可能，将并行工程引入软件测试中。</p>
+<p>在为模块单元测试设计测试用例时，需要使用两种类型的信息：模块的规格说明和模块的源代码。规格说明一般都规定了模块的输入和输出参数以及模块的功能。单元测试总体上是面向白盒测试的，因此，单元测试的测试用例的设计过程如下：使用一种或多种白盒测试方法分析模块的逻辑结构，然后使用黑盒测试方法对照模块的规格说明以补充测试用例。</p>
+<h2 id="集成测试"><a href="#集成测试" class="headerlink" title="集成测试"></a>集成测试</h2><p>自顶向下集成和自底向上集成</p>
+<h2 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h2><p>功能测试的目的是为了暴露程序的错误以及与规格说明不一致之处，而不是为了证明程序符合其外部规格说明。</p>
+<p>功能测试是一种黑盒测试，功能测试常用步骤有：根据需求来细分功能点，根据功能点派生测试需求，根据测试需求设计功能测试用例。</p>
+<h2 id="系统测试"><a href="#系统测试" class="headerlink" title="系统测试"></a>系统测试</h2><p>系统测试的目的是为了证明程序不能实现其目标，系统测试的测试用例设计有以下14种类型：</p>
+<ul>
+<li>能力测试：是判断目标文档提及的每一项能力（或功能）是否都确实已经实现。</li>
+<li>容量测试：使程序经受大容量数据的检验。容量测试的目的是为了证明程序不能处理目标文档中规定的数据容量。</li>
+<li>强度测试：使程序承受高负载或强度的检验。所谓高强度是指在很短的时间间隔内达到的数据或操作的数量峰值。</li>
+<li>易用性测试：试图发现人为因素或易用性的问题。</li>
+<li>安全性测试：设计测试用例来突破程序安全检查的过程。举例来说，我们可以设计测试用例来规避操作系统的内存保护机制，破坏数据库管理系统的数据安全机制。</li>
+<li>性能测试：很多软件都有特定的性能或效率目标，这终特性描述为在特定负载和配置环境下程序的响应时间和吞吐率。</li>
+<li>存储测试：</li>
+<li>配置测试：</li>
+<li>兼容性测试。</li>
+<li>安装测试：有些类型的软件系统安装过程非常复杂，测试安装过程是系统测试中的一个重要部分。对于包含在软件包中的自动安装系统而言，这尤其重要。安装程序如果出现故障，会影响用户对软件的成功体验。</li>
+<li>可靠性测试：所有类型的测试都是为了提高软件的可靠性，但是如果软件的目标中包含了对可靠性的特别描述，就必须设计专门的可靠性测试。</li>
+<li>可恢复性测试：诸如操作系统、数据库管理系统和远程处理系统等软件通常都有可恢复性目标，说明系统如何从程序错误、硬件失效和数据错误中恢复过来。系统测试的一个目标是证明这些恢复机制不能够正确发挥作用。我们可以故意将程序错误置入某个系统中，判断系统是否可以从中恢复。</li>
+<li>适用性测试</li>
+<li>文档测试：检查用户文档的正确性。用户文档应成为审查的对象，检查其正确性和清晰性。在文档中描述的任何范例应编成测试用例，并提交给程序。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2017/02/21/APP-Test-003/" data-id="cj0ghxzq700036ljyntvmry1v" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/02/25/APP-Test-004/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          APP测试总结（四）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/02/19/APP-Test-002/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">APP测试总结（二）</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APP测试/">APP测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/APP测试/" style="font-size: 20px;">APP测试</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/git/" style="font-size: 10px;">git</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/03/05/APP-Test-005/">APP测试总结（五）</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/25/APP-Test-004/">APP测试总结（四）</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/21/APP-Test-003/">APP测试总结（三）</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/19/APP-Test-002/">APP测试总结（二）</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/19/APP-Test-001/">APP测试总结（一）</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 hannie<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
