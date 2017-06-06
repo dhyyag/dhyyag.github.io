@@ -3,24 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>终端打印 | hannie&#39;s blog</title>
+  <title>Linux-常用命令（一） | hannie&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一. 终端打印-echo特点：每次调用之后会自动添加一个换行符1、可以使用 -n 来忽略结尾的换行符：12$ echo -n &amp;quot;hello&amp;quot;hello
-2、可以使用 -e 来使用转义序列：12$ echo -e &amp;quot;1\t2\t3\t&amp;quot;1	2	3
-二. 终端打印-pintf特点：每次调用时不会自动添加换行符12$ printf &amp;quot;hello&amp;quot">
+  <meta name="description" content="1. 打开终端法一：键盘输入Ctrl+Alt+T法二：Alt+F2   之后输入gnome_terminal
+2. 进入root（超级用户）123——&amp;gt; sudo su[sudo]password for eric:    #须在此处输入密码，但输入的密码不会显示在屏幕上root@eric-pc:               #当显示root@后就代表已经进入了root
+3. 退出root直">
 <meta property="og:type" content="article">
-<meta property="og:title" content="终端打印">
-<meta property="og:url" content="http://softwaretest.cn/2017/06/06/Echo-001/index.html">
+<meta property="og:title" content="Linux-常用命令（一）">
+<meta property="og:url" content="http://softwaretest.cn/2017/06/06/Linux-001/index.html">
 <meta property="og:site_name" content="hannie's blog">
-<meta property="og:description" content="一. 终端打印-echo特点：每次调用之后会自动添加一个换行符1、可以使用 -n 来忽略结尾的换行符：12$ echo -n &amp;quot;hello&amp;quot;hello
-2、可以使用 -e 来使用转义序列：12$ echo -e &amp;quot;1\t2\t3\t&amp;quot;1	2	3
-二. 终端打印-pintf特点：每次调用时不会自动添加换行符12$ printf &amp;quot;hello&amp;quot">
-<meta property="og:updated_time" content="2017-06-06T12:43:17.503Z">
+<meta property="og:description" content="1. 打开终端法一：键盘输入Ctrl+Alt+T法二：Alt+F2   之后输入gnome_terminal
+2. 进入root（超级用户）123——&amp;gt; sudo su[sudo]password for eric:    #须在此处输入密码，但输入的密码不会显示在屏幕上root@eric-pc:               #当显示root@后就代表已经进入了root
+3. 退出root直">
+<meta property="og:updated_time" content="2017-06-06T23:23:37.668Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="终端打印">
-<meta name="twitter:description" content="一. 终端打印-echo特点：每次调用之后会自动添加一个换行符1、可以使用 -n 来忽略结尾的换行符：12$ echo -n &amp;quot;hello&amp;quot;hello
-2、可以使用 -e 来使用转义序列：12$ echo -e &amp;quot;1\t2\t3\t&amp;quot;1	2	3
-二. 终端打印-pintf特点：每次调用时不会自动添加换行符12$ printf &amp;quot;hello&amp;quot">
+<meta name="twitter:title" content="Linux-常用命令（一）">
+<meta name="twitter:description" content="1. 打开终端法一：键盘输入Ctrl+Alt+T法二：Alt+F2   之后输入gnome_terminal
+2. 进入root（超级用户）123——&amp;gt; sudo su[sudo]password for eric:    #须在此处输入密码，但输入的密码不会显示在屏幕上root@eric-pc:               #当显示root@后就代表已经进入了root
+3. 退出root直">
   
     <link rel="alternate" href="/atom.xml" title="hannie&#39;s blog" type="application/atom+xml">
   
@@ -69,10 +69,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Echo-001" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Linux-001" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/06/06/Echo-001/" class="article-date">
-  <time datetime="2017-06-06T12:09:25.000Z" itemprop="datePublished">2017-06-06</time>
+    <a href="/2017/06/06/Linux-001/" class="article-date">
+  <time datetime="2017-06-06T13:25:53.000Z" itemprop="datePublished">2017-06-06</time>
 </a>
     
   </div>
@@ -83,7 +83,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      终端打印
+      Linux-常用命令（一）
     </h1>
   
 
@@ -91,19 +91,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一-终端打印-echo"><a href="#一-终端打印-echo" class="headerlink" title="一. 终端打印-echo"></a>一. 终端打印-echo</h2><p>特点：每次调用之后会自动添加一个换行符<br>1、可以使用 -n 来忽略结尾的换行符：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ echo -n &quot;hello&quot;</div><div class="line">hello</div></pre></td></tr></table></figure></p>
-<p>2、可以使用 -e 来使用转义序列：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ echo -e &quot;1\t2\t3\t&quot;</div><div class="line">1	2	3</div></pre></td></tr></table></figure></p>
-<h2 id="二-终端打印-pintf"><a href="#二-终端打印-pintf" class="headerlink" title="二. 终端打印-pintf"></a>二. 终端打印-pintf</h2><p>特点：每次调用时不会自动添加换行符<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ printf &quot;hello&quot;</div><div class="line">hello</div></pre></td></tr></table></figure></p>
-<h2 id="三-终端打印的小应用"><a href="#三-终端打印的小应用" class="headerlink" title="三. 终端打印的小应用"></a>三. 终端打印的小应用</h2><p>1、要打印彩色背景的文本：黑=40 红=41 绿=42 黄=43 蓝=44 重置=0<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ echo -e &quot;\e[1;42m green background \e[0m&quot;</div></pre></td></tr></table></figure></p>
-<p>2、要打印彩色的文本：黑=30 红=31 绿=32 黄=33 蓝=34 重置=0<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ echo -e &quot;\e[1;31m this is red text \e[0m&quot;</div></pre></td></tr></table></figure></p>
+        <h2 id="1-打开终端"><a href="#1-打开终端" class="headerlink" title="1. 打开终端"></a>1. 打开终端</h2><p>法一：键盘输入Ctrl+Alt+T<br>法二：Alt+F2   之后输入gnome_terminal</p>
+<h2 id="2-进入root（超级用户）"><a href="#2-进入root（超级用户）" class="headerlink" title="2. 进入root（超级用户）"></a>2. 进入root（超级用户）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">——&gt; sudo su</div><div class="line">[sudo]password for eric:    #须在此处输入密码，但输入的密码不会显示在屏幕上</div><div class="line">root@eric-pc:               #当显示root@后就代表已经进入了root</div></pre></td></tr></table></figure>
+<h2 id="3-退出root"><a href="#3-退出root" class="headerlink" title="3. 退出root"></a>3. 退出root</h2><p>直接输入exit就可以退出root。</p>
+<h2 id="4-与-的区别："><a href="#4-与-的区别：" class="headerlink" title="4. $与#的区别："></a>4. $与#的区别：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ 表示当前用户为普通用户</div><div class="line"># 表示当前用户为超级用户</div></pre></td></tr></table></figure>
+<p>（ps：在python和shell中，以#开头的文本作为注释行）</p>
+<h2 id="5-重启电脑"><a href="#5-重启电脑" class="headerlink" title="5.重启电脑"></a>5.重启电脑</h2><p>法一：进入root后，键入reboot            #表示立即重启<br>法二：进入root后，键入shutdown -r now   #表示立即重启<br>法三：进入root后，键入shutdown -r 5     #表示5分钟后自动重启<br>法四：进入root后，键入shutdown -r 20:30 #表示在20:30时自动重启<br>（若想取消设置的重启，则可键入shutdown -e）</p>
+<h2 id="6-关机"><a href="#6-关机" class="headerlink" title="6. 关机"></a>6. 关机</h2><p>法一：进入root后，键入halt            #表示立即关机<br>法二：进入root后，键人poweroff        #表示立即关机<br>法二：进入root后，键入shutdown -h now   #表示立即关机<br>法三：进入root后，键入shutdown -h 5     #表示5分钟后自动关机<br>法四：进入root后，键入shutdown -h 20:30 #表示在20:30时自动关机<br>（若想取消设置的关机，则可键入shutdown -e）</p>
+<h2 id="7-需要帮助"><a href="#7-需要帮助" class="headerlink" title="7. 需要帮助"></a>7. 需要帮助</h2><p>在需要帮助时记得用man和help<br>法一：键入：man 命令名，就可以显示该命令的帮助文档。<br>      想退出帮助文档时键入 q 即可。<br>法二：help命令用于查找shell内部命令的帮助文档。<br>      键入：bash    #进入了bash（bash是linux系统默认使用的shell类型，常用的还有zsh csh ksh ash）<br>      键入：help cd #查找cd命令的帮助文档<br>      键入：exit    #退出bash</p>
+<p>（待续…………）</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/06/Echo-001/" data-id="cj3m6weds000dckjyt56ruj6z" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/06/Linux-001/" data-id="cj3m6wedl0004ckjy0n2o4skx" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SHELL/">SHELL</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
 
     </footer>
   </div>
@@ -111,19 +115,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/06/06/Linux-001/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Linux-常用命令（一）
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/06/06/vim-001/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/06/06/Echo-001/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">vim的三种模式</div>
+      <div class="article-nav-title">终端打印</div>
     </a>
   
 </nav>

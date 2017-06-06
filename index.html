@@ -61,6 +61,53 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Linux-001" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/06/Linux-001/" class="article-date">
+  <time datetime="2017-06-06T13:25:53.000Z" itemprop="datePublished">2017-06-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/06/Linux-001/">Linux-常用命令（一）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-打开终端"><a href="#1-打开终端" class="headerlink" title="1. 打开终端"></a>1. 打开终端</h2><p>法一：键盘输入Ctrl+Alt+T<br>法二：Alt+F2   之后输入gnome_terminal</p>
+<h2 id="2-进入root（超级用户）"><a href="#2-进入root（超级用户）" class="headerlink" title="2. 进入root（超级用户）"></a>2. 进入root（超级用户）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">——&gt; sudo su</div><div class="line">[sudo]password for eric:    #须在此处输入密码，但输入的密码不会显示在屏幕上</div><div class="line">root@eric-pc:               #当显示root@后就代表已经进入了root</div></pre></td></tr></table></figure>
+<h2 id="3-退出root"><a href="#3-退出root" class="headerlink" title="3. 退出root"></a>3. 退出root</h2><p>直接输入exit就可以退出root。</p>
+<h2 id="4-与-的区别："><a href="#4-与-的区别：" class="headerlink" title="4. $与#的区别："></a>4. $与#的区别：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ 表示当前用户为普通用户</div><div class="line"># 表示当前用户为超级用户</div></pre></td></tr></table></figure>
+<p>（ps：在python和shell中，以#开头的文本作为注释行）</p>
+<h2 id="5-重启电脑"><a href="#5-重启电脑" class="headerlink" title="5.重启电脑"></a>5.重启电脑</h2><p>法一：进入root后，键入reboot            #表示立即重启<br>法二：进入root后，键入shutdown -r now   #表示立即重启<br>法三：进入root后，键入shutdown -r 5     #表示5分钟后自动重启<br>法四：进入root后，键入shutdown -r 20:30 #表示在20:30时自动重启<br>（若想取消设置的重启，则可键入shutdown -e）</p>
+<h2 id="6-关机"><a href="#6-关机" class="headerlink" title="6. 关机"></a>6. 关机</h2><p>法一：进入root后，键入halt            #表示立即关机<br>法二：进入root后，键人poweroff        #表示立即关机<br>法二：进入root后，键入shutdown -h now   #表示立即关机<br>法三：进入root后，键入shutdown -h 5     #表示5分钟后自动关机<br>法四：进入root后，键入shutdown -h 20:30 #表示在20:30时自动关机<br>（若想取消设置的关机，则可键入shutdown -e）</p>
+<h2 id="7-需要帮助"><a href="#7-需要帮助" class="headerlink" title="7. 需要帮助"></a>7. 需要帮助</h2><p>在需要帮助时记得用man和help<br>法一：键入：man 命令名，就可以显示该命令的帮助文档。<br>      想退出帮助文档时键入 q 即可。<br>法二：help命令用于查找shell内部命令的帮助文档。<br>      键入：bash    #进入了bash（bash是linux系统默认使用的shell类型，常用的还有zsh csh ksh ash）<br>      键入：help cd #查找cd命令的帮助文档<br>      键入：exit    #退出bash</p>
+<p>（待续…………）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2017/06/06/Linux-001/" data-id="cj3m6wedl0004ckjy0n2o4skx" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Echo-001" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/06/06/Echo-001/" class="article-date">
@@ -92,7 +139,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/06/Echo-001/" data-id="cj3lk84110003apjyvox2mq0k" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/06/Echo-001/" data-id="cj3m6weds000dckjyt56ruj6z" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SHELL/">SHELL</a></li></ul>
@@ -135,7 +182,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/06/vim-001/" data-id="cj3lk841c000fapjyn7uv9can" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/06/vim-001/" data-id="cj3m6weec000tckjy1zqba123" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VIM/">VIM</a></li></ul>
@@ -208,7 +255,7 @@ GetROProperty()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/03/05/APP-Test-005/" data-id="cj3lk84180008apjyat70jlvq" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/03/05/APP-Test-005/" data-id="cj3m6wedo0008ckjy9txt8n4c" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
@@ -275,7 +322,7 @@ GetROProperty()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/02/25/APP-Test-004/" data-id="cj3lk84150005apjyrqdv93qk" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/02/25/APP-Test-004/" data-id="cj3m6wede0003ckjy806tgtuw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
@@ -335,7 +382,7 @@ GetROProperty()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/02/21/APP-Test-003/" data-id="cj3lk84120004apjyd1328ddl" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/02/21/APP-Test-003/" data-id="cj3m6wedm0005ckjyvpho53fl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
@@ -422,7 +469,7 @@ GetROProperty()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/02/19/APP-Test-002/" data-id="cj3lk840x0001apjy6anzugyg" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/02/19/APP-Test-002/" data-id="cj3m6wed80001ckjygm2e2xm0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
@@ -485,7 +532,7 @@ GetROProperty()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/01/19/APP-Test-001/" data-id="cj3lk840t0000apjyx00voiy6" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/01/19/APP-Test-001/" data-id="cj3m6wed20000ckjybmp5dlbn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
@@ -537,7 +584,7 @@ GetROProperty()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/01/09/git-tutorial-1/" data-id="cj3lk841b000dapjyk6g2v6vj" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/01/09/git-tutorial-1/" data-id="cj3m6wee8000qckjyuk5jd20d" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -670,7 +717,7 @@ GetROProperty()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2016/11/01/linux-001-hexoblog/" data-id="cj3lk841d000iapjy031juu1m" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2016/11/01/linux-001-hexoblog/" data-id="cj3m6wedp000ackjyq86sh8b9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/">Github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -682,52 +729,11 @@ GetROProperty()
 
 
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/10/31/hello-world/" class="article-date">
-  <time datetime="2016-10-30T23:17:59.047Z" itemprop="datePublished">2016-10-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/31/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2016/10/31/hello-world/" data-id="cj3lk8419000aapjyzq7a9y2y" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
 
-  
-
+  <nav id="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+  </nav>
 </section>
         
           <aside id="sidebar">
@@ -749,7 +755,7 @@ GetROProperty()
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/APP测试/" style="font-size: 20px;">APP测试</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/SHELL/" style="font-size: 10px;">SHELL</a> <a href="/tags/VIM/" style="font-size: 10px;">VIM</a> <a href="/tags/git/" style="font-size: 10px;">git</a>
+      <a href="/tags/APP测试/" style="font-size: 20px;">APP测试</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/SHELL/" style="font-size: 10px;">SHELL</a> <a href="/tags/VIM/" style="font-size: 10px;">VIM</a> <a href="/tags/git/" style="font-size: 10px;">git</a>
     </div>
   </div>
 
@@ -771,6 +777,10 @@ GetROProperty()
       <ul>
         
           <li>
+            <a href="/2017/06/06/Linux-001/">Linux-常用命令（一）</a>
+          </li>
+        
+          <li>
             <a href="/2017/06/06/Echo-001/">终端打印</a>
           </li>
         
@@ -784,10 +794,6 @@ GetROProperty()
         
           <li>
             <a href="/2017/02/25/APP-Test-004/">APP测试总结（四）</a>
-          </li>
-        
-          <li>
-            <a href="/2017/02/21/APP-Test-003/">APP测试总结（三）</a>
           </li>
         
       </ul>
