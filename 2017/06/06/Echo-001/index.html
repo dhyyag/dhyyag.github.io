@@ -3,14 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2017/6 | hannie&#39;s blog</title>
+  <title>终端打印 | hannie&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="hannie's blog">
-<meta property="og:url" content="http://softwaretest.cn/archives/2017/06/index.html">
+  <meta name="description" content="一. 终端打印-echo特点：每次调用之后会自动添加一个换行符1、可以使用 -n 来忽略结尾的换行符：12$ echo -n &amp;quot;hello&amp;quot;hello
+2、可以使用 -e 来使用转义序列：12$ echo -e &amp;quot;1\t2\t3\t&amp;quot;1	2	3
+二. 终端打印-pintf特点：每次调用时不会自动添加换行符12$ printf &amp;quot;hello&amp;quot">
+<meta property="og:type" content="article">
+<meta property="og:title" content="终端打印">
+<meta property="og:url" content="http://softwaretest.cn/2017/06/06/Echo-001/index.html">
 <meta property="og:site_name" content="hannie's blog">
+<meta property="og:description" content="一. 终端打印-echo特点：每次调用之后会自动添加一个换行符1、可以使用 -n 来忽略结尾的换行符：12$ echo -n &amp;quot;hello&amp;quot;hello
+2、可以使用 -e 来使用转义序列：12$ echo -e &amp;quot;1\t2\t3\t&amp;quot;1	2	3
+二. 终端打印-pintf特点：每次调用时不会自动添加换行符12$ printf &amp;quot;hello&amp;quot">
+<meta property="og:updated_time" content="2017-06-06T12:43:17.503Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hannie's blog">
+<meta name="twitter:title" content="终端打印">
+<meta name="twitter:description" content="一. 终端打印-echo特点：每次调用之后会自动添加一个换行符1、可以使用 -n 来忽略结尾的换行符：12$ echo -n &amp;quot;hello&amp;quot;hello
+2、可以使用 -e 来使用转义序列：12$ echo -e &amp;quot;1\t2\t3\t&amp;quot;1	2	3
+二. 终端打印-pintf特点：每次调用时不会自动添加换行符12$ printf &amp;quot;hello&amp;quot">
   
     <link rel="alternate" href="/atom.xml" title="hannie&#39;s blog" type="application/atom+xml">
   
@@ -59,52 +69,58 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/06/06/Echo-001/" class="archive-article-date">
-  <time datetime="2017-06-06T12:09:25.000Z" itemprop="datePublished">Jun 6</time>
+        <section id="main"><article id="post-Echo-001" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/06/Echo-001/" class="article-date">
+  <time datetime="2017-06-06T12:09:25.000Z" itemprop="datePublished">2017-06-06</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/06/Echo-001/">终端打印</a>
+    <h1 class="article-title" itemprop="name">
+      终端打印
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/06/06/vim-001/" class="archive-article-date">
-  <time datetime="2017-06-06T11:52:05.735Z" itemprop="datePublished">Jun 6</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-    </header>
+        <h2 id="一-终端打印-echo"><a href="#一-终端打印-echo" class="headerlink" title="一. 终端打印-echo"></a>一. 终端打印-echo</h2><p>特点：每次调用之后会自动添加一个换行符<br>1、可以使用 -n 来忽略结尾的换行符：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ echo -n &quot;hello&quot;</div><div class="line">hello</div></pre></td></tr></table></figure></p>
+<p>2、可以使用 -e 来使用转义序列：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ echo -e &quot;1\t2\t3\t&quot;</div><div class="line">1	2	3</div></pre></td></tr></table></figure></p>
+<h2 id="二-终端打印-pintf"><a href="#二-终端打印-pintf" class="headerlink" title="二. 终端打印-pintf"></a>二. 终端打印-pintf</h2><p>特点：每次调用时不会自动添加换行符<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ printf &quot;hello&quot;</div><div class="line">hello</div></pre></td></tr></table></figure></p>
+<h2 id="三-终端打印的小应用"><a href="#三-终端打印的小应用" class="headerlink" title="三. 终端打印的小应用"></a>三. 终端打印的小应用</h2><p>1、要打印彩色背景的文本：黑=40 红=41 绿=42 黄=43 蓝=44 重置=0<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ echo -e &quot;\e[1;42m green background \e[0m&quot;</div></pre></td></tr></table></figure></p>
+<p>2、要打印彩色的文本：黑=30 红=31 绿=32 黄=33 蓝=34 重置=0<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ echo -e &quot;\e[1;31m this is red text \e[0m&quot;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2017/06/06/Echo-001/" data-id="cj3ljqu5200088gjy1lv3vkz1" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SHELL/">SHELL</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/06/06/vim-001/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         
