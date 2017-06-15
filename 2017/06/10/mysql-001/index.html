@@ -3,21 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hello World | hannie&#39;s blog</title>
+  <title>mysql-数据类型 | hannie&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+  <meta name="description" content="目录整数型浮点型日期时间型字符型
+一. 整数型TINYINTSMALLINTMEDIUMINTINTBIGINT
+二. 浮点型FLOATDOUBLE
+三. 日期时间型YEARDATETIMEDATETIMETIMESTAMP
+四. 字符型CHARCHAR（M）VARCHARVARCHA（M）TINYTEXTTEXTMEDIUMTEXTLONGTEXTEUNMSET">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://softwaretest.cn/2016/10/31/hello-world/index.html">
+<meta property="og:title" content="mysql-数据类型">
+<meta property="og:url" content="http://softwaretest.cn/2017/06/10/mysql-001/index.html">
 <meta property="og:site_name" content="hannie's blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2016-10-30T23:17:59.047Z">
+<meta property="og:description" content="目录整数型浮点型日期时间型字符型
+一. 整数型TINYINTSMALLINTMEDIUMINTINTBIGINT
+二. 浮点型FLOATDOUBLE
+三. 日期时间型YEARDATETIMEDATETIMETIMESTAMP
+四. 字符型CHARCHAR（M）VARCHARVARCHA（M）TINYTEXTTEXTMEDIUMTEXTLONGTEXTEUNMSET">
+<meta property="og:updated_time" content="2017-06-10T15:02:28.063Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="mysql-数据类型">
+<meta name="twitter:description" content="目录整数型浮点型日期时间型字符型
+一. 整数型TINYINTSMALLINTMEDIUMINTINTBIGINT
+二. 浮点型FLOATDOUBLE
+三. 日期时间型YEARDATETIMEDATETIMETIMESTAMP
+四. 字符型CHARCHAR（M）VARCHARVARCHA（M）TINYTEXTTEXTMEDIUMTEXTLONGTEXTEUNMSET">
   
     <link rel="alternate" href="/atom.xml" title="hannie&#39;s blog" type="application/atom+xml">
   
@@ -66,10 +75,10 @@ Quick">
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-mysql-001" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/10/31/hello-world/" class="article-date">
-  <time datetime="2016-10-30T23:17:59.047Z" itemprop="datePublished">2016-10-31</time>
+    <a href="/2017/06/10/mysql-001/" class="article-date">
+  <time datetime="2017-06-10T14:55:26.000Z" itemprop="datePublished">2017-06-10</time>
 </a>
     
   </div>
@@ -80,7 +89,7 @@ Quick">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      mysql-数据类型
     </h1>
   
 
@@ -88,37 +97,40 @@ Quick">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p>整数型<br>浮点型<br>日期时间型<br>字符型</p>
+<h2 id="一-整数型"><a href="#一-整数型" class="headerlink" title="一. 整数型"></a>一. 整数型</h2><p>TINYINT<br>SMALLINT<br>MEDIUMINT<br>INT<br>BIGINT</p>
+<h2 id="二-浮点型"><a href="#二-浮点型" class="headerlink" title="二. 浮点型"></a>二. 浮点型</h2><p>FLOAT<br>DOUBLE</p>
+<h2 id="三-日期时间型"><a href="#三-日期时间型" class="headerlink" title="三. 日期时间型"></a>三. 日期时间型</h2><p>YEAR<br>DATE<br>TIME<br>DATETIME<br>TIMESTAMP</p>
+<h2 id="四-字符型"><a href="#四-字符型" class="headerlink" title="四. 字符型"></a>四. 字符型</h2><p>CHAR<br>CHAR（M）<br>VARCHAR<br>VARCHA（M）<br>TINYTEXT<br>TEXT<br>MEDIUMTEXT<br>LONGTEXT<br>EUNM<br>SET</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2016/10/31/hello-world/" data-id="cj3xs8u0i0018oxjy39qrky66" class="article-share-link">Partager</a>
+      <a data-url="http://softwaretest.cn/2017/06/10/mysql-001/" data-id="cj3xs8u030012oxjyf4yx12hk" class="article-share-link">Partager</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mysql/">Mysql</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2016/11/01/linux-001-hexoblog/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/06/15/python-001/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Récent</strong>
       <div class="article-nav-title">
         
-          如何用Hexo+Github搭建个人独立博客，并实现多台电脑同步?
+          python-字符串总结（一）
         
       </div>
     </a>
   
+  
+    <a href="/2017/06/07/APP-Test-006/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">APP测试总结（六）</div>
+    </a>
   
 </nav>
 
