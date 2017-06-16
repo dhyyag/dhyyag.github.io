@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>matlab-图像增强 | hannie&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1. 显示原图12345678close all  %关闭所有图形窗口clear all  %清除工作空间所有变量clc        %清空命令行addpath(genpath(&amp;apos;C:\Users\Ming\Desktop\figure&amp;apos;)); %添加路径“C:\Users\Ming\Desktop\figure”I = imread(&amp;apos;hong1.png&amp;apos">
+<meta property="og:type" content="article">
+<meta property="og:title" content="matlab-图像增强">
+<meta property="og:url" content="http://softwaretest.cn/2017/06/16/matlab-001/index.html">
+<meta property="og:site_name" content="hannie's blog">
+<meta property="og:description" content="1. 显示原图12345678close all  %关闭所有图形窗口clear all  %清除工作空间所有变量clc        %清空命令行addpath(genpath(&amp;apos;C:\Users\Ming\Desktop\figure&amp;apos;)); %添加路径“C:\Users\Ming\Desktop\figure”I = imread(&amp;apos;hong1.png&amp;apos">
+<meta property="og:image" content="http://ooqxh7rke.bkt.clouddn.com/%E5%8E%9F%E5%9B%BE.png">
+<meta property="og:image" content="http://ooqxh7rke.bkt.clouddn.com/%E6%A4%92%E7%9B%90%E5%99%AA%E5%A3%B0%E6%B1%A1%E6%9F%93.png">
+<meta property="og:image" content="http://ooqxh7rke.bkt.clouddn.com/3X3%E9%AB%98%E6%96%AF%E5%B9%B3%E6%BB%91%E6%95%88%E6%9E%9C.png">
+<meta property="og:image" content="http://ooqxh7rke.bkt.clouddn.com/3X3%E5%B9%B3%E5%9D%87%E5%B9%B3%E6%BB%91%E6%95%88%E6%9E%9C.png">
+<meta property="og:image" content="http://ooqxh7rke.bkt.clouddn.com/3X3%E5%9D%87%E5%80%BC%E6%BB%A4%E6%B3%A2%E6%95%88%E6%9E%9C.png">
+<meta property="og:image" content="http://ooqxh7rke.bkt.clouddn.com/%E4%B8%AD%E5%80%BC%E6%BB%A4%E6%B3%A2%E6%95%88%E6%9E%9C.png">
+<meta property="og:updated_time" content="2017-06-16T01:07:13.754Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="matlab-图像增强">
+<meta name="twitter:description" content="1. 显示原图12345678close all  %关闭所有图形窗口clear all  %清除工作空间所有变量clc        %清空命令行addpath(genpath(&amp;apos;C:\Users\Ming\Desktop\figure&amp;apos;)); %添加路径“C:\Users\Ming\Desktop\figure”I = imread(&amp;apos;hong1.png&amp;apos">
+<meta name="twitter:image" content="http://ooqxh7rke.bkt.clouddn.com/%E5%8E%9F%E5%9B%BE.png">
+  
+    <link rel="alternate" href="/atom.xml" title="hannie&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">hannie&#39;s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://softwaretest.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-matlab-001" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/16/matlab-001/" class="article-date">
+  <time datetime="2017-06-16T01:06:06.000Z" itemprop="datePublished">2017-06-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      matlab-图像增强
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-显示原图"><a href="#1-显示原图" class="headerlink" title="1. 显示原图"></a>1. 显示原图</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">close all  %关闭所有图形窗口</div><div class="line">clear all  %清除工作空间所有变量</div><div class="line">clc        %清空命令行</div><div class="line"></div><div class="line">addpath(genpath(&apos;C:\Users\Ming\Desktop\figure&apos;)); %添加路径“C:\Users\Ming\Desktop\figure”</div><div class="line">I = imread(&apos;hong1.png&apos;);      %读取图像“hong1.png”</div><div class="line">figure(1);                    %打开一个新窗口</div><div class="line">imshow(I);title(&apos;原图&apos;);      %显示原图像，命名为“原图”（见下图1）</div></pre></td></tr></table></figure>
+<p><img src="http://ooqxh7rke.bkt.clouddn.com/%E5%8E%9F%E5%9B%BE.png" alt="此处输入图片的描述"></p>
+<h2 id="2-显示椒盐噪声污染的图像"><a href="#2-显示椒盐噪声污染的图像" class="headerlink" title="2. 显示椒盐噪声污染的图像"></a>2. 显示椒盐噪声污染的图像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">J = imnoise(I,&apos;salt &amp; pepper&apos;,0.02);%</div><div class="line">J2 = rgb2gray(J);</div><div class="line">figure(1);</div><div class="line">imshow(J);title(&apos;椒盐噪声污染的图像&apos;);</div></pre></td></tr></table></figure>
+<p><img src="http://ooqxh7rke.bkt.clouddn.com/%E6%A4%92%E7%9B%90%E5%99%AA%E5%A3%B0%E6%B1%A1%E6%9F%93.png" alt="此处输入图片的描述"></p>
+<h2 id="3-显示高斯平滑滤波的效果"><a href="#3-显示高斯平滑滤波的效果" class="headerlink" title="3. 显示高斯平滑滤波的效果"></a>3. 显示高斯平滑滤波的效果</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">W1 = [1 2 1;</div><div class="line">     2 4 2;</div><div class="line">     1 2 1] / 16;</div><div class="line">J3 = imfilter(J, W1, &apos;corr&apos;, &apos;replicate&apos;);</div><div class="line">figure(2);</div><div class="line">subplot(3,2,3);</div><div class="line">imshow(J3);title(&apos;3X3高斯平滑效果&apos;);</div></pre></td></tr></table></figure>
+<p><img src="http://ooqxh7rke.bkt.clouddn.com/3X3%E9%AB%98%E6%96%AF%E5%B9%B3%E6%BB%91%E6%95%88%E6%9E%9C.png" alt="此处输入图片的描述"></p>
+<h2 id="3-显示3X3平均平滑效果"><a href="#3-显示3X3平均平滑效果" class="headerlink" title="3. 显示3X3平均平滑效果"></a>3. 显示3X3平均平滑效果</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">W2 = [1 1 1;</div><div class="line">     1 1 1;</div><div class="line">     1 1 1] / 9;</div><div class="line">J4 = imfilter(J, W2, &apos;corr&apos;, &apos;replicate&apos;);</div><div class="line">figure(1);</div><div class="line">imshow(J4);title(&apos;3X3平均平滑效果&apos;);</div></pre></td></tr></table></figure>
+<p><img src="http://ooqxh7rke.bkt.clouddn.com/3X3%E5%B9%B3%E5%9D%87%E5%B9%B3%E6%BB%91%E6%95%88%E6%9E%9C.png" alt="此处输入图片的描述"></p>
+<h2 id="4-显示3X3均值滤波效果"><a href="#4-显示3X3均值滤波效果" class="headerlink" title="4. 显示3X3均值滤波效果"></a>4. 显示3X3均值滤波效果</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">J5 = filter2(fspecial(&apos;average&apos;,3),J2) / 255;</div><div class="line">figure(1);</div><div class="line">imshow(J5);title(&apos;3X3均值滤波效果&apos;);</div></pre></td></tr></table></figure>
+<p><img src="http://ooqxh7rke.bkt.clouddn.com/3X3%E5%9D%87%E5%80%BC%E6%BB%A4%E6%B3%A2%E6%95%88%E6%9E%9C.png" alt="此处输入图片的描述"></p>
+<h2 id="5-显示中值滤波效果"><a href="#5-显示中值滤波效果" class="headerlink" title="5. 显示中值滤波效果"></a>5. 显示中值滤波效果</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">J6 = medfilt2(J2,[3,3]);</div><div class="line">figure(1);</div><div class="line">imshow(J6);title(&apos;中值滤波效果&apos;);</div></pre></td></tr></table></figure>
+<p><img src="http://ooqxh7rke.bkt.clouddn.com/%E4%B8%AD%E5%80%BC%E6%BB%A4%E6%B3%A2%E6%95%88%E6%9E%9C.png" alt="此处输入图片的描述"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2017/06/16/matlab-001/" data-id="cj3z5motz000to9jyyz9qwgj7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Matlab/">Matlab</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/06/16/data-structure-001/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">数据结构-快速排序</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APP测试/">APP测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SHELL/">SHELL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIM/">VIM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/APP测试/" style="font-size: 20px;">APP测试</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/SHELL/" style="font-size: 10px;">SHELL</a> <a href="/tags/VIM/" style="font-size: 10px;">VIM</a> <a href="/tags/git/" style="font-size: 10px;">git</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/16/matlab-001/">matlab-图像增强</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/16/data-structure-001/">数据结构-快速排序</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/15/python-001/">python-字符串总结（一）</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/07/APP-Test-006/">APP测试总结（六）</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/07/GUI-001/">GUI测试总结</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 hannie<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

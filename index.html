@@ -61,6 +61,56 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-matlab-001" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/16/matlab-001/" class="article-date">
+  <time datetime="2017-06-16T01:06:06.000Z" itemprop="datePublished">2017-06-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/16/matlab-001/">matlab-图像增强</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-显示原图"><a href="#1-显示原图" class="headerlink" title="1. 显示原图"></a>1. 显示原图</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">close all  %关闭所有图形窗口</div><div class="line">clear all  %清除工作空间所有变量</div><div class="line">clc        %清空命令行</div><div class="line"></div><div class="line">addpath(genpath(&apos;C:\Users\Ming\Desktop\figure&apos;)); %添加路径“C:\Users\Ming\Desktop\figure”</div><div class="line">I = imread(&apos;hong1.png&apos;);      %读取图像“hong1.png”</div><div class="line">figure(1);                    %打开一个新窗口</div><div class="line">imshow(I);title(&apos;原图&apos;);      %显示原图像，命名为“原图”（见下图1）</div></pre></td></tr></table></figure>
+<p><img src="http://ooqxh7rke.bkt.clouddn.com/%E5%8E%9F%E5%9B%BE.png" alt="此处输入图片的描述"></p>
+<h2 id="2-显示椒盐噪声污染的图像"><a href="#2-显示椒盐噪声污染的图像" class="headerlink" title="2. 显示椒盐噪声污染的图像"></a>2. 显示椒盐噪声污染的图像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">J = imnoise(I,&apos;salt &amp; pepper&apos;,0.02);%</div><div class="line">J2 = rgb2gray(J);</div><div class="line">figure(1);</div><div class="line">imshow(J);title(&apos;椒盐噪声污染的图像&apos;);</div></pre></td></tr></table></figure>
+<p><img src="http://ooqxh7rke.bkt.clouddn.com/%E6%A4%92%E7%9B%90%E5%99%AA%E5%A3%B0%E6%B1%A1%E6%9F%93.png" alt="此处输入图片的描述"></p>
+<h2 id="3-显示高斯平滑滤波的效果"><a href="#3-显示高斯平滑滤波的效果" class="headerlink" title="3. 显示高斯平滑滤波的效果"></a>3. 显示高斯平滑滤波的效果</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">W1 = [1 2 1;</div><div class="line">     2 4 2;</div><div class="line">     1 2 1] / 16;</div><div class="line">J3 = imfilter(J, W1, &apos;corr&apos;, &apos;replicate&apos;);</div><div class="line">figure(2);</div><div class="line">subplot(3,2,3);</div><div class="line">imshow(J3);title(&apos;3X3高斯平滑效果&apos;);</div></pre></td></tr></table></figure>
+<p><img src="http://ooqxh7rke.bkt.clouddn.com/3X3%E9%AB%98%E6%96%AF%E5%B9%B3%E6%BB%91%E6%95%88%E6%9E%9C.png" alt="此处输入图片的描述"></p>
+<h2 id="3-显示3X3平均平滑效果"><a href="#3-显示3X3平均平滑效果" class="headerlink" title="3. 显示3X3平均平滑效果"></a>3. 显示3X3平均平滑效果</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">W2 = [1 1 1;</div><div class="line">     1 1 1;</div><div class="line">     1 1 1] / 9;</div><div class="line">J4 = imfilter(J, W2, &apos;corr&apos;, &apos;replicate&apos;);</div><div class="line">figure(1);</div><div class="line">imshow(J4);title(&apos;3X3平均平滑效果&apos;);</div></pre></td></tr></table></figure>
+<p><img src="http://ooqxh7rke.bkt.clouddn.com/3X3%E5%B9%B3%E5%9D%87%E5%B9%B3%E6%BB%91%E6%95%88%E6%9E%9C.png" alt="此处输入图片的描述"></p>
+<h2 id="4-显示3X3均值滤波效果"><a href="#4-显示3X3均值滤波效果" class="headerlink" title="4. 显示3X3均值滤波效果"></a>4. 显示3X3均值滤波效果</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">J5 = filter2(fspecial(&apos;average&apos;,3),J2) / 255;</div><div class="line">figure(1);</div><div class="line">imshow(J5);title(&apos;3X3均值滤波效果&apos;);</div></pre></td></tr></table></figure>
+<p><img src="http://ooqxh7rke.bkt.clouddn.com/3X3%E5%9D%87%E5%80%BC%E6%BB%A4%E6%B3%A2%E6%95%88%E6%9E%9C.png" alt="此处输入图片的描述"></p>
+<h2 id="5-显示中值滤波效果"><a href="#5-显示中值滤波效果" class="headerlink" title="5. 显示中值滤波效果"></a>5. 显示中值滤波效果</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">J6 = medfilt2(J2,[3,3]);</div><div class="line">figure(1);</div><div class="line">imshow(J6);title(&apos;中值滤波效果&apos;);</div></pre></td></tr></table></figure>
+<p><img src="http://ooqxh7rke.bkt.clouddn.com/%E4%B8%AD%E5%80%BC%E6%BB%A4%E6%B3%A2%E6%95%88%E6%9E%9C.png" alt="此处输入图片的描述"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2017/06/16/matlab-001/" data-id="cj3z5motz000to9jyyz9qwgj7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Matlab/">Matlab</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-data-structure-001" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/06/16/data-structure-001/" class="article-date">
@@ -96,7 +146,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/16/data-structure-001/" data-id="cj3z52h2y000ftjjy7grxzf9i" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/16/data-structure-001/" data-id="cj3z5motn000fo9jycong7cf0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li></ul>
@@ -148,7 +198,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/15/python-001/" data-id="cj3z52h420012tjjybsxkfraf" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/15/python-001/" data-id="cj3z5mou2000vo9jy286uyys6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -220,7 +270,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/07/APP-Test-006/" data-id="cj3z52h36000mtjjyyw2et87p" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/07/APP-Test-006/" data-id="cj3z5motg0008o9jyr0dgwsm0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
@@ -293,7 +343,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/07/GUI-001/" data-id="cj3z52h2t0008tjjyamd2e6wr" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/07/GUI-001/" data-id="cj3z5moto000io9jy9dztxm71" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
@@ -347,7 +397,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/07/Linux-002/" data-id="cj3z52h2x000dtjjy50ew4x0e" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/07/Linux-002/" data-id="cj3z5motl000do9jylll02r2o" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -394,7 +444,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/06/Linux-001/" data-id="cj3z52h30000itjjyjpf7sku3" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/06/Linux-001/" data-id="cj3z5motq000ko9jyralp1izy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -437,7 +487,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/06/Echo-001/" data-id="cj3z52h2v000atjjymyusz3u5" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/06/Echo-001/" data-id="cj3z5moti000ao9jyb9z4empe" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SHELL/">SHELL</a></li></ul>
@@ -480,7 +530,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/06/vim-001/" data-id="cj3z52h440014tjjyagd2r6o9" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/06/vim-001/" data-id="cj3z5mou4000xo9jy6351b9yw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VIM/">VIM</a></li></ul>
@@ -553,74 +603,7 @@ GetROProperty()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/03/05/APP-Test-005/" data-id="cj3z52h2q0005tjjyygfx4886" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-APP-Test-004" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/02/25/APP-Test-004/" class="article-date">
-  <time datetime="2017-02-25T09:23:55.000Z" itemprop="datePublished">2017-02-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/25/APP-Test-004/">APP测试总结（四）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="自动化测试"><a href="#自动化测试" class="headerlink" title="自动化测试"></a>自动化测试</h2><h2 id="自动化测试：以程序测试程序、以代码代替思维、以脚本运行代替手工测试。"><a href="#自动化测试：以程序测试程序、以代码代替思维、以脚本运行代替手工测试。" class="headerlink" title="自动化测试：以程序测试程序、以代码代替思维、以脚本运行代替手工测试。"></a>自动化测试：以程序测试程序、以代码代替思维、以脚本运行代替手工测试。</h2><ul>
-<li><p>冒烟测试:就是在一个新版本出来的时候，将软件的全部功能过一遍，看有没有什么大问题。如果功能可以正常运行，不会影响测试进行，那么这个版本就可以真正开始测试了。如果功能有重大问题或影响测试进行，那么这个版本就是不合格的，不用进行进一步的测试。比如，拿到QQ的app新版本，登陆都登陆不上，那么这个版本肯定无法继续测下去。或者，游戏中新的模块出现，但是新的模块总是崩溃、卡死，测试进行不下去，那么冒烟的结果就是不合格的。</p>
-</li>
-<li><p>回归测试:就是以前版本中发现的bug在新的版本中验证是否存在且是否引发新的bug。</p>
-</li>
-</ul>
-<h2 id="自动化测试的优势"><a href="#自动化测试的优势" class="headerlink" title="自动化测试的优势"></a>自动化测试的优势</h2><ul>
-<li>回归测试更方便、可靠。由于回归测试的业务流程操作和测试用例是预先设计好的，预期结果也是完全在项目人员掌握之中的，将回归测试交给计算机自动运行，可以极大提高测试效率，缩短回归测试时间。</li>
-<li>可运行更多更繁琐的测试，且快速高效。</li>
-<li>可执行一些对于手工测试来说相当困难或根本做不到的测试。比如，对大量用户的并发测试等。</li>
-<li>具有一致性和可重复性的特点。</li>
-<li>自动化测试脚本完全具有复用性。由于自动化测试通常以脚本的方式实现，这样在不同的版本之间，就可能只需要做少量的维护甚至不做任何修改，实现在不同的测试版本中使用相同的测试脚本执行相同的测试用例。</li>
-</ul>
-<h2 id="自动化测试的劣势"><a href="#自动化测试的劣势" class="headerlink" title="自动化测试的劣势"></a>自动化测试的劣势</h2><ul>
-<li>永远不可能完全取代手工测试。自动化测试无法做到手工测试的覆盖率，不是每个测试用例都适合转换成自动化测试用例的。</li>
-<li>无法保证测试的正确性。测试脚本本身也可能存在缺陷。</li>
-<li>手工测试能发现的缺陷远比自动化测试多。自动化测试几乎是无法发现新缺陷。</li>
-<li>自动化测试工具是死的，它本身没有任何想象力。</li>
-<li>自动化测试对测试工程师来说必须有一定的开发技术背景。</li>
-</ul>
-<h2 id="引入自动化测试的时机"><a href="#引入自动化测试的时机" class="headerlink" title="引入自动化测试的时机"></a>引入自动化测试的时机</h2><p>项目周期长，系统版本不断。主要在于回归测试。<br>需求变更不频繁。<br>系统中的测试对象基本可以正常识别，不存在大批量第三方控件。<br>需要反复测试，如可靠性测试需要进行上千次的系统测试。</p>
-<h2 id="何时避免展开自动化测试"><a href="#何时避免展开自动化测试" class="headerlink" title="何时避免展开自动化测试"></a>何时避免展开自动化测试</h2><p>项目周期短，需求变更频繁。项目周期短的情况下引入自动化测试，不但收不回成本，而且会延长产品的发布时间。需求频繁改变会使老功能的业务逻辑被修改，从而导致相应的测试脚本也需相应修改。<br>软件版本还没稳定。<br>多数对象无法识别以及脚本维护频繁与艰难。</p>
-<h2 id="自动化测试用例设计"><a href="#自动化测试用例设计" class="headerlink" title="自动化测试用例设计"></a>自动化测试用例设计</h2><p>在项目的测试过程中，测试工程师都会首先分析测试需求，产出测试计划后，编写和设计测试用例，设计开发测试脚本。</p>
-<ul>
-<li>自动化测试用例的范围往往是核心业务流程或者重复执行率较高的。并不需要覆盖所有的手工测试用例。</li>
-<li>自动化测试用例的选择一般以“正向”为主。正常情况即为“正向”，异常情况即为“反向”。功能自动化测试主要还是用于回归测试，回归测试的目的就是保证新增功能后老功能是否能够正常运作。</li>
-<li>手工测试用例可以不用回归原点，而自动化用例往往是必须的。所谓回归原点就是执行的测试用例最终需要恢复其在执行前的初始状态。比如添加用户功能，由于用户名是唯一的，第一次执行时没有问题，第二次执行时程序就会出现用户名重复而报错；这种情况下，就需要在自动化测试用例最后增加删除该用户的步骤。</li>
-<li>自动化测试用例与手工测试用例不同，不需要每个步骤都写预期结果。</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/02/25/APP-Test-004/" data-id="cj3z52h2l0003tjjysk70ivsy" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/03/05/APP-Test-005/" data-id="cj3z5motc0005o9jyx23id6qm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
@@ -648,7 +631,7 @@ GetROProperty()
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APP测试/">APP测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SHELL/">SHELL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIM/">VIM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APP测试/">APP测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SHELL/">SHELL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIM/">VIM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li></ul>
     </div>
   </div>
 
@@ -658,7 +641,7 @@ GetROProperty()
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/APP测试/" style="font-size: 20px;">APP测试</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/SHELL/" style="font-size: 10px;">SHELL</a> <a href="/tags/VIM/" style="font-size: 10px;">VIM</a> <a href="/tags/git/" style="font-size: 10px;">git</a>
+      <a href="/tags/APP测试/" style="font-size: 20px;">APP测试</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/SHELL/" style="font-size: 10px;">SHELL</a> <a href="/tags/VIM/" style="font-size: 10px;">VIM</a> <a href="/tags/git/" style="font-size: 10px;">git</a>
     </div>
   </div>
 
@@ -680,6 +663,10 @@ GetROProperty()
       <ul>
         
           <li>
+            <a href="/2017/06/16/matlab-001/">matlab-图像增强</a>
+          </li>
+        
+          <li>
             <a href="/2017/06/16/data-structure-001/">数据结构-快速排序</a>
           </li>
         
@@ -693,10 +680,6 @@ GetROProperty()
         
           <li>
             <a href="/2017/06/07/GUI-001/">GUI测试总结</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/07/Linux-002/">Linux-常用命令（二）</a>
           </li>
         
       </ul>
