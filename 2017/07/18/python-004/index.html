@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>shell-网页下载wget | hannie&#39;s blog</title>
+  <title>python——NumPy数组（一） | hannie&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="wget是一个用于文件下载的命令行工具。
-1. 指定下载位置wget URLwget URL1 URL212345678910111213141516wget http://softwaretest.cn --2017-06-17 08:42:06--  http://softwaretest.cn/Resolving softwaretest.cn (softwaretest.cn)... 15">
+  <meta name="description" content="1. 全零矩阵123456&amp;gt;&amp;gt;&amp;gt; import numpy as det&amp;gt;&amp;gt;&amp;gt; a = det.zeros((3,3))&amp;gt;&amp;gt;&amp;gt; print a[[ 0.  0.  0.] [ 0.  0.  0.] [ 0.  0.  0.]]
+2. 全一矩阵123456&amp;gt;&amp;gt;&amp;gt; import numpy as det&amp;gt;&amp;gt;&amp;gt;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="shell-网页下载wget">
-<meta property="og:url" content="http://softwaretest.cn/2017/06/17/shell-001/index.html">
+<meta property="og:title" content="python——NumPy数组（一）">
+<meta property="og:url" content="http://softwaretest.cn/2017/07/18/python-004/index.html">
 <meta property="og:site_name" content="hannie's blog">
-<meta property="og:description" content="wget是一个用于文件下载的命令行工具。
-1. 指定下载位置wget URLwget URL1 URL212345678910111213141516wget http://softwaretest.cn --2017-06-17 08:42:06--  http://softwaretest.cn/Resolving softwaretest.cn (softwaretest.cn)... 15">
-<meta property="og:updated_time" content="2017-06-17T01:56:32.672Z">
+<meta property="og:description" content="1. 全零矩阵123456&amp;gt;&amp;gt;&amp;gt; import numpy as det&amp;gt;&amp;gt;&amp;gt; a = det.zeros((3,3))&amp;gt;&amp;gt;&amp;gt; print a[[ 0.  0.  0.] [ 0.  0.  0.] [ 0.  0.  0.]]
+2. 全一矩阵123456&amp;gt;&amp;gt;&amp;gt; import numpy as det&amp;gt;&amp;gt;&amp;gt;">
+<meta property="og:updated_time" content="2017-07-18T13:46:42.387Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="shell-网页下载wget">
-<meta name="twitter:description" content="wget是一个用于文件下载的命令行工具。
-1. 指定下载位置wget URLwget URL1 URL212345678910111213141516wget http://softwaretest.cn --2017-06-17 08:42:06--  http://softwaretest.cn/Resolving softwaretest.cn (softwaretest.cn)... 15">
+<meta name="twitter:title" content="python——NumPy数组（一）">
+<meta name="twitter:description" content="1. 全零矩阵123456&amp;gt;&amp;gt;&amp;gt; import numpy as det&amp;gt;&amp;gt;&amp;gt; a = det.zeros((3,3))&amp;gt;&amp;gt;&amp;gt; print a[[ 0.  0.  0.] [ 0.  0.  0.] [ 0.  0.  0.]]
+2. 全一矩阵123456&amp;gt;&amp;gt;&amp;gt; import numpy as det&amp;gt;&amp;gt;&amp;gt;">
   
     <link rel="alternate" href="/atom.xml" title="hannie&#39;s blog" type="application/atom+xml">
   
@@ -66,10 +66,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-shell-001" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-python-004" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/06/17/shell-001/" class="article-date">
-  <time datetime="2017-06-17T01:54:23.000Z" itemprop="datePublished">2017-06-17</time>
+    <a href="/2017/07/18/python-004/" class="article-date">
+  <time datetime="2017-07-18T13:45:44.000Z" itemprop="datePublished">2017-07-18</time>
 </a>
     
   </div>
@@ -80,7 +80,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      shell-网页下载wget
+      python——NumPy数组（一）
     </h1>
   
 
@@ -88,21 +88,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>wget是一个用于文件下载的命令行工具。</p>
-<h2 id="1-指定下载位置"><a href="#1-指定下载位置" class="headerlink" title="1. 指定下载位置"></a>1. 指定下载位置</h2><p>wget URL<br>wget URL1 URL2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">wget http://softwaretest.cn </div><div class="line">--2017-06-17 08:42:06--  http://softwaretest.cn/</div><div class="line">Resolving softwaretest.cn (softwaretest.cn)... 151.101.0.133, 151.101.64.133, 151.101.128.133</div><div class="line">Connecting to softwaretest.cn (softwaretest.cn)|151.101.0.133|:80... connected.</div><div class="line">HTTP request sent, awaiting response... 301 Moved Permanently</div><div class="line">Location: http://www.softwaretest.cn/ [following]</div><div class="line">--2017-06-17 08:42:21--  http://www.softwaretest.cn/</div><div class="line">Resolving www.softwaretest.cn (www.softwaretest.cn)... 151.101.72.133</div><div class="line">Connecting to www.softwaretest.cn (www.softwaretest.cn)|151.101.72.133|:80... connected.</div><div class="line">HTTP request sent, awaiting response... 200 OK</div><div class="line">Length: 109528 (107K) [text/html]</div><div class="line">Saving to: ‘index.html’</div><div class="line"></div><div class="line">100%[==============================================================================================================================================&gt;] 109,528      360KB/s   in 0.3s   </div><div class="line"></div><div class="line">2017-06-17 08:42:22 (360 KB/s) - ‘index.html’ saved [109528/109528]</div></pre></td></tr></table></figure></p>
-<h2 id="2-指定输出位置"><a href="#2-指定输出位置" class="headerlink" title="2. 指定输出位置"></a>2. 指定输出位置</h2><p>wget URL -O download -o log<br>-O ：指定输出的文件名<br>-o ：指定一个日志文件</p>
-<h2 id="3-指定重试次数"><a href="#3-指定重试次数" class="headerlink" title="3. 指定重试次数"></a>3. 指定重试次数</h2><p>wget -t 5 URL<br>-t ：指定重试次数<br>5  ：重试5次</p>
-<h2 id="4-对下载限速"><a href="#4-对下载限速" class="headerlink" title="4. 对下载限速"></a>4. 对下载限速</h2><p>wget –limit-rate 20k URL<br>–limit-rate ：对wget限速<br>20k ：20年字节为指定速度限制</p>
-<h2 id="5-断点续传"><a href="#5-断点续传" class="headerlink" title="5. 断点续传"></a>5. 断点续传</h2><p>wget -c URL<br>-c ：从断点开始继续下载</p>
-<h2 id="6-补充"><a href="#6-补充" class="headerlink" title="6. 补充"></a>6. 补充</h2><p>wget –mirror URL<br>wget –user username –password pass URL</p>
+        <h2 id="1-全零矩阵"><a href="#1-全零矩阵" class="headerlink" title="1. 全零矩阵"></a>1. 全零矩阵</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import numpy as det</div><div class="line">&gt;&gt;&gt; a = det.zeros((3,3))</div><div class="line">&gt;&gt;&gt; print a</div><div class="line">[[ 0.  0.  0.]</div><div class="line"> [ 0.  0.  0.]</div><div class="line"> [ 0.  0.  0.]]</div></pre></td></tr></table></figure>
+<h2 id="2-全一矩阵"><a href="#2-全一矩阵" class="headerlink" title="2. 全一矩阵"></a>2. 全一矩阵</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import numpy as det</div><div class="line">&gt;&gt;&gt; a = det.ones((3,3))</div><div class="line">&gt;&gt;&gt; print a</div><div class="line">[[ 1.  1.  1.]</div><div class="line"> [ 1.  1.  1.]</div><div class="line"> [ 1.  1.  1.]]</div></pre></td></tr></table></figure>
+<h2 id="3-指定固定值矩阵"><a href="#3-指定固定值矩阵" class="headerlink" title="3. 指定固定值矩阵"></a>3. 指定固定值矩阵</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import numpy as det</div><div class="line">&gt;&gt;&gt; a = det.full((3,3),100)</div><div class="line">&gt;&gt;&gt; print a</div><div class="line">[[ 100.  100.  100.]</div><div class="line"> [ 100.  100.  100.]</div><div class="line"> [ 100.  100.  100.]]</div></pre></td></tr></table></figure>
+<h2 id="4-随机矩阵"><a href="#4-随机矩阵" class="headerlink" title="4. 随机矩阵"></a>4. 随机矩阵</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import numpy as det</div><div class="line">&gt;&gt;&gt; a = det.random.random((3,3))</div><div class="line">&gt;&gt;&gt; print a</div><div class="line">[[ 0.46759462  0.74203465  0.1685592 ]</div><div class="line"> [ 0.09625809  0.25350595  0.17873013]</div><div class="line"> [ 0.43552232  0.78442542  0.76970373]]</div></pre></td></tr></table></figure>
+<h2 id="5-对角矩阵"><a href="#5-对角矩阵" class="headerlink" title="5. 对角矩阵"></a>5. 对角矩阵</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import numpy as det</div><div class="line">&gt;&gt;&gt; a = det.eye(3)</div><div class="line">&gt;&gt;&gt; print a</div><div class="line">[[ 1.  0.  0.]</div><div class="line"> [ 0.  1.  0.]</div><div class="line"> [ 0.  0.  1.]]</div></pre></td></tr></table></figure>
+<h2 id="6-指定固定值矩阵"><a href="#6-指定固定值矩阵" class="headerlink" title="6. 指定固定值矩阵"></a>6. 指定固定值矩阵</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import numpy as det</div><div class="line">&gt;&gt;&gt; a = det.array([[1,2,3],[4,5,6],[7,8,9]])</div><div class="line">&gt;&gt;&gt; print a</div><div class="line">[[1 2 3]</div><div class="line"> [4 5 6]</div><div class="line"> [7 8 9]]</div></pre></td></tr></table></figure>
+<p>（未完，待续……）</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/17/shell-001/" data-id="cj59muqkb0015vzjyunqi47m8" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/python-004/" data-id="cj59muqka0013vzjy3bt0dnn2" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SHELL/">SHELL</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
 
     </footer>
   </div>
@@ -110,19 +110,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/07/08/Linux-003/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Linux命令查看系统硬件信息
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/06/16/matlab-001/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/07/18/python-003/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">matlab-图像增强</div>
+      <div class="article-nav-title">python—PIL（图像处理库）</div>
     </a>
   
 </nav>
