@@ -3,24 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Linux-常用命令（一） | hannie&#39;s blog</title>
+  <title>python—PIL（图像处理库） | hannie&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 打开终端法一：键盘输入Ctrl+Alt+T法二：Alt+F2   之后输入gnome_terminal
-2. 进入root（超级用户）123——&amp;gt; sudo su[sudo]password for eric:    #须在此处输入密码，但输入的密码不会显示在屏幕上root@eric-pc:               #当显示root@后就代表已经进入了root
-3. 退出root直">
+  <meta name="description" content="一. PIL(Python ImagingLibrary)是Python一个强大方便的图像处理库1.安装pillow1$ sudo pip install pillow==2.6.0
+或在命令行使用easy_install安装：1$ sudo pip easy_install Pillow
+2.使用pillow安装完成后，使用from PIL import Image就引用使用库了。比如：123f">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux-常用命令（一）">
-<meta property="og:url" content="http://softwaretest.cn/2017/06/06/Linux-001/index.html">
+<meta property="og:title" content="python—PIL（图像处理库）">
+<meta property="og:url" content="http://softwaretest.cn/2017/07/18/python-003/index.html">
 <meta property="og:site_name" content="hannie's blog">
-<meta property="og:description" content="1. 打开终端法一：键盘输入Ctrl+Alt+T法二：Alt+F2   之后输入gnome_terminal
-2. 进入root（超级用户）123——&amp;gt; sudo su[sudo]password for eric:    #须在此处输入密码，但输入的密码不会显示在屏幕上root@eric-pc:               #当显示root@后就代表已经进入了root
-3. 退出root直">
-<meta property="og:updated_time" content="2017-06-07T00:44:23.252Z">
+<meta property="og:description" content="一. PIL(Python ImagingLibrary)是Python一个强大方便的图像处理库1.安装pillow1$ sudo pip install pillow==2.6.0
+或在命令行使用easy_install安装：1$ sudo pip easy_install Pillow
+2.使用pillow安装完成后，使用from PIL import Image就引用使用库了。比如：123f">
+<meta property="og:updated_time" content="2017-07-18T13:43:57.511Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux-常用命令（一）">
-<meta name="twitter:description" content="1. 打开终端法一：键盘输入Ctrl+Alt+T法二：Alt+F2   之后输入gnome_terminal
-2. 进入root（超级用户）123——&amp;gt; sudo su[sudo]password for eric:    #须在此处输入密码，但输入的密码不会显示在屏幕上root@eric-pc:               #当显示root@后就代表已经进入了root
-3. 退出root直">
+<meta name="twitter:title" content="python—PIL（图像处理库）">
+<meta name="twitter:description" content="一. PIL(Python ImagingLibrary)是Python一个强大方便的图像处理库1.安装pillow1$ sudo pip install pillow==2.6.0
+或在命令行使用easy_install安装：1$ sudo pip easy_install Pillow
+2.使用pillow安装完成后，使用from PIL import Image就引用使用库了。比如：123f">
   
     <link rel="alternate" href="/atom.xml" title="hannie&#39;s blog" type="application/atom+xml">
   
@@ -69,10 +69,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Linux-001" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-python-003" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/06/06/Linux-001/" class="article-date">
-  <time datetime="2017-06-06T13:25:53.000Z" itemprop="datePublished">2017-06-06</time>
+    <a href="/2017/07/18/python-003/" class="article-date">
+  <time datetime="2017-07-18T13:42:33.000Z" itemprop="datePublished">2017-07-18</time>
 </a>
     
   </div>
@@ -83,7 +83,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Linux-常用命令（一）
+      python—PIL（图像处理库）
     </h1>
   
 
@@ -91,23 +91,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-打开终端"><a href="#1-打开终端" class="headerlink" title="1. 打开终端"></a>1. 打开终端</h2><p>法一：键盘输入Ctrl+Alt+T<br>法二：Alt+F2   之后输入gnome_terminal</p>
-<h2 id="2-进入root（超级用户）"><a href="#2-进入root（超级用户）" class="headerlink" title="2. 进入root（超级用户）"></a>2. 进入root（超级用户）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">——&gt; sudo su</div><div class="line">[sudo]password for eric:    #须在此处输入密码，但输入的密码不会显示在屏幕上</div><div class="line">root@eric-pc:               #当显示root@后就代表已经进入了root</div></pre></td></tr></table></figure>
-<h2 id="3-退出root"><a href="#3-退出root" class="headerlink" title="3. 退出root"></a>3. 退出root</h2><p>直接输入exit就可以退出root。</p>
-<h2 id="4-与-的区别："><a href="#4-与-的区别：" class="headerlink" title="4. $与#的区别："></a>4. $与#的区别：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ 表示当前用户为普通用户</div><div class="line"># 表示当前用户为超级用户</div></pre></td></tr></table></figure>
-<p>（ps：在python和shell中，以#开头的文本作为注释行）</p>
-<h2 id="5-重启电脑"><a href="#5-重启电脑" class="headerlink" title="5.重启电脑"></a>5.重启电脑</h2><p>法一：进入root后，键入reboot            #表示立即重启<br>法二：进入root后，键入shutdown -r now   #表示立即重启<br>法三：进入root后，键入shutdown -r 5     #表示5分钟后自动重启<br>法四：进入root后，键入shutdown -r 20:30 #表示在20:30时自动重启<br>（若想取消设置的重启，则可键入shutdown -e）</p>
-<h2 id="6-关机"><a href="#6-关机" class="headerlink" title="6. 关机"></a>6. 关机</h2><p>法一：进入root后，键入halt            #表示立即关机<br>法二：进入root后，键人poweroff        #表示立即关机<br>法二：进入root后，键入shutdown -h now   #表示立即关机<br>法三：进入root后，键入shutdown -h 5     #表示5分钟后自动关机<br>法四：进入root后，键入shutdown -h 20:30 #表示在20:30时自动关机<br>（若想取消设置的关机，则可键入shutdown -e）</p>
-<h2 id="7-需要帮助"><a href="#7-需要帮助" class="headerlink" title="7. 需要帮助"></a>7. 需要帮助</h2><p>在需要帮助时记得用man和help<br>法一：键入：man 命令名，就可以显示该命令的帮助文档。<br>      想退出帮助文档时键入 q 即可。<br>法二：键入：命令名 –help，就可以显示该命令的帮助。<br>      例如：cat –help<br>法三：help 命令名，可用于查找shell内部命令的帮助文档。<br>      键入：bash    #进入了bash（bash是linux系统默认使用的shell类型，常用的还有zsh csh ksh ash）<br>      键入：help cd #查找cd命令的帮助文档<br>      键入：exit    #退出bash</p>
-<p>（待续…………）</p>
+        <h2 id="一-PIL-Python-ImagingLibrary-是Python一个强大方便的图像处理库"><a href="#一-PIL-Python-ImagingLibrary-是Python一个强大方便的图像处理库" class="headerlink" title="一. PIL(Python ImagingLibrary)是Python一个强大方便的图像处理库"></a>一. PIL(Python ImagingLibrary)是Python一个强大方便的图像处理库</h2><h3 id="1-安装pillow"><a href="#1-安装pillow" class="headerlink" title="1.安装pillow"></a>1.安装pillow</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo pip install pillow==2.6.0</div></pre></td></tr></table></figure>
+<p>或在命令行使用easy_install安装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo pip easy_install Pillow</div></pre></td></tr></table></figure></p>
+<h3 id="2-使用pillow"><a href="#2-使用pillow" class="headerlink" title="2.使用pillow"></a>2.使用pillow</h3><p>安装完成后，使用from PIL import Image就引用使用库了。<br>比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">from PIL import Image</div><div class="line">im = Image.open(&quot;hello.jpg&quot;)</div><div class="line">im.rotate(45).show()</div></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/06/Linux-001/" data-id="cj59mr3yi000fm0jys3l3xvkr" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/python-003/" data-id="cj59mr3yz0011m0jyylwjihub" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
 
     </footer>
   </div>
@@ -115,19 +109,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/06/07/Linux-002/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Linux-常用命令（二）
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/06/06/Echo-001/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/07/18/python-002/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">终端打印</div>
+      <div class="article-nav-title">python—pip （软件包管理系统)</div>
     </a>
   
 </nav>
