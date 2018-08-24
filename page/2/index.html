@@ -61,6 +61,53 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-data-structure-001" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/16/data-structure-001/" class="article-date">
+  <time datetime="2017-06-15T23:29:15.000Z" itemprop="datePublished">2017-06-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/16/data-structure-001/">数据结构-快速排序</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-快速排序的基本思想："><a href="#1-快速排序的基本思想：" class="headerlink" title="1. 快速排序的基本思想："></a>1. 快速排序的基本思想：</h2><p>1.1 存在一个需要排序的无序序列A[54  38  96  23  15  72  60  45  83],将序列抽象为A[low<del>~mid</del>~~high];<br>1.2 将序列中的第一个记录 54 作为一个<strong>基准</strong>，pivot = a[low],此时无序序列为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">A[__ 38 96  23  15  72  60  45  83];</div><div class="line">     i                           j</div></pre></td></tr></table></figure></p>
+<p>1.3 用<code>j</code>从序列的右边开始往左找，在没有遇到<code>i</code>时，找到第一个比基准54小的值后停下来，找到了45；将45放在第一个空位置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">A[45  38  96  23  15  72  60  __  83]</div><div class="line">       i                       j</div></pre></td></tr></table></figure></p>
+<p>1.4 然后用<code>i</code>从序列的左边开始往右找，在没有遇到<code>j</code>时，找到第一个比基准54大的值后停下来，找到了96；将96放在空的位置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">A[45  38  __  23  15  72  60  96  83]</div><div class="line">          i                   j</div></pre></td></tr></table></figure></p>
+<p>1.5 继续从<code>j</code>停止的位置从右向左走，在没有遇到<code>i</code>时，找到第二个比基准54小的值后停下来，找到了15；将15放在空的位置上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">A[45  38  15  23  __ 72  60  96  83]</div><div class="line">          i        j</div></pre></td></tr></table></figure></p>
+<p>1.6 继续从<code>i</code>停止的位置从左向右走，在没有遇到<code>j</code>时，找比基准大的值，此时遇到了<code>j</code>，此时把基准值54放在ij相遇的位置。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">A[45  38  15  23  __  72  60  96  83]</div><div class="line">                  ij</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">A[45  38  15  23  54  72  60  96  83]</div><div class="line">                  ij</div></pre></td></tr></table></figure>
+<p>可以看到，此时序列大概有序了，比54小的都排在了左边，比54大的都排在了右边。<br>1.7  接下来基准54不参加排序，将54左边的序列[45 38 15 23]再看做是一个无序序列再按上述方法排序，<br>同样将54右边的序列[72 60 96 83]也按上述方法排序，直到整个序列有序。</p>
+<h2 id="2-编程实现快速排序："><a href="#2-编程实现快速排序：" class="headerlink" title="2. 编程实现快速排序："></a>2. 编程实现快速排序：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">void quick_sort(int a[] , int low , int high)</div><div class="line">&#123;</div><div class="line">    int i, j, pivot;</div><div class="line">    if(low &lt; high)</div><div class="line">    &#123;</div><div class="line">        pivot = a[low];  //将第一个元素作为基准</div><div class="line">        i = low;     </div><div class="line">        j = high;</div><div class="line">        while(i &lt; j)</div><div class="line">        &#123;</div><div class="line">            while(i &lt; j &amp;&amp; a[j] &gt;= pivot) //从右向左找</div><div class="line">                 j--;</div><div class="line">            if(i &lt; j)</div><div class="line">                a[i++] = a[j]; </div><div class="line">            while(i &lt; j &amp;&amp; a[i] &lt;= pivot) //从左向右找</div><div class="line">                i++;</div><div class="line">            if(i &lt; j)</div><div class="line">                a[j--] = a[i];</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        a[i]= pivot;</div><div class="line">        quick_sort(a , low , i-1);  //基数左边的序列进行快速排序</div><div class="line">        quick_sort(a , i+1 , high); //基数右边的序列进行快速排序</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void main()</div><div class="line">&#123;</div><div class="line">    int data[9] = &#123;54 , 38 , 96 , 23 , 15 , 72 , 60 , 45 , 83&#125;;</div><div class="line">    quick_sort(data , 0 , 8);</div><div class="line">    for(i =0 ; i &lt; 9; i++)</div><div class="line">        cout&lt;&lt;data[i]&lt;&lt;&quot;&quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="3-快速排序时间复杂度分析："><a href="#3-快速排序时间复杂度分析：" class="headerlink" title="3. 快速排序时间复杂度分析："></a>3. 快速排序时间复杂度分析：</h2><p>快速排序是不稳定的。<br>快速排序最理想情况下的算法时间复杂度是O（nlogn）,最坏为O（n^2）。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2017/06/16/data-structure-001/" data-id="cjl80hig3000r9ojyrng0uxc6" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-python-001" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/06/15/python-001/" class="article-date">
@@ -101,7 +148,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/15/python-001/" data-id="cjl7zabkf000z9qjy1z76a5k1" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/15/python-001/" data-id="cjl80higc00119ojyi3m5ar6t" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -173,7 +220,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/07/APP-Test-006/" data-id="cjl7zabjq00059qjyrsrc0rkz" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/07/APP-Test-006/" data-id="cjl80hifp00089ojyuzta1c4x" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
@@ -246,7 +293,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/07/GUI-001/" data-id="cjl7zabjx000d9qjyqds7jt7g" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/07/GUI-001/" data-id="cjl80hifw000f9ojyuiq3ioqy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
@@ -300,7 +347,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/07/Linux-002/" data-id="cjl7zabjz000i9qjyvorqcb0a" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/07/Linux-002/" data-id="cjl80hifz000k9ojytiakoma3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -347,7 +394,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/06/Linux-001/" data-id="cjl7zabjy000f9qjyavxsngit" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/06/Linux-001/" data-id="cjl80hify000i9ojyr2oc45mg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -390,7 +437,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/06/Echo-001/" data-id="cjl7zabjv000a9qjy58tzosw0" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/06/Echo-001/" data-id="cjl80hifu000d9ojymo9ucz8l" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SHELL/">SHELL</a></li></ul>
@@ -433,7 +480,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/06/vim-001/" data-id="cjl7zabkm00199qjyru87907b" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/06/vim-001/" data-id="cjl80high001a9ojybxisibh1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VIM/">VIM</a></li></ul>
@@ -506,7 +553,7 @@ GetROProperty()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/03/05/APP-Test-005/" data-id="cjl7zabjn00049qjyvbymkugu" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/03/05/APP-Test-005/" data-id="cjl80hifm00059ojy567868r8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
@@ -573,67 +620,7 @@ GetROProperty()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/02/25/APP-Test-004/" data-id="cjl7zabjl00039qjycizo0znt" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-APP-Test-003" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/02/21/APP-Test-003/" class="article-date">
-  <time datetime="2017-02-21T09:23:55.000Z" itemprop="datePublished">2017-02-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/21/APP-Test-003/">APP测试总结（三）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="软件测试类型"><a href="#软件测试类型" class="headerlink" title="软件测试类型"></a>软件测试类型</h2><h2 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h2><p>单元测试并不是对整个程序进行测试，而是对构成程序的较小模块进行测试。单元测试减小了调试的难度（一旦某个错误被发现出来，我们就知道它在哪个具体的模块中）；单元测试提供了同时测试多个模块的可能，将并行工程引入软件测试中。</p>
-<p>在为模块单元测试设计测试用例时，需要使用两种类型的信息：模块的规格说明和模块的源代码。规格说明一般都规定了模块的输入和输出参数以及模块的功能。单元测试总体上是面向白盒测试的，因此，单元测试的测试用例的设计过程如下：使用一种或多种白盒测试方法分析模块的逻辑结构，然后使用黑盒测试方法对照模块的规格说明以补充测试用例。</p>
-<h2 id="集成测试"><a href="#集成测试" class="headerlink" title="集成测试"></a>集成测试</h2><p>自顶向下集成和自底向上集成</p>
-<h2 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h2><p>功能测试的目的是为了暴露程序的错误以及与规格说明不一致之处，而不是为了证明程序符合其外部规格说明。</p>
-<p>功能测试是一种黑盒测试，功能测试常用步骤有：根据需求来细分功能点，根据功能点派生测试需求，根据测试需求设计功能测试用例。</p>
-<h2 id="系统测试"><a href="#系统测试" class="headerlink" title="系统测试"></a>系统测试</h2><p>系统测试的目的是为了证明程序不能实现其目标，系统测试的测试用例设计有以下14种类型：</p>
-<ul>
-<li>能力测试：是判断目标文档提及的每一项能力（或功能）是否都确实已经实现。</li>
-<li>容量测试：使程序经受大容量数据的检验。容量测试的目的是为了证明程序不能处理目标文档中规定的数据容量。</li>
-<li>强度测试：使程序承受高负载或强度的检验。所谓高强度是指在很短的时间间隔内达到的数据或操作的数量峰值。</li>
-<li>易用性测试：试图发现人为因素或易用性的问题。</li>
-<li>安全性测试：设计测试用例来突破程序安全检查的过程。举例来说，我们可以设计测试用例来规避操作系统的内存保护机制，破坏数据库管理系统的数据安全机制。</li>
-<li>性能测试：很多软件都有特定的性能或效率目标，这终特性描述为在特定负载和配置环境下程序的响应时间和吞吐率。</li>
-<li>存储测试：</li>
-<li>配置测试：</li>
-<li>兼容性测试。</li>
-<li>安装测试：有些类型的软件系统安装过程非常复杂，测试安装过程是系统测试中的一个重要部分。对于包含在软件包中的自动安装系统而言，这尤其重要。安装程序如果出现故障，会影响用户对软件的成功体验。</li>
-<li>可靠性测试：所有类型的测试都是为了提高软件的可靠性，但是如果软件的目标中包含了对可靠性的特别描述，就必须设计专门的可靠性测试。</li>
-<li>可恢复性测试：诸如操作系统、数据库管理系统和远程处理系统等软件通常都有可恢复性目标，说明系统如何从程序错误、硬件失效和数据错误中恢复过来。系统测试的一个目标是证明这些恢复机制不能够正确发挥作用。我们可以故意将程序错误置入某个系统中，判断系统是否可以从中恢复。</li>
-<li>适用性测试</li>
-<li>文档测试：检查用户文档的正确性。用户文档应成为审查的对象，检查其正确性和清晰性。在文档中描述的任何范例应编成测试用例，并提交给程序。</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/02/21/APP-Test-003/" data-id="cjl7zabjh00019qjy8ijupr2l" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/02/25/APP-Test-004/" data-id="cjl80hifj00049ojy48k6l5qi" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
@@ -661,7 +648,7 @@ GetROProperty()
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APP测试/">APP测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SHELL/">SHELL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIM/">VIM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APP测试/">APP测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Quality-Assurance/">Quality Assurance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SHELL/">SHELL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIM/">VIM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li></ul>
     </div>
   </div>
 
@@ -671,7 +658,7 @@ GetROProperty()
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/APP测试/" style="font-size: 20px;">APP测试</a> <a href="/tags/Charles/" style="font-size: 10px;">Charles</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 17.5px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 17.5px;">Python</a> <a href="/tags/SHELL/" style="font-size: 12.5px;">SHELL</a> <a href="/tags/VIM/" style="font-size: 15px;">VIM</a> <a href="/tags/git/" style="font-size: 10px;">git</a>
+      <a href="/tags/APP测试/" style="font-size: 20px;">APP测试</a> <a href="/tags/Charles/" style="font-size: 10px;">Charles</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 17.5px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 17.5px;">Python</a> <a href="/tags/Quality-Assurance/" style="font-size: 10px;">Quality Assurance</a> <a href="/tags/SHELL/" style="font-size: 12.5px;">SHELL</a> <a href="/tags/VIM/" style="font-size: 15px;">VIM</a> <a href="/tags/git/" style="font-size: 10px;">git</a>
     </div>
   </div>
 
@@ -693,6 +680,10 @@ GetROProperty()
       <ul>
         
           <li>
+            <a href="/2018/08/24/QA的职责/">QA的职责</a>
+          </li>
+        
+          <li>
             <a href="/2018/08/24/Charles-001/">Charles 重定向功能——Map Local</a>
           </li>
         
@@ -706,10 +697,6 @@ GetROProperty()
         
           <li>
             <a href="/2017/07/18/python-002/">python—pip （软件包管理系统)</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/18/vim-003/">vim—常用命令（二）</a>
           </li>
         
       </ul>
