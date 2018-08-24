@@ -61,6 +61,73 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-git-001" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/24/git-001/" class="article-date">
+  <time datetime="2018-08-24T13:31:56.000Z" itemprop="datePublished">2018-08-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/24/git-001/">git-基本操作（一）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>git版本控制系统，其实只能跟踪文本文件的改动，比如TXT文件，网页，所有的程序代码等等。而图片、视频这些二进制文件，虽然也能由版本控制系统管理，但没法跟踪文件的具体内容的变化。<br>(但是可以知道比如图片从100KB改成了120KB这样的变化。)</p>
+<h2 id="1-安装git"><a href="#1-安装git" class="headerlink" title="1. 安装git"></a>1. 安装git</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install git</div></pre></td></tr></table></figure>
+<h2 id="2-创建版本库"><a href="#2-创建版本库" class="headerlink" title="2. 创建版本库"></a>2. 创建版本库</h2><h3 id="2-1-创建一个空目录"><a href="#2-1-创建一个空目录" class="headerlink" title="2.1 创建一个空目录"></a>2.1 创建一个空目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ mkdir learngit</div><div class="line">$ cd learngit</div><div class="line">$ pwd</div><div class="line">/Users/donghongyu/learngit   #新创建的新目录的地址</div></pre></td></tr></table></figure>
+<h3 id="2-2-初始化一个Git仓库"><a href="#2-2-初始化一个Git仓库" class="headerlink" title="2.2 初始化一个Git仓库"></a>2.2 初始化一个Git仓库</h3><p>把刚刚建的空目录变成Git可以管理的仓库。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git init</div><div class="line">Initialized empty Git repository in /Users/donghongyu/learngit/.git/</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ ls -ah</div><div class="line">.	..	.git</div></pre></td></tr></table></figure>
+<p><code>.git</code>目录是Git来跟踪管理版本库的，千万不要手动修改这个目录里面的文件.</p>
+<h2 id="3-把一个文件放到Git仓库"><a href="#3-把一个文件放到Git仓库" class="headerlink" title="3. 把一个文件放到Git仓库"></a>3. 把一个文件放到Git仓库</h2><h3 id="3-1-编辑文档readme-txt-放在-Users-donghongyu-learngit目录下-："><a href="#3-1-编辑文档readme-txt-放在-Users-donghongyu-learngit目录下-：" class="headerlink" title="3.1 编辑文档readme.txt(放在/Users/donghongyu/learngit目录下)："></a>3.1 编辑文档<code>readme.txt</code>(放在/Users/donghongyu/learngit目录下)：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vim readme.txt</div></pre></td></tr></table></figure>
+<p><code>readme.txt</code>内容如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Git is a version control system.</div><div class="line">Git is free software.</div></pre></td></tr></table></figure></p>
+<h3 id="3-2-告诉Git，把文件添加到仓库："><a href="#3-2-告诉Git，把文件添加到仓库：" class="headerlink" title="3.2 告诉Git，把文件添加到仓库："></a>3.2 告诉Git，把文件添加到仓库：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git add readme.txt</div></pre></td></tr></table></figure>
+<p>没有任何提示说明添加成功。</p>
+<h3 id="3-3-告诉Git，把文件提交到仓库："><a href="#3-3-告诉Git，把文件提交到仓库：" class="headerlink" title="3.3 告诉Git，把文件提交到仓库："></a>3.3 告诉Git，把文件提交到仓库：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git commit -m &quot;wrote a readme file&quot;</div><div class="line">1 file changed, 2 insertions(+)</div><div class="line"> create mode 100644 readme.txt</div></pre></td></tr></table></figure>
+<p>“wrote a readme file”用来标明这个版本做了哪些修改，方便以后查找。</p>
+<h2 id="4-查看文件的修改情况"><a href="#4-查看文件的修改情况" class="headerlink" title="4. 查看文件的修改情况"></a>4. 查看文件的修改情况</h2><h3 id="4-1-修改文件："><a href="#4-1-修改文件：" class="headerlink" title="4.1 修改文件："></a>4.1 修改文件：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vim readme.txt</div></pre></td></tr></table></figure>
+<p>编辑<code>readme.txt</code>的内容如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Git is a distributed version control system.</div><div class="line">Git is free software.</div></pre></td></tr></table></figure></p>
+<h3 id="4-2-查看文件是否被修改过："><a href="#4-2-查看文件是否被修改过：" class="headerlink" title="4.2 查看文件是否被修改过："></a>4.2 查看文件是否被修改过：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ git status</div><div class="line">On branch master</div><div class="line">Changes not staged for commit:</div><div class="line">  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</div><div class="line">  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)</div><div class="line"></div><div class="line">	modified:   readme.txt</div><div class="line"></div><div class="line">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</div></pre></td></tr></table></figure>
+<p><code>Changes not staged for commit</code>表示目前的文本被修改的状态。</p>
+<h3 id="4-3-查看文件修改的内容："><a href="#4-3-查看文件修改的内容：" class="headerlink" title="4.3 查看文件修改的内容："></a>4.3 查看文件修改的内容：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ git diff</div><div class="line">diff --git a/readme.txt b/readme.txt</div><div class="line">index 46d49bf..9247db6 100644</div><div class="line">--- a/readme.txt</div><div class="line">+++ b/readme.txt</div><div class="line">@@ -1,2 +1,2 @@</div><div class="line">-Git is a version control system.</div><div class="line">+Git is a distributed version control system.</div><div class="line"> Git is free software.</div></pre></td></tr></table></figure>
+<h2 id="5-查看提交版本的日志"><a href="#5-查看提交版本的日志" class="headerlink" title="5. 查看提交版本的日志"></a>5. 查看提交版本的日志</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">$ git log</div><div class="line">commit f1e566bf5b56ba3a9cc589b797373b467fa8c827</div><div class="line">Author:  &lt;donghongyu@donghongyudeMacBook-Pro.local&gt;</div><div class="line">Date:   Wed Jul 19 09:20:10 2017 +0800</div><div class="line"></div><div class="line">    add GPL</div><div class="line"></div><div class="line">commit 1af66189a5b7dcee0d34d7cdc8dbf21ae10d16d8</div><div class="line">Author:  &lt;donghongyu@donghongyudeMacBook-Pro.local&gt;</div><div class="line">Date:   Wed Jul 19 09:14:55 2017 +0800</div><div class="line"></div><div class="line">    add distributed</div><div class="line"></div><div class="line">commit c40a1e6235e0c7685f4a565d22119bb213f93822</div><div class="line">Author:  &lt;donghongyu@donghongyudeMacBook-Pro.local&gt;</div><div class="line">Date:   Wed Jul 19 09:03:45 2017 +0800</div><div class="line"></div><div class="line">    wrote a readme file</div><div class="line">donghongyudeMacBook-Pro:learngit donghongyu$</div></pre></td></tr></table></figure>
+<p>或者<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git log --pretty=oneline</div><div class="line">f1e566bf5b56ba3a9cc589b797373b467fa8c827 add GPL</div><div class="line">1af66189a5b7dcee0d34d7cdc8dbf21ae10d16d8 add distributed</div><div class="line">c40a1e6235e0c7685f4a565d22119bb213f93822 wrote a readme file</div></pre></td></tr></table></figure></p>
+<p>commit c40a1e6235e0c7685f4a565d22119bb213f93822<br>这个是版本号。</p>
+<h2 id="6-退回到以前的版本"><a href="#6-退回到以前的版本" class="headerlink" title="6. 退回到以前的版本"></a>6. 退回到以前的版本</h2><p>用<code>HEAD</code>表示当前版本<br>上一个版本就是<code>HEAD^</code><br>上上一个版本就是<code>HEAD^^</code><br>当然往上100个版本写成<code>HEAD~100</code>。</p>
+<h3 id="6-1-退回到上一个版本"><a href="#6-1-退回到上一个版本" class="headerlink" title="6.1 退回到上一个版本"></a>6.1 退回到上一个版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git reset --hard HEAD^</div><div class="line">HEAD is now at 1af6618 add distributed</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ cat readme.txt</div><div class="line">Git is a distributed version control system.</div><div class="line">Git is free software.</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git log --pretty=oneline</div><div class="line">1af66189a5b7dcee0d34d7cdc8dbf21ae10d16d8 add distributed</div><div class="line">c40a1e6235e0c7685f4a565d22119bb213f93822 wrote a readme file</div></pre></td></tr></table></figure>
+<p>没有<code>f1e566bf5b56ba3a9cc589b797373b467fa8c827 add GPL</code>了。</p>
+<h3 id="6-2-我又反悔了，又想回到add-GPL"><a href="#6-2-我又反悔了，又想回到add-GPL" class="headerlink" title="6.2 我又反悔了，又想回到add GPL"></a>6.2 我又反悔了，又想回到<code>add GPL</code></h3><p>找到<code>add GPL</code>的版本号，输入一部分即可，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git reset --hard f1e566</div><div class="line">HEAD is now at f1e566b add GPL</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ cat readme.txt</div><div class="line">Git is a distributed version control system.</div><div class="line">Git is free software distributed under the GPL。</div></pre></td></tr></table></figure>
+<p><code>add GPL</code>又回来了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git log --pretty=oneline</div><div class="line">f1e566bf5b56ba3a9cc589b797373b467fa8c827 add GPL</div><div class="line">1af66189a5b7dcee0d34d7cdc8dbf21ae10d16d8 add distributed</div><div class="line">c40a1e6235e0c7685f4a565d22119bb213f93822 wrote a readme file</div></pre></td></tr></table></figure></p>
+<p>没有找到<code>add GPL</code>的版本号怎么办？<br>Git提供了一个命令<code>git reflog</code>用来记录你的每一次命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ git reflog</div><div class="line">f1e566b HEAD@&#123;0&#125;: reset: moving to f1e566</div><div class="line">1af6618 HEAD@&#123;1&#125;: reset: moving to HEAD^</div><div class="line">f1e566b HEAD@&#123;2&#125;: commit: add GPL</div><div class="line">1af6618 HEAD@&#123;3&#125;: commit: add distributed</div><div class="line">c40a1e6 HEAD@&#123;4&#125;: commit (initial): wrote a readme file</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2018/08/24/git-001/" data-id="cjl81ene1000vtfjykw8xlxnk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Charles-002" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/08/24/Charles-002/" class="article-date">
@@ -88,7 +155,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/08/24/Charles-002/" data-id="cjl816feu000dhljyuacd88se" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2018/08/24/Charles-002/" data-id="cjl81endl000dtfjyp2wmv0jb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Charles/">Charles</a></li></ul>
@@ -127,7 +194,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/08/24/QA的职责/" data-id="cjl816ff7000rhljy1x18z0r9" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2018/08/24/QA的职责/" data-id="cjl81ene0000ttfjyvhotw5qo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Quality-Assurance/">Quality Assurance</a></li></ul>
@@ -175,7 +242,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/08/24/Charles-001/" data-id="cjl816fer000ahljy8in32sgx" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2018/08/24/Charles-001/" data-id="cjl81endi000atfjygewr05at" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Charles/">Charles</a></li></ul>
@@ -220,7 +287,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/python-004/" data-id="cjl816ffp0019hljyraoop4z4" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/python-004/" data-id="cjl81ened001atfjyqpnyql2x" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -261,7 +328,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/python-003/" data-id="cjl816ffo0017hljyfkv1ukl3" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/python-003/" data-id="cjl81enec0019tfjyj4m2lgwb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -303,7 +370,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/python-002/" data-id="cjl816ffn0015hljyb01w4xv8" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/python-002/" data-id="cjl81eneb0017tfjydpzzvqvd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -354,7 +421,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/vim-003/" data-id="cjl816ffw001hhljyvb7v3mh0" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/vim-003/" data-id="cjl81enej001jtfjyqdgwdrkl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VIM/">VIM</a></li></ul>
@@ -405,7 +472,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/vim-002/" data-id="cjl816fft001fhljyrj8d1tm1" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/vim-002/" data-id="cjl81eneh001htfjyijgjnlzw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VIM/">VIM</a></li></ul>
@@ -453,55 +520,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/08/Linux-003/" data-id="cjl816ff5000phljywvgyqyl9" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/08/Linux-003/" data-id="cjl81endu000ptfjy1fc2ijc1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-shell-001" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/17/shell-001/" class="article-date">
-  <time datetime="2017-06-17T01:54:23.000Z" itemprop="datePublished">2017-06-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/17/shell-001/">shell-网页下载wget</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>wget是一个用于文件下载的命令行工具。</p>
-<h2 id="1-指定下载位置"><a href="#1-指定下载位置" class="headerlink" title="1. 指定下载位置"></a>1. 指定下载位置</h2><p>wget URL<br>wget URL1 URL2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">wget http://softwaretest.cn </div><div class="line">--2017-06-17 08:42:06--  http://softwaretest.cn/</div><div class="line">Resolving softwaretest.cn (softwaretest.cn)... 151.101.0.133, 151.101.64.133, 151.101.128.133</div><div class="line">Connecting to softwaretest.cn (softwaretest.cn)|151.101.0.133|:80... connected.</div><div class="line">HTTP request sent, awaiting response... 301 Moved Permanently</div><div class="line">Location: http://www.softwaretest.cn/ [following]</div><div class="line">--2017-06-17 08:42:21--  http://www.softwaretest.cn/</div><div class="line">Resolving www.softwaretest.cn (www.softwaretest.cn)... 151.101.72.133</div><div class="line">Connecting to www.softwaretest.cn (www.softwaretest.cn)|151.101.72.133|:80... connected.</div><div class="line">HTTP request sent, awaiting response... 200 OK</div><div class="line">Length: 109528 (107K) [text/html]</div><div class="line">Saving to: ‘index.html’</div><div class="line"></div><div class="line">100%[==============================================================================================================================================&gt;] 109,528      360KB/s   in 0.3s   </div><div class="line"></div><div class="line">2017-06-17 08:42:22 (360 KB/s) - ‘index.html’ saved [109528/109528]</div></pre></td></tr></table></figure></p>
-<h2 id="2-指定输出位置"><a href="#2-指定输出位置" class="headerlink" title="2. 指定输出位置"></a>2. 指定输出位置</h2><p>wget URL -O download -o log<br>-O ：指定输出的文件名<br>-o ：指定一个日志文件</p>
-<h2 id="3-指定重试次数"><a href="#3-指定重试次数" class="headerlink" title="3. 指定重试次数"></a>3. 指定重试次数</h2><p>wget -t 5 URL<br>-t ：指定重试次数<br>5  ：重试5次</p>
-<h2 id="4-对下载限速"><a href="#4-对下载限速" class="headerlink" title="4. 对下载限速"></a>4. 对下载限速</h2><p>wget –limit-rate 20k URL<br>–limit-rate ：对wget限速<br>20k ：20年字节为指定速度限制</p>
-<h2 id="5-断点续传"><a href="#5-断点续传" class="headerlink" title="5. 断点续传"></a>5. 断点续传</h2><p>wget -c URL<br>-c ：从断点开始继续下载</p>
-<h2 id="6-补充"><a href="#6-补充" class="headerlink" title="6. 补充"></a>6. 补充</h2><p>wget –mirror URL<br>wget –user username –password pass URL</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/17/shell-001/" data-id="cjl816ffq001ahljyd4t2fxlg" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SHELL/">SHELL</a></li></ul>
 
     </footer>
   </div>
@@ -536,7 +558,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/APP测试/" style="font-size: 20px;">APP测试</a> <a href="/tags/Charles/" style="font-size: 12.5px;">Charles</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 17.5px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 17.5px;">Python</a> <a href="/tags/Quality-Assurance/" style="font-size: 10px;">Quality Assurance</a> <a href="/tags/SHELL/" style="font-size: 12.5px;">SHELL</a> <a href="/tags/VIM/" style="font-size: 15px;">VIM</a> <a href="/tags/git/" style="font-size: 10px;">git</a>
+      <a href="/tags/APP测试/" style="font-size: 20px;">APP测试</a> <a href="/tags/Charles/" style="font-size: 12.5px;">Charles</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 17.5px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 17.5px;">Python</a> <a href="/tags/Quality-Assurance/" style="font-size: 10px;">Quality Assurance</a> <a href="/tags/SHELL/" style="font-size: 12.5px;">SHELL</a> <a href="/tags/VIM/" style="font-size: 15px;">VIM</a> <a href="/tags/git/" style="font-size: 12.5px;">git</a>
     </div>
   </div>
 
@@ -558,6 +580,10 @@
       <ul>
         
           <li>
+            <a href="/2018/08/24/git-001/">git-基本操作（一）</a>
+          </li>
+        
+          <li>
             <a href="/2018/08/24/Charles-002/">Charles——模拟慢速网络</a>
           </li>
         
@@ -571,10 +597,6 @@
         
           <li>
             <a href="/2017/07/18/python-004/">python——NumPy数组（一）</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/18/python-003/">python—PIL（图像处理库）</a>
           </li>
         
       </ul>

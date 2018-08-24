@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>git-基本操作（一） | hannie&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="git版本控制系统，其实只能跟踪文本文件的改动，比如TXT文件，网页，所有的程序代码等等。而图片、视频这些二进制文件，虽然也能由版本控制系统管理，但没法跟踪文件的具体内容的变化。(但是可以知道比如图片从100KB改成了120KB这样的变化。)
+1. 安装git1$ sudo apt-get install git
+2. 创建版本库2.1 创建一个空目录1234$ mkdir learngit$ c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git-基本操作（一）">
+<meta property="og:url" content="http://softwaretest.cn/2018/08/24/git-001/index.html">
+<meta property="og:site_name" content="hannie's blog">
+<meta property="og:description" content="git版本控制系统，其实只能跟踪文本文件的改动，比如TXT文件，网页，所有的程序代码等等。而图片、视频这些二进制文件，虽然也能由版本控制系统管理，但没法跟踪文件的具体内容的变化。(但是可以知道比如图片从100KB改成了120KB这样的变化。)
+1. 安装git1$ sudo apt-get install git
+2. 创建版本库2.1 创建一个空目录1234$ mkdir learngit$ c">
+<meta property="og:updated_time" content="2018-08-24T13:37:28.971Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git-基本操作（一）">
+<meta name="twitter:description" content="git版本控制系统，其实只能跟踪文本文件的改动，比如TXT文件，网页，所有的程序代码等等。而图片、视频这些二进制文件，虽然也能由版本控制系统管理，但没法跟踪文件的具体内容的变化。(但是可以知道比如图片从100KB改成了120KB这样的变化。)
+1. 安装git1$ sudo apt-get install git
+2. 创建版本库2.1 创建一个空目录1234$ mkdir learngit$ c">
+  
+    <link rel="alternate" href="/atom.xml" title="hannie&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">hannie&#39;s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://softwaretest.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-git-001" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/24/git-001/" class="article-date">
+  <time datetime="2018-08-24T13:31:56.000Z" itemprop="datePublished">2018-08-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      git-基本操作（一）
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>git版本控制系统，其实只能跟踪文本文件的改动，比如TXT文件，网页，所有的程序代码等等。而图片、视频这些二进制文件，虽然也能由版本控制系统管理，但没法跟踪文件的具体内容的变化。<br>(但是可以知道比如图片从100KB改成了120KB这样的变化。)</p>
+<h2 id="1-安装git"><a href="#1-安装git" class="headerlink" title="1. 安装git"></a>1. 安装git</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install git</div></pre></td></tr></table></figure>
+<h2 id="2-创建版本库"><a href="#2-创建版本库" class="headerlink" title="2. 创建版本库"></a>2. 创建版本库</h2><h3 id="2-1-创建一个空目录"><a href="#2-1-创建一个空目录" class="headerlink" title="2.1 创建一个空目录"></a>2.1 创建一个空目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ mkdir learngit</div><div class="line">$ cd learngit</div><div class="line">$ pwd</div><div class="line">/Users/donghongyu/learngit   #新创建的新目录的地址</div></pre></td></tr></table></figure>
+<h3 id="2-2-初始化一个Git仓库"><a href="#2-2-初始化一个Git仓库" class="headerlink" title="2.2 初始化一个Git仓库"></a>2.2 初始化一个Git仓库</h3><p>把刚刚建的空目录变成Git可以管理的仓库。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git init</div><div class="line">Initialized empty Git repository in /Users/donghongyu/learngit/.git/</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ ls -ah</div><div class="line">.	..	.git</div></pre></td></tr></table></figure>
+<p><code>.git</code>目录是Git来跟踪管理版本库的，千万不要手动修改这个目录里面的文件.</p>
+<h2 id="3-把一个文件放到Git仓库"><a href="#3-把一个文件放到Git仓库" class="headerlink" title="3. 把一个文件放到Git仓库"></a>3. 把一个文件放到Git仓库</h2><h3 id="3-1-编辑文档readme-txt-放在-Users-donghongyu-learngit目录下-："><a href="#3-1-编辑文档readme-txt-放在-Users-donghongyu-learngit目录下-：" class="headerlink" title="3.1 编辑文档readme.txt(放在/Users/donghongyu/learngit目录下)："></a>3.1 编辑文档<code>readme.txt</code>(放在/Users/donghongyu/learngit目录下)：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vim readme.txt</div></pre></td></tr></table></figure>
+<p><code>readme.txt</code>内容如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Git is a version control system.</div><div class="line">Git is free software.</div></pre></td></tr></table></figure></p>
+<h3 id="3-2-告诉Git，把文件添加到仓库："><a href="#3-2-告诉Git，把文件添加到仓库：" class="headerlink" title="3.2 告诉Git，把文件添加到仓库："></a>3.2 告诉Git，把文件添加到仓库：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git add readme.txt</div></pre></td></tr></table></figure>
+<p>没有任何提示说明添加成功。</p>
+<h3 id="3-3-告诉Git，把文件提交到仓库："><a href="#3-3-告诉Git，把文件提交到仓库：" class="headerlink" title="3.3 告诉Git，把文件提交到仓库："></a>3.3 告诉Git，把文件提交到仓库：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git commit -m &quot;wrote a readme file&quot;</div><div class="line">1 file changed, 2 insertions(+)</div><div class="line"> create mode 100644 readme.txt</div></pre></td></tr></table></figure>
+<p>“wrote a readme file”用来标明这个版本做了哪些修改，方便以后查找。</p>
+<h2 id="4-查看文件的修改情况"><a href="#4-查看文件的修改情况" class="headerlink" title="4. 查看文件的修改情况"></a>4. 查看文件的修改情况</h2><h3 id="4-1-修改文件："><a href="#4-1-修改文件：" class="headerlink" title="4.1 修改文件："></a>4.1 修改文件：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vim readme.txt</div></pre></td></tr></table></figure>
+<p>编辑<code>readme.txt</code>的内容如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Git is a distributed version control system.</div><div class="line">Git is free software.</div></pre></td></tr></table></figure></p>
+<h3 id="4-2-查看文件是否被修改过："><a href="#4-2-查看文件是否被修改过：" class="headerlink" title="4.2 查看文件是否被修改过："></a>4.2 查看文件是否被修改过：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ git status</div><div class="line">On branch master</div><div class="line">Changes not staged for commit:</div><div class="line">  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</div><div class="line">  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)</div><div class="line"></div><div class="line">	modified:   readme.txt</div><div class="line"></div><div class="line">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</div></pre></td></tr></table></figure>
+<p><code>Changes not staged for commit</code>表示目前的文本被修改的状态。</p>
+<h3 id="4-3-查看文件修改的内容："><a href="#4-3-查看文件修改的内容：" class="headerlink" title="4.3 查看文件修改的内容："></a>4.3 查看文件修改的内容：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ git diff</div><div class="line">diff --git a/readme.txt b/readme.txt</div><div class="line">index 46d49bf..9247db6 100644</div><div class="line">--- a/readme.txt</div><div class="line">+++ b/readme.txt</div><div class="line">@@ -1,2 +1,2 @@</div><div class="line">-Git is a version control system.</div><div class="line">+Git is a distributed version control system.</div><div class="line"> Git is free software.</div></pre></td></tr></table></figure>
+<h2 id="5-查看提交版本的日志"><a href="#5-查看提交版本的日志" class="headerlink" title="5. 查看提交版本的日志"></a>5. 查看提交版本的日志</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">$ git log</div><div class="line">commit f1e566bf5b56ba3a9cc589b797373b467fa8c827</div><div class="line">Author:  &lt;donghongyu@donghongyudeMacBook-Pro.local&gt;</div><div class="line">Date:   Wed Jul 19 09:20:10 2017 +0800</div><div class="line"></div><div class="line">    add GPL</div><div class="line"></div><div class="line">commit 1af66189a5b7dcee0d34d7cdc8dbf21ae10d16d8</div><div class="line">Author:  &lt;donghongyu@donghongyudeMacBook-Pro.local&gt;</div><div class="line">Date:   Wed Jul 19 09:14:55 2017 +0800</div><div class="line"></div><div class="line">    add distributed</div><div class="line"></div><div class="line">commit c40a1e6235e0c7685f4a565d22119bb213f93822</div><div class="line">Author:  &lt;donghongyu@donghongyudeMacBook-Pro.local&gt;</div><div class="line">Date:   Wed Jul 19 09:03:45 2017 +0800</div><div class="line"></div><div class="line">    wrote a readme file</div><div class="line">donghongyudeMacBook-Pro:learngit donghongyu$</div></pre></td></tr></table></figure>
+<p>或者<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git log --pretty=oneline</div><div class="line">f1e566bf5b56ba3a9cc589b797373b467fa8c827 add GPL</div><div class="line">1af66189a5b7dcee0d34d7cdc8dbf21ae10d16d8 add distributed</div><div class="line">c40a1e6235e0c7685f4a565d22119bb213f93822 wrote a readme file</div></pre></td></tr></table></figure></p>
+<p>commit c40a1e6235e0c7685f4a565d22119bb213f93822<br>这个是版本号。</p>
+<h2 id="6-退回到以前的版本"><a href="#6-退回到以前的版本" class="headerlink" title="6. 退回到以前的版本"></a>6. 退回到以前的版本</h2><p>用<code>HEAD</code>表示当前版本<br>上一个版本就是<code>HEAD^</code><br>上上一个版本就是<code>HEAD^^</code><br>当然往上100个版本写成<code>HEAD~100</code>。</p>
+<h3 id="6-1-退回到上一个版本"><a href="#6-1-退回到上一个版本" class="headerlink" title="6.1 退回到上一个版本"></a>6.1 退回到上一个版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git reset --hard HEAD^</div><div class="line">HEAD is now at 1af6618 add distributed</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ cat readme.txt</div><div class="line">Git is a distributed version control system.</div><div class="line">Git is free software.</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git log --pretty=oneline</div><div class="line">1af66189a5b7dcee0d34d7cdc8dbf21ae10d16d8 add distributed</div><div class="line">c40a1e6235e0c7685f4a565d22119bb213f93822 wrote a readme file</div></pre></td></tr></table></figure>
+<p>没有<code>f1e566bf5b56ba3a9cc589b797373b467fa8c827 add GPL</code>了。</p>
+<h3 id="6-2-我又反悔了，又想回到add-GPL"><a href="#6-2-我又反悔了，又想回到add-GPL" class="headerlink" title="6.2 我又反悔了，又想回到add GPL"></a>6.2 我又反悔了，又想回到<code>add GPL</code></h3><p>找到<code>add GPL</code>的版本号，输入一部分即可，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git reset --hard f1e566</div><div class="line">HEAD is now at f1e566b add GPL</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ cat readme.txt</div><div class="line">Git is a distributed version control system.</div><div class="line">Git is free software distributed under the GPL。</div></pre></td></tr></table></figure>
+<p><code>add GPL</code>又回来了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git log --pretty=oneline</div><div class="line">f1e566bf5b56ba3a9cc589b797373b467fa8c827 add GPL</div><div class="line">1af66189a5b7dcee0d34d7cdc8dbf21ae10d16d8 add distributed</div><div class="line">c40a1e6235e0c7685f4a565d22119bb213f93822 wrote a readme file</div></pre></td></tr></table></figure></p>
+<p>没有找到<code>add GPL</code>的版本号怎么办？<br>Git提供了一个命令<code>git reflog</code>用来记录你的每一次命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ git reflog</div><div class="line">f1e566b HEAD@&#123;0&#125;: reset: moving to f1e566</div><div class="line">1af6618 HEAD@&#123;1&#125;: reset: moving to HEAD^</div><div class="line">f1e566b HEAD@&#123;2&#125;: commit: add GPL</div><div class="line">1af6618 HEAD@&#123;3&#125;: commit: add distributed</div><div class="line">c40a1e6 HEAD@&#123;4&#125;: commit (initial): wrote a readme file</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2018/08/24/git-001/" data-id="cjl81ene1000vtfjykw8xlxnk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/08/24/Charles-002/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Charles——模拟慢速网络</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APP测试/">APP测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Quality-Assurance/">Quality Assurance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SHELL/">SHELL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIM/">VIM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/APP测试/" style="font-size: 20px;">APP测试</a> <a href="/tags/Charles/" style="font-size: 12.5px;">Charles</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 17.5px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 17.5px;">Python</a> <a href="/tags/Quality-Assurance/" style="font-size: 10px;">Quality Assurance</a> <a href="/tags/SHELL/" style="font-size: 12.5px;">SHELL</a> <a href="/tags/VIM/" style="font-size: 15px;">VIM</a> <a href="/tags/git/" style="font-size: 12.5px;">git</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/08/24/git-001/">git-基本操作（一）</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/24/Charles-002/">Charles——模拟慢速网络</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/24/QA的职责/">QA的职责</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/24/Charles-001/">Charles 重定向功能——Map Local</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/18/python-004/">python——NumPy数组（一）</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 hannie<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
