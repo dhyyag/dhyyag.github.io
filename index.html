@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://softwaretest.cn"></form>
@@ -60,6 +60,57 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-Charles-001" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/24/Charles-001/" class="article-date">
+  <time datetime="2018-08-24T12:14:31.000Z" itemprop="datePublished">2018-08-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/24/Charles-001/">Charles 重定向功能——Map Local</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>###一、Map Local 的应用场景<br>需要测试一些后端返回内容的特殊case，但是找后端配合测试又很麻烦，那么就可以通过MapLocal重定位到你模拟的数据，从而达到修改服务器返回内容的目的。<br>一般我们会模拟哪些数据呢？例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">1. 列表页面为空的情况；</div><div class="line">2. 数据异常的情况；</div><div class="line">3. 后端还没有准备好数据又需要提前测试，则需要 mock 数据；</div><div class="line">4. ……</div></pre></td></tr></table></figure></p>
+<p>###二、具体怎么用呢？</p>
+<ol>
+<li>确保手机已设置代理且 charles 已连接成功；</li>
+<li>确保在.json为后缀的文件中已经模拟好需要的数据；</li>
+<li>打开app，定位需要修改返回数据的接口；</li>
+<li>选中此接口，点击右键，选择 <strong>Map Local</strong> ；</li>
+<li>选中已经模拟好的.json为后缀的数据文件；见下图：</li>
+<li>再次在 app 上使用调用该接口的功能，此时数据就是自己模拟的数据哦<br>![此处输入图片的描述][1]</li>
+</ol>
+<p>  ![此处输入图片的描述][2]</p>
+<pre><code>[1]: http://ooqxh7rke.bkt.clouddn.com/maplocal1.png
+  [2]: http://ooqxh7rke.bkt.clouddn.com/maplocal2.png
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2018/08/24/Charles-001/" data-id="cjl7ytan20004cijyx7w4pp2i" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Charles/">Charles</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-python-004" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -94,7 +145,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/python-004/" data-id="cj59muqka0013vzjy3bt0dnn2" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/python-004/" data-id="cjl7ytanw0011cijyb1nw8s7b" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -135,7 +186,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/python-003/" data-id="cj59muqk80011vzjyntiltj55" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/python-003/" data-id="cjl7ytao20016cijy451eismj" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -177,7 +228,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/python-002/" data-id="cj59muqk7000zvzjyessncrjg" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/python-002/" data-id="cjl7ytao10015cijyw3803eup" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -228,7 +279,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/vim-003/" data-id="cj59muqkh001bvzjyx1x16l2w" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/vim-003/" data-id="cjl7ytaos001vcijyubp9dyeg" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VIM/">VIM</a></li></ul>
@@ -279,7 +330,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/vim-002/" data-id="cj59muqkd0016vzjyoneilad6" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/vim-002/" data-id="cjl7ytaor001ucijyys35zmzf" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VIM/">VIM</a></li></ul>
@@ -327,7 +378,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/08/Linux-003/" data-id="cj59muqjs000kvzjyim0llrcu" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/08/Linux-003/" data-id="cjl7ytanm000mcijyno3uzbdj" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -372,7 +423,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/17/shell-001/" data-id="cj59muqkb0015vzjyunqi47m8" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/17/shell-001/" data-id="cjl7ytao30019cijyuj14o1hv" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SHELL/">SHELL</a></li></ul>
@@ -422,7 +473,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/16/matlab-001/" data-id="cj59muqk6000xvzjy14g0ciqq" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/16/matlab-001/" data-id="cjl7ytanp000scijyyoiapgoe" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Matlab/">Matlab</a></li></ul>
@@ -469,62 +520,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/16/data-structure-001/" data-id="cj59muqjw000nvzjy0jkx89kc" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/16/data-structure-001/" data-id="cjl7ytank000kcijy4g7xmn8r" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-python-001" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/15/python-001/" class="article-date">
-  <time datetime="2017-06-15T01:42:33.000Z" itemprop="datePublished">2017-06-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/15/python-001/">python-字符串总结（一）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-单引号-‘’"><a href="#1-单引号-‘’" class="headerlink" title="1. 单引号 ‘’"></a>1. 单引号 <code>‘’</code></h2><p>1.1 被两个单引号<code>‘’</code>括住的所有空格或制表符都保留。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt;str = &apos;hello\nfree world!&apos;</div><div class="line">&gt;&gt;&gt;print str</div><div class="line">hello </div><div class="line">free world!</div></pre></td></tr></table></figure></p>
-<p>1.2 单引号中可以使用双引号。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt;str = &apos;hello\nfree &quot;world!&quot;&apos;</div><div class="line">&gt;&gt;&gt;print str</div><div class="line">hello </div><div class="line">free &quot;world!&quot;</div></pre></td></tr></table></figure></p>
-<h2 id="2-双引号-quot-quot"><a href="#2-双引号-quot-quot" class="headerlink" title="2. 双引号 &quot;&quot;"></a>2. 双引号 <code>&quot;&quot;</code></h2><p>2.1 被双引号<code>“”</code>括住的所有空或格制表符都保留。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt;str = &quot;hello\nfree world!&quot;</div><div class="line">&gt;&gt;&gt;print str</div><div class="line">hello </div><div class="line">free world!</div></pre></td></tr></table></figure></p>
-<p>2.2 双引号中可以使用单引号。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt;str = &quot;hello\nfree &apos;world!&apos;&quot;</div><div class="line">&gt;&gt;&gt;print str</div><div class="line">hello </div><div class="line">free &apos;world!&apos;</div></pre></td></tr></table></figure></p>
-<h2 id="3-三引号-39-39-39-39-39-39"><a href="#3-三引号-39-39-39-39-39-39" class="headerlink" title="3. 三引号&#39;&#39;&#39; &#39;&#39;&#39;"></a>3. 三引号<code>&#39;&#39;&#39; &#39;&#39;&#39;</code></h2><p>被三引号<code>&#39;&#39;&#39; &#39;&#39;&#39;</code>括住可以指示一个多行的字符串，也可以在三引号中使用单引号和双引号。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt;str = ‘‘‘this is a string</div><div class="line">...this is the second line</div><div class="line">...&quot;what&apos;s your name?&quot;</div><div class="line">...&apos;who are you?&apos;</div><div class="line">...’’’</div><div class="line">&gt;&gt;&gt;print str</div></pre></td></tr></table></figure></p>
-<p>输出结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">this is a string</div><div class="line">this is the second line</div><div class="line">&quot;what&apos;s your name?&quot;</div><div class="line">&apos;who are you?&apos;</div></pre></td></tr></table></figure></p>
-<h2 id="4-转义符"><a href="#4-转义符" class="headerlink" title="4. 转义符 \"></a>4. 转义符 <code>\</code></h2><p>4.1 用法一：转义符<code>\</code>可以转义单引号<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; s = &apos;what\&apos;s your name?&apos;</div><div class="line">&gt;&gt;&gt; print s</div><div class="line">what&apos;s your name?</div></pre></td></tr></table></figure></p>
-<p>4.2 用法二：在字符串中行末加一个反斜杠<code>\</code>表示字符串在下一行继续，而不是重新开始一个新的行。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; s = &apos;this is a string.\</div><div class="line">... what\&apos;s your name?\</div><div class="line">... who are you?&apos;</div><div class="line">&gt;&gt;&gt; print s</div><div class="line">this is a string.what&apos;s your name?who are you?</div></pre></td></tr></table></figure></p>
-<h2 id="5-自然字符串-r-R"><a href="#5-自然字符串-r-R" class="headerlink" title="5. 自然字符串 r R"></a>5. 自然字符串 <code>r</code> <code>R</code></h2><p>若想指示某些<strong>不需要如转义符</strong>那样的特别处理的字符串时，则需要指定一个自然字符串。<br>注：<strong>处理正则表达式时，一定要用自然字符串</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; s=r&apos;hello\nfree world!&apos;</div><div class="line">&gt;&gt;&gt; print s</div><div class="line">hello\nfree world!</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; s=R&apos;hello\nfree world!&apos;</div><div class="line">&gt;&gt;&gt; print s</div><div class="line">hello\nfree world!</div></pre></td></tr></table></figure>
-<h2 id="6-unicode字符串-u-U"><a href="#6-unicode字符串-u-U" class="headerlink" title="6. unicode字符串 u U"></a>6. unicode字符串 <code>u</code> <code>U</code></h2><p>6.1 若字符串中有非英文文本时，比如中文，则需要指定unicode字符串。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; s=u&apos;你好！&apos;</div><div class="line">&gt;&gt;&gt; print s</div><div class="line">你好！</div></pre></td></tr></table></figure></p>
-<p>6.2 变程序判断是否是字符串。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line">#filename:if_str.py</div><div class="line">#encoding:utf8</div><div class="line"> </div><div class="line">s=&quot;hello normal string&quot;</div><div class="line">u=u&apos;hello unicode&apos;</div><div class="line"></div><div class="line">if isinstance(s,unicode):</div><div class="line">    print s,u&apos;is unicode&apos;</div><div class="line">if isinstance(u,unicode):</div><div class="line">    print u,u&apos;is unicode&apos;</div></pre></td></tr></table></figure></p>
-<p>输出结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">→ python if_str.py</div><div class="line">hello unicode is unicode</div></pre></td></tr></table></figure></p>
-<p>（待续…………）</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/15/python-001/" data-id="cj59muqk4000vvzjy389zd00a" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
 
     </footer>
   </div>
@@ -547,9 +546,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Mot-clés</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APP测试/">APP测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SHELL/">SHELL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIM/">VIM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APP测试/">APP测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SHELL/">SHELL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIM/">VIM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li></ul>
     </div>
   </div>
 
@@ -557,9 +556,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nuage de mot-clés</h3>
     <div class="widget tagcloud">
-      <a href="/tags/APP测试/" style="font-size: 20px;">APP测试</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 17.5px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 17.5px;">Python</a> <a href="/tags/SHELL/" style="font-size: 12.5px;">SHELL</a> <a href="/tags/VIM/" style="font-size: 15px;">VIM</a> <a href="/tags/git/" style="font-size: 10px;">git</a>
+      <a href="/tags/APP测试/" style="font-size: 20px;">APP测试</a> <a href="/tags/Charles/" style="font-size: 10px;">Charles</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 17.5px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 17.5px;">Python</a> <a href="/tags/SHELL/" style="font-size: 12.5px;">SHELL</a> <a href="/tags/VIM/" style="font-size: 15px;">VIM</a> <a href="/tags/git/" style="font-size: 10px;">git</a>
     </div>
   </div>
 
@@ -568,7 +567,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li></ul>
     </div>
   </div>
 
@@ -576,9 +575,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/08/24/Charles-001/">Charles 重定向功能——Map Local</a>
+          </li>
         
           <li>
             <a href="/2017/07/18/python-004/">python——NumPy数组（一）</a>
@@ -596,10 +599,6 @@
             <a href="/2017/07/18/vim-003/">vim—常用命令（二）</a>
           </li>
         
-          <li>
-            <a href="/2017/07/18/vim-002/">vim—常用命令（一）</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -612,8 +611,8 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017 hannie<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      &copy; 2018 hannie<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
