@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://softwaretest.cn"></form>
@@ -60,6 +60,57 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-vim-003" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/18/vim-003/" class="article-date">
+  <time datetime="2017-07-18T13:34:42.000Z" itemprop="datePublished">2017-07-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/18/vim-003/">vim—常用命令（二）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-插入文本"><a href="#1-插入文本" class="headerlink" title="1. 插入文本"></a>1. 插入文本</h2><p>在“普通模式”时，输入以下的任一字符，则可插入文本（即在左下角出现了–INSERT–时，表示可以插入字符了。）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a   #在当前光标的右边插入文本</div><div class="line">A   #在当前光标行的末尾插入文本(也就是最右边)</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">i   #在当前光标的左边插入文本</div><div class="line">I   #在当前光标所在行的开始处插入文本（也就是最左边）</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">o   #在当前行在下面新建一行</div><div class="line">O   #在当前行的上面新建一行</div></pre></td></tr></table></figure>
+<h2 id="2-替换文本"><a href="#2-替换文本" class="headerlink" title="2. 替换文本"></a>2. 替换文本</h2><p>进入“普通模式”（当你不知道自己目前所在的模式时，最简单的方式是，按两次<code>esc</code>）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">R      #替换当前光标位置以及以后的若干文本（在左下角会显示--REPLACE--）</div></pre></td></tr></table></figure></p>
+<h2 id="3-连接文本"><a href="#3-连接文本" class="headerlink" title="3. 连接文本"></a>3. 连接文本</h2><p>需进入“普通模式”下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">J      #连接光标所在行和下一行</div></pre></td></tr></table></figure></p>
+<h2 id="4-删除文本"><a href="#4-删除文本" class="headerlink" title="4. 删除文本"></a>4. 删除文本</h2><p>需进入“普通模式”下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">x     #当前光标所在的一个字符</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">dd     #删除当前行，并把删除的行存到剪贴板里</div><div class="line">ndd    #删除n行</div></pre></td></tr></table></figure>
+<h2 id="5-拷贝-粘贴文本"><a href="#5-拷贝-粘贴文本" class="headerlink" title="5. 拷贝/粘贴文本"></a>5. 拷贝/粘贴文本</h2><p>需进入“普通模式”下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yy    #拷贝</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">P     #粘贴</div></pre></td></tr></table></figure>
+<h2 id="6-撤销操作"><a href="#6-撤销操作" class="headerlink" title="6. 撤销操作"></a>6. 撤销操作</h2><p>需进入“普通模式”下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">u      #撤销上一次操作</div><div class="line">U      #撤销对当前行的所有操作</div></pre></td></tr></table></figure></p>
+<h2 id="7-搜索"><a href="#7-搜索" class="headerlink" title="7. 搜索"></a>7. 搜索</h2><p>需进入“普通模式”下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">/word 向前搜索第一个出现的word</div><div class="line">/ 继续向前搜索word</div><div class="line">？word 向后搜索第一个出现的word</div><div class="line">？ 继续向后搜索word</div></pre></td></tr></table></figure></p>
+<h2 id="8-移动光标"><a href="#8-移动光标" class="headerlink" title="8. 移动光标"></a>8. 移动光标</h2><p>需进入“普通模式”下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">h   #向左移动光标（h的相对位置在左边，可以帮助记忆）</div><div class="line">j   #向下移动光标（j像向下的箭头，可以帮助记忆）</div><div class="line">k   #向上移动光标</div><div class="line">l   #向右移动光标</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2017/07/18/vim-003/" data-id="cjl98fda6001pkejy5luwz1pt" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VIM/">VIM</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-vim-002" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -100,7 +151,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/vim-002/" data-id="cjl9851al001i78jyv842vvs2" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/vim-002/" data-id="cjl98fda4001mkejyu6rpzv39" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VIM/">VIM</a></li></ul>
@@ -148,7 +199,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/08/Linux-003/" data-id="cjl98519v000p78jytq8cqqbj" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/08/Linux-003/" data-id="cjl98fd9b000pkejy70cwxomm" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -193,7 +244,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/17/shell-001/" data-id="cjl9851ak001g78jy979bdt1r" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/17/shell-001/" data-id="cjl98fda1001ikejy8ou17ztc" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SHELL/">SHELL</a></li></ul>
@@ -243,7 +294,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/16/matlab-001/" data-id="cjl9851aa001578jyi7sqn2pm" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/16/matlab-001/" data-id="cjl98fd9t0017kejytav4bmh5" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Matlab/">Matlab</a></li></ul>
@@ -290,7 +341,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/16/data-structure-001/" data-id="cjl98519z000t78jyfqqgocy3" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/16/data-structure-001/" data-id="cjl98fd9i000tkejy1ylen62j" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li></ul>
@@ -342,7 +393,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/15/python-001/" data-id="cjl9851ad001778jyt12e1wu2" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/15/python-001/" data-id="cjl98fd9u0019kejydo08kd63" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -414,7 +465,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/07/APP-Test-006/" data-id="cjl98519k000a78jyrmvsfljd" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/07/APP-Test-006/" data-id="cjl98fd8v0008kejyhke85ez9" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
@@ -487,7 +538,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/07/GUI-001/" data-id="cjl98519p000i78jy8atwsq1b" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/07/GUI-001/" data-id="cjl98fd94000ikejya963unel" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
@@ -541,54 +592,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/07/Linux-002/" data-id="cjl98519t000n78jy4w2lk9de" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Linux-001" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/06/Linux-001/" class="article-date">
-  <time datetime="2017-06-06T13:25:53.000Z" itemprop="datePublished">2017-06-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/06/Linux-001/">Linux-常用命令（一）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-打开终端"><a href="#1-打开终端" class="headerlink" title="1. 打开终端"></a>1. 打开终端</h2><p>法一：键盘输入Ctrl+Alt+T<br>法二：Alt+F2   之后输入gnome_terminal</p>
-<h2 id="2-进入root（超级用户）"><a href="#2-进入root（超级用户）" class="headerlink" title="2. 进入root（超级用户）"></a>2. 进入root（超级用户）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">——&gt; sudo su</div><div class="line">[sudo]password for eric:    #须在此处输入密码，但输入的密码不会显示在屏幕上</div><div class="line">root@eric-pc:               #当显示root@后就代表已经进入了root</div></pre></td></tr></table></figure>
-<h2 id="3-退出root"><a href="#3-退出root" class="headerlink" title="3. 退出root"></a>3. 退出root</h2><p>直接输入exit就可以退出root。</p>
-<h2 id="4-与-的区别："><a href="#4-与-的区别：" class="headerlink" title="4. $与#的区别："></a>4. $与#的区别：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ 表示当前用户为普通用户</div><div class="line"># 表示当前用户为超级用户</div></pre></td></tr></table></figure>
-<p>（ps：在python和shell中，以#开头的文本作为注释行）</p>
-<h2 id="5-重启电脑"><a href="#5-重启电脑" class="headerlink" title="5.重启电脑"></a>5.重启电脑</h2><p>法一：进入root后，键入reboot            #表示立即重启<br>法二：进入root后，键入shutdown -r now   #表示立即重启<br>法三：进入root后，键入shutdown -r 5     #表示5分钟后自动重启<br>法四：进入root后，键入shutdown -r 20:30 #表示在20:30时自动重启<br>（若想取消设置的重启，则可键入shutdown -e）</p>
-<h2 id="6-关机"><a href="#6-关机" class="headerlink" title="6. 关机"></a>6. 关机</h2><p>法一：进入root后，键入halt            #表示立即关机<br>法二：进入root后，键人poweroff        #表示立即关机<br>法二：进入root后，键入shutdown -h now   #表示立即关机<br>法三：进入root后，键入shutdown -h 5     #表示5分钟后自动关机<br>法四：进入root后，键入shutdown -h 20:30 #表示在20:30时自动关机<br>（若想取消设置的关机，则可键入shutdown -e）</p>
-<h2 id="7-需要帮助"><a href="#7-需要帮助" class="headerlink" title="7. 需要帮助"></a>7. 需要帮助</h2><p>在需要帮助时记得用man和help<br>法一：键入：man 命令名，就可以显示该命令的帮助文档。<br>      想退出帮助文档时键入 q 即可。<br>法二：键入：命令名 –help，就可以显示该命令的帮助。<br>      例如：cat –help<br>法三：help 命令名，可用于查找shell内部命令的帮助文档。<br>      键入：bash    #进入了bash（bash是linux系统默认使用的shell类型，常用的还有zsh csh ksh ash）<br>      键入：help cd #查找cd命令的帮助文档<br>      键入：exit    #退出bash</p>
-<p>（待续…………）</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/06/Linux-001/" data-id="cjl98519q000k78jyuob691ud" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/07/Linux-002/" data-id="cjl98fd99000nkejyi50d01g3" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -603,7 +607,7 @@
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">__('next') &raquo;</a>
+    <a class="extend prev" rel="prev" href="/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">__('next') &raquo;</a>
   </nav>
 </section>
         
@@ -614,7 +618,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Mot-clés</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APP测试/">APP测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Quality-Assurance/">Quality Assurance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SHELL/">SHELL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIM/">VIM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li></ul>
     </div>
@@ -624,9 +628,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nuage de mot-clés</h3>
     <div class="widget tagcloud">
-      <a href="/tags/APP测试/" style="font-size: 20px;">APP测试</a> <a href="/tags/Charles/" style="font-size: 12px;">Charles</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 18px;">Python</a> <a href="/tags/Quality-Assurance/" style="font-size: 10px;">Quality Assurance</a> <a href="/tags/SHELL/" style="font-size: 12px;">SHELL</a> <a href="/tags/VIM/" style="font-size: 14px;">VIM</a> <a href="/tags/git/" style="font-size: 14px;">git</a>
+      <a href="/tags/APP测试/" style="font-size: 20px;">APP测试</a> <a href="/tags/Charles/" style="font-size: 12px;">Charles</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 18px;">Python</a> <a href="/tags/Quality-Assurance/" style="font-size: 10px;">Quality Assurance</a> <a href="/tags/SHELL/" style="font-size: 12px;">SHELL</a> <a href="/tags/VIM/" style="font-size: 14px;">VIM</a> <a href="/tags/git/" style="font-size: 16px;">git</a>
     </div>
   </div>
 
@@ -635,7 +639,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li></ul>
     </div>
   </div>
 
@@ -643,7 +647,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
@@ -680,7 +684,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 hannie<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
