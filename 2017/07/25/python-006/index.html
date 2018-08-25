@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>python——数据结构 | hannie&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1. 列表  []列表是可变的数据类型，可以增加和删除项目。n是从0开始计数123456789101112131415161718192021222324252627#!/usr/bin/python#filename:using_list.pyshoplist=[&amp;apos;apple&amp;apos;,&amp;apos;mango&amp;apos;,&amp;apos;carrot&amp;apos;,&amp;apos;banana">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python——数据结构">
+<meta property="og:url" content="http://softwaretest.cn/2017/07/25/python-006/index.html">
+<meta property="og:site_name" content="hannie's blog">
+<meta property="og:description" content="1. 列表  []列表是可变的数据类型，可以增加和删除项目。n是从0开始计数123456789101112131415161718192021222324252627#!/usr/bin/python#filename:using_list.pyshoplist=[&amp;apos;apple&amp;apos;,&amp;apos;mango&amp;apos;,&amp;apos;carrot&amp;apos;,&amp;apos;banana">
+<meta property="og:updated_time" content="2018-08-25T09:49:59.594Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python——数据结构">
+<meta name="twitter:description" content="1. 列表  []列表是可变的数据类型，可以增加和删除项目。n是从0开始计数123456789101112131415161718192021222324252627#!/usr/bin/python#filename:using_list.pyshoplist=[&amp;apos;apple&amp;apos;,&amp;apos;mango&amp;apos;,&amp;apos;carrot&amp;apos;,&amp;apos;banana">
+  
+    <link rel="alternate" href="/atom.xml" title="hannie&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">hannie&#39;s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://softwaretest.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-python-006" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/25/python-006/" class="article-date">
+  <time datetime="2017-07-25T13:43:32.000Z" itemprop="datePublished">2017-07-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      python——数据结构
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-列表"><a href="#1-列表" class="headerlink" title="1. 列表  []"></a>1. 列表  []</h2><p>列表是<strong>可变的</strong>数据类型，可以<strong>增加</strong>和<strong>删除</strong>项目。<br>n是从0开始计数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line">#filename:using_list.py</div><div class="line"></div><div class="line">shoplist=[&apos;apple&apos;,&apos;mango&apos;,&apos;carrot&apos;,&apos;banana&apos;]</div><div class="line"></div><div class="line">#len()</div><div class="line">print len(shoplist)</div><div class="line"></div><div class="line">#append()</div><div class="line">shoplist.append(&apos;rice&apos;)</div><div class="line">print shoplist</div><div class="line"></div><div class="line">#insert()</div><div class="line">shoplist.insert(4,&apos;lemon&apos;)</div><div class="line">print shoplist</div><div class="line"></div><div class="line">#sort()</div><div class="line">shoplist.sort()</div><div class="line">print shoplist</div><div class="line"></div><div class="line">#remove()</div><div class="line">shoplist.remove(&apos;rice&apos;)</div><div class="line">print shoplist</div><div class="line"></div><div class="line">#reverse()</div><div class="line">shoplist.reverse()</div><div class="line">print shoplist</div></pre></td></tr></table></figure></p>
+<p>结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">➜  ~python using_list.py</div><div class="line">4</div><div class="line">[&apos;apple&apos;, &apos;mango&apos;, &apos;carrot&apos;, &apos;banana&apos;, &apos;rice&apos;]</div><div class="line">[&apos;apple&apos;, &apos;mango&apos;, &apos;carrot&apos;, &apos;banana&apos;, &apos;lemon&apos;, &apos;rice&apos;]</div><div class="line">[&apos;apple&apos;, &apos;banana&apos;, &apos;carrot&apos;, &apos;lemon&apos;, &apos;mango&apos;, &apos;rice&apos;]</div><div class="line">[&apos;apple&apos;, &apos;banana&apos;, &apos;carrot&apos;, &apos;lemon&apos;, &apos;mango&apos;]</div><div class="line">[&apos;mango&apos;, &apos;lemon&apos;, &apos;carrot&apos;, &apos;banana&apos;, &apos;apple&apos;]</div></pre></td></tr></table></figure></p>
+<h2 id="2-元组"><a href="#2-元组" class="headerlink" title="2.元组()"></a>2.元组()</h2><p>元组是<strong>不可变的</strong>数据类型。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line">#filename:using_tuple.py</div><div class="line"></div><div class="line">zoo=(&apos;wolf&apos;,&apos;elephone&apos;,&apos;monkey&apos;)</div><div class="line">print zoo</div><div class="line"></div><div class="line">#len()</div><div class="line">print len(zoo)</div><div class="line"></div><div class="line">new_zoo=(&apos;dolphin&apos;,&apos;rabit&apos;,zoo)</div><div class="line">print new_zoo</div><div class="line"></div><div class="line">print new_zoo[0]</div><div class="line">print new_zoo[2]</div><div class="line">print new_zoo[2][2]</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">➜  ~ python using_tuple.py</div><div class="line">(&apos;wolf&apos;, &apos;elephone&apos;, &apos;monkey&apos;)</div><div class="line">3</div><div class="line">(&apos;dolphin&apos;, &apos;rabit&apos;, (&apos;wolf&apos;, &apos;elephone&apos;, &apos;monkey&apos;))</div><div class="line">dolphin</div><div class="line">(&apos;wolf&apos;, &apos;elephone&apos;, &apos;monkey&apos;)</div><div class="line">monkey</div></pre></td></tr></table></figure>
+<p>元组最通常的用法是用在打印句子中:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line">age=22</div><div class="line">name=&quot;hannie&quot;</div><div class="line"></div><div class="line">print &quot;%s is %d years old&quot; % (name,age)</div><div class="line">print &quot;why is %s playing with that python&quot;% name</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">➜  python_learn python print_tuple.py</div><div class="line">hannie is 22 years old</div><div class="line">why is hannie playing with that python</div></pre></td></tr></table></figure>
+<h2 id="3-字典"><a href="#3-字典" class="headerlink" title="3.字典 {}"></a>3.字典 {}</h2><p>字典类似于你通过联系人名字查找地址和联系人详细情况的地址簿，把<strong>键</strong>（名字，是唯一的）和<strong>值</strong>（详细情况）练习在一起。<br><strong>键：</strong>使用不可变的对象（比如字符串）作为字典的键<br><strong>值：</strong>使用不可变的或可变的对象作为字典的值<br><code>d = {key1 : value1 , key2 : value2}</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line">#filename:using_dict.py</div><div class="line"></div><div class="line">ab=&#123;</div><div class="line">        &apos;swaroop&apos;:&apos;swaroopch@liulishuo.com&apos;,</div><div class="line">        &apos;larry&apos;:&apos;larry@lilishuo.com&apos;,</div><div class="line">        &apos;mm&apos;:&apos;mm@liulishuo.com&apos;,</div><div class="line">        &apos;spammer&apos;:&apos;spammer@liulishuo.com&apos;</div><div class="line">&#125;</div><div class="line">print &quot;swaroop&apos;s address is %s&quot; % ab[&apos;swaroop&apos;]</div><div class="line"></div><div class="line"></div><div class="line">ab[&apos;guido&apos;]=&apos;guido@liulishuo.com&apos;</div><div class="line">print ab</div><div class="line">print &apos;there are %d contacts in the address-book\n&apos; % len(ab)</div><div class="line"></div><div class="line"></div><div class="line">del ab[&apos;mm&apos;]</div><div class="line">print ab</div><div class="line">print &apos;there are %d contacts in the address-book\n&apos; % len(ab)</div><div class="line"></div><div class="line">for name,address in ab.items():</div><div class="line">        print &apos;contact %s at %s&apos; % (name,address)</div><div class="line">#使用字典的items方法，来使用字典中的每个键/值对</div><div class="line"></div><div class="line">if &apos;guido&apos; in ab:</div><div class="line">        print &quot;\nguido&apos;s address is %s&quot;  % ab[&apos;guido&apos;]</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">swaroop&apos;s address is swaroopch@liulishuo.com</div><div class="line">&#123;&apos;swaroop&apos;: &apos;swaroopch@liulishuo.com&apos;, &apos;mm&apos;: &apos;mm@liulishuo.com&apos;, &apos;larry&apos;: &apos;larry@lilishuo.com&apos;, &apos;spammer&apos;: &apos;spammer@liulishuo.com&apos;, &apos;guido&apos;: &apos;guido@liulishuo.com&apos;&#125;</div><div class="line">there are 5 contacts in the address-book</div><div class="line"></div><div class="line">&#123;&apos;swaroop&apos;: &apos;swaroopch@liulishuo.com&apos;, &apos;larry&apos;: &apos;larry@lilishuo.com&apos;, &apos;spammer&apos;: &apos;spammer@liulishuo.com&apos;, &apos;guido&apos;: &apos;guido@liulishuo.com&apos;&#125;</div><div class="line">there are 4 contacts in the address-book</div><div class="line"></div><div class="line">contact swaroop at swaroopch@liulishuo.com</div><div class="line">contact larry at larry@lilishuo.com</div><div class="line">contact spammer at spammer@liulishuo.com</div><div class="line">contact guido at guido@liulishuo.com</div><div class="line"></div><div class="line">guido&apos;s address is guido@liulishuo.com</div></pre></td></tr></table></figure>
+<h2 id="4-序列-（列表、元组和字符串都是序列）"><a href="#4-序列-（列表、元组和字符串都是序列）" class="headerlink" title="4. 序列  （列表、元组和字符串都是序列）"></a>4. 序列  （列表、元组和字符串都是序列）</h2><p>序列的两个主要特点是<strong>索引操作符</strong>和<strong>切片操作符</strong><br><strong>索引操作符：</strong>可以让我们从序列中抓取一个特定的项目<br><strong>切片操作符：</strong>可以让我们能够获取序列的一个切片，即一部分序列<br>第一个数（冒号之前）表示切片开始的位置，第二个数（冒号之后）表示切片到哪里结束<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line">#filename:seq.py</div><div class="line"></div><div class="line"></div><div class="line">shoplist=[&apos;apple&apos;,&apos;mango&apos;,&apos;carrot&apos;,&apos;banana&apos;]</div><div class="line">#index</div><div class="line">print &apos;item 0 is&apos;,shoplist[0]</div><div class="line">print &apos;item 3 is&apos;,shoplist[3]</div><div class="line"></div><div class="line">print &apos;item -1 is&apos;,shoplist[-1]</div><div class="line">print &apos;item -2 is&apos;,shoplist[-2]</div><div class="line"></div><div class="line"></div><div class="line">#slicing on a list</div><div class="line">print &apos;item 1 to 3 is&apos;,shoplist[1:3]</div><div class="line">print &apos;item 1 to -1 is&apos;,shoplist[1:-1]</div><div class="line">print &apos;item start to end is&apos;,shoplist[:]</div><div class="line"></div><div class="line"></div><div class="line">#slicing on a string</div><div class="line">name=&apos;swaroop&apos;</div><div class="line">print &apos;characters 1 to 3 is&apos;,name[1:3]</div><div class="line">print &apos;1 to -1&apos;,name[1:-1]</div><div class="line">print &apos;start to end&apos;,name[:]</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">➜  python seq.py</div><div class="line">item 0 is apple</div><div class="line">item 3 is banana</div><div class="line">item -1 is banana</div><div class="line">item -2 is carrot</div><div class="line">item 1 to 3 is [&apos;mango&apos;, &apos;carrot&apos;]</div><div class="line">item 1 to -1 is [&apos;mango&apos;, &apos;carrot&apos;]</div><div class="line">item start to end is [&apos;apple&apos;, &apos;mango&apos;, &apos;carrot&apos;, &apos;banana&apos;]</div><div class="line">characters 1 to 3 is wa</div><div class="line">1 to -1 waroo</div><div class="line">start to end swaroop</div></pre></td></tr></table></figure>
+<h2 id="tags-Python"><a href="#tags-Python" class="headerlink" title="tags: Python"></a>tags: Python</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2017/07/25/python-006/" data-id="cjl98p0of001r6ajy0hxd3dfk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/07/18/git-003/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          git-最常用的操作
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/07/19/python-005/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">python——模块</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APP测试/">APP测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Quality-Assurance/">Quality Assurance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SHELL/">SHELL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIM/">VIM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/APP测试/" style="font-size: 20px;">APP测试</a> <a href="/tags/Charles/" style="font-size: 12px;">Charles</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 18px;">Python</a> <a href="/tags/Quality-Assurance/" style="font-size: 10px;">Quality Assurance</a> <a href="/tags/SHELL/" style="font-size: 12px;">SHELL</a> <a href="/tags/VIM/" style="font-size: 14px;">VIM</a> <a href="/tags/git/" style="font-size: 16px;">git</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/08/25/git-002/">git-基本操作（二）</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/24/git-001/">git-基本操作（一）</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/23/Charles-001/">Charles 重定向功能——Map Local</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/22/Charles-002/">Charles——模拟慢速网络</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/21/QA的职责/">QA的职责</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 hannie<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
