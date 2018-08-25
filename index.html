@@ -61,6 +61,52 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-git-002" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/25/git-002/" class="article-date">
+  <time datetime="2018-08-25T09:17:43.000Z" itemprop="datePublished">2018-08-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/25/git-002/">git-基本操作（二）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-工作区与暂存区"><a href="#1-工作区与暂存区" class="headerlink" title="1. 工作区与暂存区"></a>1. 工作区与暂存区</h2><p>为什么 Git 比其他版本控制系统设计得优秀，因为 Git 跟踪并管理的是修改，而非文件。 git commit 只负责把暂存区的修改提交了。 每次修改，如果不 add 到暂存区，那就不会加入到 commit 中。 主要注意下面三个命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git diff    #是工作区(work dict)和暂存区(stage)的比较</div><div class="line">git diff --cached    #是暂存区(stage)和分支(master)的比较</div><div class="line">git diff HEAD  #查看工作区和版本库里面最新版本的区别</div></pre></td></tr></table></figure></p>
+<h2 id="2-撤销修改"><a href="#2-撤销修改" class="headerlink" title="2. 撤销修改"></a>2. 撤销修改</h2><p>命令git checkout – readme.txt意思就是，把readme.txt文件在工作区的修改全部撤销，这里有两种情况：</p>
+<p>一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；</p>
+<p>一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。</p>
+<p>总之，就是让这个文件回到最近一次git commit或git add时的状态。</p>
+<h2 id="3-删除文件"><a href="#3-删除文件" class="headerlink" title="3. 删除文件"></a>3. 删除文件</h2><p>一是确实要从版本库中删除该文件，那就用命令git rm删掉</p>
+<p>git checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。</p>
+<p>未完，待续…………</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2018/08/25/git-002/" data-id="cjl97tge9000xohjyl6e7d0cz" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-git-001" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/08/24/git-001/" class="article-date">
@@ -116,7 +162,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/08/24/git-001/" data-id="cjl81zu0p000vlwjyivc3jyg0" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2018/08/24/git-001/" data-id="cjl97tge8000vohjy2x8f8cm9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -164,7 +210,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/08/23/Charles-001/" data-id="cjl81zu040008lwjy8w8plded" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2018/08/23/Charles-001/" data-id="cjl97tgdp000aohjy1r80a5sj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Charles/">Charles</a></li></ul>
@@ -203,7 +249,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/08/22/Charles-002/" data-id="cjl81zu06000alwjyhh2hr5zc" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2018/08/22/Charles-002/" data-id="cjl97tgds000dohjyoyxbkn4d" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Charles/">Charles</a></li></ul>
@@ -242,7 +288,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/08/21/QA的职责/" data-id="cjl81zu0j000rlwjylcmkyhmn" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2018/08/21/QA的职责/" data-id="cjl97tge6000rohjy6t0luug1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Quality-Assurance/">Quality Assurance</a></li></ul>
@@ -287,7 +333,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/python-004/" data-id="cjl81zu0y001alwjy8wz2mzs3" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/python-004/" data-id="cjl97tgel001dohjyyl1v1u5k" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -328,7 +374,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/python-003/" data-id="cjl81zu0x0019lwjyi62d0xs8" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/python-003/" data-id="cjl97tgej001aohjyk7h005uk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -370,7 +416,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/python-002/" data-id="cjl81zu0w0017lwjyepbuc8hd" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/python-002/" data-id="cjl97tgei0019ohjyxgxd5sc0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -421,7 +467,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/vim-003/" data-id="cjl81zu16001jlwjywnr6ls57" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/vim-003/" data-id="cjl97tgeq001iohjydq1uyun5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VIM/">VIM</a></li></ul>
@@ -472,58 +518,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/vim-002/" data-id="cjl81zu14001hlwjyya3tciz0" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/vim-002/" data-id="cjl97tgeo001gohjyx4ze2pnm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VIM/">VIM</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Linux-003" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/08/Linux-003/" class="article-date">
-  <time datetime="2017-07-08T00:42:59.000Z" itemprop="datePublished">2017-07-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/08/Linux-003/">Linux命令查看系统硬件信息</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一-查看系统的PCI设备"><a href="#一-查看系统的PCI设备" class="headerlink" title="一. 查看系统的PCI设备"></a>一. 查看系统的PCI设备</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$eric@eric-pc in ~ [7:49:39]</div><div class="line">→ lspci                     注释：lspci -v 可以显示更详细的信息。</div></pre></td></tr></table></figure>
-<p>输出显示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">00:00.0 Host bridge: Intel Corporation Xeon E3-1200 v3/4th Gen Core Processor DRAM Controller (rev 06)</div><div class="line">00:01.0 PCI bridge: Intel Corporation Xeon E3-1200 v3/4th Gen Core Processor PCI Express x16 Controller (rev 06)</div><div class="line">00:02.0 VGA compatible controller: Intel Corporation 4th Gen Core Processor Integrated Graphics Controller (rev 06)</div><div class="line">00:03.0 Audio device: Intel Corporation Xeon E3-1200 v3/4th Gen Core Processor HD Audio Controller (rev 06)</div><div class="line">00:14.0 USB controller: Intel Corporation 8 Series/C220 Series Chipset Family USB xHCI (rev 05)</div><div class="line">00:16.0 Communication controller: Intel Corporation 8 Series/C220 Series Chipset Family MEI Controller #1 (rev 04)</div><div class="line">00:1b.0 Audio device: Intel Corporation 8 Series/C220 Series Chipset High Definition Audio Controller (rev 05)</div><div class="line">00:1c.0 PCI bridge: Intel Corporation 8 Series/C220 Series Chipset Family PCI Express Root Port #3 (rev d5)</div><div class="line">00:1c.3 PCI bridge: Intel Corporation 8 Series/C220 Series Chipset Family PCI Express Root Port #4 (rev d5)</div><div class="line">00:1d.0 USB controller: Intel Corporation 8 Series/C220 Series Chipset Family USB EHCI #1 (rev 05)</div><div class="line">00:1f.0 ISA bridge: Intel Corporation HM86 Express LPC Controller (rev 05)</div><div class="line">00:1f.2 SATA controller: Intel Corporation 8 Series/C220 Series Chipset Family 6-port SATA Controller 1 [AHCI mode] (rev 05)</div><div class="line">00:1f.3 SMBus: Intel Corporation 8 Series/C220 Series Chipset Family SMBus Controller (rev 05)</div><div class="line">01:00.0 3D controller: NVIDIA Corporation GM108M [GeForce 840M] (rev a2)</div><div class="line">07:00.0 Unassigned class [ff00]: Realtek Semiconductor Co., Ltd. Device 5287 (rev 01)</div><div class="line">07:00.1 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller (rev 12)</div><div class="line">08:00.0 Network controller: Broadcom Corporation BCM43142 802.11b/g/n (rev 01)</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1.Host bridge：主板设备</div><div class="line">2.VGA compatible controller：VGA显卡设备</div><div class="line">3.USB controller：USB借口设备</div><div class="line">4.SATA controller：SATA控制器</div><div class="line">5.Ethernet controller：网卡设备</div></pre></td></tr></table></figure>
-<h2 id="二-查看CPU信息"><a href="#二-查看CPU信息" class="headerlink" title="二. 查看CPU信息"></a>二. 查看CPU信息</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$eric@eric-pc in ~ [7:52:23]</div><div class="line">→ more /proc/cpuinfo</div></pre></td></tr></table></figure>
-<p>输出显示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">processor	: 0</div><div class="line">vendor_id	: GenuineIntel</div><div class="line">cpu family	: 6</div><div class="line">model		: 60</div><div class="line">model name	: Intel(R) Core(TM) i5-4210M CPU @ 2.60GHz</div><div class="line">stepping	: 3</div><div class="line">microcode	: 0x17</div><div class="line">cpu MHz		: 1270.140</div><div class="line">cache size	: 3072 KB</div><div class="line">physical id	: 0</div><div class="line">siblings	: 4</div><div class="line">core id		: 0</div><div class="line">cpu cores	: 2</div><div class="line">apicid		: 0</div><div class="line">initial apicid	: 0</div><div class="line">fpu		: yes</div><div class="line">fpu_exception	: yes</div><div class="line">cpuid level	: 13</div><div class="line">wp		: yes</div><div class="line">flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch</div><div class="line">_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 fma cx16 xtpr pdcm pcid sse4_1 sse4_2 movbe popcnt tsc_d</div><div class="line">eadline_timer aes xsave avx f16c rdrand lahf_lm abm ida arat epb xsaveopt pln pts dtherm tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid</div><div class="line">bogomips	: 5188.38</div><div class="line">clflush size	: 64</div><div class="line">cache_alignment	: 64</div><div class="line">address sizes	: 39 bits physical, 48 bits virtual</div><div class="line">power management:</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">processor	: 逻辑处理器的唯一标识</div><div class="line">vendor_id	: 处理器类型</div><div class="line">physical id	: 表示物理CPU的个数</div><div class="line">siblings	: 相同物理封装中的逻辑处理器的个数</div><div class="line">core id		: 内核的唯一标识</div><div class="line">cpu cores	: 相同物理封装中的内核数量     注释：当siblings是cpu cores的两倍则系统支持线程。</div></pre></td></tr></table></figure>
-<h2 id="三-查看内存信息"><a href="#三-查看内存信息" class="headerlink" title="三. 查看内存信息"></a>三. 查看内存信息</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$eric@eric-pc in ~ [8:12:33]</div><div class="line">→ more /proc/meminfo</div></pre></td></tr></table></figure>
-<p>输出显示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">MemTotal:        8069360 kB</div><div class="line">MemFree:         5730560 kB</div><div class="line">MemAvailable:    6452632 kB</div><div class="line">Buffers:           99104 kB</div><div class="line">Cached:          1176560 kB</div><div class="line">SwapCached:            0 kB</div><div class="line">Active:          1193748 kB</div><div class="line">Inactive:         893736 kB</div><div class="line">Active(anon):     813624 kB</div><div class="line">Inactive(anon):   430044 kB</div><div class="line">Active(file):     380124 kB</div><div class="line">Inactive(file):   463692 kB</div><div class="line">Unevictable:          48 kB</div><div class="line">Mlocked:              48 kB</div><div class="line">SwapTotal:       7811068 kB</div><div class="line">SwapFree:        7811068 kB</div><div class="line">Dirty:                 0 kB</div><div class="line">Writeback:             0 kB</div><div class="line">AnonPages:        811860 kB</div><div class="line">Mapped:           442288 kB</div><div class="line">Shmem:            431856 kB</div><div class="line">Slab:             126744 kB</div><div class="line">SReclaimable:      94368 kB</div><div class="line">SUnreclaim:        32376 kB</div><div class="line">KernelStack:        7520 kB</div><div class="line">PageTables:        30412 kB</div><div class="line">NFS_Unstable:          0 kB</div><div class="line">Bounce:                0 kB</div><div class="line">WritebackTmp:          0 kB</div><div class="line">CommitLimit:    11845748 kB</div><div class="line">Committed_AS:    4156656 kB</div><div class="line">VmallocTotal:   34359738367 kB</div><div class="line">VmallocUsed:      557616 kB</div><div class="line">VmallocChunk:   34359104616 kB</div><div class="line">HardwareCorrupted:     0 kB</div><div class="line">AnonHugePages:    167936 kB</div><div class="line">HugePages_Total:       0</div><div class="line">HugePages_Free:        0</div><div class="line">HugePages_Rsvd:        0</div><div class="line">HugePages_Surp:        0</div><div class="line">Hugepagesize:       2048 kB</div><div class="line">DirectMap4k:       77568 kB</div><div class="line">DirectMap2M:     1912832 kB</div><div class="line">DirectMap1G:     6291456 kB</div></pre></td></tr></table></figure></p>
-<h2 id="四-查看磁盘分区信息"><a href="#四-查看磁盘分区信息" class="headerlink" title="四. 查看磁盘分区信息"></a>四. 查看磁盘分区信息</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">root@eric-pc:/home/eric# fdisk -l</div></pre></td></tr></table></figure>
-<p>输出显示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">Disk /dev/sda: 1000.2 GB, 1000204886016 bytes</div><div class="line">255 heads, 63 sectors/track, 121601 cylinders, total 1953525168 sectors</div><div class="line">Units = sectors of 1 * 512 = 512 bytes</div><div class="line">Sector size (logical/physical): 512 bytes / 4096 bytes</div><div class="line">I/O size (minimum/optimal): 4096 bytes / 4096 bytes</div><div class="line">Disk identifier: 0x0c34bbc3</div><div class="line"></div><div class="line">   Device Boot      Start         End      Blocks   Id  System</div><div class="line">/dev/sda1   *        2048   419432447   209715200    7  HPFS/NTFS/exFAT</div><div class="line">/dev/sda2       419432448   838862847   209715200    7  HPFS/NTFS/exFAT</div><div class="line">/dev/sda3       838862848  1258293247   209715200    7  HPFS/NTFS/exFAT</div><div class="line">/dev/sda4      1258295294  1953523711   347614209    f  W95 Extd (LBA)</div><div class="line">Partition 4 does not start on physical sector boundary.</div><div class="line">/dev/sda5      1258295296  1677725695   209715200    7  HPFS/NTFS/exFAT</div><div class="line">/dev/sda6      1677727744  1678311423      291840   83  Linux</div><div class="line">/dev/sda7      1678313472  1693935615     7811072   82  Linux swap / Solaris</div><div class="line">/dev/sda8      1693937664  1742764031    24413184   83  Linux</div><div class="line">/dev/sda9      1742766080  1953523711   105378816   83  Linux</div></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/08/Linux-003/" data-id="cjl81zu0f000plwjyyte25uhe" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
 
     </footer>
   </div>
@@ -558,7 +556,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/APP测试/" style="font-size: 20px;">APP测试</a> <a href="/tags/Charles/" style="font-size: 12.5px;">Charles</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 17.5px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 17.5px;">Python</a> <a href="/tags/Quality-Assurance/" style="font-size: 10px;">Quality Assurance</a> <a href="/tags/SHELL/" style="font-size: 12.5px;">SHELL</a> <a href="/tags/VIM/" style="font-size: 15px;">VIM</a> <a href="/tags/git/" style="font-size: 12.5px;">git</a>
+      <a href="/tags/APP测试/" style="font-size: 20px;">APP测试</a> <a href="/tags/Charles/" style="font-size: 12.5px;">Charles</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 17.5px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 17.5px;">Python</a> <a href="/tags/Quality-Assurance/" style="font-size: 10px;">Quality Assurance</a> <a href="/tags/SHELL/" style="font-size: 12.5px;">SHELL</a> <a href="/tags/VIM/" style="font-size: 15px;">VIM</a> <a href="/tags/git/" style="font-size: 15px;">git</a>
     </div>
   </div>
 
@@ -580,6 +578,10 @@
       <ul>
         
           <li>
+            <a href="/2018/08/25/git-002/">git-基本操作（二）</a>
+          </li>
+        
+          <li>
             <a href="/2018/08/24/git-001/">git-基本操作（一）</a>
           </li>
         
@@ -593,10 +595,6 @@
         
           <li>
             <a href="/2018/08/21/QA的职责/">QA的职责</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/18/python-004/">python——NumPy数组（一）</a>
           </li>
         
       </ul>
