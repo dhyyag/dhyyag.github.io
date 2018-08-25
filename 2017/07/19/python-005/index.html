@@ -3,24 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>python—PIL（图像处理库） | hannie&#39;s blog</title>
+  <title>python——模块 | hannie&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一. PIL(Python ImagingLibrary)是Python一个强大方便的图像处理库1.安装pillow1$ sudo pip install pillow==2.6.0
-或在命令行使用easy_install安装：1$ sudo pip easy_install Pillow
-2.使用pillow安装完成后，使用from PIL import Image就引用使用库了。比如：123f">
+  <meta name="description" content="若想再其他函数中重用很多函数，则可以使用模块，模块是一个包含了所有你定义的函数和变量的文件，模块的文件名必须以.py为扩展名。
+1.使用标准库模块（sys模块）import sys
+from sys import *但是为了避免名称冲突，尽量使用import语句
+2.若我只想在程序本身被使用的时候运行主块，而在它被别的模块输入的时候不运行主块可以通过模块的name属性完成3.使用dir()函数列出">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python—PIL（图像处理库）">
-<meta property="og:url" content="http://softwaretest.cn/2017/07/18/python-003/index.html">
+<meta property="og:title" content="python——模块">
+<meta property="og:url" content="http://softwaretest.cn/2017/07/19/python-005/index.html">
 <meta property="og:site_name" content="hannie's blog">
-<meta property="og:description" content="一. PIL(Python ImagingLibrary)是Python一个强大方便的图像处理库1.安装pillow1$ sudo pip install pillow==2.6.0
-或在命令行使用easy_install安装：1$ sudo pip easy_install Pillow
-2.使用pillow安装完成后，使用from PIL import Image就引用使用库了。比如：123f">
-<meta property="og:updated_time" content="2017-07-18T13:43:57.511Z">
+<meta property="og:description" content="若想再其他函数中重用很多函数，则可以使用模块，模块是一个包含了所有你定义的函数和变量的文件，模块的文件名必须以.py为扩展名。
+1.使用标准库模块（sys模块）import sys
+from sys import *但是为了避免名称冲突，尽量使用import语句
+2.若我只想在程序本身被使用的时候运行主块，而在它被别的模块输入的时候不运行主块可以通过模块的name属性完成3.使用dir()函数列出">
+<meta property="og:updated_time" content="2018-08-25T09:30:07.206Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python—PIL（图像处理库）">
-<meta name="twitter:description" content="一. PIL(Python ImagingLibrary)是Python一个强大方便的图像处理库1.安装pillow1$ sudo pip install pillow==2.6.0
-或在命令行使用easy_install安装：1$ sudo pip easy_install Pillow
-2.使用pillow安装完成后，使用from PIL import Image就引用使用库了。比如：123f">
+<meta name="twitter:title" content="python——模块">
+<meta name="twitter:description" content="若想再其他函数中重用很多函数，则可以使用模块，模块是一个包含了所有你定义的函数和变量的文件，模块的文件名必须以.py为扩展名。
+1.使用标准库模块（sys模块）import sys
+from sys import *但是为了避免名称冲突，尽量使用import语句
+2.若我只想在程序本身被使用的时候运行主块，而在它被别的模块输入的时候不运行主块可以通过模块的name属性完成3.使用dir()函数列出">
   
     <link rel="alternate" href="/atom.xml" title="hannie&#39;s blog" type="application/atom+xml">
   
@@ -69,10 +72,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-python-003" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-python-005" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/07/18/python-003/" class="article-date">
-  <time datetime="2017-07-18T13:42:33.000Z" itemprop="datePublished">2017-07-18</time>
+    <a href="/2017/07/19/python-005/" class="article-date">
+  <time datetime="2017-07-19T13:28:30.000Z" itemprop="datePublished">2017-07-19</time>
 </a>
     
   </div>
@@ -83,7 +86,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      python—PIL（图像处理库）
+      python——模块
     </h1>
   
 
@@ -91,14 +94,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一-PIL-Python-ImagingLibrary-是Python一个强大方便的图像处理库"><a href="#一-PIL-Python-ImagingLibrary-是Python一个强大方便的图像处理库" class="headerlink" title="一. PIL(Python ImagingLibrary)是Python一个强大方便的图像处理库"></a>一. PIL(Python ImagingLibrary)是Python一个强大方便的图像处理库</h2><h3 id="1-安装pillow"><a href="#1-安装pillow" class="headerlink" title="1.安装pillow"></a>1.安装pillow</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo pip install pillow==2.6.0</div></pre></td></tr></table></figure>
-<p>或在命令行使用easy_install安装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo pip easy_install Pillow</div></pre></td></tr></table></figure></p>
-<h3 id="2-使用pillow"><a href="#2-使用pillow" class="headerlink" title="2.使用pillow"></a>2.使用pillow</h3><p>安装完成后，使用from PIL import Image就引用使用库了。<br>比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">from PIL import Image</div><div class="line">im = Image.open(&quot;hello.jpg&quot;)</div><div class="line">im.rotate(45).show()</div></pre></td></tr></table></figure></p>
+        <p>若想再其他函数中重用很多函数，则可以使用<strong>模块</strong>，模块是一个包含了所有你定义的函数和变量的文件，模块的文件名必须以.py为扩展名。</p>
+<h2 id="1-使用标准库模块（sys模块）"><a href="#1-使用标准库模块（sys模块）" class="headerlink" title="1.使用标准库模块（sys模块）"></a>1.使用标准库模块（sys模块）</h2><p>import sys</p>
+<p>from sys import *<br>但是为了避免名称冲突，尽量使用import语句</p>
+<h2 id="2-若我只想在程序本身被使用的时候运行主块，而在它被别的模块输入的时候不运行主块可以通过模块的name属性完成"><a href="#2-若我只想在程序本身被使用的时候运行主块，而在它被别的模块输入的时候不运行主块可以通过模块的name属性完成" class="headerlink" title="2.若我只想在程序本身被使用的时候运行主块，而在它被别的模块输入的时候不运行主块可以通过模块的name属性完成"></a>2.若我只想在程序本身被使用的时候运行主块，而在它被别的模块输入的时候不运行主块可以通过模块的<strong>name</strong>属性完成</h2><h2 id="3-使用dir-函数列出模块定义的标识符。（函数，类，变量）"><a href="#3-使用dir-函数列出模块定义的标识符。（函数，类，变量）" class="headerlink" title="3.使用dir()函数列出模块定义的标识符。（函数，类，变量）"></a>3.使用dir()函数列出模块定义的标识符。（函数，类，变量）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import sys</div><div class="line">&gt;&gt;&gt; dir(sys)</div></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/python-003/" data-id="cjl9851ag001a78jyr2jwhj0w" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/19/python-005/" data-id="cjl9851aj001e78jyqyvf7h3t" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -109,19 +113,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/07/18/python-004/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/08/21/QA的职责/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          python——NumPy数组（一）
+          QA的职责
         
       </div>
     </a>
   
   
-    <a href="/2017/07/18/python-002/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/07/18/python-004/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">python—pip （软件包管理系统)</div>
+      <div class="article-nav-title">python——NumPy数组（一）</div>
     </a>
   
 </nav>
