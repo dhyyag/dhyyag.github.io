@@ -95,7 +95,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/08/25/git-002/" data-id="cjl99ljwy000xnsjy4jrmt5rw" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2018/08/25/git-002/" data-id="cjl99vn2s000x3mjyiysug7qp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -162,7 +162,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/08/24/git-001/" data-id="cjl99ljww000vnsjyz3nltkds" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2018/08/24/git-001/" data-id="cjl99vn2r000v3mjy9b7dsgkz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -210,7 +210,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/08/23/Charles-001/" data-id="cjl99ljwd000ansjy23gw0eid" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2018/08/23/Charles-001/" data-id="cjl99vn26000a3mjy8o0wucsv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Charles/">Charles</a></li></ul>
@@ -249,7 +249,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/08/22/Charles-002/" data-id="cjl99ljwf000dnsjy0dc8za74" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2018/08/22/Charles-002/" data-id="cjl99vn2a000d3mjyh2vlbqo2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Charles/">Charles</a></li></ul>
@@ -288,7 +288,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/08/21/QA的职责/" data-id="cjl99ljwt000rnsjywkyqe326" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2018/08/21/QA的职责/" data-id="cjl99vn2m000r3mjy6qw5ifnu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Quality-Assurance/">Quality Assurance</a></li></ul>
@@ -356,10 +356,51 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/07/18/git-003/" data-id="cjl99ljwz000znsjyf3w0li4x" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2018/07/18/git-003/" data-id="cjl99vn2t000z3mjy8m2cpdkm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-http-002" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/04/http-002/" class="article-date">
+  <time datetime="2018-06-04T12:14:39.000Z" itemprop="datePublished">2018-06-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/04/http-002/">http协议-接口测试基础（二）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-常用的HTTP请求方式"><a href="#1-常用的HTTP请求方式" class="headerlink" title="1.常用的HTTP请求方式"></a>1.常用的HTTP请求方式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">请求格式如下: Method Request-URI HTTP-Version CRLF </div><div class="line"> Method       //表示请求方法;</div><div class="line"> Request-URI  //是一个统一资源标识符;</div><div class="line"> HTTP-Version //表示请求的HTTP协议版本;</div><div class="line"> CRLF         //表示回车和换行;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">GET     //请求获取Request-URI所标识的资源</div><div class="line">        //数据跟在url后面</div><div class="line">        //(GET可能会被网络蜘蛛等随意访问，浪费资源。)</div><div class="line">        </div><div class="line">POST    //在Request-URI所标识的资源后附加新的数据</div><div class="line">        //数据被包含在请求体中</div><div class="line">        //POST请求可能会导致新的资源的建立和/或已有资源的修改</div><div class="line">        </div><div class="line">PUT     //请求服务器存储一个资源，并用Request-URI作为其标识</div><div class="line"></div><div class="line">TRACE   //请求服务器回送收到的请求信息，主要用于测试或诊断</div><div class="line"></div><div class="line">HEAD    //请求获取由Request-URI所标识的资源的响应消息报头</div><div class="line"></div><div class="line">DELETE  //请求服务器删除Request-URI所标识的资源</div><div class="line"></div><div class="line">CONNECT //保留将来使用</div><div class="line"></div><div class="line">OPTIONS //请求查询服务器的性能，或者查询与资源相关的选项和需求</div></pre></td></tr></table></figure>
+<h2 id="2-中介"><a href="#2-中介" class="headerlink" title="2. 中介"></a>2. 中介</h2><p>中介由三种：<br>代理(Proxy)、<br>网关(Gateway)<br>通道(Tunnel)，<br>代理(Proxy)：一个中间程序，它可以充当一个服务器，也可以充当一个客户机，为其它客户机建立请求。请求是通过可能的翻译在内部或经过传递到其它的 服务器中。一个代理在发送请求信息之前，必须解释并且如果可能重写它。代理经常作为通过防火墙的客户机端的门户，代理还可以作为一个帮助应用来通过协议处 理没有被用户代理完成的请求。<br>网关(Gateway)：一个作为其它服务器中间媒介的服务器。与代理不同的是，网关接受请求就好象对被请求的资源来说它就是源服务器；发出请求的客户机并没有意识到它在同网关打交道。<br>网关经常作为通过防火墙的服务器端的门户，网关还可以作为一个协议翻译器以便存取那些存储在非HTTP系统中的资源。<br>通道(Tunnel)：是作为两个连接中继的中介程序。一旦激活，通道便被认为不属于HTTP通讯，尽管通道可能是被一个HTTP请求初始化的。当被中继 的连接两端关闭时，通道便消失。当一个门户(Portal)必须存在或中介(Intermediary)不能解释中继的通讯时通道被经常使用。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2018/06/04/http-002/" data-id="cjl99vn2z00173mjyhikge59q" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/接口测试/">接口测试</a></li></ul>
 
     </footer>
   </div>
@@ -382,7 +423,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/02/http-001/">http协议——接口测试基础（一）</a>
+      <a class="article-title" href="/2018/06/02/http-001/">http协议-接口测试基础（一）</a>
     </h1>
   
 
@@ -411,7 +452,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/06/02/http-001/" data-id="cjl99ljx30015nsjy6biu60qf" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2018/06/02/http-001/" data-id="cjl99vn2x00153mjyje37yetx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/接口测试/">接口测试</a></li></ul>
@@ -459,7 +500,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/25/python-006/" data-id="cjl99ljxe001knsjy0j4tafsd" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/25/python-006/" data-id="cjl99vn39001m3mjyhsyx9v8j" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -501,52 +542,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/19/python-005/" data-id="cjl99ljxd001insjyowt8ias5" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-python-004" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/18/python-004/" class="article-date">
-  <time datetime="2017-07-18T13:45:44.000Z" itemprop="datePublished">2017-07-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/18/python-004/">python——NumPy数组（一）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-全零矩阵"><a href="#1-全零矩阵" class="headerlink" title="1. 全零矩阵"></a>1. 全零矩阵</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import numpy as det</div><div class="line">&gt;&gt;&gt; a = det.zeros((3,3))</div><div class="line">&gt;&gt;&gt; print a</div><div class="line">[[ 0.  0.  0.]</div><div class="line"> [ 0.  0.  0.]</div><div class="line"> [ 0.  0.  0.]]</div></pre></td></tr></table></figure>
-<h2 id="2-全一矩阵"><a href="#2-全一矩阵" class="headerlink" title="2. 全一矩阵"></a>2. 全一矩阵</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import numpy as det</div><div class="line">&gt;&gt;&gt; a = det.ones((3,3))</div><div class="line">&gt;&gt;&gt; print a</div><div class="line">[[ 1.  1.  1.]</div><div class="line"> [ 1.  1.  1.]</div><div class="line"> [ 1.  1.  1.]]</div></pre></td></tr></table></figure>
-<h2 id="3-指定固定值矩阵"><a href="#3-指定固定值矩阵" class="headerlink" title="3. 指定固定值矩阵"></a>3. 指定固定值矩阵</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import numpy as det</div><div class="line">&gt;&gt;&gt; a = det.full((3,3),100)</div><div class="line">&gt;&gt;&gt; print a</div><div class="line">[[ 100.  100.  100.]</div><div class="line"> [ 100.  100.  100.]</div><div class="line"> [ 100.  100.  100.]]</div></pre></td></tr></table></figure>
-<h2 id="4-随机矩阵"><a href="#4-随机矩阵" class="headerlink" title="4. 随机矩阵"></a>4. 随机矩阵</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import numpy as det</div><div class="line">&gt;&gt;&gt; a = det.random.random((3,3))</div><div class="line">&gt;&gt;&gt; print a</div><div class="line">[[ 0.46759462  0.74203465  0.1685592 ]</div><div class="line"> [ 0.09625809  0.25350595  0.17873013]</div><div class="line"> [ 0.43552232  0.78442542  0.76970373]]</div></pre></td></tr></table></figure>
-<h2 id="5-对角矩阵"><a href="#5-对角矩阵" class="headerlink" title="5. 对角矩阵"></a>5. 对角矩阵</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import numpy as det</div><div class="line">&gt;&gt;&gt; a = det.eye(3)</div><div class="line">&gt;&gt;&gt; print a</div><div class="line">[[ 1.  0.  0.]</div><div class="line"> [ 0.  1.  0.]</div><div class="line"> [ 0.  0.  1.]]</div></pre></td></tr></table></figure>
-<h2 id="6-指定固定值矩阵"><a href="#6-指定固定值矩阵" class="headerlink" title="6. 指定固定值矩阵"></a>6. 指定固定值矩阵</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import numpy as det</div><div class="line">&gt;&gt;&gt; a = det.array([[1,2,3],[4,5,6],[7,8,9]])</div><div class="line">&gt;&gt;&gt; print a</div><div class="line">[[1 2 3]</div><div class="line"> [4 5 6]</div><div class="line"> [7 8 9]]</div></pre></td></tr></table></figure>
-<p>（未完，待续……）</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/python-004/" data-id="cjl99ljxb001gnsjytmhwzuab" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/19/python-005/" data-id="cjl99vn39001k3mjys48ebi5m" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -584,7 +580,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/APP测试/" style="font-size: 20px;">APP测试</a> <a href="/tags/Charles/" style="font-size: 12px;">Charles</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 18px;">Python</a> <a href="/tags/Quality-Assurance/" style="font-size: 10px;">Quality Assurance</a> <a href="/tags/Shell/" style="font-size: 14px;">Shell</a> <a href="/tags/VIM/" style="font-size: 14px;">VIM</a> <a href="/tags/git/" style="font-size: 16px;">git</a> <a href="/tags/接口测试/" style="font-size: 10px;">接口测试</a>
+      <a href="/tags/APP测试/" style="font-size: 20px;">APP测试</a> <a href="/tags/Charles/" style="font-size: 12px;">Charles</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 18px;">Python</a> <a href="/tags/Quality-Assurance/" style="font-size: 10px;">Quality Assurance</a> <a href="/tags/Shell/" style="font-size: 14px;">Shell</a> <a href="/tags/VIM/" style="font-size: 14px;">VIM</a> <a href="/tags/git/" style="font-size: 16px;">git</a> <a href="/tags/接口测试/" style="font-size: 12px;">接口测试</a>
     </div>
   </div>
 
