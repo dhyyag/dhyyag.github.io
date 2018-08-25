@@ -3,14 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: Matlab | hannie&#39;s blog</title>
+  <title>Linux-常用命令（apt-get） | hannie&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="hannie's blog">
-<meta property="og:url" content="http://softwaretest.cn/tags/Matlab/index.html">
+  <meta name="description" content="apt-get主要用于自动从互联网的软件仓库中搜索、安装、升级、卸载软件或操作系统。
+Ubuntu Linux操作系统下apt-get命令的详细说明常用的APT命令参数：1234567891011121314151617181920212223242526272829303132apt-cache search package 搜索包apt-cache show package 获取包的相关信息，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux-常用命令（apt-get）">
+<meta property="og:url" content="http://softwaretest.cn/2017/07/07/Linux-005/index.html">
 <meta property="og:site_name" content="hannie's blog">
+<meta property="og:description" content="apt-get主要用于自动从互联网的软件仓库中搜索、安装、升级、卸载软件或操作系统。
+Ubuntu Linux操作系统下apt-get命令的详细说明常用的APT命令参数：1234567891011121314151617181920212223242526272829303132apt-cache search package 搜索包apt-cache show package 获取包的相关信息，">
+<meta property="og:updated_time" content="2018-08-25T10:27:29.754Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hannie's blog">
+<meta name="twitter:title" content="Linux-常用命令（apt-get）">
+<meta name="twitter:description" content="apt-get主要用于自动从互联网的软件仓库中搜索、安装、升级、卸载软件或操作系统。
+Ubuntu Linux操作系统下apt-get命令的详细说明常用的APT命令参数：1234567891011121314151617181920212223242526272829303132apt-cache search package 搜索包apt-cache show package 获取包的相关信息，">
   
     <link rel="alternate" href="/atom.xml" title="hannie&#39;s blog" type="application/atom+xml">
   
@@ -59,39 +66,64 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/06/16/matlab-001/" class="archive-article-date">
-  <time datetime="2017-06-16T01:06:06.000Z" itemprop="datePublished">Jun 16</time>
+        <section id="main"><article id="post-Linux-005" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/07/Linux-005/" class="article-date">
+  <time datetime="2017-07-07T11:25:43.000Z" itemprop="datePublished">2017-07-07</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/16/matlab-001/">matlab-图像增强</a>
+    <h1 class="article-title" itemprop="name">
+      Linux-常用命令（apt-get）
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>apt-get主要用于自动从互联网的软件仓库中搜索、安装、升级、卸载软件或操作系统。</p>
+<p>Ubuntu Linux操作系统下apt-get命令的详细说明<br>常用的APT命令参数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">apt-cache search package 搜索包</div><div class="line"></div><div class="line">apt-cache show package 获取包的相关信息，如说明、大小、版本等</div><div class="line"></div><div class="line">sudo apt-get install package 安装包</div><div class="line"></div><div class="line">sudo apt-get install package - - reinstall 重新安装包</div><div class="line"></div><div class="line">sudo apt-get -f install 修复安装&quot;-f = ——fix-missing&quot;</div><div class="line"></div><div class="line">sudo apt-get remove package 删除包</div><div class="line"></div><div class="line">sudo apt-get remove package - - purge 删除包，包括删除配置文件等</div><div class="line"></div><div class="line">sudo apt-get update 更新源</div><div class="line"></div><div class="line">sudo apt-get upgrade 更新已安装的包</div><div class="line"></div><div class="line">sudo apt-get dist-upgrade 升级系统</div><div class="line"></div><div class="line">sudo apt-get dselect-upgrade 使用 dselect 升级</div><div class="line"></div><div class="line">apt-cache depends package 了解使用依赖</div><div class="line"></div><div class="line">apt-cache rdepends package 是查看该包被哪些包依赖</div><div class="line"></div><div class="line">sudo apt-get build-dep package 安装相关的编译环境</div><div class="line"></div><div class="line">apt-get source package 下载该包的源代码</div><div class="line"></div><div class="line">sudo apt-get clean &amp;&amp; sudo apt-get autoclean 清理无用的包</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2017/07/07/Linux-005/" data-id="cjl9a7j2x000rixjy012gxpv4" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/07/08/Linux-003/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Linux命令查看系统硬件信息
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/06/17/shell-001/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">shell-网页下载wget</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         
