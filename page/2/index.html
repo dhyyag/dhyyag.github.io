@@ -61,6 +61,136 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-jmeter-001" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/07/jmeter-001/" class="article-date">
+  <time datetime="2018-03-07T13:47:50.000Z" itemprop="datePublished">2018-03-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/07/jmeter-001/">JMeter-乱码问题如何解决</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>在“HTTP请求”中的”Content encoding”选项中输入 utf-8</p>
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>打开bin文件夹下的<strong>jmeter.properties</strong>文件<br>在<strong>jmeter.properties</strong>文件中修改<strong>ampleresult.default.encoding</strong><br>默认显示如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#sampleresult.default.encoding=ISO-8859-1</div></pre></td></tr></table></figure></p>
+<p>修改后：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sampleresult.default.encoding=UTF-8</div></pre></td></tr></table></figure></p>
+<p>修改参数后需重启 Jmeter。</p>
+<h3 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h3><p>选中“线程组”，点击右键，添加——后置处理器——BeanShell PostProcessor<br>添加如下信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">prev.setDataEncoding(&quot;utf-8&quot;)</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2018/03/07/jmeter-001/" data-id="cjlp7rp64001bw8jyuwodumzt" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JMeter/">JMeter</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-接口测试-002" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/06/接口测试-002/" class="article-date">
+  <time datetime="2018-03-06T13:58:48.000Z" itemprop="datePublished">2018-03-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/06/接口测试-002/">通过cURL去注册账号（1）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="cURL介绍（维基百科）"><a href="#cURL介绍（维基百科）" class="headerlink" title="cURL介绍（维基百科）"></a>cURL介绍（维基百科）</h2><h6 id="1、-cURL是一个利用URL语法在命令行下工作的文件传输工具；"><a href="#1、-cURL是一个利用URL语法在命令行下工作的文件传输工具；" class="headerlink" title="1、 cURL是一个利用URL语法在命令行下工作的文件传输工具；"></a>1、 cURL是一个利用URL语法在命令行下工作的文件传输工具；</h6><h6 id="2、它支持文件上传和下载，"><a href="#2、它支持文件上传和下载，" class="headerlink" title="2、它支持文件上传和下载，"></a>2、它支持文件上传和下载，</h6><h6 id="3、cURL还包含了用于程序开发的libcurl"><a href="#3、cURL还包含了用于程序开发的libcurl" class="headerlink" title="3、cURL还包含了用于程序开发的libcurl"></a>3、cURL还包含了用于程序开发的libcurl</h6><h6 id="4、cURL支持的通信协议有FTP、FTPS、HTTP、HTTPS、TFTP、SFTP、Gopher、SCP、Telnet、DICT、FILE、LDAP、LDAPS、IMAP、POP3、SMTP和RTSP。"><a href="#4、cURL支持的通信协议有FTP、FTPS、HTTP、HTTPS、TFTP、SFTP、Gopher、SCP、Telnet、DICT、FILE、LDAP、LDAPS、IMAP、POP3、SMTP和RTSP。" class="headerlink" title="4、cURL支持的通信协议有FTP、FTPS、HTTP、HTTPS、TFTP、SFTP、Gopher、SCP、Telnet、DICT、FILE、LDAP、LDAPS、IMAP、POP3、SMTP和RTSP。"></a>4、cURL支持的通信协议有FTP、FTPS、HTTP、HTTPS、TFTP、SFTP、Gopher、SCP、Telnet、DICT、FILE、LDAP、LDAPS、IMAP、POP3、SMTP和RTSP。</h6><h6 id="5、curl还支持SSL认证、HTTP-POST、HTTP-PUT、FTP上传-HTTP-form-based-upload、proxies、HTTP-2、cookies、用户名-密码认证-Basic-Plain-Digest-CRAM-MD5-NTLM-Negotiate-and-Kerberos-、file-transfer-resume、proxy-tunneling。"><a href="#5、curl还支持SSL认证、HTTP-POST、HTTP-PUT、FTP上传-HTTP-form-based-upload、proxies、HTTP-2、cookies、用户名-密码认证-Basic-Plain-Digest-CRAM-MD5-NTLM-Negotiate-and-Kerberos-、file-transfer-resume、proxy-tunneling。" class="headerlink" title="5、curl还支持SSL认证、HTTP POST、HTTP PUT、FTP上传, HTTP form based upload、proxies、HTTP/2、cookies、用户名+密码认证(Basic, Plain, Digest, CRAM-MD5, NTLM, Negotiate and Kerberos)、file transfer resume、proxy tunneling。"></a>5、curl还支持SSL认证、HTTP POST、HTTP PUT、FTP上传, HTTP form based upload、proxies、HTTP/2、cookies、用户名+密码认证(Basic, Plain, Digest, CRAM-MD5, NTLM, Negotiate and Kerberos)、file transfer resume、proxy tunneling。</h6><h2 id="curl安装："><a href="#curl安装：" class="headerlink" title="curl安装："></a>curl安装：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">brew install curl   //安装curl</div><div class="line">brew upgrade curl   //更新版本</div></pre></td></tr></table></figure>
+<h2 id="例子："><a href="#例子：" class="headerlink" title="例子："></a>例子：</h2><p>staging环境注册账号：<br>新建脚本staging_register_account.sh ，脚本内容如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">#!/bin/zsh</div><div class="line">#staging register account</div><div class="line">curl -X POST \</div><div class="line">        https://staging-neo.llsapp.com/api/v1/usr \</div><div class="line">        -H &quot;Content-Type: application/json&quot; \</div><div class="line">        -H &quot;Accept-Language: zh;q=1&quot; \</div><div class="line">        -H &quot;sDeviceId&quot;:&quot;99000663276322&quot; \</div><div class="line">        -H &quot;deviceId&quot;:&quot;99000663276322&quot; \</div><div class="line">        -d &quot;&#123;\&quot;sDeviceId\&quot;:\&quot;99000663276322\&quot;,\&quot;deviceId\&quot;:\&quot;99000663276322\&quot;,\&quot;appId\&quot;:\&quot;lls\&quot;,\&quot;appVer\&quot;:\&quot;4\&quot; ,\&quot;email\&quot;:\&quot;dong1055@dw.com\&quot;,\&quot;nick\&quot;:\&quot;1055\&quot;,\&quot;password\&quot;:\&quot;123456\&quot;,\&quot;gender\&quot;:\&quot;female\&quot;&#125;&quot;</div></pre></td></tr></table></figure></p>
+<p>设置权限：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod a+x staging_register_account.sh</div></pre></td></tr></table></figure></p>
+<p>执行脚本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./staging_register_account.sh</div></pre></td></tr></table></figure></p>
+<p>执行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&quot;diamonds&quot;:0,&quot;id&quot;:&quot;NGVjMWQwMDAwNGRjYjUzYg==&quot;,&quot;nick&quot;:&quot;1057&quot;,&quot;avatar&quot;:&quot;http://cdn.llscdn.com/avatars/default_f.jpg&quot;,&quot;level&quot;:0,&quot;resourceId&quot;:&quot;5b8f97847b7a570001ba85e6&quot;,&quot;email&quot;:&quot;dong1057@dw.com&quot;,&quot;login&quot;:4210439513,&quot;backgroundImage&quot;:&quot;&quot;,&quot;photos&quot;:[],&quot;coins&quot;:0,&quot;stars&quot;:0,&quot;gender&quot;:&quot;female&quot;,&quot;createdAt&quot;:1536137092,&quot;token&quot;:&quot;e102b14093150136ccd849bdcc9aad7d&quot;,&quot;key&quot;:&quot;e10330a093150136ccd849bdcc9aad7d&quot;,&quot;bind&quot;:[],&quot;bindDetail&quot;:&#123;&#125;,&quot;emailConfirmed&quot;:false,&quot;mobileConfirmed&quot;:false,&quot;config&quot;:&#123;&quot;app&quot;:&#123;&quot;pushFollowOff&quot;:false,&quot;pushForumLikeOff&quot;:false,&quot;pushForumReplyOff&quot;:false,&quot;pushForumInviteOff&quot;:false&#125;,&quot;colorPreference&quot;:0,&quot;pmPolicy&quot;:0&#125;,&quot;checkin&quot;:&#123;&quot;recordTimeTarget&quot;:300,&quot;totalDays&quot;:0,&quot;currentConsecutiveDays&quot;:0&#125;,&quot;subscriptionCoursesBalance&quot;:-1,&quot;subscriptionExpiresAt&quot;:-1,&quot;isNewRegister&quot;:false,&quot;secretKey&quot;:&quot;3093a9f8dae24a0cfceb90d4509fab09a2873543cd90a14fe0b50e89aa94835d208b9fe0d38777a39d9a1c26a950ae61cf9116dd2ea11fdf191a16bb8fc5c3de&quot;,&quot;signinCount&quot;:1&#125;%</div></pre></td></tr></table></figure></p>
+<h2 id="美化执行结果的格式："><a href="#美化执行结果的格式：" class="headerlink" title="美化执行结果的格式："></a>美化执行结果的格式：</h2><p>安装jq：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install jq   //安装 jq</div></pre></td></tr></table></figure></p>
+<p>执行脚本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./staging_register_account.sh | jq</div></pre></td></tr></table></figure></p>
+<p>执行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;diamonds&quot;: 0,</div><div class="line">  &quot;id&quot;: &quot;NGY0MWQwMDAwNGRjYjUzZA==&quot;,</div><div class="line">  &quot;nick&quot;: &quot;1058&quot;,</div><div class="line">  &quot;avatar&quot;: &quot;http://cdn.llscdn.com/avatars/default_f.jpg&quot;,</div><div class="line">  &quot;level&quot;: 0,</div><div class="line">  &quot;resourceId&quot;: &quot;5b8f9907665cb4000151154b&quot;,</div><div class="line">  &quot;email&quot;: &quot;dong1058@dw.com&quot;,</div><div class="line">  &quot;login&quot;: 659676204,</div><div class="line">  &quot;backgroundImage&quot;: &quot;&quot;,</div><div class="line">  &quot;photos&quot;: [],</div><div class="line">  &quot;coins&quot;: 0,</div><div class="line">  &quot;stars&quot;: 0,</div><div class="line">  &quot;gender&quot;: &quot;female&quot;,</div><div class="line">  &quot;createdAt&quot;: 1536137479,</div><div class="line">  &quot;token&quot;: &quot;c80f835093160136e01863b426fb55fa&quot;,</div><div class="line">  &quot;key&quot;: &quot;c81002d093160136e01863b426fb55fa&quot;,</div><div class="line">  &quot;bind&quot;: [],</div><div class="line">  &quot;bindDetail&quot;: &#123;&#125;,</div><div class="line">  &quot;emailConfirmed&quot;: false,</div><div class="line">  &quot;mobileConfirmed&quot;: false,</div><div class="line">  &quot;config&quot;: &#123;</div><div class="line">    &quot;app&quot;: &#123;</div><div class="line">      &quot;pushFollowOff&quot;: false,</div><div class="line">      &quot;pushForumLikeOff&quot;: false,</div><div class="line">      &quot;pushForumReplyOff&quot;: false,</div><div class="line">      &quot;pushForumInviteOff&quot;: false</div><div class="line">    &#125;,</div><div class="line">    &quot;colorPreference&quot;: 0,</div><div class="line">    &quot;pmPolicy&quot;: 0</div><div class="line">  &#125;,</div><div class="line">  &quot;checkin&quot;: &#123;</div><div class="line">    &quot;recordTimeTarget&quot;: 300,</div><div class="line">    &quot;totalDays&quot;: 0,</div><div class="line">    &quot;currentConsecutiveDays&quot;: 0</div><div class="line">  &#125;,</div><div class="line">  &quot;subscriptionCoursesBalance&quot;: -1,</div><div class="line">  &quot;subscriptionExpiresAt&quot;: -1,</div><div class="line">  &quot;isNewRegister&quot;: false,</div><div class="line">  &quot;secretKey&quot;: &quot;9ea8a8c3aa02291c6148d15f55fc0b87f258338316506e1c95ae3f456a0736b1bfcc58733488e51527b6cc36fa3daf38ca17553f3fd8531395e683927cec3025&quot;,</div><div class="line">  &quot;signinCount&quot;: 1</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2018/03/06/接口测试-002/" data-id="cjlp7rp6n0027w8jywkui1t9g" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/接口测试/">接口测试</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-接口测试-001" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/05/接口测试-001/" class="article-date">
+  <time datetime="2018-03-05T13:55:26.000Z" itemprop="datePublished">2018-03-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/05/接口测试-001/">通过Postman注册账号</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Header：<br><img src="http://ooqxh7rke.bkt.clouddn.com/WX20180905-0001.png" alt="请求的Header"></p>
+<p>Body：<br><img src="http://ooqxh7rke.bkt.clouddn.com/WX20180905-0002.png" alt="请求的Body"></p>
+<p>Response：<br><img src="http://ooqxh7rke.bkt.clouddn.com/WX20180905-0003.png" alt="Response"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2018/03/05/接口测试-001/" data-id="cjlp7rp6o0029w8jyh0u41m3a" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/接口测试/">接口测试</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-python-006" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/07/25/python-006/" class="article-date">
@@ -97,7 +227,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/25/python-006/" data-id="cjlp79eef0025nujy4pzbqc97" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/25/python-006/" data-id="cjlp7rp6c001rw8jyge797s32" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -139,7 +269,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/19/python-005/" data-id="cjlp79eek002dnujy7kvvh3i9" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/19/python-005/" data-id="cjlp7rp6b001nw8jyf0r8kpn9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -184,7 +314,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/python-004/" data-id="cjlp79eee0024nujymfog6mak" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/python-004/" data-id="cjlp7rp6j001yw8jyru8malm8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -225,7 +355,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/python-003/" data-id="cjlp79eea0021nujy8dt2209g" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/python-003/" data-id="cjlp7rp6a001lw8jyrpdyj8xh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -267,7 +397,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/python-002/" data-id="cjlp79ee9001znujy9tx5cb1p" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/python-002/" data-id="cjlp7rp68001jw8jyi963214o" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -318,7 +448,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/vim-003/" data-id="cjlp79eel002inujyix4fvwdh" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/vim-003/" data-id="cjlp7rp6m0025w8jygzqfyqg3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VIM/">VIM</a></li></ul>
@@ -369,7 +499,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/vim-002/" data-id="cjlp79eeq002knujyfjc9tq8d" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/vim-002/" data-id="cjlp7rp6l0023w8jyhnnbkye8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VIM/">VIM</a></li></ul>
@@ -381,143 +511,10 @@
 
 
   
-    <article id="post-Linux-003" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/08/Linux-003/" class="article-date">
-  <time datetime="2017-07-08T00:42:59.000Z" itemprop="datePublished">2017-07-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/08/Linux-003/">Linux命令查看系统硬件信息</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一-查看系统的PCI设备"><a href="#一-查看系统的PCI设备" class="headerlink" title="一. 查看系统的PCI设备"></a>一. 查看系统的PCI设备</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$eric@eric-pc in ~ [7:49:39]</div><div class="line">→ lspci                     注释：lspci -v 可以显示更详细的信息。</div></pre></td></tr></table></figure>
-<p>输出显示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">00:00.0 Host bridge: Intel Corporation Xeon E3-1200 v3/4th Gen Core Processor DRAM Controller (rev 06)</div><div class="line">00:01.0 PCI bridge: Intel Corporation Xeon E3-1200 v3/4th Gen Core Processor PCI Express x16 Controller (rev 06)</div><div class="line">00:02.0 VGA compatible controller: Intel Corporation 4th Gen Core Processor Integrated Graphics Controller (rev 06)</div><div class="line">00:03.0 Audio device: Intel Corporation Xeon E3-1200 v3/4th Gen Core Processor HD Audio Controller (rev 06)</div><div class="line">00:14.0 USB controller: Intel Corporation 8 Series/C220 Series Chipset Family USB xHCI (rev 05)</div><div class="line">00:16.0 Communication controller: Intel Corporation 8 Series/C220 Series Chipset Family MEI Controller #1 (rev 04)</div><div class="line">00:1b.0 Audio device: Intel Corporation 8 Series/C220 Series Chipset High Definition Audio Controller (rev 05)</div><div class="line">00:1c.0 PCI bridge: Intel Corporation 8 Series/C220 Series Chipset Family PCI Express Root Port #3 (rev d5)</div><div class="line">00:1c.3 PCI bridge: Intel Corporation 8 Series/C220 Series Chipset Family PCI Express Root Port #4 (rev d5)</div><div class="line">00:1d.0 USB controller: Intel Corporation 8 Series/C220 Series Chipset Family USB EHCI #1 (rev 05)</div><div class="line">00:1f.0 ISA bridge: Intel Corporation HM86 Express LPC Controller (rev 05)</div><div class="line">00:1f.2 SATA controller: Intel Corporation 8 Series/C220 Series Chipset Family 6-port SATA Controller 1 [AHCI mode] (rev 05)</div><div class="line">00:1f.3 SMBus: Intel Corporation 8 Series/C220 Series Chipset Family SMBus Controller (rev 05)</div><div class="line">01:00.0 3D controller: NVIDIA Corporation GM108M [GeForce 840M] (rev a2)</div><div class="line">07:00.0 Unassigned class [ff00]: Realtek Semiconductor Co., Ltd. Device 5287 (rev 01)</div><div class="line">07:00.1 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller (rev 12)</div><div class="line">08:00.0 Network controller: Broadcom Corporation BCM43142 802.11b/g/n (rev 01)</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1.Host bridge：主板设备</div><div class="line">2.VGA compatible controller：VGA显卡设备</div><div class="line">3.USB controller：USB借口设备</div><div class="line">4.SATA controller：SATA控制器</div><div class="line">5.Ethernet controller：网卡设备</div></pre></td></tr></table></figure>
-<h2 id="二-查看CPU信息"><a href="#二-查看CPU信息" class="headerlink" title="二. 查看CPU信息"></a>二. 查看CPU信息</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$eric@eric-pc in ~ [7:52:23]</div><div class="line">→ more /proc/cpuinfo</div></pre></td></tr></table></figure>
-<p>输出显示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">processor	: 0</div><div class="line">vendor_id	: GenuineIntel</div><div class="line">cpu family	: 6</div><div class="line">model		: 60</div><div class="line">model name	: Intel(R) Core(TM) i5-4210M CPU @ 2.60GHz</div><div class="line">stepping	: 3</div><div class="line">microcode	: 0x17</div><div class="line">cpu MHz		: 1270.140</div><div class="line">cache size	: 3072 KB</div><div class="line">physical id	: 0</div><div class="line">siblings	: 4</div><div class="line">core id		: 0</div><div class="line">cpu cores	: 2</div><div class="line">apicid		: 0</div><div class="line">initial apicid	: 0</div><div class="line">fpu		: yes</div><div class="line">fpu_exception	: yes</div><div class="line">cpuid level	: 13</div><div class="line">wp		: yes</div><div class="line">flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch</div><div class="line">_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 fma cx16 xtpr pdcm pcid sse4_1 sse4_2 movbe popcnt tsc_d</div><div class="line">eadline_timer aes xsave avx f16c rdrand lahf_lm abm ida arat epb xsaveopt pln pts dtherm tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid</div><div class="line">bogomips	: 5188.38</div><div class="line">clflush size	: 64</div><div class="line">cache_alignment	: 64</div><div class="line">address sizes	: 39 bits physical, 48 bits virtual</div><div class="line">power management:</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">processor	: 逻辑处理器的唯一标识</div><div class="line">vendor_id	: 处理器类型</div><div class="line">physical id	: 表示物理CPU的个数</div><div class="line">siblings	: 相同物理封装中的逻辑处理器的个数</div><div class="line">core id		: 内核的唯一标识</div><div class="line">cpu cores	: 相同物理封装中的内核数量     注释：当siblings是cpu cores的两倍则系统支持线程。</div></pre></td></tr></table></figure>
-<h2 id="三-查看内存信息"><a href="#三-查看内存信息" class="headerlink" title="三. 查看内存信息"></a>三. 查看内存信息</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$eric@eric-pc in ~ [8:12:33]</div><div class="line">→ more /proc/meminfo</div></pre></td></tr></table></figure>
-<p>输出显示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">MemTotal:        8069360 kB</div><div class="line">MemFree:         5730560 kB</div><div class="line">MemAvailable:    6452632 kB</div><div class="line">Buffers:           99104 kB</div><div class="line">Cached:          1176560 kB</div><div class="line">SwapCached:            0 kB</div><div class="line">Active:          1193748 kB</div><div class="line">Inactive:         893736 kB</div><div class="line">Active(anon):     813624 kB</div><div class="line">Inactive(anon):   430044 kB</div><div class="line">Active(file):     380124 kB</div><div class="line">Inactive(file):   463692 kB</div><div class="line">Unevictable:          48 kB</div><div class="line">Mlocked:              48 kB</div><div class="line">SwapTotal:       7811068 kB</div><div class="line">SwapFree:        7811068 kB</div><div class="line">Dirty:                 0 kB</div><div class="line">Writeback:             0 kB</div><div class="line">AnonPages:        811860 kB</div><div class="line">Mapped:           442288 kB</div><div class="line">Shmem:            431856 kB</div><div class="line">Slab:             126744 kB</div><div class="line">SReclaimable:      94368 kB</div><div class="line">SUnreclaim:        32376 kB</div><div class="line">KernelStack:        7520 kB</div><div class="line">PageTables:        30412 kB</div><div class="line">NFS_Unstable:          0 kB</div><div class="line">Bounce:                0 kB</div><div class="line">WritebackTmp:          0 kB</div><div class="line">CommitLimit:    11845748 kB</div><div class="line">Committed_AS:    4156656 kB</div><div class="line">VmallocTotal:   34359738367 kB</div><div class="line">VmallocUsed:      557616 kB</div><div class="line">VmallocChunk:   34359104616 kB</div><div class="line">HardwareCorrupted:     0 kB</div><div class="line">AnonHugePages:    167936 kB</div><div class="line">HugePages_Total:       0</div><div class="line">HugePages_Free:        0</div><div class="line">HugePages_Rsvd:        0</div><div class="line">HugePages_Surp:        0</div><div class="line">Hugepagesize:       2048 kB</div><div class="line">DirectMap4k:       77568 kB</div><div class="line">DirectMap2M:     1912832 kB</div><div class="line">DirectMap1G:     6291456 kB</div></pre></td></tr></table></figure></p>
-<h2 id="四-查看磁盘分区信息"><a href="#四-查看磁盘分区信息" class="headerlink" title="四. 查看磁盘分区信息"></a>四. 查看磁盘分区信息</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">root@eric-pc:/home/eric# fdisk -l</div></pre></td></tr></table></figure>
-<p>输出显示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">Disk /dev/sda: 1000.2 GB, 1000204886016 bytes</div><div class="line">255 heads, 63 sectors/track, 121601 cylinders, total 1953525168 sectors</div><div class="line">Units = sectors of 1 * 512 = 512 bytes</div><div class="line">Sector size (logical/physical): 512 bytes / 4096 bytes</div><div class="line">I/O size (minimum/optimal): 4096 bytes / 4096 bytes</div><div class="line">Disk identifier: 0x0c34bbc3</div><div class="line"></div><div class="line">   Device Boot      Start         End      Blocks   Id  System</div><div class="line">/dev/sda1   *        2048   419432447   209715200    7  HPFS/NTFS/exFAT</div><div class="line">/dev/sda2       419432448   838862847   209715200    7  HPFS/NTFS/exFAT</div><div class="line">/dev/sda3       838862848  1258293247   209715200    7  HPFS/NTFS/exFAT</div><div class="line">/dev/sda4      1258295294  1953523711   347614209    f  W95 Extd (LBA)</div><div class="line">Partition 4 does not start on physical sector boundary.</div><div class="line">/dev/sda5      1258295296  1677725695   209715200    7  HPFS/NTFS/exFAT</div><div class="line">/dev/sda6      1677727744  1678311423      291840   83  Linux</div><div class="line">/dev/sda7      1678313472  1693935615     7811072   82  Linux swap / Solaris</div><div class="line">/dev/sda8      1693937664  1742764031    24413184   83  Linux</div><div class="line">/dev/sda9      1742766080  1953523711   105378816   83  Linux</div></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/08/Linux-003/" data-id="cjlp79edd000tnujy494wh6xn" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Linux-005" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/07/Linux-005/" class="article-date">
-  <time datetime="2017-07-07T11:25:43.000Z" itemprop="datePublished">2017-07-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/07/Linux-005/">Linux-常用命令（apt-get）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>apt-get主要用于自动从互联网的软件仓库中搜索、安装、升级、卸载软件或操作系统。</p>
-<p>Ubuntu Linux操作系统下apt-get命令的详细说明<br>常用的APT命令参数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">apt-cache search package 搜索包</div><div class="line"></div><div class="line">apt-cache show package 获取包的相关信息，如说明、大小、版本等</div><div class="line"></div><div class="line">sudo apt-get install package 安装包</div><div class="line"></div><div class="line">sudo apt-get install package - - reinstall 重新安装包</div><div class="line"></div><div class="line">sudo apt-get -f install 修复安装&quot;-f = ——fix-missing&quot;</div><div class="line"></div><div class="line">sudo apt-get remove package 删除包</div><div class="line"></div><div class="line">sudo apt-get remove package - - purge 删除包，包括删除配置文件等</div><div class="line"></div><div class="line">sudo apt-get update 更新源</div><div class="line"></div><div class="line">sudo apt-get upgrade 更新已安装的包</div><div class="line"></div><div class="line">sudo apt-get dist-upgrade 升级系统</div><div class="line"></div><div class="line">sudo apt-get dselect-upgrade 使用 dselect 升级</div><div class="line"></div><div class="line">apt-cache depends package 了解使用依赖</div><div class="line"></div><div class="line">apt-cache rdepends package 是查看该包被哪些包依赖</div><div class="line"></div><div class="line">sudo apt-get build-dep package 安装相关的编译环境</div><div class="line"></div><div class="line">apt-get source package 下载该包的源代码</div><div class="line"></div><div class="line">sudo apt-get clean &amp;&amp; sudo apt-get autoclean 清理无用的包</div></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/07/Linux-005/" data-id="cjlp79ed9000onujygceg8zc7" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-shell-001" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/17/shell-001/" class="article-date">
-  <time datetime="2017-06-17T01:54:23.000Z" itemprop="datePublished">2017-06-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/17/shell-001/">shell-网页下载wget</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>wget是一个用于文件下载的命令行工具。</p>
-<h2 id="1-指定下载位置"><a href="#1-指定下载位置" class="headerlink" title="1. 指定下载位置"></a>1. 指定下载位置</h2><p>wget URL<br>wget URL1 URL2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">wget http://softwaretest.cn </div><div class="line">--2017-06-17 08:42:06--  http://softwaretest.cn/</div><div class="line">Resolving softwaretest.cn (softwaretest.cn)... 151.101.0.133, 151.101.64.133, 151.101.128.133</div><div class="line">Connecting to softwaretest.cn (softwaretest.cn)|151.101.0.133|:80... connected.</div><div class="line">HTTP request sent, awaiting response... 301 Moved Permanently</div><div class="line">Location: http://www.softwaretest.cn/ [following]</div><div class="line">--2017-06-17 08:42:21--  http://www.softwaretest.cn/</div><div class="line">Resolving www.softwaretest.cn (www.softwaretest.cn)... 151.101.72.133</div><div class="line">Connecting to www.softwaretest.cn (www.softwaretest.cn)|151.101.72.133|:80... connected.</div><div class="line">HTTP request sent, awaiting response... 200 OK</div><div class="line">Length: 109528 (107K) [text/html]</div><div class="line">Saving to: ‘index.html’</div><div class="line"></div><div class="line">100%[==============================================================================================================================================&gt;] 109,528      360KB/s   in 0.3s   </div><div class="line"></div><div class="line">2017-06-17 08:42:22 (360 KB/s) - ‘index.html’ saved [109528/109528]</div></pre></td></tr></table></figure></p>
-<h2 id="2-指定输出位置"><a href="#2-指定输出位置" class="headerlink" title="2. 指定输出位置"></a>2. 指定输出位置</h2><p>wget URL -O download -o log<br>-O ：指定输出的文件名<br>-o ：指定一个日志文件</p>
-<h2 id="3-指定重试次数"><a href="#3-指定重试次数" class="headerlink" title="3. 指定重试次数"></a>3. 指定重试次数</h2><p>wget -t 5 URL<br>-t ：指定重试次数<br>5  ：重试5次</p>
-<h2 id="4-对下载限速"><a href="#4-对下载限速" class="headerlink" title="4. 对下载限速"></a>4. 对下载限速</h2><p>wget –limit-rate 20k URL<br>–limit-rate ：对wget限速<br>20k ：20年字节为指定速度限制</p>
-<h2 id="5-断点续传"><a href="#5-断点续传" class="headerlink" title="5. 断点续传"></a>5. 断点续传</h2><p>wget -c URL<br>-c ：从断点开始继续下载</p>
-<h2 id="6-补充"><a href="#6-补充" class="headerlink" title="6. 补充"></a>6. 补充</h2><p>wget –mirror URL<br>wget –user username –password pass URL</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/17/shell-001/" data-id="cjlp79eev002tnujyf54fbjhu" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/">Shell</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">__('next') &raquo;</a>
+    <a class="extend prev" rel="prev" href="/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">__('next') &raquo;</a>
   </nav>
 </section>
         
@@ -540,7 +537,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/APP测试/" style="font-size: 20px;">APP测试</a> <a href="/tags/Charles/" style="font-size: 11.67px;">Charles</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JMeter/" style="font-size: 10px;">JMeter</a> <a href="/tags/Linux/" style="font-size: 16.67px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 18.33px;">Python</a> <a href="/tags/Quality-Assurance/" style="font-size: 10px;">Quality Assurance</a> <a href="/tags/Shell/" style="font-size: 13.33px;">Shell</a> <a href="/tags/VIM/" style="font-size: 13.33px;">VIM</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/安全测试/" style="font-size: 10px;">安全测试</a> <a href="/tags/接口测试/" style="font-size: 11.67px;">接口测试</a>
+      <a href="/tags/APP测试/" style="font-size: 20px;">APP测试</a> <a href="/tags/Charles/" style="font-size: 11.67px;">Charles</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JMeter/" style="font-size: 10px;">JMeter</a> <a href="/tags/Linux/" style="font-size: 16.67px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 18.33px;">Python</a> <a href="/tags/Quality-Assurance/" style="font-size: 10px;">Quality Assurance</a> <a href="/tags/Shell/" style="font-size: 13.33px;">Shell</a> <a href="/tags/VIM/" style="font-size: 13.33px;">VIM</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/安全测试/" style="font-size: 10px;">安全测试</a> <a href="/tags/接口测试/" style="font-size: 16.67px;">接口测试</a>
     </div>
   </div>
 
