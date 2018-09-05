@@ -61,6 +61,79 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-APP-Test-005" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/05/APP-Test-005/" class="article-date">
+  <time datetime="2017-03-05T09:23:55.000Z" itemprop="datePublished">2017-03-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/05/APP-Test-005/">APP测试总结（五）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="测试文档编写与缺陷管理"><a href="#测试文档编写与缺陷管理" class="headerlink" title="测试文档编写与缺陷管理"></a>测试文档编写与缺陷管理</h2><p>测试文档包括：测试计划文档，测试设计规格文档，测试用例，软件缺陷报告，状态报告。</p>
+<p>测试用例对一项特定的软件产品进行测试任务的描述，体现测试方案、方法、技术和策略。内容包括测试目标、测试环境、输入数据、测试步骤、预期结果、测试脚本等，并形成文档。测试用例一般包括验证测试用例和证伪测试用例；验证测试用例用于验证代码是否按照预期执行，得到预期结果；证伪测试用例验证代码是否对异常和错误条件进行了适当处理。</p>
+<p>缺陷报告包括：问题/错误的简单描述，重现的环境配置要求，保证多次精确重复的特定输入，期望结果与实际结果的对比，优先级与严重性，对客户的影响等。</p>
+<h2 id="常用的测试工具"><a href="#常用的测试工具" class="headerlink" title="常用的测试工具"></a>常用的测试工具</h2><h3 id="功能测试UFT"><a href="#功能测试UFT" class="headerlink" title="功能测试UFT"></a>功能测试UFT</h3><h4 id="UFT自动化测试的原理"><a href="#UFT自动化测试的原理" class="headerlink" title="UFT自动化测试的原理"></a>UFT自动化测试的原理</h4><ul>
+<li>封装真实被测对象并转化为UFT对象到对象库。</li>
+<li>对比对象库里的对象鉴别属性和运行时的真实被测对象的鉴别属性。</li>
+<li>对比结果一致，则说明对象成功匹配并可以继续对该真实被测对象进行后续操作；如果不一致则报错，提示对象无法识别。</li>
+</ul>
+<h3 id="封装对象模型"><a href="#封装对象模型" class="headerlink" title="封装对象模型"></a>封装对象模型</h3><p>在UFT里的封装对象共分两个概念，Test Objects（测试对象，TO）和Runtime Objects（运行时对象，RO）。TO就是被被添加到对象库中的对象，RO就是被测试软件在运行实际所运行的对象。他们都是UFT封装的对象，TO是为了识别RO而存在的。</p>
+<p>UFT识别对象通常先在对象库中添加测试对象，然后在被测软件运行的时候，根据脚本中调用的对象名称，在对象库中找到相应的测试对象，并根据这些对象的特征属性，在被测试软件中搜索相匹配的正在运行的对象，最后就可以对这些实际运行的测试对象进行操作。</p>
+<p>GetTOProperty()<br>    基本含义：获取对象库中某个对象的某个属性的值。<br>    公式：ReturnValue = 对象.GetTOProperty(“封装属性名”)</p>
+<pre><code>SetTOProperty()
+基本含义：设置对象库中某个对象的某个属性的值。
+公式：对象.SetTOProperty &quot;封装属性名&quot; &quot;封装属性值&quot;
+注：使用代码形式的修改对象属性属于临时性的，只在脚本运行时有效，一旦脚本运行结束，对象库里的属性值就会还原。
+
+GetROProperty()
+基本含义：获取实际运行时的某个对象的某个属性的值。
+公式：ReturnValue = 对象.GetROProperty(&quot;封装属性名&quot;)
+注：使用GetROProperty这个方法来动态获取实际运行时的一些确认信息，然后和所预期的测试数据做对比。如注册功能，在提交一些注册信息以后，一般都要到接下来的确认页面去验证一些信息，这就可以使用GetROProperty来动态获取实际运行时的一些确认信息。
+</code></pre><h4 id="对象无法识别的解决办法"><a href="#对象无法识别的解决办法" class="headerlink" title="对象无法识别的解决办法"></a>对象无法识别的解决办法</h4><pre><code>设置虚拟对象。不推荐，虚拟对象非常脆弱，难以维护；即使对象没有发生变化，但只要对象在界面是那个的方位发生变化，虚拟对象就会识别失败。
+使用相对坐标配合WSH去定位对象。
+使用DOM组建接口应用技术。只适用于Web项目。
+使用UFT自定义扩展SDK Customer来进行二次开发使UFT能够识别对象。难度大。
+开发提供专属插件。
+把无法识别的对象的一些方法封装到一个dll中并使用UFT调用。
+</code></pre><h4 id="数据驱动与场景恢复"><a href="#数据驱动与场景恢复" class="headerlink" title="数据驱动与场景恢复"></a>数据驱动与场景恢复</h4><pre><code>数据驱动Data Table的应用：实现测试数据和脚本业务的分离。
+场景恢复：场景恢复可以应对多种类型的错误并进行恢复操作。
+</code></pre><h3 id="性能测试LoadRunner"><a href="#性能测试LoadRunner" class="headerlink" title="性能测试LoadRunner"></a>性能测试LoadRunner</h3><ul>
+<li>LoadRunner是一种适用于各种体系架构的自动负载测试工具，它能预测系统行为并优化系统性能。LoadRunner的测试对象是整个企业的系统，它通过模拟实际用户的操作行为和实时性能监测，来帮助测试人员更快地查找和发现问题。<br>*</li>
+<li>轻松创建虚拟用户。Virtual User Generator能够生成虚拟用于，以虚拟用户的方式模拟真实用户的业务操作行为。它先记录下业务流程，然后将其转化为测试脚本，并进行参数化操作（Data Wizard直接连接数据服务器获取数据）。利用虚拟用户可以在不同操作系统上同时产生成千上万用户访问，能极大的减少负载测试所需要的硬件和人力资源。</li>
+<li>创建真实负载。建立虚拟用户后，需要设定负载方案、业务流程组合和虚拟用户数量。用Controller能够很快地组织多用户测试方案。</li>
+<li>定位性能问题。LoadRunner内含一个实时检测器，在负载测试过程的任何时候都能观察到应用系统的运行性能。</li>
+<li>分析结果。一旦测试完毕，LoadRunner收集汇总所有的测试数据，并提供高级的分析和报告工具，一遍迅速找到性能问题并做出相应的调整。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2017/03/05/APP-Test-005/" data-id="cjlp79ecv0005nujyb177v71y" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-APP-Test-004" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/02/25/APP-Test-004/" class="article-date">
@@ -116,7 +189,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/02/25/APP-Test-004/" data-id="cjl9aixzk0004wyjypzye1fpc" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/02/25/APP-Test-004/" data-id="cjlp79ecq0003nujyk138qkmv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
@@ -176,7 +249,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/02/21/APP-Test-003/" data-id="cjl9aixzh0003wyjy7n9glede" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/02/21/APP-Test-003/" data-id="cjlp79ecs0004nujy3w0nmwv7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
@@ -263,7 +336,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/02/19/APP-Test-002/" data-id="cjl9aixzd0001wyjye4qxxm0w" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/02/19/APP-Test-002/" data-id="cjlp79ecm0001nujytsbqx9m9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
@@ -326,7 +399,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/01/19/APP-Test-001/" data-id="cjl9aixz90000wyjyhu4i28wj" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/01/19/APP-Test-001/" data-id="cjlp79ecj0000nujy96jnatuh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
@@ -378,7 +451,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/01/09/git-tutorial-1/" data-id="cjl9aiy0g0013wyjyiytrt6z2" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/01/09/git-tutorial-1/" data-id="cjlp79edi0010nujy4jvrd06y" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -511,7 +584,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2016/11/01/linux-001-hexoblog/" data-id="cjl9aiy0l0019wyjy87diyloz" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2016/11/01/linux-001-hexoblog/" data-id="cjlp79edp0018nujym51tppup" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/">Github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -558,7 +631,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2016/10/31/hello-world/" data-id="cjl9aiy0i0015wyjyqxngzlp4" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2016/10/31/hello-world/" data-id="cjlp79ee5001wnujyq2el135q" class="article-share-link">Share</a>
       
       
     </footer>
@@ -584,7 +657,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APP测试/">APP测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Quality-Assurance/">Quality Assurance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIM/">VIM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安全测试/">安全测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/接口测试/">接口测试</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APP测试/">APP测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JMeter/">JMeter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Quality-Assurance/">Quality Assurance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIM/">VIM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安全测试/">安全测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/接口测试/">接口测试</a></li></ul>
     </div>
   </div>
 
@@ -594,7 +667,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/APP测试/" style="font-size: 20px;">APP测试</a> <a href="/tags/Charles/" style="font-size: 11.67px;">Charles</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 16.67px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 18.33px;">Python</a> <a href="/tags/Quality-Assurance/" style="font-size: 10px;">Quality Assurance</a> <a href="/tags/Shell/" style="font-size: 13.33px;">Shell</a> <a href="/tags/VIM/" style="font-size: 13.33px;">VIM</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/安全测试/" style="font-size: 10px;">安全测试</a> <a href="/tags/接口测试/" style="font-size: 11.67px;">接口测试</a>
+      <a href="/tags/APP测试/" style="font-size: 20px;">APP测试</a> <a href="/tags/Charles/" style="font-size: 11.67px;">Charles</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JMeter/" style="font-size: 10px;">JMeter</a> <a href="/tags/Linux/" style="font-size: 16.67px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 18.33px;">Python</a> <a href="/tags/Quality-Assurance/" style="font-size: 10px;">Quality Assurance</a> <a href="/tags/Shell/" style="font-size: 13.33px;">Shell</a> <a href="/tags/VIM/" style="font-size: 13.33px;">VIM</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/安全测试/" style="font-size: 10px;">安全测试</a> <a href="/tags/接口测试/" style="font-size: 11.67px;">接口测试</a>
     </div>
   </div>
 
@@ -603,7 +676,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li></ul>
     </div>
   </div>
 
