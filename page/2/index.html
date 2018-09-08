@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://softwaretest.cn"></form>
@@ -95,7 +95,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/03/06/接口测试-002/" data-id="cjltc90790035qhjyzt7y5lgd" class="article-share-link">Partager</a>
+      <a data-url="http://softwaretest.cn/2018/03/06/接口测试-002/" data-id="cjltctp7e002cqijyx67vsqfe" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/接口测试/">接口测试</a></li></ul>
@@ -136,7 +136,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/03/05/接口测试-001/" data-id="cjltc906i0029qhjyf7kjsr46" class="article-share-link">Partager</a>
+      <a data-url="http://softwaretest.cn/2018/03/05/接口测试-001/" data-id="cjltctp7c002aqijycbzk42wx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/接口测试/">接口测试</a></li></ul>
@@ -170,17 +170,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<h2 id="用户自定义的变量"><a href="#用户自定义的变量" class="headerlink" title="用户自定义的变量"></a>用户自定义的变量</h2><p>简单的说，测试计划中的某些值（比如：IP地址）出现了多次，那为了避免更改时要更改多个地方，则可以将这些值定义为一组初始变量。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">如何定义?</div><div class="line">1.选中“测试计划”或“线程组”——&gt;右键——&gt;配置元件——&gt;用户自定义的变量</div><div class="line">2.在用户自定义的变量中，添加“name”和“value”（比如：password 123456）</div><div class="line">如何引用定义的变量?</div><div class="line">在线程组中，要引用该变量时则输入$&#123;name&#125;。比如：$&#123;password&#125;</div></pre></td></tr></table></figure></p>
+        <h2 id="用户自定义的变量"><a href="#用户自定义的变量" class="headerlink" title="用户自定义的变量"></a>用户自定义的变量</h2><p>简单的说，测试计划中的某些值（比如：IP地址）出现了多次，那为了避免更改时要更改多个地方，则可以将这些值定义为一组初始变量。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">如何定义?</div><div class="line">1.选中“测试计划”或“线程组”——&gt;右键——&gt;配置元件——&gt;用户自定义的变量</div><div class="line">2.在用户自定义的变量中，添加“name”和“value”（比如：password 123456）</div><div class="line">如何引用定义的变量?</div><div class="line">在线程组中，要引用该变量时则输入$&#123;name&#125;。比如：$&#123;password&#125;</div></pre></td></tr></table></figure></p>
 <h2 id="注："><a href="#注：" class="headerlink" title="注："></a>注：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">1、UDVs是按照它们在计划中出现的顺序从上到下进行处理的，所以一般将UDVs放在线程组的开头或者放在测试计划本身之下。</div><div class="line"></div><div class="line">2、UDVs不应该与每次调用时产生不同结果的函数一起使用。只有第一个函数调用的结果会保存在变量中。然而，UDVs可以与__P()等函数一起使用，</div><div class="line"></div><div class="line">3、如果一个运行时元素(如用户参数预处理程序或正则表达式提取器)定义了一个与UDV变量同名的变量，那么这将替换初始值，线程中的所有其他测试元素将看到更新后的值。</div><div class="line"></div><div class="line">4、如果有多个线程组，请确保对不同的值使用不同的名称，因为UDVs在线程组之间是共享的。</div></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/01/03/jmeter-003/" data-id="cjltc905w001aqhjysiuq8phc" class="article-share-link">Partager</a>
+      <a data-url="http://softwaretest.cn/2018/01/03/jmeter-003/" data-id="cjltctp6o001eqijy43a8uo2m" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JMeter/">JMeter</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jMeter/">jMeter</a></li></ul>
 
     </footer>
   </div>
@@ -211,17 +210,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<h2 id="查看结果树"><a href="#查看结果树" class="headerlink" title="查看结果树"></a>查看结果树</h2><p><strong>查看结果树</strong>仅用于功能测试或测试计划调试和验证期间。<br>在负载测试期间不要使用视图结果树，因为它会消耗大量资源(内存和CPU)。</p>
+        <h2 id="查看结果树"><a href="#查看结果树" class="headerlink" title="查看结果树"></a>查看结果树</h2><p><strong>查看结果树</strong>仅用于功能测试或测试计划调试和验证期间。<br>在负载测试期间不要使用视图结果树，因为它会消耗大量资源(内存和CPU)。</p>
 <p>可以通过“查看结果树”查看request，响应所需的时间，以及响应数据（可以选择数据的显示格式，比如：Text，JSON，HTML 等），也可以查看日志（点击页面右上方的叹号，可展示日志，也可关闭日志），见下图红色标记处。<br><img src="http://ooqxh7rke.bkt.clouddn.com/WX20180906-001.png" alt="查看结果树页面"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/01/02/jmeter-002/" data-id="cjltc905t0016qhjyo7qw0u7d" class="article-share-link">Partager</a>
+      <a data-url="http://softwaretest.cn/2018/01/02/jmeter-002/" data-id="cjltctp6n001dqijyx0etoy37" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JMeter/">JMeter</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jMeter/">jMeter</a></li></ul>
 
     </footer>
   </div>
@@ -261,10 +259,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/01/01/jmeter-001/" data-id="cjltc905y001eqhjybanyhv71" class="article-share-link">Partager</a>
+      <a data-url="http://softwaretest.cn/2018/01/01/jmeter-001/" data-id="cjltctp6l001bqijyze9q6g09" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JMeter/">JMeter</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jMeter/">jMeter</a></li></ul>
 
     </footer>
   </div>
@@ -309,7 +307,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/25/python-006/" data-id="cjltc906a001uqhjy00djwibf" class="article-share-link">Partager</a>
+      <a data-url="http://softwaretest.cn/2017/07/25/python-006/" data-id="cjltctp70001uqijy4o0hacvg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -351,7 +349,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/19/python-005/" data-id="cjltc906e0020qhjy776mqw8y" class="article-share-link">Partager</a>
+      <a data-url="http://softwaretest.cn/2017/07/19/python-005/" data-id="cjltctp6z001sqijywp7bpmm6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -396,7 +394,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/python-004/" data-id="cjltc9067001sqhjyxxd0fmi2" class="article-share-link">Partager</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/python-004/" data-id="cjltctp6w001qqijyl5cuef6x" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -437,7 +435,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/python-003/" data-id="cjltc9064001oqhjyi6hebelz" class="article-share-link">Partager</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/python-003/" data-id="cjltctp6v001oqijyt8q1p8uo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -479,7 +477,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/python-002/" data-id="cjltc9064001mqhjyjid4jlm7" class="article-share-link">Partager</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/python-002/" data-id="cjltctp6t001mqijy0qrpek8y" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -505,9 +503,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Mot-clés</h3>
+    <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APP测试/">APP测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JMeter/">JMeter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Quality-Assurance/">Quality Assurance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIM/">VIM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安全测试/">安全测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/接口测试/">接口测试</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APP测试/">APP测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Quality-Assurance/">Quality Assurance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIM/">VIM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jMeter/">jMeter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安全测试/">安全测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/接口测试/">接口测试</a></li></ul>
     </div>
   </div>
 
@@ -515,9 +513,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/APP测试/" style="font-size: 20px;">APP测试</a> <a href="/tags/Charles/" style="font-size: 11.67px;">Charles</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JMeter/" style="font-size: 13.33px;">JMeter</a> <a href="/tags/Linux/" style="font-size: 16.67px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 18.33px;">Python</a> <a href="/tags/Quality-Assurance/" style="font-size: 10px;">Quality Assurance</a> <a href="/tags/Shell/" style="font-size: 13.33px;">Shell</a> <a href="/tags/VIM/" style="font-size: 13.33px;">VIM</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/安全测试/" style="font-size: 10px;">安全测试</a> <a href="/tags/接口测试/" style="font-size: 16.67px;">接口测试</a>
+      <a href="/tags/APP测试/" style="font-size: 20px;">APP测试</a> <a href="/tags/Charles/" style="font-size: 11.67px;">Charles</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 16.67px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 18.33px;">Python</a> <a href="/tags/Quality-Assurance/" style="font-size: 10px;">Quality Assurance</a> <a href="/tags/Shell/" style="font-size: 13.33px;">Shell</a> <a href="/tags/VIM/" style="font-size: 13.33px;">VIM</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/jMeter/" style="font-size: 13.33px;">jMeter</a> <a href="/tags/安全测试/" style="font-size: 10px;">安全测试</a> <a href="/tags/接口测试/" style="font-size: 16.67px;">接口测试</a>
     </div>
   </div>
 
@@ -534,7 +532,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -571,7 +569,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 hannie<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
