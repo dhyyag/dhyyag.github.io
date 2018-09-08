@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://softwaretest.cn"></form>
@@ -60,49 +60,6 @@
 </header>
       <div class="outer">
         <section id="main">
-  
-    <article id="post-jmeter-001" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/07/jmeter-001/" class="article-date">
-  <time datetime="2018-03-07T13:47:50.000Z" itemprop="datePublished">2018-03-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/07/jmeter-001/">JMeter-乱码问题如何解决</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>在“HTTP请求”中的”Content encoding”选项中输入 utf-8</p>
-<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>打开bin文件夹下的<strong>jmeter.properties</strong>文件<br>在<strong>jmeter.properties</strong>文件中修改<strong>ampleresult.default.encoding</strong><br>默认显示如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#sampleresult.default.encoding=ISO-8859-1</div></pre></td></tr></table></figure></p>
-<p>修改后：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sampleresult.default.encoding=UTF-8</div></pre></td></tr></table></figure></p>
-<p>修改参数后需重启 Jmeter。</p>
-<h3 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h3><p>选中“线程组”，点击右键，添加——后置处理器——BeanShell PostProcessor<br>添加如下信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">prev.setDataEncoding(&quot;utf-8&quot;)</div></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/03/07/jmeter-001/" data-id="cjlp7rp64001bw8jyuwodumzt" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JMeter/">JMeter</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
   
     <article id="post-接口测试-002" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -138,7 +95,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/03/06/接口测试-002/" data-id="cjlp7rp6n0027w8jywkui1t9g" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2018/03/06/接口测试-002/" data-id="cjltc90790035qhjyzt7y5lgd" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/接口测试/">接口测试</a></li></ul>
@@ -179,10 +136,135 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/03/05/接口测试-001/" data-id="cjlp7rp6o0029w8jyh0u41m3a" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2018/03/05/接口测试-001/" data-id="cjltc906i0029qhjyf7kjsr46" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/接口测试/">接口测试</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-jmeter-003" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/03/jmeter-003/" class="article-date">
+  <time datetime="2018-01-03T13:18:53.000Z" itemprop="datePublished">2018-01-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/03/jmeter-003/">jmeter-用户自定义的变量（UDV）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="用户自定义的变量"><a href="#用户自定义的变量" class="headerlink" title="用户自定义的变量"></a>用户自定义的变量</h2><p>简单的说，测试计划中的某些值（比如：IP地址）出现了多次，那为了避免更改时要更改多个地方，则可以将这些值定义为一组初始变量。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">如何定义?</div><div class="line">1.选中“测试计划”或“线程组”——&gt;右键——&gt;配置元件——&gt;用户自定义的变量</div><div class="line">2.在用户自定义的变量中，添加“name”和“value”（比如：password 123456）</div><div class="line">如何引用定义的变量?</div><div class="line">在线程组中，要引用该变量时则输入$&#123;name&#125;。比如：$&#123;password&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="注："><a href="#注：" class="headerlink" title="注："></a>注：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">1、UDVs是按照它们在计划中出现的顺序从上到下进行处理的，所以一般将UDVs放在线程组的开头或者放在测试计划本身之下。</div><div class="line"></div><div class="line">2、UDVs不应该与每次调用时产生不同结果的函数一起使用。只有第一个函数调用的结果会保存在变量中。然而，UDVs可以与__P()等函数一起使用，</div><div class="line"></div><div class="line">3、如果一个运行时元素(如用户参数预处理程序或正则表达式提取器)定义了一个与UDV变量同名的变量，那么这将替换初始值，线程中的所有其他测试元素将看到更新后的值。</div><div class="line"></div><div class="line">4、如果有多个线程组，请确保对不同的值使用不同的名称，因为UDVs在线程组之间是共享的。</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2018/01/03/jmeter-003/" data-id="cjltc905w001aqhjysiuq8phc" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JMeter/">JMeter</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-jmeter-002" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/02/jmeter-002/" class="article-date">
+  <time datetime="2018-01-02T11:14:35.000Z" itemprop="datePublished">2018-01-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/02/jmeter-002/">jmeter-查看结果树</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="查看结果树"><a href="#查看结果树" class="headerlink" title="查看结果树"></a>查看结果树</h2><p><strong>查看结果树</strong>仅用于功能测试或测试计划调试和验证期间。<br>在负载测试期间不要使用视图结果树，因为它会消耗大量资源(内存和CPU)。</p>
+<p>可以通过“查看结果树”查看request，响应所需的时间，以及响应数据（可以选择数据的显示格式，比如：Text，JSON，HTML 等），也可以查看日志（点击页面右上方的叹号，可展示日志，也可关闭日志），见下图红色标记处。<br><img src="http://ooqxh7rke.bkt.clouddn.com/WX20180906-001.png" alt="查看结果树页面"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2018/01/02/jmeter-002/" data-id="cjltc905t0016qhjyo7qw0u7d" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JMeter/">JMeter</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-jmeter-001" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/01/jmeter-001/" class="article-date">
+  <time datetime="2018-01-01T13:47:50.000Z" itemprop="datePublished">2018-01-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/01/jmeter-001/">JMeter-乱码问题如何解决</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>在“HTTP请求”中的”Content encoding”选项中输入 utf-8</p>
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>打开bin文件夹下的<strong>jmeter.properties</strong>文件<br>在<strong>jmeter.properties</strong>文件中修改<strong>ampleresult.default.encoding</strong><br>默认显示如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#sampleresult.default.encoding=ISO-8859-1</div></pre></td></tr></table></figure></p>
+<p>修改后：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sampleresult.default.encoding=UTF-8</div></pre></td></tr></table></figure></p>
+<p>修改参数后需重启 Jmeter。</p>
+<h3 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h3><p>选中“线程组”，点击右键，添加——后置处理器——BeanShell PostProcessor<br>添加如下信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">prev.setDataEncoding(&quot;utf-8&quot;)</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2018/01/01/jmeter-001/" data-id="cjltc905y001eqhjybanyhv71" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JMeter/">JMeter</a></li></ul>
 
     </footer>
   </div>
@@ -227,7 +309,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/25/python-006/" data-id="cjlp7rp6c001rw8jyge797s32" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/25/python-006/" data-id="cjltc906a001uqhjy00djwibf" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -269,7 +351,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/19/python-005/" data-id="cjlp7rp6b001nw8jyf0r8kpn9" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/19/python-005/" data-id="cjltc906e0020qhjy776mqw8y" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -314,7 +396,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/python-004/" data-id="cjlp7rp6j001yw8jyru8malm8" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/python-004/" data-id="cjltc9067001sqhjyxxd0fmi2" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -355,7 +437,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/python-003/" data-id="cjlp7rp6a001lw8jyrpdyj8xh" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/python-003/" data-id="cjltc9064001oqhjyi6hebelz" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -397,112 +479,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/python-002/" data-id="cjlp7rp68001jw8jyi963214o" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/python-002/" data-id="cjltc9064001mqhjyjid4jlm7" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-vim-003" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/18/vim-003/" class="article-date">
-  <time datetime="2017-07-18T13:34:42.000Z" itemprop="datePublished">2017-07-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/18/vim-003/">vim—常用命令（二）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-插入文本"><a href="#1-插入文本" class="headerlink" title="1. 插入文本"></a>1. 插入文本</h2><p>在“普通模式”时，输入以下的任一字符，则可插入文本（即在左下角出现了–INSERT–时，表示可以插入字符了。）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a   #在当前光标的右边插入文本</div><div class="line">A   #在当前光标行的末尾插入文本(也就是最右边)</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">i   #在当前光标的左边插入文本</div><div class="line">I   #在当前光标所在行的开始处插入文本（也就是最左边）</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">o   #在当前行在下面新建一行</div><div class="line">O   #在当前行的上面新建一行</div></pre></td></tr></table></figure>
-<h2 id="2-替换文本"><a href="#2-替换文本" class="headerlink" title="2. 替换文本"></a>2. 替换文本</h2><p>进入“普通模式”（当你不知道自己目前所在的模式时，最简单的方式是，按两次<code>esc</code>）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">R      #替换当前光标位置以及以后的若干文本（在左下角会显示--REPLACE--）</div></pre></td></tr></table></figure></p>
-<h2 id="3-连接文本"><a href="#3-连接文本" class="headerlink" title="3. 连接文本"></a>3. 连接文本</h2><p>需进入“普通模式”下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">J      #连接光标所在行和下一行</div></pre></td></tr></table></figure></p>
-<h2 id="4-删除文本"><a href="#4-删除文本" class="headerlink" title="4. 删除文本"></a>4. 删除文本</h2><p>需进入“普通模式”下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">x     #当前光标所在的一个字符</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">dd     #删除当前行，并把删除的行存到剪贴板里</div><div class="line">ndd    #删除n行</div></pre></td></tr></table></figure>
-<h2 id="5-拷贝-粘贴文本"><a href="#5-拷贝-粘贴文本" class="headerlink" title="5. 拷贝/粘贴文本"></a>5. 拷贝/粘贴文本</h2><p>需进入“普通模式”下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yy    #拷贝</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">P     #粘贴</div></pre></td></tr></table></figure>
-<h2 id="6-撤销操作"><a href="#6-撤销操作" class="headerlink" title="6. 撤销操作"></a>6. 撤销操作</h2><p>需进入“普通模式”下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">u      #撤销上一次操作</div><div class="line">U      #撤销对当前行的所有操作</div></pre></td></tr></table></figure></p>
-<h2 id="7-搜索"><a href="#7-搜索" class="headerlink" title="7. 搜索"></a>7. 搜索</h2><p>需进入“普通模式”下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">/word 向前搜索第一个出现的word</div><div class="line">/ 继续向前搜索word</div><div class="line">？word 向后搜索第一个出现的word</div><div class="line">？ 继续向后搜索word</div></pre></td></tr></table></figure></p>
-<h2 id="8-移动光标"><a href="#8-移动光标" class="headerlink" title="8. 移动光标"></a>8. 移动光标</h2><p>需进入“普通模式”下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">h   #向左移动光标（h的相对位置在左边，可以帮助记忆）</div><div class="line">j   #向下移动光标（j像向下的箭头，可以帮助记忆）</div><div class="line">k   #向上移动光标</div><div class="line">l   #向右移动光标</div></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/vim-003/" data-id="cjlp7rp6m0025w8jygzqfyqg3" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VIM/">VIM</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-vim-002" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/18/vim-002/" class="article-date">
-  <time datetime="2017-07-18T13:30:14.000Z" itemprop="datePublished">2017-07-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/18/vim-002/">vim—常用命令（一）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-启动vim"><a href="#1-启动vim" class="headerlink" title="1. 启动vim"></a>1. 启动vim</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">vim filename   #若filename存在则打开文件filename。</div><div class="line">               #若filename不存在则创建filename并打开。</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">vi filename   #若filename存在则打开文件filename。</div><div class="line">              #若filename不存在则创建filename并打开。</div></pre></td></tr></table></figure>
-<h2 id="2-退出vim"><a href="#2-退出vim" class="headerlink" title="2. 退出vim"></a>2. 退出vim</h2><h3 id="2-1-需进入“命令模式”（即在左下角出现-时-则表示在“命令模式”）"><a href="#2-1-需进入“命令模式”（即在左下角出现-时-则表示在“命令模式”）" class="headerlink" title="2.1 需进入“命令模式”（即在左下角出现:时,则表示在“命令模式”）"></a>2.1 需进入“命令模式”（即在左下角出现:时,则表示在“命令模式”）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">:wq          #保存并退出(我平时用的最多)</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">:q           #退出vim编辑器</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">:q!          #不保存直接退出</div></pre></td></tr></table></figure>
-<h3 id="2-2-需进入“普通模式”下"><a href="#2-2-需进入“普通模式”下" class="headerlink" title="2.2 需进入“普通模式”下"></a>2.2 需进入“普通模式”下</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ZZ          #保存并退出</div></pre></td></tr></table></figure>
-<h2 id="3-打开-保存-另存为文件"><a href="#3-打开-保存-另存为文件" class="headerlink" title="3. 打开/保存/另存为文件"></a>3. 打开/保存/另存为文件</h2><h3 id="3-1-打开文件"><a href="#3-1-打开文件" class="headerlink" title="3.1 打开文件"></a>3.1 打开文件</h3><p>需进入“命令模式”（不知自己目前是什么模式时，按下<code>esc</code>，再同时按下<code>shift ;</code>）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">:e &lt;path/to/file&gt;       #在打开一个文件时打开另一个文件</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">:bn  </div><div class="line">:bp → 你可以同时打开很多文件，使用这两个命令来切换下一个或上一个文件。</div></pre></td></tr></table></figure>
-<h3 id="3-2-保存文件"><a href="#3-2-保存文件" class="headerlink" title="3.2 保存文件"></a>3.2 保存文件</h3><p>需进入“命令模式”下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">:w                      #保存缓冲区的内容</div></pre></td></tr></table></figure></p>
-<h3 id="3-3-另存为"><a href="#3-3-另存为" class="headerlink" title="3.3 另存为"></a>3.3 另存为</h3><p>需进入“命令模式”下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">:w filename              #保存缓冲区的内容至filename文件中（也就是另存为filename的意思,存在当前目录下）</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">:saveas &lt;path/to/file&gt;   #另存为指定的路径&lt;path/to/file&gt;下</div></pre></td></tr></table></figure>
-<h2 id="4-设置行号"><a href="#4-设置行号" class="headerlink" title="4. 设置行号"></a>4. 设置行号</h2><p>需进入“命令模式”下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">:set nu     #在屏幕上显示行号</div><div class="line">:set nonu   #取消显示行号</div></pre></td></tr></table></figure></p>
-<p>（未完，待续……）</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/vim-002/" data-id="cjlp7rp6l0023w8jyhnnbkye8" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VIM/">VIM</a></li></ul>
 
     </footer>
   </div>
@@ -525,7 +505,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Mot-clés</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APP测试/">APP测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JMeter/">JMeter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Quality-Assurance/">Quality Assurance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIM/">VIM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安全测试/">安全测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/接口测试/">接口测试</a></li></ul>
     </div>
@@ -535,9 +515,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nuage de mot-clés</h3>
     <div class="widget tagcloud">
-      <a href="/tags/APP测试/" style="font-size: 20px;">APP测试</a> <a href="/tags/Charles/" style="font-size: 11.67px;">Charles</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JMeter/" style="font-size: 10px;">JMeter</a> <a href="/tags/Linux/" style="font-size: 16.67px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 18.33px;">Python</a> <a href="/tags/Quality-Assurance/" style="font-size: 10px;">Quality Assurance</a> <a href="/tags/Shell/" style="font-size: 13.33px;">Shell</a> <a href="/tags/VIM/" style="font-size: 13.33px;">VIM</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/安全测试/" style="font-size: 10px;">安全测试</a> <a href="/tags/接口测试/" style="font-size: 16.67px;">接口测试</a>
+      <a href="/tags/APP测试/" style="font-size: 20px;">APP测试</a> <a href="/tags/Charles/" style="font-size: 11.67px;">Charles</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JMeter/" style="font-size: 13.33px;">JMeter</a> <a href="/tags/Linux/" style="font-size: 16.67px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 18.33px;">Python</a> <a href="/tags/Quality-Assurance/" style="font-size: 10px;">Quality Assurance</a> <a href="/tags/Shell/" style="font-size: 13.33px;">Shell</a> <a href="/tags/VIM/" style="font-size: 13.33px;">VIM</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/安全测试/" style="font-size: 10px;">安全测试</a> <a href="/tags/接口测试/" style="font-size: 16.67px;">接口测试</a>
     </div>
   </div>
 
@@ -546,7 +526,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li></ul>
     </div>
   </div>
 
@@ -554,7 +534,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
@@ -591,7 +571,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 hannie<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
