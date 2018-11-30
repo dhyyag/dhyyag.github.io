@@ -61,6 +61,49 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Echo-001" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/06/Echo-001/" class="article-date">
+  <time datetime="2017-06-06T12:09:25.000Z" itemprop="datePublished">2017-06-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/06/Echo-001/">终端打印-echo</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一-终端打印-echo"><a href="#一-终端打印-echo" class="headerlink" title="一. 终端打印-echo"></a>一. 终端打印-echo</h2><p>特点：每次调用之后会自动添加一个换行符<br>1、可以使用 -n 来忽略结尾的换行符：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ echo -n &quot;hello&quot;</div><div class="line">hello</div></pre></td></tr></table></figure></p>
+<p>2、可以使用 -e 来使用转义序列：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ echo -e &quot;1\t2\t3\t&quot;</div><div class="line">1	2	3</div></pre></td></tr></table></figure></p>
+<h2 id="二-终端打印-printf"><a href="#二-终端打印-printf" class="headerlink" title="二. 终端打印-printf"></a>二. 终端打印-printf</h2><p>特点：每次调用时不会自动添加换行符<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ printf &quot;hello&quot;</div><div class="line">hello</div></pre></td></tr></table></figure></p>
+<h2 id="三-终端打印的小应用"><a href="#三-终端打印的小应用" class="headerlink" title="三. 终端打印的小应用"></a>三. 终端打印的小应用</h2><p>1、要打印彩色背景的文本：黑=40 红=41 绿=42 黄=43 蓝=44 重置=0<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ echo -e &quot;\e[1;42m green background \e[0m&quot;</div></pre></td></tr></table></figure></p>
+<p>2、要打印彩色的文本：黑=30 红=31 绿=32 黄=33 蓝=34 重置=0<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ echo -e &quot;\e[1;31m this is red text \e[0m&quot;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2017/06/06/Echo-001/" data-id="cjp44gsgz000fiujy4ymo278l" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/">Shell</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-vim-001" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/06/06/vim-001/" class="article-date">
@@ -92,7 +135,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/06/vim-001/" data-id="cjp446ml3002g5zjyrrgcm6wq" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/06/vim-001/" data-id="cjp44gsik002iiujy9dvidywq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VIM/">VIM</a></li></ul>
@@ -134,7 +177,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/04/shell-003/" data-id="cjp446ml1002e5zjyqj5zdu60" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/04/shell-003/" data-id="cjp44gsii002fiujyebjsft14" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/">Shell</a></li></ul>
@@ -207,7 +250,7 @@ GetROProperty()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/03/05/APP-Test-005/" data-id="cjp446mj800055zjyqnlssd16" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/03/05/APP-Test-005/" data-id="cjp44gsgo0005iujykkfdl82l" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
@@ -274,7 +317,7 @@ GetROProperty()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/02/25/APP-Test-004/" data-id="cjp446mj500045zjyoc7npwn0" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/02/25/APP-Test-004/" data-id="cjp44gsgl0004iujyrja65jv8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
@@ -334,7 +377,7 @@ GetROProperty()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/02/21/APP-Test-003/" data-id="cjp446mj000015zjy1u7aggi1" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/02/21/APP-Test-003/" data-id="cjp44gsgk0003iujyy7rk5nv7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
@@ -421,7 +464,7 @@ GetROProperty()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/02/19/APP-Test-002/" data-id="cjp446mj400035zjycytkoy7b" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/02/19/APP-Test-002/" data-id="cjp44gsgg0001iujyoiv231k7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
@@ -484,7 +527,7 @@ GetROProperty()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/01/19/APP-Test-001/" data-id="cjp446miw00005zjygg1e97ea" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/01/19/APP-Test-001/" data-id="cjp44gsgc0000iujyd85dmvty" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
@@ -536,7 +579,7 @@ GetROProperty()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/01/09/git-tutorial-1/" data-id="cjp446mk200135zjywsczuo76" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/01/09/git-tutorial-1/" data-id="cjp44gshf0013iujyyfmv34cm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -669,7 +712,7 @@ GetROProperty()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2016/11/01/linux-001-hexoblog/" data-id="cjp446mkb001h5zjye6tgj13k" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2016/11/01/linux-001-hexoblog/" data-id="cjp44gshq001iiujyma7lhlfx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/">Github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -681,55 +724,10 @@ GetROProperty()
 
 
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/10/31/hello-world/" class="article-date">
-  <time datetime="2016-10-30T23:17:59.047Z" itemprop="datePublished">2016-10-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/31/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2016/10/31/hello-world/" data-id="cjp446mk300155zjy2fiu8ad2" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/page/4/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+    <a class="extend prev" rel="prev" href="/page/4/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/">__('next') &raquo;</a>
   </nav>
 </section>
         
@@ -742,7 +740,7 @@ GetROProperty()
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APP测试/">APP测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Quality-Assurance/">Quality Assurance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIM/">VIM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jMeter/">jMeter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/压力测试/">压力测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安全测试/">安全测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/接口测试/">接口测试</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APP测试/">APP测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Quality-Assurance/">Quality Assurance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIM/">VIM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jMeter/">jMeter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/压力测试/">压力测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安全测试/">安全测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能测试/">性能测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/接口测试/">接口测试</a></li></ul>
     </div>
   </div>
 
@@ -752,7 +750,7 @@ GetROProperty()
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/APP测试/" style="font-size: 18.57px;">APP测试</a> <a href="/tags/Charles/" style="font-size: 11.43px;">Charles</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 15.71px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/Quality-Assurance/" style="font-size: 10px;">Quality Assurance</a> <a href="/tags/Shell/" style="font-size: 12.86px;">Shell</a> <a href="/tags/VIM/" style="font-size: 12.86px;">VIM</a> <a href="/tags/git/" style="font-size: 14.29px;">git</a> <a href="/tags/jMeter/" style="font-size: 12.86px;">jMeter</a> <a href="/tags/压力测试/" style="font-size: 10px;">压力测试</a> <a href="/tags/安全测试/" style="font-size: 10px;">安全测试</a> <a href="/tags/接口测试/" style="font-size: 17.14px;">接口测试</a>
+      <a href="/tags/APP测试/" style="font-size: 18.57px;">APP测试</a> <a href="/tags/Charles/" style="font-size: 11.43px;">Charles</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 15.71px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/Quality-Assurance/" style="font-size: 10px;">Quality Assurance</a> <a href="/tags/Shell/" style="font-size: 12.86px;">Shell</a> <a href="/tags/VIM/" style="font-size: 12.86px;">VIM</a> <a href="/tags/git/" style="font-size: 14.29px;">git</a> <a href="/tags/jMeter/" style="font-size: 12.86px;">jMeter</a> <a href="/tags/压力测试/" style="font-size: 10px;">压力测试</a> <a href="/tags/安全测试/" style="font-size: 10px;">安全测试</a> <a href="/tags/性能测试/" style="font-size: 10px;">性能测试</a> <a href="/tags/接口测试/" style="font-size: 17.14px;">接口测试</a>
     </div>
   </div>
 
@@ -774,6 +772,10 @@ GetROProperty()
       <ul>
         
           <li>
+            <a href="/2018/11/30/performance-001/">performance-001</a>
+          </li>
+        
+          <li>
             <a href="/2018/11/30/python-010/">python——Requests（基础）</a>
           </li>
         
@@ -787,10 +789,6 @@ GetROProperty()
         
           <li>
             <a href="/2018/11/27/python-011/">python-正则表达式1</a>
-          </li>
-        
-          <li>
-            <a href="/2018/11/27/python-009/">python-requests.session</a>
           </li>
         
       </ul>

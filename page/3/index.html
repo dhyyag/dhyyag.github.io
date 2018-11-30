@@ -61,6 +61,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-jmeter-003" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/03/jmeter-003/" class="article-date">
+  <time datetime="2018-01-03T13:18:53.000Z" itemprop="datePublished">2018-01-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/03/jmeter-003/">jmeter-用户自定义的变量（UDV）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="用户自定义的变量"><a href="#用户自定义的变量" class="headerlink" title="用户自定义的变量"></a>用户自定义的变量</h2><p>简单的说，测试计划中的某些值（比如：IP地址）出现了多次，那为了避免更改时要更改多个地方，则可以将这些值定义为一组初始变量。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">如何定义?</div><div class="line">1.选中“测试计划”或“线程组”——&gt;右键——&gt;配置元件——&gt;用户自定义的变量</div><div class="line">2.在用户自定义的变量中，添加“name”和“value”（比如：password 123456）</div><div class="line">如何引用定义的变量?</div><div class="line">在线程组中，要引用该变量时则输入$&#123;name&#125;。比如：$&#123;password&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="注："><a href="#注：" class="headerlink" title="注："></a>注：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">1、UDVs是按照它们在计划中出现的顺序从上到下进行处理的，所以一般将UDVs放在线程组的开头或者放在测试计划本身之下。</div><div class="line"></div><div class="line">2、UDVs不应该与每次调用时产生不同结果的函数一起使用。只有第一个函数调用的结果会保存在变量中。然而，UDVs可以与__P()等函数一起使用，</div><div class="line"></div><div class="line">3、如果一个运行时元素(如用户参数预处理程序或正则表达式提取器)定义了一个与UDV变量同名的变量，那么这将替换初始值，线程中的所有其他测试元素将看到更新后的值。</div><div class="line"></div><div class="line">4、如果有多个线程组，请确保对不同的值使用不同的名称，因为UDVs在线程组之间是共享的。</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2018/01/03/jmeter-003/" data-id="cjp44gshp001hiujyz3qafgm0" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jMeter/">jMeter</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-jmeter-002" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/01/02/jmeter-002/" class="article-date">
@@ -89,7 +129,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/01/02/jmeter-002/" data-id="cjp446mka001d5zjymc8h5d0r" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2018/01/02/jmeter-002/" data-id="cjp44gsho001eiujylnye0c83" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jMeter/">jMeter</a></li></ul>
@@ -132,7 +172,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/01/01/jmeter-001/" data-id="cjp446mkk001q5zjycxpzny10" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2018/01/01/jmeter-001/" data-id="cjp44gshl001diujyxthnrqqc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jMeter/">jMeter</a></li></ul>
@@ -180,7 +220,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/25/python-006/" data-id="cjp446mku001y5zjytjirkl65" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/25/python-006/" data-id="cjp44gsi60020iujyvexx69h1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -222,7 +262,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/19/python-005/" data-id="cjp446mku001w5zjy7ftnmntb" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/19/python-005/" data-id="cjp44gsi4001yiujy046d2kxn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -267,7 +307,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/python-004/" data-id="cjp446mkt001u5zjyio2t12gk" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/python-004/" data-id="cjp44gsi3001wiujyso1gyyp8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -308,7 +348,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/python-003/" data-id="cjp446mkr001s5zjyl4xikdwn" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/python-003/" data-id="cjp44gsi1001uiujy02iuyglf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -350,7 +390,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/python-002/" data-id="cjp446mkj001o5zjyn9wuc6ys" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/python-002/" data-id="cjp44gsi0001siujydzgj1hfr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -401,7 +441,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/vim-003/" data-id="cjp446ml6002l5zjylak05e3i" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/vim-003/" data-id="cjp44gsil002niujyhq3ejpps" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VIM/">VIM</a></li></ul>
@@ -452,7 +492,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/vim-002/" data-id="cjp446ml5002j5zjyl0vjxaif" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/vim-002/" data-id="cjp44gsik002kiujydy8jew9c" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VIM/">VIM</a></li></ul>
@@ -464,58 +504,10 @@
 
 
   
-    <article id="post-Linux-003" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/08/Linux-003/" class="article-date">
-  <time datetime="2017-07-08T00:42:59.000Z" itemprop="datePublished">2017-07-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/08/Linux-003/">Linux命令查看系统硬件信息</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一-查看系统的PCI设备"><a href="#一-查看系统的PCI设备" class="headerlink" title="一. 查看系统的PCI设备"></a>一. 查看系统的PCI设备</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$eric@eric-pc in ~ [7:49:39]</div><div class="line">→ lspci                     注释：lspci -v 可以显示更详细的信息。</div></pre></td></tr></table></figure>
-<p>输出显示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">00:00.0 Host bridge: Intel Corporation Xeon E3-1200 v3/4th Gen Core Processor DRAM Controller (rev 06)</div><div class="line">00:01.0 PCI bridge: Intel Corporation Xeon E3-1200 v3/4th Gen Core Processor PCI Express x16 Controller (rev 06)</div><div class="line">00:02.0 VGA compatible controller: Intel Corporation 4th Gen Core Processor Integrated Graphics Controller (rev 06)</div><div class="line">00:03.0 Audio device: Intel Corporation Xeon E3-1200 v3/4th Gen Core Processor HD Audio Controller (rev 06)</div><div class="line">00:14.0 USB controller: Intel Corporation 8 Series/C220 Series Chipset Family USB xHCI (rev 05)</div><div class="line">00:16.0 Communication controller: Intel Corporation 8 Series/C220 Series Chipset Family MEI Controller #1 (rev 04)</div><div class="line">00:1b.0 Audio device: Intel Corporation 8 Series/C220 Series Chipset High Definition Audio Controller (rev 05)</div><div class="line">00:1c.0 PCI bridge: Intel Corporation 8 Series/C220 Series Chipset Family PCI Express Root Port #3 (rev d5)</div><div class="line">00:1c.3 PCI bridge: Intel Corporation 8 Series/C220 Series Chipset Family PCI Express Root Port #4 (rev d5)</div><div class="line">00:1d.0 USB controller: Intel Corporation 8 Series/C220 Series Chipset Family USB EHCI #1 (rev 05)</div><div class="line">00:1f.0 ISA bridge: Intel Corporation HM86 Express LPC Controller (rev 05)</div><div class="line">00:1f.2 SATA controller: Intel Corporation 8 Series/C220 Series Chipset Family 6-port SATA Controller 1 [AHCI mode] (rev 05)</div><div class="line">00:1f.3 SMBus: Intel Corporation 8 Series/C220 Series Chipset Family SMBus Controller (rev 05)</div><div class="line">01:00.0 3D controller: NVIDIA Corporation GM108M [GeForce 840M] (rev a2)</div><div class="line">07:00.0 Unassigned class [ff00]: Realtek Semiconductor Co., Ltd. Device 5287 (rev 01)</div><div class="line">07:00.1 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller (rev 12)</div><div class="line">08:00.0 Network controller: Broadcom Corporation BCM43142 802.11b/g/n (rev 01)</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1.Host bridge：主板设备</div><div class="line">2.VGA compatible controller：VGA显卡设备</div><div class="line">3.USB controller：USB借口设备</div><div class="line">4.SATA controller：SATA控制器</div><div class="line">5.Ethernet controller：网卡设备</div></pre></td></tr></table></figure>
-<h2 id="二-查看CPU信息"><a href="#二-查看CPU信息" class="headerlink" title="二. 查看CPU信息"></a>二. 查看CPU信息</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$eric@eric-pc in ~ [7:52:23]</div><div class="line">→ more /proc/cpuinfo</div></pre></td></tr></table></figure>
-<p>输出显示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">processor	: 0</div><div class="line">vendor_id	: GenuineIntel</div><div class="line">cpu family	: 6</div><div class="line">model		: 60</div><div class="line">model name	: Intel(R) Core(TM) i5-4210M CPU @ 2.60GHz</div><div class="line">stepping	: 3</div><div class="line">microcode	: 0x17</div><div class="line">cpu MHz		: 1270.140</div><div class="line">cache size	: 3072 KB</div><div class="line">physical id	: 0</div><div class="line">siblings	: 4</div><div class="line">core id		: 0</div><div class="line">cpu cores	: 2</div><div class="line">apicid		: 0</div><div class="line">initial apicid	: 0</div><div class="line">fpu		: yes</div><div class="line">fpu_exception	: yes</div><div class="line">cpuid level	: 13</div><div class="line">wp		: yes</div><div class="line">flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch</div><div class="line">_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 fma cx16 xtpr pdcm pcid sse4_1 sse4_2 movbe popcnt tsc_d</div><div class="line">eadline_timer aes xsave avx f16c rdrand lahf_lm abm ida arat epb xsaveopt pln pts dtherm tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid</div><div class="line">bogomips	: 5188.38</div><div class="line">clflush size	: 64</div><div class="line">cache_alignment	: 64</div><div class="line">address sizes	: 39 bits physical, 48 bits virtual</div><div class="line">power management:</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">processor	: 逻辑处理器的唯一标识</div><div class="line">vendor_id	: 处理器类型</div><div class="line">physical id	: 表示物理CPU的个数</div><div class="line">siblings	: 相同物理封装中的逻辑处理器的个数</div><div class="line">core id		: 内核的唯一标识</div><div class="line">cpu cores	: 相同物理封装中的内核数量     注释：当siblings是cpu cores的两倍则系统支持线程。</div></pre></td></tr></table></figure>
-<h2 id="三-查看内存信息"><a href="#三-查看内存信息" class="headerlink" title="三. 查看内存信息"></a>三. 查看内存信息</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$eric@eric-pc in ~ [8:12:33]</div><div class="line">→ more /proc/meminfo</div></pre></td></tr></table></figure>
-<p>输出显示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">MemTotal:        8069360 kB</div><div class="line">MemFree:         5730560 kB</div><div class="line">MemAvailable:    6452632 kB</div><div class="line">Buffers:           99104 kB</div><div class="line">Cached:          1176560 kB</div><div class="line">SwapCached:            0 kB</div><div class="line">Active:          1193748 kB</div><div class="line">Inactive:         893736 kB</div><div class="line">Active(anon):     813624 kB</div><div class="line">Inactive(anon):   430044 kB</div><div class="line">Active(file):     380124 kB</div><div class="line">Inactive(file):   463692 kB</div><div class="line">Unevictable:          48 kB</div><div class="line">Mlocked:              48 kB</div><div class="line">SwapTotal:       7811068 kB</div><div class="line">SwapFree:        7811068 kB</div><div class="line">Dirty:                 0 kB</div><div class="line">Writeback:             0 kB</div><div class="line">AnonPages:        811860 kB</div><div class="line">Mapped:           442288 kB</div><div class="line">Shmem:            431856 kB</div><div class="line">Slab:             126744 kB</div><div class="line">SReclaimable:      94368 kB</div><div class="line">SUnreclaim:        32376 kB</div><div class="line">KernelStack:        7520 kB</div><div class="line">PageTables:        30412 kB</div><div class="line">NFS_Unstable:          0 kB</div><div class="line">Bounce:                0 kB</div><div class="line">WritebackTmp:          0 kB</div><div class="line">CommitLimit:    11845748 kB</div><div class="line">Committed_AS:    4156656 kB</div><div class="line">VmallocTotal:   34359738367 kB</div><div class="line">VmallocUsed:      557616 kB</div><div class="line">VmallocChunk:   34359104616 kB</div><div class="line">HardwareCorrupted:     0 kB</div><div class="line">AnonHugePages:    167936 kB</div><div class="line">HugePages_Total:       0</div><div class="line">HugePages_Free:        0</div><div class="line">HugePages_Rsvd:        0</div><div class="line">HugePages_Surp:        0</div><div class="line">Hugepagesize:       2048 kB</div><div class="line">DirectMap4k:       77568 kB</div><div class="line">DirectMap2M:     1912832 kB</div><div class="line">DirectMap1G:     6291456 kB</div></pre></td></tr></table></figure></p>
-<h2 id="四-查看磁盘分区信息"><a href="#四-查看磁盘分区信息" class="headerlink" title="四. 查看磁盘分区信息"></a>四. 查看磁盘分区信息</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">root@eric-pc:/home/eric# fdisk -l</div></pre></td></tr></table></figure>
-<p>输出显示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">Disk /dev/sda: 1000.2 GB, 1000204886016 bytes</div><div class="line">255 heads, 63 sectors/track, 121601 cylinders, total 1953525168 sectors</div><div class="line">Units = sectors of 1 * 512 = 512 bytes</div><div class="line">Sector size (logical/physical): 512 bytes / 4096 bytes</div><div class="line">I/O size (minimum/optimal): 4096 bytes / 4096 bytes</div><div class="line">Disk identifier: 0x0c34bbc3</div><div class="line"></div><div class="line">   Device Boot      Start         End      Blocks   Id  System</div><div class="line">/dev/sda1   *        2048   419432447   209715200    7  HPFS/NTFS/exFAT</div><div class="line">/dev/sda2       419432448   838862847   209715200    7  HPFS/NTFS/exFAT</div><div class="line">/dev/sda3       838862848  1258293247   209715200    7  HPFS/NTFS/exFAT</div><div class="line">/dev/sda4      1258295294  1953523711   347614209    f  W95 Extd (LBA)</div><div class="line">Partition 4 does not start on physical sector boundary.</div><div class="line">/dev/sda5      1258295296  1677725695   209715200    7  HPFS/NTFS/exFAT</div><div class="line">/dev/sda6      1677727744  1678311423      291840   83  Linux</div><div class="line">/dev/sda7      1678313472  1693935615     7811072   82  Linux swap / Solaris</div><div class="line">/dev/sda8      1693937664  1742764031    24413184   83  Linux</div><div class="line">/dev/sda9      1742766080  1953523711   105378816   83  Linux</div></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/08/Linux-003/" data-id="cjp446mjp000p5zjyuqstseom" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/page/2/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">__('next') &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">__('next') &raquo;</a>
   </nav>
 </section>
         
@@ -528,7 +520,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APP测试/">APP测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Quality-Assurance/">Quality Assurance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIM/">VIM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jMeter/">jMeter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/压力测试/">压力测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安全测试/">安全测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/接口测试/">接口测试</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APP测试/">APP测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Quality-Assurance/">Quality Assurance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIM/">VIM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jMeter/">jMeter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/压力测试/">压力测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安全测试/">安全测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能测试/">性能测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/接口测试/">接口测试</a></li></ul>
     </div>
   </div>
 
@@ -538,7 +530,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/APP测试/" style="font-size: 18.57px;">APP测试</a> <a href="/tags/Charles/" style="font-size: 11.43px;">Charles</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 15.71px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/Quality-Assurance/" style="font-size: 10px;">Quality Assurance</a> <a href="/tags/Shell/" style="font-size: 12.86px;">Shell</a> <a href="/tags/VIM/" style="font-size: 12.86px;">VIM</a> <a href="/tags/git/" style="font-size: 14.29px;">git</a> <a href="/tags/jMeter/" style="font-size: 12.86px;">jMeter</a> <a href="/tags/压力测试/" style="font-size: 10px;">压力测试</a> <a href="/tags/安全测试/" style="font-size: 10px;">安全测试</a> <a href="/tags/接口测试/" style="font-size: 17.14px;">接口测试</a>
+      <a href="/tags/APP测试/" style="font-size: 18.57px;">APP测试</a> <a href="/tags/Charles/" style="font-size: 11.43px;">Charles</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 15.71px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/Quality-Assurance/" style="font-size: 10px;">Quality Assurance</a> <a href="/tags/Shell/" style="font-size: 12.86px;">Shell</a> <a href="/tags/VIM/" style="font-size: 12.86px;">VIM</a> <a href="/tags/git/" style="font-size: 14.29px;">git</a> <a href="/tags/jMeter/" style="font-size: 12.86px;">jMeter</a> <a href="/tags/压力测试/" style="font-size: 10px;">压力测试</a> <a href="/tags/安全测试/" style="font-size: 10px;">安全测试</a> <a href="/tags/性能测试/" style="font-size: 10px;">性能测试</a> <a href="/tags/接口测试/" style="font-size: 17.14px;">接口测试</a>
     </div>
   </div>
 
@@ -560,6 +552,10 @@
       <ul>
         
           <li>
+            <a href="/2018/11/30/performance-001/">performance-001</a>
+          </li>
+        
+          <li>
             <a href="/2018/11/30/python-010/">python——Requests（基础）</a>
           </li>
         
@@ -573,10 +569,6 @@
         
           <li>
             <a href="/2018/11/27/python-011/">python-正则表达式1</a>
-          </li>
-        
-          <li>
-            <a href="/2018/11/27/python-009/">python-requests.session</a>
           </li>
         
       </ul>
