@@ -61,6 +61,91 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-vim-001" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/06/vim-001/" class="article-date">
+  <time datetime="2017-06-06T11:37:44.000Z" itemprop="datePublished">2017-06-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/06/vim-001/">vim的三种模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一-普通模式："><a href="#一-普通模式：" class="headerlink" title="一. 普通模式："></a>一. 普通模式：</h2><p>1、通过以下命令进入的则是普通模式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim 1.txt   #1.txt为要编辑的文档。若该文档存在时则直接打开编辑，若该文档不存在则新建1.txt文档后打开编辑。</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim -R 1.txt  #以只读模式打开文件1.txt</div></pre></td></tr></table></figure>
+<p>2、当在“输入模式”或者“命令模式”时，按键盘左上角的“Esc”可回到普通模式。<br>3、在普通模式下，通常会进行复制，粘贴，移动，删除等操作。</p>
+<h2 id="二-插入模式："><a href="#二-插入模式：" class="headerlink" title="二. 插入模式："></a>二. 插入模式：</h2><p>1、进入普通模式后，再输入i或a或o或I或A或O，均可进入插入模式。<br>2、若在命令模式中，要想进入插入模式，需要先按下按键“Esc”回到普通模式后，再进入插入模式。<br>3、在插入模式下，通常进行输入字符操作。</p>
+<h2 id="三-命令模式："><a href="#三-命令模式：" class="headerlink" title="三. 命令模式："></a>三. 命令模式：</h2><p>1、若目前在普通模式下，想要进入命令模式，需要键入：（冒号）可进入命令模式。<br>2、若目前在插入模式下，想要进入命令模式，需要按下按键“ESC”回到普通模式后，再进入命令模式。<br>3、在命令模式下，通常进行保存该文档，或退出vim，或对vim编辑器做一些设置，或运行lunux命令等操作。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2017/06/06/vim-001/" data-id="cjp446ml3002g5zjyrrgcm6wq" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VIM/">VIM</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-shell-003" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/04/shell-003/" class="article-date">
+  <time datetime="2017-06-04T12:52:45.000Z" itemprop="datePublished">2017-06-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/04/shell-003/">shell是什么？</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、shell是什么？"><a href="#一、shell是什么？" class="headerlink" title="一、shell是什么？"></a>一、shell是什么？</h2><p>shell 的本意是“壳”的意思。形象的说明了shell是围绕在Linux内核之外的一个“壳”程序。shell是用户和操作系统内核之间通讯的桥梁。<br>shell是一种<strong>命令解释程序</strong>：它解释用户输入的命令，然后提交为内核处理，最后把结果返回给用户。<br>shell是一种<strong>解释型的程序设计语言</strong>：它定义了各种选项和变量，有函数，表达式，循环等，可以利用shell编写shell 脚本。</p>
+<h2 id="二、Linux下有很多shell"><a href="#二、Linux下有很多shell" class="headerlink" title="二、Linux下有很多shell"></a>二、Linux下有很多shell</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">cat /etc/shells  #查看系统下的所有shell</div><div class="line"></div><div class="line">/bin/bash</div><div class="line">/bin/csh</div><div class="line">/bin/ksh</div><div class="line">/bin/sh</div><div class="line">/bin/tcsh</div><div class="line">/bin/zsh</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">echo $SHELL     #查看当前用户默认使用的shell</div><div class="line"></div><div class="line">/bin/zsh       #我的系统默认使用的是zsh</div></pre></td></tr></table></figure>
+<h2 id="三、shell命令的语法"><a href="#三、shell命令的语法" class="headerlink" title="三、shell命令的语法"></a>三、shell命令的语法</h2><p>比如 cd pwd exit echo等命令是bash的内置命令，当用户登录系统后，shell以及内置的命令就被系统载入到内存中，并且一直运行，直到用户退出程序为止。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2017/06/04/shell-003/" data-id="cjp446ml1002e5zjyqj5zdu60" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/">Shell</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-APP-Test-005" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/03/05/APP-Test-005/" class="article-date">
@@ -122,7 +207,7 @@ GetROProperty()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/03/05/APP-Test-005/" data-id="cjp42zpgr0005hojy7sqy258x" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/03/05/APP-Test-005/" data-id="cjp446mj800055zjyqnlssd16" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
@@ -189,7 +274,7 @@ GetROProperty()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/02/25/APP-Test-004/" data-id="cjp42zpgo0004hojy3nj21mus" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/02/25/APP-Test-004/" data-id="cjp446mj500045zjyoc7npwn0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
@@ -249,7 +334,7 @@ GetROProperty()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/02/21/APP-Test-003/" data-id="cjp42zpgn0003hojytwkkuxyp" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/02/21/APP-Test-003/" data-id="cjp446mj000015zjy1u7aggi1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
@@ -336,7 +421,7 @@ GetROProperty()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/02/19/APP-Test-002/" data-id="cjp42zpgi0001hojy6kvee7by" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/02/19/APP-Test-002/" data-id="cjp446mj400035zjycytkoy7b" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
@@ -399,7 +484,7 @@ GetROProperty()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/01/19/APP-Test-001/" data-id="cjp42zpgc0000hojyprhfisqp" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/01/19/APP-Test-001/" data-id="cjp446miw00005zjygg1e97ea" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
@@ -451,7 +536,7 @@ GetROProperty()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/01/09/git-tutorial-1/" data-id="cjp42zphj0015hojy2wm21kx7" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/01/09/git-tutorial-1/" data-id="cjp446mk200135zjywsczuo76" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -584,7 +669,7 @@ GetROProperty()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2016/11/01/linux-001-hexoblog/" data-id="cjp42zphr001ehojyhz01z6kl" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2016/11/01/linux-001-hexoblog/" data-id="cjp446mkb001h5zjye6tgj13k" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/">Github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -631,7 +716,7 @@ GetROProperty()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2016/10/31/hello-world/" data-id="cjp42zphi0013hojy2udhguxs" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2016/10/31/hello-world/" data-id="cjp446mk300155zjy2fiu8ad2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -657,7 +742,7 @@ GetROProperty()
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APP测试/">APP测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Quality-Assurance/">Quality Assurance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIM/">VIM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jMeter/">jMeter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安全测试/">安全测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/接口测试/">接口测试</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APP测试/">APP测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Quality-Assurance/">Quality Assurance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIM/">VIM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jMeter/">jMeter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/压力测试/">压力测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安全测试/">安全测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/接口测试/">接口测试</a></li></ul>
     </div>
   </div>
 
@@ -667,7 +752,7 @@ GetROProperty()
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/APP测试/" style="font-size: 18.33px;">APP测试</a> <a href="/tags/Charles/" style="font-size: 11.67px;">Charles</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 16.67px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/Quality-Assurance/" style="font-size: 10px;">Quality Assurance</a> <a href="/tags/Shell/" style="font-size: 13.33px;">Shell</a> <a href="/tags/VIM/" style="font-size: 13.33px;">VIM</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/jMeter/" style="font-size: 13.33px;">jMeter</a> <a href="/tags/安全测试/" style="font-size: 10px;">安全测试</a> <a href="/tags/接口测试/" style="font-size: 16.67px;">接口测试</a>
+      <a href="/tags/APP测试/" style="font-size: 18.57px;">APP测试</a> <a href="/tags/Charles/" style="font-size: 11.43px;">Charles</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 15.71px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/Quality-Assurance/" style="font-size: 10px;">Quality Assurance</a> <a href="/tags/Shell/" style="font-size: 12.86px;">Shell</a> <a href="/tags/VIM/" style="font-size: 12.86px;">VIM</a> <a href="/tags/git/" style="font-size: 14.29px;">git</a> <a href="/tags/jMeter/" style="font-size: 12.86px;">jMeter</a> <a href="/tags/压力测试/" style="font-size: 10px;">压力测试</a> <a href="/tags/安全测试/" style="font-size: 10px;">安全测试</a> <a href="/tags/接口测试/" style="font-size: 17.14px;">接口测试</a>
     </div>
   </div>
 

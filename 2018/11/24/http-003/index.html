@@ -3,14 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: Charles | hannie&#39;s blog</title>
+  <title>http-Request信息 | hannie&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="hannie's blog">
-<meta property="og:url" content="http://softwaretest.cn/tags/Charles/index.html">
+  <meta name="description" content="客户端发送请求的 Header12345678910111213GET /api/v1/ncc/users/info?appId=darwin&amp;amp;deviceId=aa6923488f37b8261eca448344ad631cec25f742&amp;amp;sDeviceId=aa6923488f37b8261eca448344ad631cec25f742&amp;amp;token=ceca0a009">
+<meta property="og:type" content="article">
+<meta property="og:title" content="http-Request信息">
+<meta property="og:url" content="http://softwaretest.cn/2018/11/24/http-003/index.html">
 <meta property="og:site_name" content="hannie's blog">
+<meta property="og:description" content="客户端发送请求的 Header12345678910111213GET /api/v1/ncc/users/info?appId=darwin&amp;amp;deviceId=aa6923488f37b8261eca448344ad631cec25f742&amp;amp;sDeviceId=aa6923488f37b8261eca448344ad631cec25f742&amp;amp;token=ceca0a009">
+<meta property="og:updated_time" content="2018-11-30T14:19:19.755Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hannie's blog">
+<meta name="twitter:title" content="http-Request信息">
+<meta name="twitter:description" content="客户端发送请求的 Header12345678910111213GET /api/v1/ncc/users/info?appId=darwin&amp;amp;deviceId=aa6923488f37b8261eca448344ad631cec25f742&amp;amp;sDeviceId=aa6923488f37b8261eca448344ad631cec25f742&amp;amp;token=ceca0a009">
   
     <link rel="alternate" href="/atom.xml" title="hannie&#39;s blog" type="application/atom+xml">
   
@@ -59,58 +63,69 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/08/23/Charles-001/" class="archive-article-date">
-  <time datetime="2018-08-23T12:14:31.000Z" itemprop="datePublished">Aug 23</time>
+        <section id="main"><article id="post-http-003" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/24/http-003/" class="article-date">
+  <time datetime="2018-11-24T14:15:26.000Z" itemprop="datePublished">2018-11-24</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/23/Charles-001/">Charles 重定向功能——Map Local</a>
+    <h1 class="article-title" itemprop="name">
+      http-Request信息
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/08/22/Charles-002/" class="archive-article-date">
-  <time datetime="2018-08-22T13:20:44.000Z" itemprop="datePublished">Aug 22</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/22/Charles-002/">Charles——模拟慢速网络</a>
-    </h1>
-  
+        <h2 id="客户端发送请求的-Header"><a href="#客户端发送请求的-Header" class="headerlink" title="客户端发送请求的 Header"></a>客户端发送请求的 Header</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">GET /api/v1/ncc/users/info?appId=darwin&amp;deviceId=aa6923488f37b8261eca448344ad631cec25f742&amp;sDeviceId=aa6923488f37b8261eca448344ad631cec25f742&amp;token=ceca0a0093cd0136bf8e02f953439724 HTTP/1.1</div><div class="line">Host: staging-neo.llsapp.com</div><div class="line">sDeviceId: aa6923488f37b8261eca448344ad631cec25f742</div><div class="line">Accept: */*</div><div class="line">Authorization: Bearer ceca0a0093cd0136bf8e02f953439724</div><div class="line">Accept-Encoding: gzip, deflate</div><div class="line">appId: darwin</div><div class="line">token: ceca0a0093cd0136bf8e02f953439724</div><div class="line">Accept-Language: zh;q=1</div><div class="line">deviceId: aa6923488f37b8261eca448344ad631cec25f742</div><div class="line">User-Agent: LingoDarwin_STAGING/0.18.0 (iPhone; iOS 10.3.3; Scale/2.00)</div><div class="line">Connection: keep-alive</div><div class="line">Cookie: aliyungf_tc=AQAAAIqBuCTIlA0AUM1J3hTqQIMuww1I</div></pre></td></tr></table></figure>
+<p>第一行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">GET /api/v1/ncc/users/info?appId=darwin&amp;deviceId=aa6923488f37b8261eca448344ad631cec25f742&amp;sDeviceId=aa6923488f37b8261eca448344ad631cec25f742&amp;token=ceca0a0093cd0136bf8e02f953439724 HTTP/1.1</div><div class="line"></div><div class="line"></div><div class="line">GET ：http 请求方式,向web服务器请求一个文件；</div><div class="line">/api/v1/ncc/users/info 请求的接口；</div><div class="line">appId=darwin&amp;deviceId=aa6923488f37b8261eca448344ad631cec25f742&amp;sDeviceId=aa6923488f37b8261eca448344ad631cec25f742&amp;token=ceca0a0093cd0136bf8e02f953439724 请求的参数；</div><div class="line">HTTP/1.1 HTTP协议的版本</div></pre></td></tr></table></figure></p>
+<p>第二行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Host: staging-neo.llsapp.com</div><div class="line"></div><div class="line">请求的服务器域名地址</div></pre></td></tr></table></figure></p>
+<p>第三行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sDeviceId: aa6923488f37b8261eca448344ad631cec25f742</div><div class="line"></div><div class="line">设备的 ID 信息，不同的手机ID 不同</div></pre></td></tr></table></figure></p>
+<p>第四行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Accept: */*</div><div class="line"></div><div class="line">客户端告诉服务端我能接受的内容类型，*/*表示接受任意类型</div></pre></td></tr></table></figure></p>
+<p>第五行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Authorization: Bearer ceca0a0093cd0136bf8e02f953439724</div></pre></td></tr></table></figure></p>
+<pre><code>print(re.findall(r5, t3))
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2018/11/24/http-003/" data-id="cjp446mk9001b5zjypbycqv5y" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/接口测试/">接口测试</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/11/25/monkey-001/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          monkey测试
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/08/25/git-002/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">git-基本操作（二）</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         

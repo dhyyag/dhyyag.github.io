@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>monkey测试 | hannie&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、what is monkey testing？Monkey：是 Android SDK提供的一个命令行工具，可以运行在任何版本的模拟器里或实际设备里。monkey 向系统发送伪随机的用户事件流（比如：按键输入，触摸屏幕输入，手势输入），从而对应用程序进行压力测试。Monkey testing：是Android自动化测试、压力测试的一种手段.
+二、How to execute monkey te">
+<meta property="og:type" content="article">
+<meta property="og:title" content="monkey测试">
+<meta property="og:url" content="http://softwaretest.cn/2018/11/25/monkey-001/index.html">
+<meta property="og:site_name" content="hannie's blog">
+<meta property="og:description" content="一、what is monkey testing？Monkey：是 Android SDK提供的一个命令行工具，可以运行在任何版本的模拟器里或实际设备里。monkey 向系统发送伪随机的用户事件流（比如：按键输入，触摸屏幕输入，手势输入），从而对应用程序进行压力测试。Monkey testing：是Android自动化测试、压力测试的一种手段.
+二、How to execute monkey te">
+<meta property="og:updated_time" content="2018-11-30T14:15:00.355Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="monkey测试">
+<meta name="twitter:description" content="一、what is monkey testing？Monkey：是 Android SDK提供的一个命令行工具，可以运行在任何版本的模拟器里或实际设备里。monkey 向系统发送伪随机的用户事件流（比如：按键输入，触摸屏幕输入，手势输入），从而对应用程序进行压力测试。Monkey testing：是Android自动化测试、压力测试的一种手段.
+二、How to execute monkey te">
+  
+    <link rel="alternate" href="/atom.xml" title="hannie&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">hannie&#39;s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://softwaretest.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-monkey-001" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/25/monkey-001/" class="article-date">
+  <time datetime="2018-11-25T14:12:57.000Z" itemprop="datePublished">2018-11-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      monkey测试
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、what-is-monkey-testing？"><a href="#一、what-is-monkey-testing？" class="headerlink" title="一、what is monkey testing？"></a>一、what is monkey testing？</h2><p><strong>Monkey：</strong>是 Android SDK提供的一个命令行工具，可以运行在任何版本的模拟器里或实际设备里。monkey 向系统发送伪随机的用户事件流（比如：按键输入，触摸屏幕输入，手势输入），从而对应用程序进行压力测试。<br><strong>Monkey testing：</strong>是Android自动化测试、压力测试的一种手段.</p>
+<h2 id="二、How-to-execute-monkey-testing？"><a href="#二、How-to-execute-monkey-testing？" class="headerlink" title="二、How to execute monkey testing？"></a>二、How to execute monkey testing？</h2><h3 id="2-1-软硬件环境准备"><a href="#2-1-软硬件环境准备" class="headerlink" title="2.1 软硬件环境准备"></a>2.1 软硬件环境准备</h3><p>硬件：电脑，Android手机（已安装被测 app），数据线<br>软件：android SDK，Android 模拟器（安装被测 app），adb 命令可用</p>
+<h3 id="2-2-常规类命令"><a href="#2-2-常规类命令" class="headerlink" title="2.2 常规类命令"></a>2.2 常规类命令</h3><ul>
+<li><code>adb install -r -t 要测试的应用的 apk包的路径</code><br>安装 apk 包到手机</li>
+<li><code>adb logcat | grep START</code><br>查询待测试的 app 的包名，查询 cmp，cmp 对应的值就是包名 比如：cmp=com.liulishuo.lingodarwin</li>
+<li><code>adb shell monkey -p com.liulishuo.lingodarwin 1000</code><br><code>-p</code>指定测试对象包名<br><code>1000</code>mon</li>
+<li><code>adb shell monkey -v -p com.liulishuo.lingodarwin 1000</code><br><code>-v</code>:打印日志信息<br><code>-v -v</code>: 打印比较详细的日志信息<br><code>-v -v -v</code>g:打印更详细的日志信息<br><code>1000</code>:monkey向手机上发送1000个随机事件</li>
+</ul>
+<p>命令执行结束后，log中会显示<code>Events injected: 1000</code>，表示执行的随机事件数,monkey向手机上的com.liulishuo.lingodarwin应用程序发送1000个随机事件</p>
+<ul>
+<li><code>adb shell monkey -c &lt;main-category&gt; 100</code><br><code>-c</code>指定测试一个或多个类别<br><code>&lt;main-category&gt;</code>指定的类别，比如：Inter.CATEGORY_LAUNCHER</li>
+</ul>
+<h3 id="2-3-事件类命令"><a href="#2-3-事件类命令" class="headerlink" title="2.3 事件类命令"></a>2.3 事件类命令</h3><ul>
+<li><code>adb shell monkey -f 脚本的路径 该脚本循环次数</code><br><code>-f</code>表示 monkey 运行指定路径下的脚本</li>
+<li><code>adb shell monkey -v -p com.liulishuo.lingodarwin -s 100 1000</code><br><code>-s</code>指定 seed 值(可重复执行刚才的随机操作）<br><code>100</code>指定随机数生成器的 seed 值，<br><code>1000</code>1000g个随机事件</li>
+<li><code>adb shell monkey -v -p com.liulishuo.lingodarwin --throttle 500  100</code><br><code>--throttle</code>表示事件事件的的固定延迟事件，单位 ms，设置为500比较接近人的操作</li>
+<li><code>adb shell monkey -v -p com.liulishuo.lingodarwin --pct-touch 50 100</code><br><code>--pct-touch</code>:接触摸事件<br><code>50</code>:触摸事件占比50%<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">~ adb shell monkey -v -p com.liulishuo.lingodarwin --pct-touch 10 --pct-motion 15 --pct-trackball 16 --pct-nav 17 --pct-majornav 18 --pct-majornav 19  --pct-syskeys 1 --pct-appswitch 3 --pct-anyevent 1 500 </div><div class="line">:Monkey: seed=1538078497467 count=100</div><div class="line">:AllowPackage: com.liulishuo.lingodarwin</div><div class="line">:IncludeCategory: android.intent.category.LAUNCHER</div><div class="line">:IncludeCategory: android.intent.category.MONKEY</div><div class="line">// Event percentages:</div><div class="line">//   0: 10.0%  **** --pct-touch，触摸事件，****</div><div class="line">//   1: 15.0%  ****--pct-motion, 动作事件， ****</div><div class="line">//   2: 12.0% </div><div class="line">//   3: 16.0%  ****--pct-trackball, 轨迹事件， ****</div><div class="line">//   4: -0.0%</div><div class="line">//   5: -0.0%</div><div class="line">//   6: 17.0%   ****--pct-nav, 基本导航事件，上下左右事件 ****</div><div class="line">//   7: 19.0%   ****--pct-majornav, 主要导航事件，菜单键，返回键 ****</div><div class="line">//   8: 1.0%   **** --pct-syskeys,系统按键事件，home 键吧，backe 键，拨号键****</div><div class="line">//   9: 3.0%  **** --pct-appswitch,启动事件****</div><div class="line">//   10: 6.0%</div><div class="line">//   11: 1.0% **** --pct-anyevent,启动事件****</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-4-调试类命令"><a href="#2-4-调试类命令" class="headerlink" title="2.4 调试类命令"></a>2.4 调试类命令</h3><ul>
+<li><code>adb shell monkey --ignore-crashes 1000</code><br><code>--ignore-crashes</code>:当应用程序崩溃或发生失控异常时，monkey将继续运行直到计数完成。如果不设置此项，monkey遇到上述崩溃或异常将停止运行。</li>
+<li><code>adb shell monkey --ignore-timeouts 1000</code><br><code>--ignore-timeouts</code>:当应用程序发生任何超时错误（如ANR，即Application Not Responding)时，monkey将继续运行直到计数完成。如果不设置此项，monkey遇到此类超时将停止运行</li>
+<li><code>adb shell monkey --kill-process-after-error 1000</code><br><code>--kill-process-after-error</code>:当monkey因为应用程序发生错误而停止时，将会通知系统停止发生错误的进程。如果不设置此项，monkey停止时发生错误的应用程度将继续处于运行状态。</li>
+<li><p><code>adb shell monkey --monitor-native-crashes 1000</code><br><code>--monitor-native-crashes</code>:monkey运行时native code的崩溃事件将被监视并报告。如果不设置此选项，将不会监视此类事件。</p>
+<h2 id="三、Analyze-monkey-test-results"><a href="#三、Analyze-monkey-test-results" class="headerlink" title="三、Analyze monkey test results"></a>三、Analyze monkey test results</h2><p>测试结束后，需要将手机连接PC，拷贝以下文件,我们需要对这3个文件进行分析整理，以便提交开发人员处理。</p>
+</li>
+<li><p>info.txt：此文件在手机上的SDCARD中，主要记录了MONKEY测试时发送的各种事件，如触摸事件的位置等等。</p>
+</li>
+<li>error.txt：此文件在手机上的SDCARD中，主要记录了MONKEY测试时产生的一些ANR、强制关闭等异常。</li>
+<li>LOG文件：此文件在手机上的LOG文件夹中中，主要主要记录程序对MONKEY测试时的响应情况。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"> Log文件记录了所有信息，因此我们需要进行初步分析整理后再提交研发，以减少研发工作量。</div><div class="line"></div><div class="line">Monkey测试后在Mobilelog文件中会产生多个main_log文件，里面含有详细的log执行记录。通过main_log文件，我们可以查看可能存在内存泄露代码所在具体位置。是否该行代码存在泄露需要开发人员进一步验证。我们只提供可能存在代码泄露的信息。</div><div class="line"></div><div class="line">含有mian_log的文件都需要进行查看。搜索关键字“leak”，在搜索结果中，查看与包名com.liulishuo.lingodarwin相关的代码。</div><div class="line"></div><div class="line">CursorLeakDetecter: 游标泄露检查器</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2018/11/25/monkey-001/" data-id="cjp446mkh001k5zjywofcefjj" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/压力测试/">压力测试</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/11/27/python-009/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          python-requests.session
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/11/24/http-003/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">http-Request信息</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APP测试/">APP测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Quality-Assurance/">Quality Assurance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIM/">VIM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jMeter/">jMeter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/压力测试/">压力测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安全测试/">安全测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/接口测试/">接口测试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/APP测试/" style="font-size: 18.57px;">APP测试</a> <a href="/tags/Charles/" style="font-size: 11.43px;">Charles</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 15.71px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/Quality-Assurance/" style="font-size: 10px;">Quality Assurance</a> <a href="/tags/Shell/" style="font-size: 12.86px;">Shell</a> <a href="/tags/VIM/" style="font-size: 12.86px;">VIM</a> <a href="/tags/git/" style="font-size: 14.29px;">git</a> <a href="/tags/jMeter/" style="font-size: 12.86px;">jMeter</a> <a href="/tags/压力测试/" style="font-size: 10px;">压力测试</a> <a href="/tags/安全测试/" style="font-size: 10px;">安全测试</a> <a href="/tags/接口测试/" style="font-size: 17.14px;">接口测试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/30/python-010/">python——Requests（基础）</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/29/python-008/">pytho——代码规范</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/28/python-007/">python——命名规范</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/27/python-011/">python-正则表达式1</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/27/python-009/">python-requests.session</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 hannie<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

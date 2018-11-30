@@ -61,6 +61,91 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Linux-005" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/07/Linux-005/" class="article-date">
+  <time datetime="2017-07-07T11:25:43.000Z" itemprop="datePublished">2017-07-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/07/Linux-005/">Linux-常用命令（apt-get）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>apt-get主要用于自动从互联网的软件仓库中搜索、安装、升级、卸载软件或操作系统。</p>
+<p>Ubuntu Linux操作系统下apt-get命令的详细说明<br>常用的APT命令参数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">apt-cache search package 搜索包</div><div class="line"></div><div class="line">apt-cache show package 获取包的相关信息，如说明、大小、版本等</div><div class="line"></div><div class="line">sudo apt-get install package 安装包</div><div class="line"></div><div class="line">sudo apt-get install package - - reinstall 重新安装包</div><div class="line"></div><div class="line">sudo apt-get -f install 修复安装&quot;-f = ——fix-missing&quot;</div><div class="line"></div><div class="line">sudo apt-get remove package 删除包</div><div class="line"></div><div class="line">sudo apt-get remove package - - purge 删除包，包括删除配置文件等</div><div class="line"></div><div class="line">sudo apt-get update 更新源</div><div class="line"></div><div class="line">sudo apt-get upgrade 更新已安装的包</div><div class="line"></div><div class="line">sudo apt-get dist-upgrade 升级系统</div><div class="line"></div><div class="line">sudo apt-get dselect-upgrade 使用 dselect 升级</div><div class="line"></div><div class="line">apt-cache depends package 了解使用依赖</div><div class="line"></div><div class="line">apt-cache rdepends package 是查看该包被哪些包依赖</div><div class="line"></div><div class="line">sudo apt-get build-dep package 安装相关的编译环境</div><div class="line"></div><div class="line">apt-get source package 下载该包的源代码</div><div class="line"></div><div class="line">sudo apt-get clean &amp;&amp; sudo apt-get autoclean 清理无用的包</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2017/07/07/Linux-005/" data-id="cjp446mjs000r5zjymtgo3fsl" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-shell-001" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/17/shell-001/" class="article-date">
+  <time datetime="2017-06-17T01:54:23.000Z" itemprop="datePublished">2017-06-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/17/shell-001/">shell-网页下载wget</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>wget是一个用于文件下载的命令行工具。</p>
+<h2 id="1-指定下载位置"><a href="#1-指定下载位置" class="headerlink" title="1. 指定下载位置"></a>1. 指定下载位置</h2><p>wget URL<br>wget URL1 URL2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">wget http://softwaretest.cn </div><div class="line">--2017-06-17 08:42:06--  http://softwaretest.cn/</div><div class="line">Resolving softwaretest.cn (softwaretest.cn)... 151.101.0.133, 151.101.64.133, 151.101.128.133</div><div class="line">Connecting to softwaretest.cn (softwaretest.cn)|151.101.0.133|:80... connected.</div><div class="line">HTTP request sent, awaiting response... 301 Moved Permanently</div><div class="line">Location: http://www.softwaretest.cn/ [following]</div><div class="line">--2017-06-17 08:42:21--  http://www.softwaretest.cn/</div><div class="line">Resolving www.softwaretest.cn (www.softwaretest.cn)... 151.101.72.133</div><div class="line">Connecting to www.softwaretest.cn (www.softwaretest.cn)|151.101.72.133|:80... connected.</div><div class="line">HTTP request sent, awaiting response... 200 OK</div><div class="line">Length: 109528 (107K) [text/html]</div><div class="line">Saving to: ‘index.html’</div><div class="line"></div><div class="line">100%[==============================================================================================================================================&gt;] 109,528      360KB/s   in 0.3s   </div><div class="line"></div><div class="line">2017-06-17 08:42:22 (360 KB/s) - ‘index.html’ saved [109528/109528]</div></pre></td></tr></table></figure></p>
+<h2 id="2-指定输出位置"><a href="#2-指定输出位置" class="headerlink" title="2. 指定输出位置"></a>2. 指定输出位置</h2><p>wget URL -O download -o log<br>-O ：指定输出的文件名<br>-o ：指定一个日志文件</p>
+<h2 id="3-指定重试次数"><a href="#3-指定重试次数" class="headerlink" title="3. 指定重试次数"></a>3. 指定重试次数</h2><p>wget -t 5 URL<br>-t ：指定重试次数<br>5  ：重试5次</p>
+<h2 id="4-对下载限速"><a href="#4-对下载限速" class="headerlink" title="4. 对下载限速"></a>4. 对下载限速</h2><p>wget –limit-rate 20k URL<br>–limit-rate ：对wget限速<br>20k ：20年字节为指定速度限制</p>
+<h2 id="5-断点续传"><a href="#5-断点续传" class="headerlink" title="5. 断点续传"></a>5. 断点续传</h2><p>wget -c URL<br>-c ：从断点开始继续下载</p>
+<h2 id="6-补充"><a href="#6-补充" class="headerlink" title="6. 补充"></a>6. 补充</h2><p>wget –mirror URL<br>wget –user username –password pass URL</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2017/06/17/shell-001/" data-id="cjp446mkz002c5zjymse69ln0" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/">Shell</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-matlab-001" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/06/16/matlab-001/" class="article-date">
@@ -99,7 +184,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/16/matlab-001/" data-id="cjp42zphv001ihojygmqkuc6f" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/16/matlab-001/" data-id="cjp446mkf001i5zjyg26iui5k" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Matlab/">Matlab</a></li></ul>
@@ -146,7 +231,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/16/data-structure-001/" data-id="cjp42zphd000vhojy0x0dyz09" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/16/data-structure-001/" data-id="cjp446mjv000v5zjyy79jldcb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li></ul>
@@ -198,7 +283,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/15/python-001/" data-id="cjp42zphw001khojya7jykvbb" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/15/python-001/" data-id="cjp446mki001m5zjy5lfq2cnq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -270,7 +355,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/07/APP-Test-006/" data-id="cjp42zpgv0008hojyc4653eep" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/07/APP-Test-006/" data-id="cjp446mjc00085zjywpmteug8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
@@ -343,7 +428,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/07/GUI-001/" data-id="cjp42zph3000ihojyr0w9w8nl" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/07/GUI-001/" data-id="cjp446mjl000i5zjyhf61udje" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
@@ -397,7 +482,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/07/Linux-002/" data-id="cjp42zph7000nhojyxmewpnky" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/07/Linux-002/" data-id="cjp446mjo000n5zjyt4ad1sr5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -444,7 +529,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/06/Linux-001/" data-id="cjp42zph5000khojy7y7tkcc0" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/06/Linux-001/" data-id="cjp446mjm000k5zjyh7g3cgou" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -487,92 +572,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/06/Echo-001/" data-id="cjp42zph2000fhojyiib3ik2v" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/">Shell</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-vim-001" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/06/vim-001/" class="article-date">
-  <time datetime="2017-06-06T11:37:44.000Z" itemprop="datePublished">2017-06-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/06/vim-001/">vim的三种模式</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一-普通模式："><a href="#一-普通模式：" class="headerlink" title="一. 普通模式："></a>一. 普通模式：</h2><p>1、通过以下命令进入的则是普通模式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim 1.txt   #1.txt为要编辑的文档。若该文档存在时则直接打开编辑，若该文档不存在则新建1.txt文档后打开编辑。</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim -R 1.txt  #以只读模式打开文件1.txt</div></pre></td></tr></table></figure>
-<p>2、当在“输入模式”或者“命令模式”时，按键盘左上角的“Esc”可回到普通模式。<br>3、在普通模式下，通常会进行复制，粘贴，移动，删除等操作。</p>
-<h2 id="二-插入模式："><a href="#二-插入模式：" class="headerlink" title="二. 插入模式："></a>二. 插入模式：</h2><p>1、进入普通模式后，再输入i或a或o或I或A或O，均可进入插入模式。<br>2、若在命令模式中，要想进入插入模式，需要先按下按键“Esc”回到普通模式后，再进入插入模式。<br>3、在插入模式下，通常进行输入字符操作。</p>
-<h2 id="三-命令模式："><a href="#三-命令模式：" class="headerlink" title="三. 命令模式："></a>三. 命令模式：</h2><p>1、若目前在普通模式下，想要进入命令模式，需要键入：（冒号）可进入命令模式。<br>2、若目前在插入模式下，想要进入命令模式，需要按下按键“ESC”回到普通模式后，再进入命令模式。<br>3、在命令模式下，通常进行保存该文档，或退出vim，或对vim编辑器做一些设置，或运行lunux命令等操作。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/06/vim-001/" data-id="cjp42zpih002chojyn5niosm8" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VIM/">VIM</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-shell-003" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/04/shell-003/" class="article-date">
-  <time datetime="2017-06-04T12:52:45.000Z" itemprop="datePublished">2017-06-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/04/shell-003/">shell是什么？</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、shell是什么？"><a href="#一、shell是什么？" class="headerlink" title="一、shell是什么？"></a>一、shell是什么？</h2><p>shell 的本意是“壳”的意思。形象的说明了shell是围绕在Linux内核之外的一个“壳”程序。shell是用户和操作系统内核之间通讯的桥梁。<br>shell是一种<strong>命令解释程序</strong>：它解释用户输入的命令，然后提交为内核处理，最后把结果返回给用户。<br>shell是一种<strong>解释型的程序设计语言</strong>：它定义了各种选项和变量，有函数，表达式，循环等，可以利用shell编写shell 脚本。</p>
-<h2 id="二、Linux下有很多shell"><a href="#二、Linux下有很多shell" class="headerlink" title="二、Linux下有很多shell"></a>二、Linux下有很多shell</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">cat /etc/shells  #查看系统下的所有shell</div><div class="line"></div><div class="line">/bin/bash</div><div class="line">/bin/csh</div><div class="line">/bin/ksh</div><div class="line">/bin/sh</div><div class="line">/bin/tcsh</div><div class="line">/bin/zsh</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">echo $SHELL     #查看当前用户默认使用的shell</div><div class="line"></div><div class="line">/bin/zsh       #我的系统默认使用的是zsh</div></pre></td></tr></table></figure>
-<h2 id="三、shell命令的语法"><a href="#三、shell命令的语法" class="headerlink" title="三、shell命令的语法"></a>三、shell命令的语法</h2><p>比如 cd pwd exit echo等命令是bash的内置命令，当用户登录系统后，shell以及内置的命令就被系统载入到内存中，并且一直运行，直到用户退出程序为止。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/04/shell-003/" data-id="cjp42zpig002ahojy0ikdjjys" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/06/Echo-001/" data-id="cjp446mjk000f5zjyrtx5tt7f" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/">Shell</a></li></ul>
@@ -600,7 +600,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APP测试/">APP测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Quality-Assurance/">Quality Assurance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIM/">VIM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jMeter/">jMeter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安全测试/">安全测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/接口测试/">接口测试</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APP测试/">APP测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Quality-Assurance/">Quality Assurance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIM/">VIM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jMeter/">jMeter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/压力测试/">压力测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安全测试/">安全测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/接口测试/">接口测试</a></li></ul>
     </div>
   </div>
 
@@ -610,7 +610,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/APP测试/" style="font-size: 18.33px;">APP测试</a> <a href="/tags/Charles/" style="font-size: 11.67px;">Charles</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 16.67px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/Quality-Assurance/" style="font-size: 10px;">Quality Assurance</a> <a href="/tags/Shell/" style="font-size: 13.33px;">Shell</a> <a href="/tags/VIM/" style="font-size: 13.33px;">VIM</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/jMeter/" style="font-size: 13.33px;">jMeter</a> <a href="/tags/安全测试/" style="font-size: 10px;">安全测试</a> <a href="/tags/接口测试/" style="font-size: 16.67px;">接口测试</a>
+      <a href="/tags/APP测试/" style="font-size: 18.57px;">APP测试</a> <a href="/tags/Charles/" style="font-size: 11.43px;">Charles</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 15.71px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/Quality-Assurance/" style="font-size: 10px;">Quality Assurance</a> <a href="/tags/Shell/" style="font-size: 12.86px;">Shell</a> <a href="/tags/VIM/" style="font-size: 12.86px;">VIM</a> <a href="/tags/git/" style="font-size: 14.29px;">git</a> <a href="/tags/jMeter/" style="font-size: 12.86px;">jMeter</a> <a href="/tags/压力测试/" style="font-size: 10px;">压力测试</a> <a href="/tags/安全测试/" style="font-size: 10px;">安全测试</a> <a href="/tags/接口测试/" style="font-size: 17.14px;">接口测试</a>
     </div>
   </div>
 
