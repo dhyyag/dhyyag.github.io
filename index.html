@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://softwaretest.cn"></form>
@@ -60,6 +60,130 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-python-007" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/30/python-007/" class="article-date">
+  <time datetime="2018-11-30T13:16:53.000Z" itemprop="datePublished">2018-11-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/30/python-007/">python——命名规范</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="python——命名规范"><a href="#python——命名规范" class="headerlink" title="python——命名规范"></a>python——命名规范</h1><h2 id="一、模块名"><a href="#一、模块名" class="headerlink" title="一、模块名"></a>一、模块名</h2><ul>
+<li>小写</li>
+<li>避免使用下划线<h2 id="二、类名"><a href="#二、类名" class="headerlink" title="二、类名"></a>二、类名</h2><ul>
+<li>首字母大写，驼峰命名规则</li>
+<li>私有类用一个下划线开头<h2 id="三、函数名"><a href="#三、函数名" class="headerlink" title="三、函数名"></a>三、函数名</h2><ul>
+<li>小写，多个单词用下划线分割</li>
+<li>私有函数用一个下划线开头<h2 id="四、变量名"><a href="#四、变量名" class="headerlink" title="四、变量名"></a>四、变量名</h2><ul>
+<li>小写，多个单词用下划线分割<h2 id="五、常量名"><a href="#五、常量名" class="headerlink" title="五、常量名"></a>五、常量名</h2></li>
+<li>全部大写，多个单词用下划线分割</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2018/11/30/python-007/" data-id="cjp425qa6001rxzjyrd9fgsvz" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-python-008" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/29/python-008/" class="article-date">
+  <time datetime="2018-11-29T13:21:05.000Z" itemprop="datePublished">2018-11-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/29/python-008/">pytho——代码规范</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="python——代码规范"><a href="#python——代码规范" class="headerlink" title="python——代码规范"></a>python——代码规范</h1><h2 id="一、编码"><a href="#一、编码" class="headerlink" title="一、编码"></a>一、编码</h2><p>无特殊情况，使用 UTF-8编码<br>文件头部加入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#-*-coding:utf-8-*-</div></pre></td></tr></table></figure></p>
+<h2 id="二、缩进"><a href="#二、缩进" class="headerlink" title="二、缩进"></a>二、缩进</h2><p>使用4个空格进行缩进，或者 tab缩进</p>
+<h2 id="三、空格"><a href="#三、空格" class="headerlink" title="三、空格"></a>三、空格</h2><ul>
+<li>二元运算符两个各一个空格=,-,+=,==,&gt;,in,is not, and<ul>
+<li>函数参数列表中，后要加空格</li>
+<li>函数参数列表中，赋值语句=左右不加空格</li>
+</ul>
+</li>
+</ul>
+<h2 id="四、空行"><a href="#四、空行" class="headerlink" title="四、空行"></a>四、空行</h2><pre><code>- 模块奇函数和类之间空两行
+ - 类成员函数之间空一行
+  - 可以空行分割逻辑相关的代码
+   - 可以用多个空行分割多组相关的函数
+</code></pre><h2 id="五、行宽"><a href="#五、行宽" class="headerlink" title="五、行宽"></a>五、行宽</h2><pre><code>每行代码最长不超过80，或者不超过120
+控制在80内的优势：
+ - 这在查看 side-by-side 的 diff 时很有帮助 
+  - 方便在控制台下查看代码 
+   - 太长可能是设计有缺陷
+</code></pre><h2 id="六、换行"><a href="#六、换行" class="headerlink" title="六、换行"></a>六、换行</h2><pre><code>- 括号内换行，第二行缩进4个空格，可以\换行
+ - 每行一个语句
+  - 循环语句一定要换行
+</code></pre><h2 id="七、引号"><a href="#七、引号" class="headerlink" title="七、引号"></a>七、引号</h2><pre><code>- 自然语言使用双引号
+ - 机器表示使用单引号
+  - 正则表达式使用 r&quot;  &quot;
+   - 文档(docstring) 使用三引号&quot;&quot;&quot;    &quot;&quot;&quot;
+</code></pre><h2 id="八、注释"><a href="#八、注释" class="headerlink" title="八、注释"></a>八、注释</h2><pre><code>- #后空一个
+ - 重要的注释，# =====            #======
+  - 文档注释，&quot;&quot;&quot;     &quot;&quot;&quot;
+</code></pre><h2 id="九、import-语句"><a href="#九、import-语句" class="headerlink" title="九、import 语句"></a>九、import 语句</h2><pre><code>- import 语句分行写
+ - import 语句应使用 absolute import
+  - import 语言放在头部，模块说明 docstring 之后
+   - 可以用空行分割相关模块
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2018/11/29/python-008/" data-id="cjp425qae001xxzjynj2hy5lk" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-git-002" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -95,7 +219,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/08/25/git-002/" data-id="cjltctp6d000zqijy1hcxawkx" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2018/08/25/git-002/" data-id="cjp425q9i000vxzjyac9lfjt4" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -162,7 +286,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/08/24/git-001/" data-id="cjltctp6b000xqijyrlcztou2" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2018/08/24/git-001/" data-id="cjp425q9k000xxzjyogj1e7pb" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -210,7 +334,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/08/23/Charles-001/" data-id="cjltctp5s000aqijy59z9e1co" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2018/08/23/Charles-001/" data-id="cjp425q8z000axzjysewmyxt2" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Charles/">Charles</a></li></ul>
@@ -249,7 +373,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/08/22/Charles-002/" data-id="cjltctp5v000dqijycttwwz1v" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2018/08/22/Charles-002/" data-id="cjp425q8y0008xzjyl7lu01k7" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Charles/">Charles</a></li></ul>
@@ -288,7 +412,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/08/21/QA的职责/" data-id="cjltctp68000tqijyc8hyb7k2" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2018/08/21/QA的职责/" data-id="cjp425q97000mxzjyp0wettg1" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Quality-Assurance/">Quality Assurance</a></li></ul>
@@ -356,7 +480,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/07/18/git-003/" data-id="cjltctp6f0011qijy87f2pt4e" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2018/07/18/git-003/" data-id="cjp425q9q0016xzjy7eruj0dk" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -397,7 +521,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/06/04/http-002/" data-id="cjltctp6k0019qijyphvi53fa" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2018/06/04/http-002/" data-id="cjp425q9o0014xzjygtrvf964" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/接口测试/">接口测试</a></li></ul>
@@ -452,93 +576,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/06/02/http-001/" data-id="cjltctp6j0017qijykxxsewuh" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2018/06/02/http-001/" data-id="cjp425qa4001lxzjyvth6kwej" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/接口测试/">接口测试</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-接口测试-003" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/04/07/接口测试-003/" class="article-date">
-  <time datetime="2018-04-07T14:01:46.000Z" itemprop="datePublished">2018-04-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/07/接口测试-003/">通过cURL去注册账号（2）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>注册时，每次注册都需要一个新的账号，若在脚本中将账号写死，则每次都需要修改脚本，为了不频繁修改脚本，可将变化的参数写成不固定的形式。<br>比如：email和 nick两个参数未写死，当执行脚本时可直接在，命令行修改参数而不用修改脚本。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">#!/bin/zsh</div><div class="line"></div><div class="line">#taging register account2</div><div class="line">curl -X POST \</div><div class="line">        https://staging-neo.llsapp.com/api/v1/usr \</div><div class="line">        -H &quot;Content-Type: application/json&quot; \</div><div class="line">        -H &quot;Accept-Language: zh;q=1&quot; \</div><div class="line">        -H &quot;sDeviceId&quot;:&quot;99000663276322&quot; \</div><div class="line">        -H &quot;deviceId&quot;:&quot;99000663276322&quot; \</div><div class="line">        -d &quot;&#123;\&quot;sDeviceId\&quot;:\&quot;99000663276322\&quot;,\&quot;deviceId\&quot;:\&quot;99000663276322\&quot;,\&quot;appId\&quot;:\&quot;lls\&quot;,\&quot;appVer\&quot;:\&quot;4\&quot; ,\&quot;email\&quot;:\&quot;$1\&quot;,\&quot;nick\&quot;:\&quot;$2\&quot;,\&quot;password\&quot;:\&quot;123456\&quot;,\&quot;gender\&quot;:\&quot;female\&quot;&#125;&quot;</div></pre></td></tr></table></figure></p>
-<p>设置权限：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod a+x staging_register_account2.sh</div></pre></td></tr></table></figure></p>
-<p>执行脚本：<br>在执行脚本时，写上参数的值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./staging_register_account2.sh dong1060@dw.com 1060 | jq</div></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/04/07/接口测试-003/" data-id="cjltctp7f002eqijy8ib5milf" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/接口测试/">接口测试</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-security-testing-001" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/04/01/security-testing-001/" class="article-date">
-  <time datetime="2018-04-01T12:32:59.000Z" itemprop="datePublished">2018-04-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/01/security-testing-001/">安全测试——概述</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>软件：由程序、数据、文档组成。<br>软件安全性测试的主要内容：程序的安全性，数据的安全性，<br>软件的质量：安全性与功能、易用性有较大的关联；安全想强易用性差，易用性强则安全性差</p>
-<h2 id="一、安全测试的内容"><a href="#一、安全测试的内容" class="headerlink" title="一、安全测试的内容"></a>一、安全测试的内容</h2><h3 id="1、用户认证机制"><a href="#1、用户认证机制" class="headerlink" title="1、用户认证机制"></a>1、用户认证机制</h3><h3 id="2、加密机制"><a href="#2、加密机制" class="headerlink" title="2、加密机制"></a>2、加密机制</h3><h3 id="3、安全防护策略"><a href="#3、安全防护策略" class="headerlink" title="3、安全防护策略"></a>3、安全防护策略</h3><h3 id="4、数据备份与恢复手段"><a href="#4、数据备份与恢复手段" class="headerlink" title="4、数据备份与恢复手段"></a>4、数据备份与恢复手段</h3><h3 id="5、防病毒系统"><a href="#5、防病毒系统" class="headerlink" title="5、防病毒系统"></a>5、防病毒系统</h3><h2 id="二、安全系统测试的策略"><a href="#二、安全系统测试的策略" class="headerlink" title="二、安全系统测试的策略"></a>二、安全系统测试的策略</h2><h3 id="1、基本安全防护系统测试"><a href="#1、基本安全防护系统测试" class="headerlink" title="1、基本安全防护系统测试"></a>1、基本安全防护系统测试</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">防火墙</div><div class="line">入侵检测系统</div><div class="line">漏洞扫描</div><div class="line">病毒防治</div><div class="line">安全审计</div><div class="line">web 信息防篡改系统</div></pre></td></tr></table></figure>
-<h3 id="2、安全系统防护体系"><a href="#2、安全系统防护体系" class="headerlink" title="2、安全系统防护体系"></a>2、安全系统防护体系</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">证书业务服务系统测试</div><div class="line">证书查询验证服务系统测试</div><div class="line">密钥管理系统测试</div><div class="line">密码服务系统测试</div><div class="line">可信授权服务系统测试</div><div class="line">可信时间戳服务系统测试</div><div class="line">故障恢复与容灾备份测试</div><div class="line">安全产品的选择</div></pre></td></tr></table></figure>
-<h3 id="3、安全性测试方法"><a href="#3、安全性测试方法" class="headerlink" title="3、安全性测试方法"></a>3、安全性测试方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">功能验证</div><div class="line">漏洞扫描</div><div class="line">模拟攻击试验</div><div class="line">侦听技术</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/04/01/security-testing-001/" data-id="cjltctp71001wqijy3q8lqprm" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安全测试/">安全测试</a></li></ul>
 
     </footer>
   </div>
@@ -561,7 +602,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Mot-clés</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APP测试/">APP测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Quality-Assurance/">Quality Assurance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIM/">VIM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jMeter/">jMeter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安全测试/">安全测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/接口测试/">接口测试</a></li></ul>
     </div>
@@ -571,9 +612,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nuage de mot-clés</h3>
     <div class="widget tagcloud">
-      <a href="/tags/APP测试/" style="font-size: 20px;">APP测试</a> <a href="/tags/Charles/" style="font-size: 11.67px;">Charles</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 16.67px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 18.33px;">Python</a> <a href="/tags/Quality-Assurance/" style="font-size: 10px;">Quality Assurance</a> <a href="/tags/Shell/" style="font-size: 13.33px;">Shell</a> <a href="/tags/VIM/" style="font-size: 13.33px;">VIM</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/jMeter/" style="font-size: 13.33px;">jMeter</a> <a href="/tags/安全测试/" style="font-size: 10px;">安全测试</a> <a href="/tags/接口测试/" style="font-size: 16.67px;">接口测试</a>
+      <a href="/tags/APP测试/" style="font-size: 18.33px;">APP测试</a> <a href="/tags/Charles/" style="font-size: 11.67px;">Charles</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 16.67px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/Quality-Assurance/" style="font-size: 10px;">Quality Assurance</a> <a href="/tags/Shell/" style="font-size: 13.33px;">Shell</a> <a href="/tags/VIM/" style="font-size: 13.33px;">VIM</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/jMeter/" style="font-size: 13.33px;">jMeter</a> <a href="/tags/安全测试/" style="font-size: 10px;">安全测试</a> <a href="/tags/接口测试/" style="font-size: 16.67px;">接口测试</a>
     </div>
   </div>
 
@@ -582,7 +623,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li></ul>
     </div>
   </div>
 
@@ -590,9 +631,17 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/11/30/python-007/">python——命名规范</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/29/python-008/">pytho——代码规范</a>
+          </li>
         
           <li>
             <a href="/2018/08/25/git-002/">git-基本操作（二）</a>
@@ -604,14 +653,6 @@
         
           <li>
             <a href="/2018/08/23/Charles-001/">Charles 重定向功能——Map Local</a>
-          </li>
-        
-          <li>
-            <a href="/2018/08/22/Charles-002/">Charles——模拟慢速网络</a>
-          </li>
-        
-          <li>
-            <a href="/2018/08/21/QA的职责/">QA的职责</a>
           </li>
         
       </ul>
@@ -627,7 +668,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 hannie<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
