@@ -61,6 +61,170 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-git-003" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/18/git-003/" class="article-date">
+  <time datetime="2018-07-18T13:36:40.000Z" itemprop="datePublished">2018-07-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/18/git-003/">git-最常用的操作</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>git版本控制系统，能跟踪文本文件的改动，比如TXT文件，网页，所有的程序代码等等。</p>
+<h2 id="1-git-init"><a href="#1-git-init" class="headerlink" title="1. git init"></a>1. <code>git init</code></h2><p>在本地创建一个空目录，然后用<code>git init</code>把刚刚建的空目录变成Git可以管理的仓库。<br><code>.git</code>目录是Git来跟踪管理版本库的.</p>
+<h2 id="2-git-status"><a href="#2-git-status" class="headerlink" title="2. git status"></a>2. <code>git status</code></h2><p>用该命令可以时刻掌握仓库当前的状态</p>
+<h2 id="3-git-add-filename"><a href="#3-git-add-filename" class="headerlink" title="3. git add filename"></a>3. <code>git add filename</code></h2><p>用该命令把fliename添加到仓库的暂存区。</p>
+<h2 id="4-git-commit-m-“修改了些什么东东”"><a href="#4-git-commit-m-“修改了些什么东东”" class="headerlink" title="4. git commit -m “修改了些什么东东”"></a>4. <code>git commit -m “修改了些什么东东”</code></h2><p>该命令把暂存区中的文件提交到master</p>
+<h2 id="5-git-reflog"><a href="#5-git-reflog" class="headerlink" title="5. git reflog"></a>5. <code>git reflog</code></h2><p>用该命令查看命令的历史</p>
+<h2 id="6-git-log"><a href="#6-git-log" class="headerlink" title="6. git log"></a>6. <code>git log</code></h2><p>用该命令查看从最近到最远的提交日志</p>
+<h2 id="7-git-log-pretty-oneline"><a href="#7-git-log-pretty-oneline" class="headerlink" title="7. git log --pretty=oneline"></a>7. <code>git log --pretty=oneline</code></h2><p>用该命令查看commit id，在想返回到以前的版本时可以用</p>
+<h2 id="8-git-log-graph"><a href="#8-git-log-graph" class="headerlink" title="8. git log --graph"></a>8. <code>git log --graph</code></h2><p>用该命令查看分支合并图</p>
+<h2 id="9-git-reset"><a href="#9-git-reset" class="headerlink" title="9. git reset"></a>9. <code>git reset</code></h2><p>用该命令回退到之前的版本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git reset --hard HEAD^               #回退到上一个版本</div><div class="line">git reset --hard HEAD^^              #回退到上上个版本</div><div class="line">git reset --hard HEAD~100            #回退到上100个版本</div><div class="line">git reset --hard &lt;commit id的前几位&gt;  #回退到指定的版本</div></pre></td></tr></table></figure></p>
+<h2 id="10-git-diff-filename"><a href="#10-git-diff-filename" class="headerlink" title="10. git diff filename"></a>10. <code>git diff filename</code></h2><p>用该命令查看difference。</p>
+<h2 id="11-git-diff-HEAD-filename"><a href="#11-git-diff-HEAD-filename" class="headerlink" title="11. git diff HEAD -- filename"></a>11. <code>git diff HEAD -- filename</code></h2><p>用该命令查看工作区和版本库里最新版本的区别。</p>
+<h2 id="12-git-checkout-filename"><a href="#12-git-checkout-filename" class="headerlink" title="12. git checkout -- filename"></a>12. <code>git checkout -- filename</code></h2><p>用该命令把文件filename在工作区中的修改全部撤销。<br>（当改乱了工作区某文件中的内容时用上面的命令丢弃工作区中的修改）</p>
+<h2 id="13-git-reset-HEAD-filename"><a href="#13-git-reset-HEAD-filename" class="headerlink" title="13. git reset HEAD filename"></a>13. <code>git reset HEAD filename</code></h2><p>当改乱了工作区中的某文件中的内容，且把该文件提交到了暂存区，需要走下面两步去撤销。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git reset HEAD filename</div><div class="line">git checkout -- filename</div></pre></td></tr></table></figure></p>
+<h2 id="14-git-rm-filename"><a href="#14-git-rm-filename" class="headerlink" title="14. git rm filename"></a>14. <code>git rm filename</code></h2><p>删除版本库中的文件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">rm filename  #删除工作区的filename</div><div class="line">git rm filename #删除版本库的filename</div></pre></td></tr></table></figure></p>
+<h2 id="15-git-branch-dev"><a href="#15-git-branch-dev" class="headerlink" title="15. git branch dev"></a>15. <code>git branch dev</code></h2><p>创建了一个叫dev的分支</p>
+<h2 id="16-git-checkout-dev"><a href="#16-git-checkout-dev" class="headerlink" title="16. git checkout dev"></a>16. <code>git checkout dev</code></h2><p>切换到分支dev</p>
+<h2 id="17-git-checkout-b-dev"><a href="#17-git-checkout-b-dev" class="headerlink" title="17. git checkout -b dev"></a>17. <code>git checkout -b dev</code></h2><p>创建分支dev，并切换到分支dev。</p>
+<h2 id="18-git-branch"><a href="#18-git-branch" class="headerlink" title="18. git branch"></a>18. <code>git branch</code></h2><p>用该命令查看当前所在的分支。</p>
+<h2 id="19-git-checkout-master"><a href="#19-git-checkout-master" class="headerlink" title="19. git checkout master"></a>19. <code>git checkout master</code></h2><p>切回到master分支</p>
+<h2 id="20-git-merge-dev"><a href="#20-git-merge-dev" class="headerlink" title="20. git merge dev"></a>20. <code>git merge dev</code></h2><p>把dev分支上的工作成果合并到master分支上</p>
+<h2 id="21-git-branch-d-dev"><a href="#21-git-branch-d-dev" class="headerlink" title="21. git branch -d dev"></a>21. <code>git branch -d dev</code></h2><p>删除dev分支。</p>
+<h2 id="22-git-stash"><a href="#22-git-stash" class="headerlink" title="22. git stash"></a>22. <code>git stash</code></h2><p>把当前工作现场“储藏”起来，以后可以恢复工作现场，</p>
+<h2 id="23-git-stash-list"><a href="#23-git-stash-list" class="headerlink" title="23. git stash list"></a>23. <code>git stash list</code></h2><p>查看“储藏”列表</p>
+<h2 id="24-git-stash-pop"><a href="#24-git-stash-pop" class="headerlink" title="24. git stash pop"></a>24. <code>git stash pop</code></h2><p>恢复工作现场，并把stash内容删除</p>
+<h2 id="25-git-remote-add-origin-git-git-llsapp-com-scorix-telis-api-test-git"><a href="#25-git-remote-add-origin-git-git-llsapp-com-scorix-telis-api-test-git" class="headerlink" title="25. git remote add origin git@git.llsapp.com:scorix/telis-api-test.git"></a>25. <code>git remote add origin git@git.llsapp.com:scorix/telis-api-test.git</code></h2><p>把本地仓库与远程仓库关联起来</p>
+<h2 id="26-git-push-u-origin-master"><a href="#26-git-push-u-origin-master" class="headerlink" title="26. git push -u origin master"></a>26. <code>git push -u origin master</code></h2><p>把当前的分支推送到远程库</p>
+<h2 id="27-git-clone-git-git-llsapp-com-scorix-telis-api-test-git"><a href="#27-git-clone-git-git-llsapp-com-scorix-telis-api-test-git" class="headerlink" title="27. git clone git@git.llsapp.com:scorix/telis-api-test.git"></a>27. <code>git clone git@git.llsapp.com:scorix/telis-api-test.git</code></h2><p>clone代码到本地工作区</p>
+<h2 id="28-git-pull-lt-远程主机名-gt-lt-远程分支名-gt-lt-本地分支名-gt"><a href="#28-git-pull-lt-远程主机名-gt-lt-远程分支名-gt-lt-本地分支名-gt" class="headerlink" title="28. git pull &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;"></a>28. <code>git pull &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;</code></h2><p>取回远程主机某个分支的更新，再与本地的指定分支合并</p>
+<h2 id="29-git-rebase"><a href="#29-git-rebase" class="headerlink" title="29. git rebase"></a>29. <code>git rebase</code></h2><p>用于把一个分支的修改合并到当前分支</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2018/07/18/git-003/" data-id="cjp42zphe000xhojymus0q2lv" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-http-002" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/04/http-002/" class="article-date">
+  <time datetime="2018-06-04T12:14:39.000Z" itemprop="datePublished">2018-06-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/04/http-002/">http协议-接口测试基础（二）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-常用的HTTP请求方式"><a href="#1-常用的HTTP请求方式" class="headerlink" title="1.常用的HTTP请求方式"></a>1.常用的HTTP请求方式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">请求格式如下: Method Request-URI HTTP-Version CRLF </div><div class="line"> Method       //表示请求方法;</div><div class="line"> Request-URI  //是一个统一资源标识符;</div><div class="line"> HTTP-Version //表示请求的HTTP协议版本;</div><div class="line"> CRLF         //表示回车和换行;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">GET     //请求获取Request-URI所标识的资源</div><div class="line">        //数据跟在url后面</div><div class="line">        //(GET可能会被网络蜘蛛等随意访问，浪费资源。)</div><div class="line">        </div><div class="line">POST    //在Request-URI所标识的资源后附加新的数据</div><div class="line">        //数据被包含在请求体中</div><div class="line">        //POST请求可能会导致新的资源的建立和/或已有资源的修改</div><div class="line">        </div><div class="line">PUT     //请求服务器存储一个资源，并用Request-URI作为其标识</div><div class="line"></div><div class="line">TRACE   //请求服务器回送收到的请求信息，主要用于测试或诊断</div><div class="line"></div><div class="line">HEAD    //请求获取由Request-URI所标识的资源的响应消息报头</div><div class="line"></div><div class="line">DELETE  //请求服务器删除Request-URI所标识的资源</div><div class="line"></div><div class="line">CONNECT //保留将来使用</div><div class="line"></div><div class="line">OPTIONS //请求查询服务器的性能，或者查询与资源相关的选项和需求</div></pre></td></tr></table></figure>
+<h2 id="2-中介"><a href="#2-中介" class="headerlink" title="2. 中介"></a>2. 中介</h2><p>中介由三种：<br>代理(Proxy)、<br>网关(Gateway)<br>通道(Tunnel)，<br>代理(Proxy)：一个中间程序，它可以充当一个服务器，也可以充当一个客户机，为其它客户机建立请求。请求是通过可能的翻译在内部或经过传递到其它的 服务器中。一个代理在发送请求信息之前，必须解释并且如果可能重写它。代理经常作为通过防火墙的客户机端的门户，代理还可以作为一个帮助应用来通过协议处 理没有被用户代理完成的请求。<br>网关(Gateway)：一个作为其它服务器中间媒介的服务器。与代理不同的是，网关接受请求就好象对被请求的资源来说它就是源服务器；发出请求的客户机并没有意识到它在同网关打交道。<br>网关经常作为通过防火墙的服务器端的门户，网关还可以作为一个协议翻译器以便存取那些存储在非HTTP系统中的资源。<br>通道(Tunnel)：是作为两个连接中继的中介程序。一旦激活，通道便被认为不属于HTTP通讯，尽管通道可能是被一个HTTP请求初始化的。当被中继 的连接两端关闭时，通道便消失。当一个门户(Portal)必须存在或中介(Intermediary)不能解释中继的通讯时通道被经常使用。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2018/06/04/http-002/" data-id="cjp42zphm0019hojynisi6l5q" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/接口测试/">接口测试</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-http-001" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/02/http-001/" class="article-date">
+  <time datetime="2018-06-02T12:05:08.000Z" itemprop="datePublished">2018-06-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/02/http-001/">http协议-接口测试基础（一）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-常见的接口协议"><a href="#1-常见的接口协议" class="headerlink" title="1. 常见的接口协议"></a>1. 常见的接口协议</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">HTTP：   超文本传输协议</div><div class="line">HTTPS：  安全超文本传输协议</div><div class="line">FTP：    文本传输协议</div><div class="line">UDP：    用户数据协议（比如：QQ）</div><div class="line">TCP ：   网络控制协议</div><div class="line">IP ：    互联网协议</div><div class="line">SMTP：   电子邮件传输协议</div></pre></td></tr></table></figure>
+<h2 id="2-HTTP与HTTPS的区别"><a href="#2-HTTP与HTTPS的区别" class="headerlink" title="2. HTTP与HTTPS的区别"></a>2. HTTP与HTTPS的区别</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">HTTP</div><div class="line">**TCP**</div><div class="line">IP</div><div class="line">数据链路层</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">HTTPS</div><div class="line">**TLS/SSL**</div><div class="line">IP</div><div class="line">数据链路层</div></pre></td></tr></table></figure>
+<h2 id="3-HTTP协议的响应码"><a href="#3-HTTP协议的响应码" class="headerlink" title="3. HTTP协议的响应码"></a>3. HTTP协议的响应码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">1xx：信息响应类，表示接收到请求并继续处理。（中间的状态，一瞬间）</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">2xx：处理成功响应类，表示动作被成功接收，理解，接受。</div><div class="line">比如：200 OK      //客户端请求成功</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">3xx：重定向响应类，为了完成指定的动作，必须接受进一步处理</div><div class="line">304：如果客户端发送了一个带条件的 GET请求且该请求已被允许，而文档的内容（自上次访问以来或者根据请求的条件）并没有改变，则服务器应当返回这个状态码”。</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">4xx：客户端错误，客户请求包含语法错误或者不能正确执行。400 Bad Request //客户端请求有语法错误，不能被服务器所理解</div><div class="line">401 Unauthorized //请求未经授权，这个状态代码必须和WWW-Authenticate报头域一起使用 </div><div class="line">403 Forbidden  //服务器收到请求，但是拒绝提供服务</div><div class="line">404 Not Found  //请求资源不存在，eg：输入了错误的URL</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">5xx：服务器端错误，服务器不能争取执行一个正确的请求。（若出现这些问题，首先查服务期端的日志，这类问题一般比较严重的。）</div><div class="line">500 Internal Server Error //服务器发生不可预期的错误</div><div class="line">503 Server Unavailable  //服务器当前不能处理客户端的请求，一段时间后可能恢复正常.</div></pre></td></tr></table></figure>
+<h2 id="4-HTTP协议请求响应模型-一次请求的生命周期"><a href="#4-HTTP协议请求响应模型-一次请求的生命周期" class="headerlink" title="4. HTTP协议请求响应模型(一次请求的生命周期)"></a>4. HTTP协议请求响应模型(一次请求的生命周期)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">client——&gt; API ——&gt; DB——&gt;  API——&gt; client</div></pre></td></tr></table></figure>
+<h3 id="4-1-客户端发出请求到API接口层（client—-gt-API）"><a href="#4-1-客户端发出请求到API接口层（client—-gt-API）" class="headerlink" title="4.1 客户端发出请求到API接口层（client—&gt; API）"></a>4.1 客户端发出请求到API接口层（client—&gt; API）</h3><p>比如：用户在客户端填写用户名和密码，之后点击登录，发送请求。</p>
+<h3 id="4-2-API接收到客户端发送的用户请求（API接收client请求）"><a href="#4-2-API接收到客户端发送的用户请求（API接收client请求）" class="headerlink" title="4.2 API接收到客户端发送的用户请求（API接收client请求）"></a>4.2 API接收到客户端发送的用户请求（API接收client请求）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">API对业务逻辑进行验证</div><div class="line">比如：验证用户和密码时否合法：</div><div class="line">      若不合法，则需要给客户端返回响应码，比如1，2，3</div><div class="line">      1代表用户名格式错误</div><div class="line">      2代表用户或密码错误</div><div class="line">      3代表密码格式错误</div></pre></td></tr></table></figure>
+<h3 id="4-3-API会将用户输入的数据发给DB层-API-—-gt-DB"><a href="#4-3-API会将用户输入的数据发给DB层-API-—-gt-DB" class="headerlink" title="4.3 API会将用户输入的数据发给DB层(API —&gt; DB)"></a>4.3 API会将用户输入的数据发给DB层(API —&gt; DB)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Create Read Update Delete</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">比如：seletct * from user where</div><div class="line">      username = ‘’ and passward = ‘’;</div><div class="line">      数据库查询成功则返回1，失败则返回0</div></pre></td></tr></table></figure>
+<h3 id="4-4-DB会将查询数据库返回的条目给API（DB—-gt-API）"><a href="#4-4-DB会将查询数据库返回的条目给API（DB—-gt-API）" class="headerlink" title="4.4 DB会将查询数据库返回的条目给API（DB—&gt; API）"></a>4.4 DB会将查询数据库返回的条目给API（DB—&gt; API）</h3><h3 id="4-5-API返回成功或失败的状态码给客户端（-API—-gt-client）"><a href="#4-5-API返回成功或失败的状态码给客户端（-API—-gt-client）" class="headerlink" title="4.5 API返回成功或失败的状态码给客户端（ API—&gt;client）"></a>4.5 API返回成功或失败的状态码给客户端（ API—&gt;client）</h3><h3 id="4-6-客户端将返回的信息提示给用户"><a href="#4-6-客户端将返回的信息提示给用户" class="headerlink" title="4.6 客户端将返回的信息提示给用户"></a>4.6 客户端将返回的信息提示给用户</h3><h2 id="5-测试app一般分为三层"><a href="#5-测试app一般分为三层" class="headerlink" title="5. 测试app一般分为三层"></a>5. 测试app一般分为三层</h2><h3 id="5-1-客户端层"><a href="#5-1-客户端层" class="headerlink" title="5.1 客户端层"></a>5.1 客户端层</h3><p>功能测试<br>性能测试<br>自动化测试</p>
+<h3 id="5-2-接口层"><a href="#5-2-接口层" class="headerlink" title="5.2 接口层"></a>5.2 接口层</h3><p>接口测试<br>功能测试<br>性能测试<br>自动化测试</p>
+<h3 id="5-3-数据库层"><a href="#5-3-数据库层" class="headerlink" title="5.3 数据库层"></a>5.3 数据库层</h3><p>可以将开发人员使用到的sql语句单独拿出来进行性能测试。</p>
+<p>（未完，待续……）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2018/06/02/http-001/" data-id="cjp42zphl0017hojyxeau6nob" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/接口测试/">接口测试</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-接口测试-003" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/04/07/接口测试-003/" class="article-date">
@@ -90,7 +254,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/04/07/接口测试-003/" data-id="cjp42i9t7002irtjyk37axdza" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2018/04/07/接口测试-003/" data-id="cjp42zpim002ohojyb55g5fxc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/接口测试/">接口测试</a></li></ul>
@@ -132,7 +296,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/04/01/security-testing-001/" data-id="cjp42i9sy0020rtjy08b0adaj" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2018/04/01/security-testing-001/" data-id="cjp42zpid0026hojy2zz8a1al" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安全测试/">安全测试</a></li></ul>
@@ -178,7 +342,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/03/06/接口测试-002/" data-id="cjp42i9t5002grtjy1r891ztb" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2018/03/06/接口测试-002/" data-id="cjp42zpil002lhojycpye7f0i" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/接口测试/">接口测试</a></li></ul>
@@ -219,7 +383,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/03/05/接口测试-001/" data-id="cjp42i9t4002drtjyzftjlrp3" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2018/03/05/接口测试-001/" data-id="cjp42zpil002khojyfl1cy9ic" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/接口测试/">接口测试</a></li></ul>
@@ -259,7 +423,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/01/03/jmeter-003/" data-id="cjp42i9se001ertjy2vhlngk0" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2018/01/03/jmeter-003/" data-id="cjp42zphp001dhojy0nma6gcl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jMeter/">jMeter</a></li></ul>
@@ -299,7 +463,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/01/02/jmeter-002/" data-id="cjp42i9sc001drtjyd2nocl19" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2018/01/02/jmeter-002/" data-id="cjp42zpho001bhojyv3bcok4w" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jMeter/">jMeter</a></li></ul>
@@ -342,145 +506,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2018/01/01/jmeter-001/" data-id="cjp42i9sb001brtjyu10xj4w6" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2018/01/01/jmeter-001/" data-id="cjp42zpht001hhojy5x7x9rfw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jMeter/">jMeter</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-python-006" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/25/python-006/" class="article-date">
-  <time datetime="2017-07-25T13:43:32.000Z" itemprop="datePublished">2017-07-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/25/python-006/">python——数据结构</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-列表"><a href="#1-列表" class="headerlink" title="1. 列表  []"></a>1. 列表  []</h2><p>列表是<strong>可变的</strong>数据类型，可以<strong>增加</strong>和<strong>删除</strong>项目。<br>n是从0开始计数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line">#filename:using_list.py</div><div class="line"></div><div class="line">shoplist=[&apos;apple&apos;,&apos;mango&apos;,&apos;carrot&apos;,&apos;banana&apos;]</div><div class="line"></div><div class="line">#len()</div><div class="line">print len(shoplist)</div><div class="line"></div><div class="line">#append()</div><div class="line">shoplist.append(&apos;rice&apos;)</div><div class="line">print shoplist</div><div class="line"></div><div class="line">#insert()</div><div class="line">shoplist.insert(4,&apos;lemon&apos;)</div><div class="line">print shoplist</div><div class="line"></div><div class="line">#sort()</div><div class="line">shoplist.sort()</div><div class="line">print shoplist</div><div class="line"></div><div class="line">#remove()</div><div class="line">shoplist.remove(&apos;rice&apos;)</div><div class="line">print shoplist</div><div class="line"></div><div class="line">#reverse()</div><div class="line">shoplist.reverse()</div><div class="line">print shoplist</div></pre></td></tr></table></figure></p>
-<p>结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">➜  ~python using_list.py</div><div class="line">4</div><div class="line">[&apos;apple&apos;, &apos;mango&apos;, &apos;carrot&apos;, &apos;banana&apos;, &apos;rice&apos;]</div><div class="line">[&apos;apple&apos;, &apos;mango&apos;, &apos;carrot&apos;, &apos;banana&apos;, &apos;lemon&apos;, &apos;rice&apos;]</div><div class="line">[&apos;apple&apos;, &apos;banana&apos;, &apos;carrot&apos;, &apos;lemon&apos;, &apos;mango&apos;, &apos;rice&apos;]</div><div class="line">[&apos;apple&apos;, &apos;banana&apos;, &apos;carrot&apos;, &apos;lemon&apos;, &apos;mango&apos;]</div><div class="line">[&apos;mango&apos;, &apos;lemon&apos;, &apos;carrot&apos;, &apos;banana&apos;, &apos;apple&apos;]</div></pre></td></tr></table></figure></p>
-<h2 id="2-元组"><a href="#2-元组" class="headerlink" title="2.元组()"></a>2.元组()</h2><p>元组是<strong>不可变的</strong>数据类型。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line">#filename:using_tuple.py</div><div class="line"></div><div class="line">zoo=(&apos;wolf&apos;,&apos;elephone&apos;,&apos;monkey&apos;)</div><div class="line">print zoo</div><div class="line"></div><div class="line">#len()</div><div class="line">print len(zoo)</div><div class="line"></div><div class="line">new_zoo=(&apos;dolphin&apos;,&apos;rabit&apos;,zoo)</div><div class="line">print new_zoo</div><div class="line"></div><div class="line">print new_zoo[0]</div><div class="line">print new_zoo[2]</div><div class="line">print new_zoo[2][2]</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">➜  ~ python using_tuple.py</div><div class="line">(&apos;wolf&apos;, &apos;elephone&apos;, &apos;monkey&apos;)</div><div class="line">3</div><div class="line">(&apos;dolphin&apos;, &apos;rabit&apos;, (&apos;wolf&apos;, &apos;elephone&apos;, &apos;monkey&apos;))</div><div class="line">dolphin</div><div class="line">(&apos;wolf&apos;, &apos;elephone&apos;, &apos;monkey&apos;)</div><div class="line">monkey</div></pre></td></tr></table></figure>
-<p>元组最通常的用法是用在打印句子中:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line">age=22</div><div class="line">name=&quot;hannie&quot;</div><div class="line"></div><div class="line">print &quot;%s is %d years old&quot; % (name,age)</div><div class="line">print &quot;why is %s playing with that python&quot;% name</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">➜  python_learn python print_tuple.py</div><div class="line">hannie is 22 years old</div><div class="line">why is hannie playing with that python</div></pre></td></tr></table></figure>
-<h2 id="3-字典"><a href="#3-字典" class="headerlink" title="3.字典 {}"></a>3.字典 {}</h2><p>字典类似于你通过联系人名字查找地址和联系人详细情况的地址簿，把<strong>键</strong>（名字，是唯一的）和<strong>值</strong>（详细情况）练习在一起。<br><strong>键：</strong>使用不可变的对象（比如字符串）作为字典的键<br><strong>值：</strong>使用不可变的或可变的对象作为字典的值<br><code>d = {key1 : value1 , key2 : value2}</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line">#filename:using_dict.py</div><div class="line"></div><div class="line">ab=&#123;</div><div class="line">        &apos;swaroop&apos;:&apos;swaroopch@liulishuo.com&apos;,</div><div class="line">        &apos;larry&apos;:&apos;larry@lilishuo.com&apos;,</div><div class="line">        &apos;mm&apos;:&apos;mm@liulishuo.com&apos;,</div><div class="line">        &apos;spammer&apos;:&apos;spammer@liulishuo.com&apos;</div><div class="line">&#125;</div><div class="line">print &quot;swaroop&apos;s address is %s&quot; % ab[&apos;swaroop&apos;]</div><div class="line"></div><div class="line"></div><div class="line">ab[&apos;guido&apos;]=&apos;guido@liulishuo.com&apos;</div><div class="line">print ab</div><div class="line">print &apos;there are %d contacts in the address-book\n&apos; % len(ab)</div><div class="line"></div><div class="line"></div><div class="line">del ab[&apos;mm&apos;]</div><div class="line">print ab</div><div class="line">print &apos;there are %d contacts in the address-book\n&apos; % len(ab)</div><div class="line"></div><div class="line">for name,address in ab.items():</div><div class="line">        print &apos;contact %s at %s&apos; % (name,address)</div><div class="line">#使用字典的items方法，来使用字典中的每个键/值对</div><div class="line"></div><div class="line">if &apos;guido&apos; in ab:</div><div class="line">        print &quot;\nguido&apos;s address is %s&quot;  % ab[&apos;guido&apos;]</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">swaroop&apos;s address is swaroopch@liulishuo.com</div><div class="line">&#123;&apos;swaroop&apos;: &apos;swaroopch@liulishuo.com&apos;, &apos;mm&apos;: &apos;mm@liulishuo.com&apos;, &apos;larry&apos;: &apos;larry@lilishuo.com&apos;, &apos;spammer&apos;: &apos;spammer@liulishuo.com&apos;, &apos;guido&apos;: &apos;guido@liulishuo.com&apos;&#125;</div><div class="line">there are 5 contacts in the address-book</div><div class="line"></div><div class="line">&#123;&apos;swaroop&apos;: &apos;swaroopch@liulishuo.com&apos;, &apos;larry&apos;: &apos;larry@lilishuo.com&apos;, &apos;spammer&apos;: &apos;spammer@liulishuo.com&apos;, &apos;guido&apos;: &apos;guido@liulishuo.com&apos;&#125;</div><div class="line">there are 4 contacts in the address-book</div><div class="line"></div><div class="line">contact swaroop at swaroopch@liulishuo.com</div><div class="line">contact larry at larry@lilishuo.com</div><div class="line">contact spammer at spammer@liulishuo.com</div><div class="line">contact guido at guido@liulishuo.com</div><div class="line"></div><div class="line">guido&apos;s address is guido@liulishuo.com</div></pre></td></tr></table></figure>
-<h2 id="4-序列-（列表、元组和字符串都是序列）"><a href="#4-序列-（列表、元组和字符串都是序列）" class="headerlink" title="4. 序列  （列表、元组和字符串都是序列）"></a>4. 序列  （列表、元组和字符串都是序列）</h2><p>序列的两个主要特点是<strong>索引操作符</strong>和<strong>切片操作符</strong><br><strong>索引操作符：</strong>可以让我们从序列中抓取一个特定的项目<br><strong>切片操作符：</strong>可以让我们能够获取序列的一个切片，即一部分序列<br>第一个数（冒号之前）表示切片开始的位置，第二个数（冒号之后）表示切片到哪里结束<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line">#filename:seq.py</div><div class="line"></div><div class="line"></div><div class="line">shoplist=[&apos;apple&apos;,&apos;mango&apos;,&apos;carrot&apos;,&apos;banana&apos;]</div><div class="line">#index</div><div class="line">print &apos;item 0 is&apos;,shoplist[0]</div><div class="line">print &apos;item 3 is&apos;,shoplist[3]</div><div class="line"></div><div class="line">print &apos;item -1 is&apos;,shoplist[-1]</div><div class="line">print &apos;item -2 is&apos;,shoplist[-2]</div><div class="line"></div><div class="line"></div><div class="line">#slicing on a list</div><div class="line">print &apos;item 1 to 3 is&apos;,shoplist[1:3]</div><div class="line">print &apos;item 1 to -1 is&apos;,shoplist[1:-1]</div><div class="line">print &apos;item start to end is&apos;,shoplist[:]</div><div class="line"></div><div class="line"></div><div class="line">#slicing on a string</div><div class="line">name=&apos;swaroop&apos;</div><div class="line">print &apos;characters 1 to 3 is&apos;,name[1:3]</div><div class="line">print &apos;1 to -1&apos;,name[1:-1]</div><div class="line">print &apos;start to end&apos;,name[:]</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">➜  python seq.py</div><div class="line">item 0 is apple</div><div class="line">item 3 is banana</div><div class="line">item -1 is banana</div><div class="line">item -2 is carrot</div><div class="line">item 1 to 3 is [&apos;mango&apos;, &apos;carrot&apos;]</div><div class="line">item 1 to -1 is [&apos;mango&apos;, &apos;carrot&apos;]</div><div class="line">item start to end is [&apos;apple&apos;, &apos;mango&apos;, &apos;carrot&apos;, &apos;banana&apos;]</div><div class="line">characters 1 to 3 is wa</div><div class="line">1 to -1 waroo</div><div class="line">start to end swaroop</div></pre></td></tr></table></figure>
-<h2 id="tags-Python"><a href="#tags-Python" class="headerlink" title="tags: Python"></a>tags: Python</h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/25/python-006/" data-id="cjp42i9sp001urtjyyvbtsp5l" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-python-005" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/19/python-005/" class="article-date">
-  <time datetime="2017-07-19T13:28:30.000Z" itemprop="datePublished">2017-07-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/19/python-005/">python——模块</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>若想再其他函数中重用很多函数，则可以使用<strong>模块</strong>，模块是一个包含了所有你定义的函数和变量的文件，模块的文件名必须以.py为扩展名。</p>
-<h2 id="1-使用标准库模块（sys模块）"><a href="#1-使用标准库模块（sys模块）" class="headerlink" title="1.使用标准库模块（sys模块）"></a>1.使用标准库模块（sys模块）</h2><p>import sys</p>
-<p>from sys import *<br>但是为了避免名称冲突，尽量使用import语句</p>
-<h2 id="2-若我只想在程序本身被使用的时候运行主块，而在它被别的模块输入的时候不运行主块可以通过模块的name属性完成"><a href="#2-若我只想在程序本身被使用的时候运行主块，而在它被别的模块输入的时候不运行主块可以通过模块的name属性完成" class="headerlink" title="2.若我只想在程序本身被使用的时候运行主块，而在它被别的模块输入的时候不运行主块可以通过模块的name属性完成"></a>2.若我只想在程序本身被使用的时候运行主块，而在它被别的模块输入的时候不运行主块可以通过模块的<strong>name</strong>属性完成</h2><h2 id="3-使用dir-函数列出模块定义的标识符。（函数，类，变量）"><a href="#3-使用dir-函数列出模块定义的标识符。（函数，类，变量）" class="headerlink" title="3.使用dir()函数列出模块定义的标识符。（函数，类，变量）"></a>3.使用dir()函数列出模块定义的标识符。（函数，类，变量）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import sys</div><div class="line">&gt;&gt;&gt; dir(sys)</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/19/python-005/" data-id="cjp42i9sk001qrtjyhi5bf9xu" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-python-004" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/18/python-004/" class="article-date">
-  <time datetime="2017-07-18T13:45:44.000Z" itemprop="datePublished">2017-07-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/18/python-004/">python——NumPy数组（一）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-全零矩阵"><a href="#1-全零矩阵" class="headerlink" title="1. 全零矩阵"></a>1. 全零矩阵</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import numpy as det</div><div class="line">&gt;&gt;&gt; a = det.zeros((3,3))</div><div class="line">&gt;&gt;&gt; print a</div><div class="line">[[ 0.  0.  0.]</div><div class="line"> [ 0.  0.  0.]</div><div class="line"> [ 0.  0.  0.]]</div></pre></td></tr></table></figure>
-<h2 id="2-全一矩阵"><a href="#2-全一矩阵" class="headerlink" title="2. 全一矩阵"></a>2. 全一矩阵</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import numpy as det</div><div class="line">&gt;&gt;&gt; a = det.ones((3,3))</div><div class="line">&gt;&gt;&gt; print a</div><div class="line">[[ 1.  1.  1.]</div><div class="line"> [ 1.  1.  1.]</div><div class="line"> [ 1.  1.  1.]]</div></pre></td></tr></table></figure>
-<h2 id="3-指定固定值矩阵"><a href="#3-指定固定值矩阵" class="headerlink" title="3. 指定固定值矩阵"></a>3. 指定固定值矩阵</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import numpy as det</div><div class="line">&gt;&gt;&gt; a = det.full((3,3),100)</div><div class="line">&gt;&gt;&gt; print a</div><div class="line">[[ 100.  100.  100.]</div><div class="line"> [ 100.  100.  100.]</div><div class="line"> [ 100.  100.  100.]]</div></pre></td></tr></table></figure>
-<h2 id="4-随机矩阵"><a href="#4-随机矩阵" class="headerlink" title="4. 随机矩阵"></a>4. 随机矩阵</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import numpy as det</div><div class="line">&gt;&gt;&gt; a = det.random.random((3,3))</div><div class="line">&gt;&gt;&gt; print a</div><div class="line">[[ 0.46759462  0.74203465  0.1685592 ]</div><div class="line"> [ 0.09625809  0.25350595  0.17873013]</div><div class="line"> [ 0.43552232  0.78442542  0.76970373]]</div></pre></td></tr></table></figure>
-<h2 id="5-对角矩阵"><a href="#5-对角矩阵" class="headerlink" title="5. 对角矩阵"></a>5. 对角矩阵</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import numpy as det</div><div class="line">&gt;&gt;&gt; a = det.eye(3)</div><div class="line">&gt;&gt;&gt; print a</div><div class="line">[[ 1.  0.  0.]</div><div class="line"> [ 0.  1.  0.]</div><div class="line"> [ 0.  0.  1.]]</div></pre></td></tr></table></figure>
-<h2 id="6-指定固定值矩阵"><a href="#6-指定固定值矩阵" class="headerlink" title="6. 指定固定值矩阵"></a>6. 指定固定值矩阵</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import numpy as det</div><div class="line">&gt;&gt;&gt; a = det.array([[1,2,3],[4,5,6],[7,8,9]])</div><div class="line">&gt;&gt;&gt; print a</div><div class="line">[[1 2 3]</div><div class="line"> [4 5 6]</div><div class="line"> [7 8 9]]</div></pre></td></tr></table></figure>
-<p>（未完，待续……）</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/python-004/" data-id="cjp42i9sk001ortjy3wy76onu" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
 
     </footer>
   </div>
@@ -537,6 +566,10 @@
       <ul>
         
           <li>
+            <a href="/2018/11/30/python-010/">python——Requests（基础）</a>
+          </li>
+        
+          <li>
             <a href="/2018/11/29/python-008/">pytho——代码规范</a>
           </li>
         
@@ -545,15 +578,11 @@
           </li>
         
           <li>
-            <a href="/2018/08/25/git-002/">git-基本操作（二）</a>
+            <a href="/2018/11/27/python-011/">python-正则表达式1</a>
           </li>
         
           <li>
-            <a href="/2018/08/24/git-001/">git-基本操作（一）</a>
-          </li>
-        
-          <li>
-            <a href="/2018/08/23/Charles-001/">Charles 重定向功能——Map Local</a>
+            <a href="/2018/11/27/python-009/">python-requests.session</a>
           </li>
         
       </ul>

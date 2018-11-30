@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>python——Requests（基础） | hannie&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、安装 Requests在终端运行以下命令行：12pip install requests   #如果用的是 python3则写成 pip3即可
+若未安装 pip，安装方法请查看“python—pip （软件包管理系统)”这篇博客。Requests是某些大牛们已经写好的代码，获取源代码的方式如下：1git clone git://github.com/kennethreitz/requests.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python——Requests（基础）">
+<meta property="og:url" content="http://softwaretest.cn/2018/11/30/python-010/index.html">
+<meta property="og:site_name" content="hannie's blog">
+<meta property="og:description" content="一、安装 Requests在终端运行以下命令行：12pip install requests   #如果用的是 python3则写成 pip3即可
+若未安装 pip，安装方法请查看“python—pip （软件包管理系统)”这篇博客。Requests是某些大牛们已经写好的代码，获取源代码的方式如下：1git clone git://github.com/kennethreitz/requests.">
+<meta property="og:updated_time" content="2018-11-30T13:51:41.711Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python——Requests（基础）">
+<meta name="twitter:description" content="一、安装 Requests在终端运行以下命令行：12pip install requests   #如果用的是 python3则写成 pip3即可
+若未安装 pip，安装方法请查看“python—pip （软件包管理系统)”这篇博客。Requests是某些大牛们已经写好的代码，获取源代码的方式如下：1git clone git://github.com/kennethreitz/requests.">
+  
+    <link rel="alternate" href="/atom.xml" title="hannie&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">hannie&#39;s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://softwaretest.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-python-010" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/30/python-010/" class="article-date">
+  <time datetime="2018-11-30T13:38:14.000Z" itemprop="datePublished">2018-11-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      python——Requests（基础）
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、安装-Requests"><a href="#一、安装-Requests" class="headerlink" title="一、安装 Requests"></a>一、安装 Requests</h2><p>在终端运行以下命令行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pip install requests   </div><div class="line">#如果用的是 python3则写成 pip3即可</div></pre></td></tr></table></figure></p>
+<p>若未安装 pip，安装方法请查看“python—pip （软件包管理系统)”这篇博客。<br>Requests是某些大牛们已经写好的代码，获取源代码的方式如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone git://github.com/kennethreitz/requests.git</div></pre></td></tr></table></figure></p>
+<p>将获取到的源代码安装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd requests</div><div class="line">pip install --user .</div></pre></td></tr></table></figure></p>
+<h2 id="二、用-Requests-发送网络请求"><a href="#二、用-Requests-发送网络请求" class="headerlink" title="二、用 Requests 发送网络请求"></a>二、用 Requests 发送网络请求</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import requests   #导入 requests 模块</div><div class="line">&gt;&gt;&gt; r = requests.get(&apos;https://www.baidu.com/&apos;) </div><div class="line">#请求https://www.baidu.com/后的 response 对象 r</div><div class="line">&gt;&gt;&gt; r = requests.post(&apos;http://httpbin.org/post&apos;, data = &#123;&apos;key&apos;:&apos;value&apos;&#125;)</div><div class="line">&gt;&gt;&gt; r = reuqests.put(&apos;http://httpbin.org/put&apos;, data = &#123;&apos;key&apos;:&apos;value&apos;&#125;)</div><div class="line">&gt;&gt;&gt; r = requests.delete(&apos;http://httpbin.org/delete&apos;)</div><div class="line">&gt;&gt;&gt; r = requests.head(&apos;http://httpbin.org/get&apos;)</div><div class="line">&gt;&gt;&gt; r = requests.options(&apos;http://httpbin.org/get&apos;)</div></pre></td></tr></table></figure>
+<h2 id="三、用-Requests-传递-URL-参数"><a href="#三、用-Requests-传递-URL-参数" class="headerlink" title="三、用 Requests 传递 URL 参数"></a>三、用 Requests 传递 URL 参数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; payload = &#123;&apos;key1&apos;:&apos;value1&apos;, &apos;keyw&apos;:&apos;value2&apos;&#125; </div><div class="line">#将参数以字典的形式写出</div><div class="line">&gt;&gt;&gt; r = requests.get(&apos;http://httpbin.org/get&apos;, params=payload)</div><div class="line">#将参数 key1=value1，key2=values2，通过关键字 params传递到httpbin.org/get</div><div class="line">&gt;&gt;&gt; print(r.url) </div><div class="line">#打印 URL:http://httpbin.org/get?key2=value2&amp;key1=value1</div></pre></td></tr></table></figure>
+<h2 id="四、用-Requests-读取响应的数据"><a href="#四、用-Requests-读取响应的数据" class="headerlink" title="四、用 Requests 读取响应的数据"></a>四、用 Requests 读取响应的数据</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import requests</div><div class="line">&gt;&gt;&gt; r = requests.get(&apos;https://www.baidu.com&apos;)</div><div class="line">&gt;&gt;&gt; r.content   #查看数据</div><div class="line">&apos;[&#123;&quot;id&quot;:&quot;8433055123&quot;,&quot;type&quot;:&quot;IssueCommentEvent&quot;,&quot;actor&quot;:&#123;&quot;id&quot;:11215289,&quot;login&quot;:&quot;keksobot&quot;,&quot;display_login&quot;:&quot;keksobot&quot;,&quot;gravatar_id&quot;:&quot;&quot;,&quot;url&quot;:&quot;https://api.github.com/users/keksobot&quot;,&quot;avatar_url&quot;:&quot;https://avatars.githubusercontent.com/u/11215289?&quot;&#125;,&quot;repo&quot;:&#123;&quot;id&quot;:151525590,&quot;name&quot;:&quot;htmlacademy-adaptive/26126-sedona&quot;,&quot;url&quot;:&quot;https://api.github.com/repos/htmlacademy-adaptive/26126-sedona&quot;&#125;,&quot;payload&quot;:&#123;&quot;action&quot;:&quot;created&quot;,&quot;issue&quot;:&#123;&quot;url&quot;:&quot;https://api.github.com/repos/htmlacademy-adaptive/26126-sedona/issues/2&quot;,&quot;repository_url&quot;:&quot;https://api.github.com/repos/htmlacademy-adaptive/26126-sedona&quot;,&quot;labels_url&quot;:&quot;https://api.github.com/repos/htmlacademy-adaptive/26126-sedona/issues/2/labels&#123;/name&#125;&quot;,&quot;comments_url&quot;:&quot;https://api.github.com/repos/htmlacademy-adaptive/26126-sedona/issues/2/comments&quot;,&quot;events_url&quot;:&quot;https://api.github.com/repos/htmlacademy-adaptive/26126-sedona/issues/2/events&quot;,&quot;html_url&quot;:&quot;https://github.com/htmlacademy-adaptive/26126-sedona/pull/2&quot;,&quot;id&quot;:370629895,&quot;node_id&quot;:&quot;MDExOlB1bGxSZXF1ZXN0MjIzMjY0MTU4&quot;,&quot;number&quot;:2,……………………………………</div><div class="line"></div><div class="line"> &gt;&gt;&gt; r.encoding  #查看 requests 使用的编码方式</div><div class="line">&apos;ISO-8859-1&apos; #当前使用的是ISO-8859-1</div><div class="line"></div><div class="line">&gt;&gt;&gt; r.encoding = &apos;utf-8&apos;</div><div class="line">#设置编码方式为 utf.8</div><div class="line"></div><div class="line">&gt;&gt;&gt; r.text</div><div class="line">#用正确的编码解析 r</div></pre></td></tr></table></figure>
+<h2 id="五、响应的内容为-JSON-格式"><a href="#五、响应的内容为-JSON-格式" class="headerlink" title="五、响应的内容为 JSON 格式"></a>五、响应的内容为 JSON 格式</h2><p>Requests 中内置一个 JSON 解码器，可以处理 JSON 数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import requests</div><div class="line">&gt;&gt;&gt; r = requests.get(&apos;https://api.github.com/events&apos;)</div><div class="line">&gt;&gt;&gt; r.json()</div><div class="line">#若检查请求是否成功，使用r.raise_for_status() 或者检查 r.status_code 是否和你的期望相同。</div></pre></td></tr></table></figure></p>
+<h2 id="六、定制请求头"><a href="#六、定制请求头" class="headerlink" title="六、定制请求头"></a>六、定制请求头</h2><p>若想为请求添加 HTTP 头部，则只需传递一个 dict 给 handers 参数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; url = &quot;https://api.github.com/some/endpoint&quot;</div><div class="line">&gt;&gt;&gt; headers = &#123;&apos;user-agent&apos;:&apos;LingoDarwin_STAGING/1.1&apos;&#125;</div><div class="line"></div><div class="line">&gt;&gt;&gt; r = requests.get(url, heanders=headers)</div><div class="line">#所有的 header 值必须是 string、bytestring 或者 unicode</div></pre></td></tr></table></figure></p>
+<h2 id="七、带-body-的-POST-请求"><a href="#七、带-body-的-POST-请求" class="headerlink" title="七、带 body 的 POST 请求"></a>七、带 body 的 POST 请求</h2><p>比如发送 POST请求时，有body，则只需要传一个字典给 data 参数:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; payload = &#123;&apos;key1&apos;:&apos;value1&apos;,&apos;key2&apos;:&apos;value2&apos;&#125;</div><div class="line">&gt;&gt;&gt; r = request.post(&apos;http://httpbin.org/post&apos;,data=payload)</div><div class="line">&gt;&gt;&gt; print(r.text)</div><div class="line">&#123;</div><div class="line">  ...</div><div class="line">  &quot;form&quot;: &#123;</div><div class="line">    &quot;key2&quot;: &quot;value2&quot;,</div><div class="line">    &quot;key1&quot;: &quot;value1&quot;</div><div class="line">  &#125;,</div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>当多个元素使用同一个 key 时，可以传一个元组列表给 data 参数:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; payload = ((&apos;key1&apos;:&apos;value1&apos;),(&apos;key2&apos;:&apos;value2&apos;))</div><div class="line">&gt;&gt;&gt; r = requests.post(&apos;http://httpbin.org/post&apos;, data=payload)</div><div class="line">&gt;&gt;&gt; print(r.text)</div><div class="line">&#123;</div><div class="line">  ...</div><div class="line">  &quot;form&quot;: &#123;</div><div class="line">    &quot;key1&quot;: [</div><div class="line">      &quot;value1&quot;,</div><div class="line">      &quot;value2&quot;</div><div class="line">    ]</div><div class="line">  &#125;,</div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>若只想传递一个 string 给 data，可以使用 json 参数直接传递<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import requests</div><div class="line">&gt;&gt;&gt; import json</div><div class="line"></div><div class="line">&gt;&gt;&gt; url = &quot;https://api.github.com/some/endpoint&quot;</div><div class="line">&gt;&gt;&gt; payload = &#123;&apos;some&apos;:&apos;data&apos;&#125;</div><div class="line"></div><div class="line">&gt;&gt;&gt; r = requests.post(url, json=payload)</div></pre></td></tr></table></figure></p>
+<p>若想传递一个含有多种编码的的文件，可以使用 files 传递<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import requests</div><div class="line">&gt;&gt;&gt; url = &quot;https://api.github.com/post&quot;</div><div class="line">&gt;&gt;&gt; files = &#123;&apos;file&apos;:open(&apos;report.xls&apos;,&apos;rb&apos;)&#125;</div><div class="line"></div><div class="line">&gt;&gt;&gt; r = requests.post(&apos;url&apos;, files=files) </div><div class="line">&gt;&gt;&gt; r.text</div><div class="line">&#123;</div><div class="line">  ...</div><div class="line">  &quot;files&quot;: &#123;</div><div class="line">    &quot;file&quot;: &quot;&lt;censored...binary...data&gt;&quot;</div><div class="line">  &#125;,</div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>八、检测相应状态码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; r.requests.get(&apos;http://httpbin.org/get&apos;)</div><div class="line">&gt;&gt;&gt; r.status_code</div><div class="line">401</div></pre></td></tr></table></figure></p>
+<p>Requests内置了一个状态码查询对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; r.status_code == requests.codes.ok</div><div class="line">true</div></pre></td></tr></table></figure></p>
+<p>如果收到了一个错误请求(一个 4XX 客户端错误，或者 5XX 服务器错误响应)，我们可以通过 Response.raise_for_status() 来抛出异常：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; bad_r = requests.get(&apos;http://httpbin.org/status/404&apos;)</div><div class="line">&gt;&gt;&gt; bad_r.status_code</div><div class="line">404</div><div class="line"></div><div class="line">&gt;&gt;&gt; bad_r.raise_for_status()</div><div class="line">Traceback (most recent call last):</div><div class="line">  File &quot;requests/models.py&quot;, line 832, in raise_for_status</div><div class="line">    raise http_error</div><div class="line">requests.exceptions.HTTPError: 404 Client Error</div></pre></td></tr></table></figure></p>
+<h2 id="九、查看响应头"><a href="#九、查看响应头" class="headerlink" title="九、查看响应头"></a>九、查看响应头</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; r.headers</div><div class="line">&#123;</div><div class="line">    &apos;content-encoding&apos;: &apos;gzip&apos;,</div><div class="line">    &apos;transfer-encoding&apos;: &apos;chunked&apos;,</div><div class="line">    &apos;connection&apos;: &apos;close&apos;,</div><div class="line">    &apos;server&apos;: &apos;nginx/1.0.4&apos;,</div><div class="line">    &apos;x-runtime&apos;: &apos;148ms&apos;,</div><div class="line">    &apos;etag&apos;: &apos;&quot;e1ca502697e5c9317743dc078f67693f&quot;&apos;,</div><div class="line">    &apos;content-type&apos;: &apos;application/json&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>我们也可以使用大写形式访问响应头字段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; r.headers[&apos;Content-Type&apos;]</div><div class="line">&apos;application/json&apos;</div></pre></td></tr></table></figure></p>
+<h2 id="十、查看响应中的-cookie，或者发送-cookies"><a href="#十、查看响应中的-cookie，或者发送-cookies" class="headerlink" title="十、查看响应中的 cookie，或者发送 cookies"></a>十、查看响应中的 cookie，或者发送 cookies</h2><p>查看相应中的 cookie：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; url = &apos;http://example.com/some/cookie/setting/url&apos;</div><div class="line">&gt;&gt;&gt; r = requests.get(url)</div><div class="line"></div><div class="line">&gt;&gt;&gt; r.cookies[&apos;example_cookie_name&apos;]</div><div class="line">&apos;example_cookie_value&apos;</div></pre></td></tr></table></figure></p>
+<p>发送 cookies 到服务器：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; url = &apos;http://httpbin.org/cookies&apos;</div><div class="line">&gt;&gt;&gt; cookies = dict(cookies_are=&apos;working&apos;)</div><div class="line"></div><div class="line">&gt;&gt;&gt; r = requests.get(url, cookies=cookies)</div><div class="line">&gt;&gt;&gt; r.text</div><div class="line">&apos;&#123;&quot;cookies&quot;: &#123;&quot;cookies_are&quot;: &quot;working&quot;&#125;&#125;&apos;</div></pre></td></tr></table></figure></p>
+<h2 id="十一、超时"><a href="#十一、超时" class="headerlink" title="十一、超时"></a>十一、超时</h2><p>你可以告诉 requests在经过以timeout参数设定的秒数时间之后停止等待响<br>应<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; requests.get(&apos;http://github.com&apos;, timeout=0.001)</div><div class="line">Traceback (most recent call last):</div><div class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</div><div class="line">requests.exceptions.Timeout: HTTPConnectionPool(host=&apos;github.com&apos;, port=80): Request timed out. (timeout=0.001)</div></pre></td></tr></table></figure></p>
+<h2 id="十二、错误与异常"><a href="#十二、错误与异常" class="headerlink" title="十二、错误与异常"></a>十二、错误与异常</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">1、若网络问题（如：DNS 查询失败、拒绝连接等）时，Requests 会抛出一个ConnectionError 异常。</div><div class="line">2、若HTTP 请求返回了不成功的状态码时， Response.raise_for_status() 会抛出一个 HTTPError 异常。</div><div class="line">3、若请求超时，则抛出一个 Timeout 异常。</div><div class="line">4、若请求超过了设定的最大重定向次数，则会抛出一个 TooManyRedirects 异常</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2018/11/30/python-010/" data-id="cjp42zpic0022hojy3k3vrr8a" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/11/29/python-008/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">pytho——代码规范</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APP测试/">APP测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Quality-Assurance/">Quality Assurance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIM/">VIM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jMeter/">jMeter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安全测试/">安全测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/接口测试/">接口测试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/APP测试/" style="font-size: 18.33px;">APP测试</a> <a href="/tags/Charles/" style="font-size: 11.67px;">Charles</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 16.67px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/Quality-Assurance/" style="font-size: 10px;">Quality Assurance</a> <a href="/tags/Shell/" style="font-size: 13.33px;">Shell</a> <a href="/tags/VIM/" style="font-size: 13.33px;">VIM</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/jMeter/" style="font-size: 13.33px;">jMeter</a> <a href="/tags/安全测试/" style="font-size: 10px;">安全测试</a> <a href="/tags/接口测试/" style="font-size: 16.67px;">接口测试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/30/python-010/">python——Requests（基础）</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/29/python-008/">pytho——代码规范</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/28/python-007/">python——命名规范</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/27/python-011/">python-正则表达式1</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/27/python-009/">python-requests.session</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 hannie<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

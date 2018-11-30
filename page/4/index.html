@@ -61,6 +61,155 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-matlab-001" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/16/matlab-001/" class="article-date">
+  <time datetime="2017-06-16T01:06:06.000Z" itemprop="datePublished">2017-06-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/16/matlab-001/">matlab-图像增强</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-显示原图"><a href="#1-显示原图" class="headerlink" title="1. 显示原图"></a>1. 显示原图</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">close all  %关闭所有图形窗口</div><div class="line">clear all  %清除工作空间所有变量</div><div class="line">clc        %清空命令行</div><div class="line"></div><div class="line">addpath(genpath(&apos;C:\Users\Ming\Desktop\figure&apos;)); %添加路径“C:\Users\Ming\Desktop\figure”</div><div class="line">I = imread(&apos;hong1.png&apos;);      %读取图像“hong1.png”</div><div class="line">figure(1);                    %打开一个新窗口</div><div class="line">imshow(I);title(&apos;原图&apos;);      %显示原图像，命名为“原图”（见下图1）</div></pre></td></tr></table></figure>
+<p><img src="http://ooqxh7rke.bkt.clouddn.com/%E5%8E%9F%E5%9B%BE.png" alt="此处输入图片的描述"></p>
+<h2 id="2-显示椒盐噪声污染的图像"><a href="#2-显示椒盐噪声污染的图像" class="headerlink" title="2. 显示椒盐噪声污染的图像"></a>2. 显示椒盐噪声污染的图像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">J = imnoise(I,&apos;salt &amp; pepper&apos;,0.02);%</div><div class="line">J2 = rgb2gray(J);</div><div class="line">figure(1);</div><div class="line">imshow(J);title(&apos;椒盐噪声污染的图像&apos;);</div></pre></td></tr></table></figure>
+<p><img src="http://ooqxh7rke.bkt.clouddn.com/%E6%A4%92%E7%9B%90%E5%99%AA%E5%A3%B0%E6%B1%A1%E6%9F%93.png" alt="此处输入图片的描述"></p>
+<h2 id="3-显示高斯平滑滤波的效果"><a href="#3-显示高斯平滑滤波的效果" class="headerlink" title="3. 显示高斯平滑滤波的效果"></a>3. 显示高斯平滑滤波的效果</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">W1 = [1 2 1;</div><div class="line">     2 4 2;</div><div class="line">     1 2 1] / 16;</div><div class="line">J3 = imfilter(J, W1, &apos;corr&apos;, &apos;replicate&apos;);</div><div class="line">figure(2);</div><div class="line">subplot(3,2,3);</div><div class="line">imshow(J3);title(&apos;3X3高斯平滑效果&apos;);</div></pre></td></tr></table></figure>
+<p><img src="http://ooqxh7rke.bkt.clouddn.com/3X3%E9%AB%98%E6%96%AF%E5%B9%B3%E6%BB%91%E6%95%88%E6%9E%9C.png" alt="此处输入图片的描述"></p>
+<h2 id="3-显示3X3平均平滑效果"><a href="#3-显示3X3平均平滑效果" class="headerlink" title="3. 显示3X3平均平滑效果"></a>3. 显示3X3平均平滑效果</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">W2 = [1 1 1;</div><div class="line">     1 1 1;</div><div class="line">     1 1 1] / 9;</div><div class="line">J4 = imfilter(J, W2, &apos;corr&apos;, &apos;replicate&apos;);</div><div class="line">figure(1);</div><div class="line">imshow(J4);title(&apos;3X3平均平滑效果&apos;);</div></pre></td></tr></table></figure>
+<p><img src="http://ooqxh7rke.bkt.clouddn.com/3X3%E5%B9%B3%E5%9D%87%E5%B9%B3%E6%BB%91%E6%95%88%E6%9E%9C.png" alt="此处输入图片的描述"></p>
+<h2 id="4-显示3X3均值滤波效果"><a href="#4-显示3X3均值滤波效果" class="headerlink" title="4. 显示3X3均值滤波效果"></a>4. 显示3X3均值滤波效果</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">J5 = filter2(fspecial(&apos;average&apos;,3),J2) / 255;</div><div class="line">figure(1);</div><div class="line">imshow(J5);title(&apos;3X3均值滤波效果&apos;);</div></pre></td></tr></table></figure>
+<p><img src="http://ooqxh7rke.bkt.clouddn.com/3X3%E5%9D%87%E5%80%BC%E6%BB%A4%E6%B3%A2%E6%95%88%E6%9E%9C.png" alt="此处输入图片的描述"></p>
+<h2 id="5-显示中值滤波效果"><a href="#5-显示中值滤波效果" class="headerlink" title="5. 显示中值滤波效果"></a>5. 显示中值滤波效果</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">J6 = medfilt2(J2,[3,3]);</div><div class="line">figure(1);</div><div class="line">imshow(J6);title(&apos;中值滤波效果&apos;);</div></pre></td></tr></table></figure>
+<p><img src="http://ooqxh7rke.bkt.clouddn.com/%E4%B8%AD%E5%80%BC%E6%BB%A4%E6%B3%A2%E6%95%88%E6%9E%9C.png" alt="此处输入图片的描述"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2017/06/16/matlab-001/" data-id="cjp42zphv001ihojygmqkuc6f" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Matlab/">Matlab</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-data-structure-001" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/16/data-structure-001/" class="article-date">
+  <time datetime="2017-06-15T23:29:15.000Z" itemprop="datePublished">2017-06-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/16/data-structure-001/">数据结构-快速排序</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-快速排序的基本思想："><a href="#1-快速排序的基本思想：" class="headerlink" title="1. 快速排序的基本思想："></a>1. 快速排序的基本思想：</h2><p>1.1 存在一个需要排序的无序序列A[54  38  96  23  15  72  60  45  83],将序列抽象为A[low<del>~mid</del>~~high];<br>1.2 将序列中的第一个记录 54 作为一个<strong>基准</strong>，pivot = a[low],此时无序序列为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">A[__ 38 96  23  15  72  60  45  83];</div><div class="line">     i                           j</div></pre></td></tr></table></figure></p>
+<p>1.3 用<code>j</code>从序列的右边开始往左找，在没有遇到<code>i</code>时，找到第一个比基准54小的值后停下来，找到了45；将45放在第一个空位置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">A[45  38  96  23  15  72  60  __  83]</div><div class="line">       i                       j</div></pre></td></tr></table></figure></p>
+<p>1.4 然后用<code>i</code>从序列的左边开始往右找，在没有遇到<code>j</code>时，找到第一个比基准54大的值后停下来，找到了96；将96放在空的位置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">A[45  38  __  23  15  72  60  96  83]</div><div class="line">          i                   j</div></pre></td></tr></table></figure></p>
+<p>1.5 继续从<code>j</code>停止的位置从右向左走，在没有遇到<code>i</code>时，找到第二个比基准54小的值后停下来，找到了15；将15放在空的位置上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">A[45  38  15  23  __ 72  60  96  83]</div><div class="line">          i        j</div></pre></td></tr></table></figure></p>
+<p>1.6 继续从<code>i</code>停止的位置从左向右走，在没有遇到<code>j</code>时，找比基准大的值，此时遇到了<code>j</code>，此时把基准值54放在ij相遇的位置。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">A[45  38  15  23  __  72  60  96  83]</div><div class="line">                  ij</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">A[45  38  15  23  54  72  60  96  83]</div><div class="line">                  ij</div></pre></td></tr></table></figure>
+<p>可以看到，此时序列大概有序了，比54小的都排在了左边，比54大的都排在了右边。<br>1.7  接下来基准54不参加排序，将54左边的序列[45 38 15 23]再看做是一个无序序列再按上述方法排序，<br>同样将54右边的序列[72 60 96 83]也按上述方法排序，直到整个序列有序。</p>
+<h2 id="2-编程实现快速排序："><a href="#2-编程实现快速排序：" class="headerlink" title="2. 编程实现快速排序："></a>2. 编程实现快速排序：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">void quick_sort(int a[] , int low , int high)</div><div class="line">&#123;</div><div class="line">    int i, j, pivot;</div><div class="line">    if(low &lt; high)</div><div class="line">    &#123;</div><div class="line">        pivot = a[low];  //将第一个元素作为基准</div><div class="line">        i = low;     </div><div class="line">        j = high;</div><div class="line">        while(i &lt; j)</div><div class="line">        &#123;</div><div class="line">            while(i &lt; j &amp;&amp; a[j] &gt;= pivot) //从右向左找</div><div class="line">                 j--;</div><div class="line">            if(i &lt; j)</div><div class="line">                a[i++] = a[j]; </div><div class="line">            while(i &lt; j &amp;&amp; a[i] &lt;= pivot) //从左向右找</div><div class="line">                i++;</div><div class="line">            if(i &lt; j)</div><div class="line">                a[j--] = a[i];</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        a[i]= pivot;</div><div class="line">        quick_sort(a , low , i-1);  //基数左边的序列进行快速排序</div><div class="line">        quick_sort(a , i+1 , high); //基数右边的序列进行快速排序</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void main()</div><div class="line">&#123;</div><div class="line">    int data[9] = &#123;54 , 38 , 96 , 23 , 15 , 72 , 60 , 45 , 83&#125;;</div><div class="line">    quick_sort(data , 0 , 8);</div><div class="line">    for(i =0 ; i &lt; 9; i++)</div><div class="line">        cout&lt;&lt;data[i]&lt;&lt;&quot;&quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="3-快速排序时间复杂度分析："><a href="#3-快速排序时间复杂度分析：" class="headerlink" title="3. 快速排序时间复杂度分析："></a>3. 快速排序时间复杂度分析：</h2><p>快速排序是不稳定的。<br>快速排序最理想情况下的算法时间复杂度是O（nlogn）,最坏为O（n^2）。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2017/06/16/data-structure-001/" data-id="cjp42zphd000vhojy0x0dyz09" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-python-001" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/15/python-001/" class="article-date">
+  <time datetime="2017-06-15T01:42:33.000Z" itemprop="datePublished">2017-06-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/15/python-001/">python-字符串总结（一）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-单引号-‘’"><a href="#1-单引号-‘’" class="headerlink" title="1. 单引号 ‘’"></a>1. 单引号 <code>‘’</code></h2><p>1.1 被两个单引号<code>‘’</code>括住的所有空格或制表符都保留。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt;str = &apos;hello\nfree world!&apos;</div><div class="line">&gt;&gt;&gt;print str</div><div class="line">hello </div><div class="line">free world!</div></pre></td></tr></table></figure></p>
+<p>1.2 单引号中可以使用双引号。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt;str = &apos;hello\nfree &quot;world!&quot;&apos;</div><div class="line">&gt;&gt;&gt;print str</div><div class="line">hello </div><div class="line">free &quot;world!&quot;</div></pre></td></tr></table></figure></p>
+<h2 id="2-双引号-quot-quot"><a href="#2-双引号-quot-quot" class="headerlink" title="2. 双引号 &quot;&quot;"></a>2. 双引号 <code>&quot;&quot;</code></h2><p>2.1 被双引号<code>“”</code>括住的所有空或格制表符都保留。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt;str = &quot;hello\nfree world!&quot;</div><div class="line">&gt;&gt;&gt;print str</div><div class="line">hello </div><div class="line">free world!</div></pre></td></tr></table></figure></p>
+<p>2.2 双引号中可以使用单引号。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt;str = &quot;hello\nfree &apos;world!&apos;&quot;</div><div class="line">&gt;&gt;&gt;print str</div><div class="line">hello </div><div class="line">free &apos;world!&apos;</div></pre></td></tr></table></figure></p>
+<h2 id="3-三引号-39-39-39-39-39-39"><a href="#3-三引号-39-39-39-39-39-39" class="headerlink" title="3. 三引号&#39;&#39;&#39; &#39;&#39;&#39;"></a>3. 三引号<code>&#39;&#39;&#39; &#39;&#39;&#39;</code></h2><p>被三引号<code>&#39;&#39;&#39; &#39;&#39;&#39;</code>括住可以指示一个多行的字符串，也可以在三引号中使用单引号和双引号。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt;str = ‘‘‘this is a string</div><div class="line">...this is the second line</div><div class="line">...&quot;what&apos;s your name?&quot;</div><div class="line">...&apos;who are you?&apos;</div><div class="line">...’’’</div><div class="line">&gt;&gt;&gt;print str</div></pre></td></tr></table></figure></p>
+<p>输出结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">this is a string</div><div class="line">this is the second line</div><div class="line">&quot;what&apos;s your name?&quot;</div><div class="line">&apos;who are you?&apos;</div></pre></td></tr></table></figure></p>
+<h2 id="4-转义符"><a href="#4-转义符" class="headerlink" title="4. 转义符 \"></a>4. 转义符 <code>\</code></h2><p>4.1 用法一：转义符<code>\</code>可以转义单引号<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; s = &apos;what\&apos;s your name?&apos;</div><div class="line">&gt;&gt;&gt; print s</div><div class="line">what&apos;s your name?</div></pre></td></tr></table></figure></p>
+<p>4.2 用法二：在字符串中行末加一个反斜杠<code>\</code>表示字符串在下一行继续，而不是重新开始一个新的行。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; s = &apos;this is a string.\</div><div class="line">... what\&apos;s your name?\</div><div class="line">... who are you?&apos;</div><div class="line">&gt;&gt;&gt; print s</div><div class="line">this is a string.what&apos;s your name?who are you?</div></pre></td></tr></table></figure></p>
+<h2 id="5-自然字符串-r-R"><a href="#5-自然字符串-r-R" class="headerlink" title="5. 自然字符串 r R"></a>5. 自然字符串 <code>r</code> <code>R</code></h2><p>若想指示某些<strong>不需要如转义符</strong>那样的特别处理的字符串时，则需要指定一个自然字符串。<br>注：<strong>处理正则表达式时，一定要用自然字符串</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; s=r&apos;hello\nfree world!&apos;</div><div class="line">&gt;&gt;&gt; print s</div><div class="line">hello\nfree world!</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; s=R&apos;hello\nfree world!&apos;</div><div class="line">&gt;&gt;&gt; print s</div><div class="line">hello\nfree world!</div></pre></td></tr></table></figure>
+<h2 id="6-unicode字符串-u-U"><a href="#6-unicode字符串-u-U" class="headerlink" title="6. unicode字符串 u U"></a>6. unicode字符串 <code>u</code> <code>U</code></h2><p>6.1 若字符串中有非英文文本时，比如中文，则需要指定unicode字符串。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; s=u&apos;你好！&apos;</div><div class="line">&gt;&gt;&gt; print s</div><div class="line">你好！</div></pre></td></tr></table></figure></p>
+<p>6.2 变程序判断是否是字符串。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line">#filename:if_str.py</div><div class="line">#encoding:utf8</div><div class="line"> </div><div class="line">s=&quot;hello normal string&quot;</div><div class="line">u=u&apos;hello unicode&apos;</div><div class="line"></div><div class="line">if isinstance(s,unicode):</div><div class="line">    print s,u&apos;is unicode&apos;</div><div class="line">if isinstance(u,unicode):</div><div class="line">    print u,u&apos;is unicode&apos;</div></pre></td></tr></table></figure></p>
+<p>输出结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">→ python if_str.py</div><div class="line">hello unicode is unicode</div></pre></td></tr></table></figure></p>
+<p>（待续…………）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2017/06/15/python-001/" data-id="cjp42zphw001khojya7jykvbb" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-APP-Test-006" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/06/07/APP-Test-006/" class="article-date">
@@ -121,7 +270,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/07/APP-Test-006/" data-id="cjp42i9re0005rtjydvpeufg7" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/07/APP-Test-006/" data-id="cjp42zpgv0008hojyc4653eep" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
@@ -194,7 +343,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/07/GUI-001/" data-id="cjp42i9ro000irtjyy7eqau4o" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/07/GUI-001/" data-id="cjp42zph3000ihojyr0w9w8nl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
@@ -248,7 +397,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/07/Linux-002/" data-id="cjp42i9rt000nrtjysohcm61g" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/07/Linux-002/" data-id="cjp42zph7000nhojyxmewpnky" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -295,7 +444,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/06/Linux-001/" data-id="cjp42i9rp000krtjyoerwxipf" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/06/Linux-001/" data-id="cjp42zph5000khojy7y7tkcc0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -338,7 +487,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/06/Echo-001/" data-id="cjp42i9ro000frtjy6glg1e8q" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/06/Echo-001/" data-id="cjp42zph2000fhojyiib3ik2v" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/">Shell</a></li></ul>
@@ -381,7 +530,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/06/vim-001/" data-id="cjp42i9t00026rtjyf05jvcko" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/06/vim-001/" data-id="cjp42zpih002chojyn5niosm8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VIM/">VIM</a></li></ul>
@@ -423,210 +572,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/04/shell-003/" data-id="cjp42i9t00024rtjy5y70q1sn" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/04/shell-003/" data-id="cjp42zpig002ahojy0ikdjjys" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/">Shell</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-APP-Test-005" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/03/05/APP-Test-005/" class="article-date">
-  <time datetime="2017-03-05T09:23:55.000Z" itemprop="datePublished">2017-03-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/05/APP-Test-005/">APP测试总结（五）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="测试文档编写与缺陷管理"><a href="#测试文档编写与缺陷管理" class="headerlink" title="测试文档编写与缺陷管理"></a>测试文档编写与缺陷管理</h2><p>测试文档包括：测试计划文档，测试设计规格文档，测试用例，软件缺陷报告，状态报告。</p>
-<p>测试用例对一项特定的软件产品进行测试任务的描述，体现测试方案、方法、技术和策略。内容包括测试目标、测试环境、输入数据、测试步骤、预期结果、测试脚本等，并形成文档。测试用例一般包括验证测试用例和证伪测试用例；验证测试用例用于验证代码是否按照预期执行，得到预期结果；证伪测试用例验证代码是否对异常和错误条件进行了适当处理。</p>
-<p>缺陷报告包括：问题/错误的简单描述，重现的环境配置要求，保证多次精确重复的特定输入，期望结果与实际结果的对比，优先级与严重性，对客户的影响等。</p>
-<h2 id="常用的测试工具"><a href="#常用的测试工具" class="headerlink" title="常用的测试工具"></a>常用的测试工具</h2><h3 id="功能测试UFT"><a href="#功能测试UFT" class="headerlink" title="功能测试UFT"></a>功能测试UFT</h3><h4 id="UFT自动化测试的原理"><a href="#UFT自动化测试的原理" class="headerlink" title="UFT自动化测试的原理"></a>UFT自动化测试的原理</h4><ul>
-<li>封装真实被测对象并转化为UFT对象到对象库。</li>
-<li>对比对象库里的对象鉴别属性和运行时的真实被测对象的鉴别属性。</li>
-<li>对比结果一致，则说明对象成功匹配并可以继续对该真实被测对象进行后续操作；如果不一致则报错，提示对象无法识别。</li>
-</ul>
-<h3 id="封装对象模型"><a href="#封装对象模型" class="headerlink" title="封装对象模型"></a>封装对象模型</h3><p>在UFT里的封装对象共分两个概念，Test Objects（测试对象，TO）和Runtime Objects（运行时对象，RO）。TO就是被被添加到对象库中的对象，RO就是被测试软件在运行实际所运行的对象。他们都是UFT封装的对象，TO是为了识别RO而存在的。</p>
-<p>UFT识别对象通常先在对象库中添加测试对象，然后在被测软件运行的时候，根据脚本中调用的对象名称，在对象库中找到相应的测试对象，并根据这些对象的特征属性，在被测试软件中搜索相匹配的正在运行的对象，最后就可以对这些实际运行的测试对象进行操作。</p>
-<p>GetTOProperty()<br>    基本含义：获取对象库中某个对象的某个属性的值。<br>    公式：ReturnValue = 对象.GetTOProperty(“封装属性名”)</p>
-<pre><code>SetTOProperty()
-基本含义：设置对象库中某个对象的某个属性的值。
-公式：对象.SetTOProperty &quot;封装属性名&quot; &quot;封装属性值&quot;
-注：使用代码形式的修改对象属性属于临时性的，只在脚本运行时有效，一旦脚本运行结束，对象库里的属性值就会还原。
-
-GetROProperty()
-基本含义：获取实际运行时的某个对象的某个属性的值。
-公式：ReturnValue = 对象.GetROProperty(&quot;封装属性名&quot;)
-注：使用GetROProperty这个方法来动态获取实际运行时的一些确认信息，然后和所预期的测试数据做对比。如注册功能，在提交一些注册信息以后，一般都要到接下来的确认页面去验证一些信息，这就可以使用GetROProperty来动态获取实际运行时的一些确认信息。
-</code></pre><h4 id="对象无法识别的解决办法"><a href="#对象无法识别的解决办法" class="headerlink" title="对象无法识别的解决办法"></a>对象无法识别的解决办法</h4><pre><code>设置虚拟对象。不推荐，虚拟对象非常脆弱，难以维护；即使对象没有发生变化，但只要对象在界面是那个的方位发生变化，虚拟对象就会识别失败。
-使用相对坐标配合WSH去定位对象。
-使用DOM组建接口应用技术。只适用于Web项目。
-使用UFT自定义扩展SDK Customer来进行二次开发使UFT能够识别对象。难度大。
-开发提供专属插件。
-把无法识别的对象的一些方法封装到一个dll中并使用UFT调用。
-</code></pre><h4 id="数据驱动与场景恢复"><a href="#数据驱动与场景恢复" class="headerlink" title="数据驱动与场景恢复"></a>数据驱动与场景恢复</h4><pre><code>数据驱动Data Table的应用：实现测试数据和脚本业务的分离。
-场景恢复：场景恢复可以应对多种类型的错误并进行恢复操作。
-</code></pre><h3 id="性能测试LoadRunner"><a href="#性能测试LoadRunner" class="headerlink" title="性能测试LoadRunner"></a>性能测试LoadRunner</h3><ul>
-<li>LoadRunner是一种适用于各种体系架构的自动负载测试工具，它能预测系统行为并优化系统性能。LoadRunner的测试对象是整个企业的系统，它通过模拟实际用户的操作行为和实时性能监测，来帮助测试人员更快地查找和发现问题。<br>*</li>
-<li>轻松创建虚拟用户。Virtual User Generator能够生成虚拟用于，以虚拟用户的方式模拟真实用户的业务操作行为。它先记录下业务流程，然后将其转化为测试脚本，并进行参数化操作（Data Wizard直接连接数据服务器获取数据）。利用虚拟用户可以在不同操作系统上同时产生成千上万用户访问，能极大的减少负载测试所需要的硬件和人力资源。</li>
-<li>创建真实负载。建立虚拟用户后，需要设定负载方案、业务流程组合和虚拟用户数量。用Controller能够很快地组织多用户测试方案。</li>
-<li>定位性能问题。LoadRunner内含一个实时检测器，在负载测试过程的任何时候都能观察到应用系统的运行性能。</li>
-<li>分析结果。一旦测试完毕，LoadRunner收集汇总所有的测试数据，并提供高级的分析和报告工具，一遍迅速找到性能问题并做出相应的调整。</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/03/05/APP-Test-005/" data-id="cjp42i9rb0004rtjy7dadtuqk" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-APP-Test-004" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/02/25/APP-Test-004/" class="article-date">
-  <time datetime="2017-02-25T09:23:55.000Z" itemprop="datePublished">2017-02-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/25/APP-Test-004/">APP测试总结（四）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="自动化测试"><a href="#自动化测试" class="headerlink" title="自动化测试"></a>自动化测试</h2><h2 id="自动化测试：以程序测试程序、以代码代替思维、以脚本运行代替手工测试。"><a href="#自动化测试：以程序测试程序、以代码代替思维、以脚本运行代替手工测试。" class="headerlink" title="自动化测试：以程序测试程序、以代码代替思维、以脚本运行代替手工测试。"></a>自动化测试：以程序测试程序、以代码代替思维、以脚本运行代替手工测试。</h2><ul>
-<li><p>冒烟测试:就是在一个新版本出来的时候，将软件的全部功能过一遍，看有没有什么大问题。如果功能可以正常运行，不会影响测试进行，那么这个版本就可以真正开始测试了。如果功能有重大问题或影响测试进行，那么这个版本就是不合格的，不用进行进一步的测试。比如，拿到QQ的app新版本，登陆都登陆不上，那么这个版本肯定无法继续测下去。或者，游戏中新的模块出现，但是新的模块总是崩溃、卡死，测试进行不下去，那么冒烟的结果就是不合格的。</p>
-</li>
-<li><p>回归测试:就是以前版本中发现的bug在新的版本中验证是否存在且是否引发新的bug。</p>
-</li>
-</ul>
-<h2 id="自动化测试的优势"><a href="#自动化测试的优势" class="headerlink" title="自动化测试的优势"></a>自动化测试的优势</h2><ul>
-<li>回归测试更方便、可靠。由于回归测试的业务流程操作和测试用例是预先设计好的，预期结果也是完全在项目人员掌握之中的，将回归测试交给计算机自动运行，可以极大提高测试效率，缩短回归测试时间。</li>
-<li>可运行更多更繁琐的测试，且快速高效。</li>
-<li>可执行一些对于手工测试来说相当困难或根本做不到的测试。比如，对大量用户的并发测试等。</li>
-<li>具有一致性和可重复性的特点。</li>
-<li>自动化测试脚本完全具有复用性。由于自动化测试通常以脚本的方式实现，这样在不同的版本之间，就可能只需要做少量的维护甚至不做任何修改，实现在不同的测试版本中使用相同的测试脚本执行相同的测试用例。</li>
-</ul>
-<h2 id="自动化测试的劣势"><a href="#自动化测试的劣势" class="headerlink" title="自动化测试的劣势"></a>自动化测试的劣势</h2><ul>
-<li>永远不可能完全取代手工测试。自动化测试无法做到手工测试的覆盖率，不是每个测试用例都适合转换成自动化测试用例的。</li>
-<li>无法保证测试的正确性。测试脚本本身也可能存在缺陷。</li>
-<li>手工测试能发现的缺陷远比自动化测试多。自动化测试几乎是无法发现新缺陷。</li>
-<li>自动化测试工具是死的，它本身没有任何想象力。</li>
-<li>自动化测试对测试工程师来说必须有一定的开发技术背景。</li>
-</ul>
-<h2 id="引入自动化测试的时机"><a href="#引入自动化测试的时机" class="headerlink" title="引入自动化测试的时机"></a>引入自动化测试的时机</h2><p>项目周期长，系统版本不断。主要在于回归测试。<br>需求变更不频繁。<br>系统中的测试对象基本可以正常识别，不存在大批量第三方控件。<br>需要反复测试，如可靠性测试需要进行上千次的系统测试。</p>
-<h2 id="何时避免展开自动化测试"><a href="#何时避免展开自动化测试" class="headerlink" title="何时避免展开自动化测试"></a>何时避免展开自动化测试</h2><p>项目周期短，需求变更频繁。项目周期短的情况下引入自动化测试，不但收不回成本，而且会延长产品的发布时间。需求频繁改变会使老功能的业务逻辑被修改，从而导致相应的测试脚本也需相应修改。<br>软件版本还没稳定。<br>多数对象无法识别以及脚本维护频繁与艰难。</p>
-<h2 id="自动化测试用例设计"><a href="#自动化测试用例设计" class="headerlink" title="自动化测试用例设计"></a>自动化测试用例设计</h2><p>在项目的测试过程中，测试工程师都会首先分析测试需求，产出测试计划后，编写和设计测试用例，设计开发测试脚本。</p>
-<ul>
-<li>自动化测试用例的范围往往是核心业务流程或者重复执行率较高的。并不需要覆盖所有的手工测试用例。</li>
-<li>自动化测试用例的选择一般以“正向”为主。正常情况即为“正向”，异常情况即为“反向”。功能自动化测试主要还是用于回归测试，回归测试的目的就是保证新增功能后老功能是否能够正常运作。</li>
-<li>手工测试用例可以不用回归原点，而自动化用例往往是必须的。所谓回归原点就是执行的测试用例最终需要恢复其在执行前的初始状态。比如添加用户功能，由于用户名是唯一的，第一次执行时没有问题，第二次执行时程序就会出现用户名重复而报错；这种情况下，就需要在自动化测试用例最后增加删除该用户的步骤。</li>
-<li>自动化测试用例与手工测试用例不同，不需要每个步骤都写预期结果。</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/02/25/APP-Test-004/" data-id="cjp42i9ra0003rtjyhqp0zbwl" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-APP-Test-003" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/02/21/APP-Test-003/" class="article-date">
-  <time datetime="2017-02-21T09:23:55.000Z" itemprop="datePublished">2017-02-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/21/APP-Test-003/">APP测试总结（三）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="软件测试类型"><a href="#软件测试类型" class="headerlink" title="软件测试类型"></a>软件测试类型</h2><h2 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h2><p>单元测试并不是对整个程序进行测试，而是对构成程序的较小模块进行测试。单元测试减小了调试的难度（一旦某个错误被发现出来，我们就知道它在哪个具体的模块中）；单元测试提供了同时测试多个模块的可能，将并行工程引入软件测试中。</p>
-<p>在为模块单元测试设计测试用例时，需要使用两种类型的信息：模块的规格说明和模块的源代码。规格说明一般都规定了模块的输入和输出参数以及模块的功能。单元测试总体上是面向白盒测试的，因此，单元测试的测试用例的设计过程如下：使用一种或多种白盒测试方法分析模块的逻辑结构，然后使用黑盒测试方法对照模块的规格说明以补充测试用例。</p>
-<h2 id="集成测试"><a href="#集成测试" class="headerlink" title="集成测试"></a>集成测试</h2><p>自顶向下集成和自底向上集成</p>
-<h2 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h2><p>功能测试的目的是为了暴露程序的错误以及与规格说明不一致之处，而不是为了证明程序符合其外部规格说明。</p>
-<p>功能测试是一种黑盒测试，功能测试常用步骤有：根据需求来细分功能点，根据功能点派生测试需求，根据测试需求设计功能测试用例。</p>
-<h2 id="系统测试"><a href="#系统测试" class="headerlink" title="系统测试"></a>系统测试</h2><p>系统测试的目的是为了证明程序不能实现其目标，系统测试的测试用例设计有以下14种类型：</p>
-<ul>
-<li>能力测试：是判断目标文档提及的每一项能力（或功能）是否都确实已经实现。</li>
-<li>容量测试：使程序经受大容量数据的检验。容量测试的目的是为了证明程序不能处理目标文档中规定的数据容量。</li>
-<li>强度测试：使程序承受高负载或强度的检验。所谓高强度是指在很短的时间间隔内达到的数据或操作的数量峰值。</li>
-<li>易用性测试：试图发现人为因素或易用性的问题。</li>
-<li>安全性测试：设计测试用例来突破程序安全检查的过程。举例来说，我们可以设计测试用例来规避操作系统的内存保护机制，破坏数据库管理系统的数据安全机制。</li>
-<li>性能测试：很多软件都有特定的性能或效率目标，这终特性描述为在特定负载和配置环境下程序的响应时间和吞吐率。</li>
-<li>存储测试：</li>
-<li>配置测试：</li>
-<li>兼容性测试。</li>
-<li>安装测试：有些类型的软件系统安装过程非常复杂，测试安装过程是系统测试中的一个重要部分。对于包含在软件包中的自动安装系统而言，这尤其重要。安装程序如果出现故障，会影响用户对软件的成功体验。</li>
-<li>可靠性测试：所有类型的测试都是为了提高软件的可靠性，但是如果软件的目标中包含了对可靠性的特别描述，就必须设计专门的可靠性测试。</li>
-<li>可恢复性测试：诸如操作系统、数据库管理系统和远程处理系统等软件通常都有可恢复性目标，说明系统如何从程序错误、硬件失效和数据错误中恢复过来。系统测试的一个目标是证明这些恢复机制不能够正确发挥作用。我们可以故意将程序错误置入某个系统中，判断系统是否可以从中恢复。</li>
-<li>适用性测试</li>
-<li>文档测试：检查用户文档的正确性。用户文档应成为审查的对象，检查其正确性和清晰性。在文档中描述的任何范例应编成测试用例，并提交给程序。</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/02/21/APP-Test-003/" data-id="cjp42i9r60001rtjyus5w7h56" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP测试/">APP测试</a></li></ul>
 
     </footer>
   </div>
@@ -683,6 +632,10 @@ GetROProperty()
       <ul>
         
           <li>
+            <a href="/2018/11/30/python-010/">python——Requests（基础）</a>
+          </li>
+        
+          <li>
             <a href="/2018/11/29/python-008/">pytho——代码规范</a>
           </li>
         
@@ -691,15 +644,11 @@ GetROProperty()
           </li>
         
           <li>
-            <a href="/2018/08/25/git-002/">git-基本操作（二）</a>
+            <a href="/2018/11/27/python-011/">python-正则表达式1</a>
           </li>
         
           <li>
-            <a href="/2018/08/24/git-001/">git-基本操作（一）</a>
-          </li>
-        
-          <li>
-            <a href="/2018/08/23/Charles-001/">Charles 重定向功能——Map Local</a>
+            <a href="/2018/11/27/python-009/">python-requests.session</a>
           </li>
         
       </ul>

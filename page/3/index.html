@@ -61,6 +61,141 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-python-006" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/25/python-006/" class="article-date">
+  <time datetime="2017-07-25T13:43:32.000Z" itemprop="datePublished">2017-07-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/25/python-006/">python——数据结构</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-列表"><a href="#1-列表" class="headerlink" title="1. 列表  []"></a>1. 列表  []</h2><p>列表是<strong>可变的</strong>数据类型，可以<strong>增加</strong>和<strong>删除</strong>项目。<br>n是从0开始计数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line">#filename:using_list.py</div><div class="line"></div><div class="line">shoplist=[&apos;apple&apos;,&apos;mango&apos;,&apos;carrot&apos;,&apos;banana&apos;]</div><div class="line"></div><div class="line">#len()</div><div class="line">print len(shoplist)</div><div class="line"></div><div class="line">#append()</div><div class="line">shoplist.append(&apos;rice&apos;)</div><div class="line">print shoplist</div><div class="line"></div><div class="line">#insert()</div><div class="line">shoplist.insert(4,&apos;lemon&apos;)</div><div class="line">print shoplist</div><div class="line"></div><div class="line">#sort()</div><div class="line">shoplist.sort()</div><div class="line">print shoplist</div><div class="line"></div><div class="line">#remove()</div><div class="line">shoplist.remove(&apos;rice&apos;)</div><div class="line">print shoplist</div><div class="line"></div><div class="line">#reverse()</div><div class="line">shoplist.reverse()</div><div class="line">print shoplist</div></pre></td></tr></table></figure></p>
+<p>结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">➜  ~python using_list.py</div><div class="line">4</div><div class="line">[&apos;apple&apos;, &apos;mango&apos;, &apos;carrot&apos;, &apos;banana&apos;, &apos;rice&apos;]</div><div class="line">[&apos;apple&apos;, &apos;mango&apos;, &apos;carrot&apos;, &apos;banana&apos;, &apos;lemon&apos;, &apos;rice&apos;]</div><div class="line">[&apos;apple&apos;, &apos;banana&apos;, &apos;carrot&apos;, &apos;lemon&apos;, &apos;mango&apos;, &apos;rice&apos;]</div><div class="line">[&apos;apple&apos;, &apos;banana&apos;, &apos;carrot&apos;, &apos;lemon&apos;, &apos;mango&apos;]</div><div class="line">[&apos;mango&apos;, &apos;lemon&apos;, &apos;carrot&apos;, &apos;banana&apos;, &apos;apple&apos;]</div></pre></td></tr></table></figure></p>
+<h2 id="2-元组"><a href="#2-元组" class="headerlink" title="2.元组()"></a>2.元组()</h2><p>元组是<strong>不可变的</strong>数据类型。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line">#filename:using_tuple.py</div><div class="line"></div><div class="line">zoo=(&apos;wolf&apos;,&apos;elephone&apos;,&apos;monkey&apos;)</div><div class="line">print zoo</div><div class="line"></div><div class="line">#len()</div><div class="line">print len(zoo)</div><div class="line"></div><div class="line">new_zoo=(&apos;dolphin&apos;,&apos;rabit&apos;,zoo)</div><div class="line">print new_zoo</div><div class="line"></div><div class="line">print new_zoo[0]</div><div class="line">print new_zoo[2]</div><div class="line">print new_zoo[2][2]</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">➜  ~ python using_tuple.py</div><div class="line">(&apos;wolf&apos;, &apos;elephone&apos;, &apos;monkey&apos;)</div><div class="line">3</div><div class="line">(&apos;dolphin&apos;, &apos;rabit&apos;, (&apos;wolf&apos;, &apos;elephone&apos;, &apos;monkey&apos;))</div><div class="line">dolphin</div><div class="line">(&apos;wolf&apos;, &apos;elephone&apos;, &apos;monkey&apos;)</div><div class="line">monkey</div></pre></td></tr></table></figure>
+<p>元组最通常的用法是用在打印句子中:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line">age=22</div><div class="line">name=&quot;hannie&quot;</div><div class="line"></div><div class="line">print &quot;%s is %d years old&quot; % (name,age)</div><div class="line">print &quot;why is %s playing with that python&quot;% name</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">➜  python_learn python print_tuple.py</div><div class="line">hannie is 22 years old</div><div class="line">why is hannie playing with that python</div></pre></td></tr></table></figure>
+<h2 id="3-字典"><a href="#3-字典" class="headerlink" title="3.字典 {}"></a>3.字典 {}</h2><p>字典类似于你通过联系人名字查找地址和联系人详细情况的地址簿，把<strong>键</strong>（名字，是唯一的）和<strong>值</strong>（详细情况）练习在一起。<br><strong>键：</strong>使用不可变的对象（比如字符串）作为字典的键<br><strong>值：</strong>使用不可变的或可变的对象作为字典的值<br><code>d = {key1 : value1 , key2 : value2}</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line">#filename:using_dict.py</div><div class="line"></div><div class="line">ab=&#123;</div><div class="line">        &apos;swaroop&apos;:&apos;swaroopch@liulishuo.com&apos;,</div><div class="line">        &apos;larry&apos;:&apos;larry@lilishuo.com&apos;,</div><div class="line">        &apos;mm&apos;:&apos;mm@liulishuo.com&apos;,</div><div class="line">        &apos;spammer&apos;:&apos;spammer@liulishuo.com&apos;</div><div class="line">&#125;</div><div class="line">print &quot;swaroop&apos;s address is %s&quot; % ab[&apos;swaroop&apos;]</div><div class="line"></div><div class="line"></div><div class="line">ab[&apos;guido&apos;]=&apos;guido@liulishuo.com&apos;</div><div class="line">print ab</div><div class="line">print &apos;there are %d contacts in the address-book\n&apos; % len(ab)</div><div class="line"></div><div class="line"></div><div class="line">del ab[&apos;mm&apos;]</div><div class="line">print ab</div><div class="line">print &apos;there are %d contacts in the address-book\n&apos; % len(ab)</div><div class="line"></div><div class="line">for name,address in ab.items():</div><div class="line">        print &apos;contact %s at %s&apos; % (name,address)</div><div class="line">#使用字典的items方法，来使用字典中的每个键/值对</div><div class="line"></div><div class="line">if &apos;guido&apos; in ab:</div><div class="line">        print &quot;\nguido&apos;s address is %s&quot;  % ab[&apos;guido&apos;]</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">swaroop&apos;s address is swaroopch@liulishuo.com</div><div class="line">&#123;&apos;swaroop&apos;: &apos;swaroopch@liulishuo.com&apos;, &apos;mm&apos;: &apos;mm@liulishuo.com&apos;, &apos;larry&apos;: &apos;larry@lilishuo.com&apos;, &apos;spammer&apos;: &apos;spammer@liulishuo.com&apos;, &apos;guido&apos;: &apos;guido@liulishuo.com&apos;&#125;</div><div class="line">there are 5 contacts in the address-book</div><div class="line"></div><div class="line">&#123;&apos;swaroop&apos;: &apos;swaroopch@liulishuo.com&apos;, &apos;larry&apos;: &apos;larry@lilishuo.com&apos;, &apos;spammer&apos;: &apos;spammer@liulishuo.com&apos;, &apos;guido&apos;: &apos;guido@liulishuo.com&apos;&#125;</div><div class="line">there are 4 contacts in the address-book</div><div class="line"></div><div class="line">contact swaroop at swaroopch@liulishuo.com</div><div class="line">contact larry at larry@lilishuo.com</div><div class="line">contact spammer at spammer@liulishuo.com</div><div class="line">contact guido at guido@liulishuo.com</div><div class="line"></div><div class="line">guido&apos;s address is guido@liulishuo.com</div></pre></td></tr></table></figure>
+<h2 id="4-序列-（列表、元组和字符串都是序列）"><a href="#4-序列-（列表、元组和字符串都是序列）" class="headerlink" title="4. 序列  （列表、元组和字符串都是序列）"></a>4. 序列  （列表、元组和字符串都是序列）</h2><p>序列的两个主要特点是<strong>索引操作符</strong>和<strong>切片操作符</strong><br><strong>索引操作符：</strong>可以让我们从序列中抓取一个特定的项目<br><strong>切片操作符：</strong>可以让我们能够获取序列的一个切片，即一部分序列<br>第一个数（冒号之前）表示切片开始的位置，第二个数（冒号之后）表示切片到哪里结束<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line">#filename:seq.py</div><div class="line"></div><div class="line"></div><div class="line">shoplist=[&apos;apple&apos;,&apos;mango&apos;,&apos;carrot&apos;,&apos;banana&apos;]</div><div class="line">#index</div><div class="line">print &apos;item 0 is&apos;,shoplist[0]</div><div class="line">print &apos;item 3 is&apos;,shoplist[3]</div><div class="line"></div><div class="line">print &apos;item -1 is&apos;,shoplist[-1]</div><div class="line">print &apos;item -2 is&apos;,shoplist[-2]</div><div class="line"></div><div class="line"></div><div class="line">#slicing on a list</div><div class="line">print &apos;item 1 to 3 is&apos;,shoplist[1:3]</div><div class="line">print &apos;item 1 to -1 is&apos;,shoplist[1:-1]</div><div class="line">print &apos;item start to end is&apos;,shoplist[:]</div><div class="line"></div><div class="line"></div><div class="line">#slicing on a string</div><div class="line">name=&apos;swaroop&apos;</div><div class="line">print &apos;characters 1 to 3 is&apos;,name[1:3]</div><div class="line">print &apos;1 to -1&apos;,name[1:-1]</div><div class="line">print &apos;start to end&apos;,name[:]</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">➜  python seq.py</div><div class="line">item 0 is apple</div><div class="line">item 3 is banana</div><div class="line">item -1 is banana</div><div class="line">item -2 is carrot</div><div class="line">item 1 to 3 is [&apos;mango&apos;, &apos;carrot&apos;]</div><div class="line">item 1 to -1 is [&apos;mango&apos;, &apos;carrot&apos;]</div><div class="line">item start to end is [&apos;apple&apos;, &apos;mango&apos;, &apos;carrot&apos;, &apos;banana&apos;]</div><div class="line">characters 1 to 3 is wa</div><div class="line">1 to -1 waroo</div><div class="line">start to end swaroop</div></pre></td></tr></table></figure>
+<h2 id="tags-Python"><a href="#tags-Python" class="headerlink" title="tags: Python"></a>tags: Python</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2017/07/25/python-006/" data-id="cjp42zpi4001uhojyz0yers3b" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-python-005" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/19/python-005/" class="article-date">
+  <time datetime="2017-07-19T13:28:30.000Z" itemprop="datePublished">2017-07-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/19/python-005/">python——模块</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>若想再其他函数中重用很多函数，则可以使用<strong>模块</strong>，模块是一个包含了所有你定义的函数和变量的文件，模块的文件名必须以.py为扩展名。</p>
+<h2 id="1-使用标准库模块（sys模块）"><a href="#1-使用标准库模块（sys模块）" class="headerlink" title="1.使用标准库模块（sys模块）"></a>1.使用标准库模块（sys模块）</h2><p>import sys</p>
+<p>from sys import *<br>但是为了避免名称冲突，尽量使用import语句</p>
+<h2 id="2-若我只想在程序本身被使用的时候运行主块，而在它被别的模块输入的时候不运行主块可以通过模块的name属性完成"><a href="#2-若我只想在程序本身被使用的时候运行主块，而在它被别的模块输入的时候不运行主块可以通过模块的name属性完成" class="headerlink" title="2.若我只想在程序本身被使用的时候运行主块，而在它被别的模块输入的时候不运行主块可以通过模块的name属性完成"></a>2.若我只想在程序本身被使用的时候运行主块，而在它被别的模块输入的时候不运行主块可以通过模块的<strong>name</strong>属性完成</h2><h2 id="3-使用dir-函数列出模块定义的标识符。（函数，类，变量）"><a href="#3-使用dir-函数列出模块定义的标识符。（函数，类，变量）" class="headerlink" title="3.使用dir()函数列出模块定义的标识符。（函数，类，变量）"></a>3.使用dir()函数列出模块定义的标识符。（函数，类，变量）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import sys</div><div class="line">&gt;&gt;&gt; dir(sys)</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2017/07/19/python-005/" data-id="cjp42zpi2001shojyw5jj0s1t" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-python-004" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/18/python-004/" class="article-date">
+  <time datetime="2017-07-18T13:45:44.000Z" itemprop="datePublished">2017-07-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/18/python-004/">python——NumPy数组（一）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-全零矩阵"><a href="#1-全零矩阵" class="headerlink" title="1. 全零矩阵"></a>1. 全零矩阵</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import numpy as det</div><div class="line">&gt;&gt;&gt; a = det.zeros((3,3))</div><div class="line">&gt;&gt;&gt; print a</div><div class="line">[[ 0.  0.  0.]</div><div class="line"> [ 0.  0.  0.]</div><div class="line"> [ 0.  0.  0.]]</div></pre></td></tr></table></figure>
+<h2 id="2-全一矩阵"><a href="#2-全一矩阵" class="headerlink" title="2. 全一矩阵"></a>2. 全一矩阵</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import numpy as det</div><div class="line">&gt;&gt;&gt; a = det.ones((3,3))</div><div class="line">&gt;&gt;&gt; print a</div><div class="line">[[ 1.  1.  1.]</div><div class="line"> [ 1.  1.  1.]</div><div class="line"> [ 1.  1.  1.]]</div></pre></td></tr></table></figure>
+<h2 id="3-指定固定值矩阵"><a href="#3-指定固定值矩阵" class="headerlink" title="3. 指定固定值矩阵"></a>3. 指定固定值矩阵</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import numpy as det</div><div class="line">&gt;&gt;&gt; a = det.full((3,3),100)</div><div class="line">&gt;&gt;&gt; print a</div><div class="line">[[ 100.  100.  100.]</div><div class="line"> [ 100.  100.  100.]</div><div class="line"> [ 100.  100.  100.]]</div></pre></td></tr></table></figure>
+<h2 id="4-随机矩阵"><a href="#4-随机矩阵" class="headerlink" title="4. 随机矩阵"></a>4. 随机矩阵</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import numpy as det</div><div class="line">&gt;&gt;&gt; a = det.random.random((3,3))</div><div class="line">&gt;&gt;&gt; print a</div><div class="line">[[ 0.46759462  0.74203465  0.1685592 ]</div><div class="line"> [ 0.09625809  0.25350595  0.17873013]</div><div class="line"> [ 0.43552232  0.78442542  0.76970373]]</div></pre></td></tr></table></figure>
+<h2 id="5-对角矩阵"><a href="#5-对角矩阵" class="headerlink" title="5. 对角矩阵"></a>5. 对角矩阵</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import numpy as det</div><div class="line">&gt;&gt;&gt; a = det.eye(3)</div><div class="line">&gt;&gt;&gt; print a</div><div class="line">[[ 1.  0.  0.]</div><div class="line"> [ 0.  1.  0.]</div><div class="line"> [ 0.  0.  1.]]</div></pre></td></tr></table></figure>
+<h2 id="6-指定固定值矩阵"><a href="#6-指定固定值矩阵" class="headerlink" title="6. 指定固定值矩阵"></a>6. 指定固定值矩阵</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import numpy as det</div><div class="line">&gt;&gt;&gt; a = det.array([[1,2,3],[4,5,6],[7,8,9]])</div><div class="line">&gt;&gt;&gt; print a</div><div class="line">[[1 2 3]</div><div class="line"> [4 5 6]</div><div class="line"> [7 8 9]]</div></pre></td></tr></table></figure>
+<p>（未完，待续……）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2017/07/18/python-004/" data-id="cjp42zphz001qhojyjuwrajiz" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-python-003" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/07/18/python-003/" class="article-date">
@@ -90,7 +225,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/python-003/" data-id="cjp42i9si001mrtjynn34k1he" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/python-003/" data-id="cjp42zphy001ohojysxy4fevd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -132,7 +267,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/python-002/" data-id="cjp42i9sh001krtjya680u48g" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/python-002/" data-id="cjp42zphx001mhojylpcvnex5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -183,7 +318,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/vim-003/" data-id="cjp42i9t2002brtjys1hvvwd5" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/vim-003/" data-id="cjp42zpik002hhojyhvut7t46" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VIM/">VIM</a></li></ul>
@@ -234,7 +369,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/18/vim-002/" data-id="cjp42i9t10029rtjyrljncpwa" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/18/vim-002/" data-id="cjp42zpij002fhojymcjblmv8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VIM/">VIM</a></li></ul>
@@ -282,7 +417,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/08/Linux-003/" data-id="cjp42i9rw000prtjy780f1jno" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/08/Linux-003/" data-id="cjp42zph8000phojyf90fwynj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -322,7 +457,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/07/07/Linux-005/" data-id="cjp42i9rx000rrtjycxps5bke" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/07/07/Linux-005/" data-id="cjp42zpha000rhojysj2gcbtu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -367,159 +502,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/17/shell-001/" data-id="cjp42i9sy0022rtjyz2sk7adn" class="article-share-link">Share</a>
+      <a data-url="http://softwaretest.cn/2017/06/17/shell-001/" data-id="cjp42zpie0028hojyqubrudfe" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/">Shell</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-matlab-001" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/16/matlab-001/" class="article-date">
-  <time datetime="2017-06-16T01:06:06.000Z" itemprop="datePublished">2017-06-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/16/matlab-001/">matlab-图像增强</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-显示原图"><a href="#1-显示原图" class="headerlink" title="1. 显示原图"></a>1. 显示原图</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">close all  %关闭所有图形窗口</div><div class="line">clear all  %清除工作空间所有变量</div><div class="line">clc        %清空命令行</div><div class="line"></div><div class="line">addpath(genpath(&apos;C:\Users\Ming\Desktop\figure&apos;)); %添加路径“C:\Users\Ming\Desktop\figure”</div><div class="line">I = imread(&apos;hong1.png&apos;);      %读取图像“hong1.png”</div><div class="line">figure(1);                    %打开一个新窗口</div><div class="line">imshow(I);title(&apos;原图&apos;);      %显示原图像，命名为“原图”（见下图1）</div></pre></td></tr></table></figure>
-<p><img src="http://ooqxh7rke.bkt.clouddn.com/%E5%8E%9F%E5%9B%BE.png" alt="此处输入图片的描述"></p>
-<h2 id="2-显示椒盐噪声污染的图像"><a href="#2-显示椒盐噪声污染的图像" class="headerlink" title="2. 显示椒盐噪声污染的图像"></a>2. 显示椒盐噪声污染的图像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">J = imnoise(I,&apos;salt &amp; pepper&apos;,0.02);%</div><div class="line">J2 = rgb2gray(J);</div><div class="line">figure(1);</div><div class="line">imshow(J);title(&apos;椒盐噪声污染的图像&apos;);</div></pre></td></tr></table></figure>
-<p><img src="http://ooqxh7rke.bkt.clouddn.com/%E6%A4%92%E7%9B%90%E5%99%AA%E5%A3%B0%E6%B1%A1%E6%9F%93.png" alt="此处输入图片的描述"></p>
-<h2 id="3-显示高斯平滑滤波的效果"><a href="#3-显示高斯平滑滤波的效果" class="headerlink" title="3. 显示高斯平滑滤波的效果"></a>3. 显示高斯平滑滤波的效果</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">W1 = [1 2 1;</div><div class="line">     2 4 2;</div><div class="line">     1 2 1] / 16;</div><div class="line">J3 = imfilter(J, W1, &apos;corr&apos;, &apos;replicate&apos;);</div><div class="line">figure(2);</div><div class="line">subplot(3,2,3);</div><div class="line">imshow(J3);title(&apos;3X3高斯平滑效果&apos;);</div></pre></td></tr></table></figure>
-<p><img src="http://ooqxh7rke.bkt.clouddn.com/3X3%E9%AB%98%E6%96%AF%E5%B9%B3%E6%BB%91%E6%95%88%E6%9E%9C.png" alt="此处输入图片的描述"></p>
-<h2 id="3-显示3X3平均平滑效果"><a href="#3-显示3X3平均平滑效果" class="headerlink" title="3. 显示3X3平均平滑效果"></a>3. 显示3X3平均平滑效果</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">W2 = [1 1 1;</div><div class="line">     1 1 1;</div><div class="line">     1 1 1] / 9;</div><div class="line">J4 = imfilter(J, W2, &apos;corr&apos;, &apos;replicate&apos;);</div><div class="line">figure(1);</div><div class="line">imshow(J4);title(&apos;3X3平均平滑效果&apos;);</div></pre></td></tr></table></figure>
-<p><img src="http://ooqxh7rke.bkt.clouddn.com/3X3%E5%B9%B3%E5%9D%87%E5%B9%B3%E6%BB%91%E6%95%88%E6%9E%9C.png" alt="此处输入图片的描述"></p>
-<h2 id="4-显示3X3均值滤波效果"><a href="#4-显示3X3均值滤波效果" class="headerlink" title="4. 显示3X3均值滤波效果"></a>4. 显示3X3均值滤波效果</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">J5 = filter2(fspecial(&apos;average&apos;,3),J2) / 255;</div><div class="line">figure(1);</div><div class="line">imshow(J5);title(&apos;3X3均值滤波效果&apos;);</div></pre></td></tr></table></figure>
-<p><img src="http://ooqxh7rke.bkt.clouddn.com/3X3%E5%9D%87%E5%80%BC%E6%BB%A4%E6%B3%A2%E6%95%88%E6%9E%9C.png" alt="此处输入图片的描述"></p>
-<h2 id="5-显示中值滤波效果"><a href="#5-显示中值滤波效果" class="headerlink" title="5. 显示中值滤波效果"></a>5. 显示中值滤波效果</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">J6 = medfilt2(J2,[3,3]);</div><div class="line">figure(1);</div><div class="line">imshow(J6);title(&apos;中值滤波效果&apos;);</div></pre></td></tr></table></figure>
-<p><img src="http://ooqxh7rke.bkt.clouddn.com/%E4%B8%AD%E5%80%BC%E6%BB%A4%E6%B3%A2%E6%95%88%E6%9E%9C.png" alt="此处输入图片的描述"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/16/matlab-001/" data-id="cjp42i9sf001hrtjy8xjl3ku7" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Matlab/">Matlab</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-data-structure-001" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/16/data-structure-001/" class="article-date">
-  <time datetime="2017-06-15T23:29:15.000Z" itemprop="datePublished">2017-06-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/16/data-structure-001/">数据结构-快速排序</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-快速排序的基本思想："><a href="#1-快速排序的基本思想：" class="headerlink" title="1. 快速排序的基本思想："></a>1. 快速排序的基本思想：</h2><p>1.1 存在一个需要排序的无序序列A[54  38  96  23  15  72  60  45  83],将序列抽象为A[low<del>~mid</del>~~high];<br>1.2 将序列中的第一个记录 54 作为一个<strong>基准</strong>，pivot = a[low],此时无序序列为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">A[__ 38 96  23  15  72  60  45  83];</div><div class="line">     i                           j</div></pre></td></tr></table></figure></p>
-<p>1.3 用<code>j</code>从序列的右边开始往左找，在没有遇到<code>i</code>时，找到第一个比基准54小的值后停下来，找到了45；将45放在第一个空位置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">A[45  38  96  23  15  72  60  __  83]</div><div class="line">       i                       j</div></pre></td></tr></table></figure></p>
-<p>1.4 然后用<code>i</code>从序列的左边开始往右找，在没有遇到<code>j</code>时，找到第一个比基准54大的值后停下来，找到了96；将96放在空的位置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">A[45  38  __  23  15  72  60  96  83]</div><div class="line">          i                   j</div></pre></td></tr></table></figure></p>
-<p>1.5 继续从<code>j</code>停止的位置从右向左走，在没有遇到<code>i</code>时，找到第二个比基准54小的值后停下来，找到了15；将15放在空的位置上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">A[45  38  15  23  __ 72  60  96  83]</div><div class="line">          i        j</div></pre></td></tr></table></figure></p>
-<p>1.6 继续从<code>i</code>停止的位置从左向右走，在没有遇到<code>j</code>时，找比基准大的值，此时遇到了<code>j</code>，此时把基准值54放在ij相遇的位置。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">A[45  38  15  23  __  72  60  96  83]</div><div class="line">                  ij</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">A[45  38  15  23  54  72  60  96  83]</div><div class="line">                  ij</div></pre></td></tr></table></figure>
-<p>可以看到，此时序列大概有序了，比54小的都排在了左边，比54大的都排在了右边。<br>1.7  接下来基准54不参加排序，将54左边的序列[45 38 15 23]再看做是一个无序序列再按上述方法排序，<br>同样将54右边的序列[72 60 96 83]也按上述方法排序，直到整个序列有序。</p>
-<h2 id="2-编程实现快速排序："><a href="#2-编程实现快速排序：" class="headerlink" title="2. 编程实现快速排序："></a>2. 编程实现快速排序：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">void quick_sort(int a[] , int low , int high)</div><div class="line">&#123;</div><div class="line">    int i, j, pivot;</div><div class="line">    if(low &lt; high)</div><div class="line">    &#123;</div><div class="line">        pivot = a[low];  //将第一个元素作为基准</div><div class="line">        i = low;     </div><div class="line">        j = high;</div><div class="line">        while(i &lt; j)</div><div class="line">        &#123;</div><div class="line">            while(i &lt; j &amp;&amp; a[j] &gt;= pivot) //从右向左找</div><div class="line">                 j--;</div><div class="line">            if(i &lt; j)</div><div class="line">                a[i++] = a[j]; </div><div class="line">            while(i &lt; j &amp;&amp; a[i] &lt;= pivot) //从左向右找</div><div class="line">                i++;</div><div class="line">            if(i &lt; j)</div><div class="line">                a[j--] = a[i];</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        a[i]= pivot;</div><div class="line">        quick_sort(a , low , i-1);  //基数左边的序列进行快速排序</div><div class="line">        quick_sort(a , i+1 , high); //基数右边的序列进行快速排序</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">void main()</div><div class="line">&#123;</div><div class="line">    int data[9] = &#123;54 , 38 , 96 , 23 , 15 , 72 , 60 , 45 , 83&#125;;</div><div class="line">    quick_sort(data , 0 , 8);</div><div class="line">    for(i =0 ; i &lt; 9; i++)</div><div class="line">        cout&lt;&lt;data[i]&lt;&lt;&quot;&quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="3-快速排序时间复杂度分析："><a href="#3-快速排序时间复杂度分析：" class="headerlink" title="3. 快速排序时间复杂度分析："></a>3. 快速排序时间复杂度分析：</h2><p>快速排序是不稳定的。<br>快速排序最理想情况下的算法时间复杂度是O（nlogn）,最坏为O（n^2）。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/16/data-structure-001/" data-id="cjp42i9s0000vrtjyzd5il7jv" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-python-001" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/15/python-001/" class="article-date">
-  <time datetime="2017-06-15T01:42:33.000Z" itemprop="datePublished">2017-06-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/15/python-001/">python-字符串总结（一）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-单引号-‘’"><a href="#1-单引号-‘’" class="headerlink" title="1. 单引号 ‘’"></a>1. 单引号 <code>‘’</code></h2><p>1.1 被两个单引号<code>‘’</code>括住的所有空格或制表符都保留。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt;str = &apos;hello\nfree world!&apos;</div><div class="line">&gt;&gt;&gt;print str</div><div class="line">hello </div><div class="line">free world!</div></pre></td></tr></table></figure></p>
-<p>1.2 单引号中可以使用双引号。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt;str = &apos;hello\nfree &quot;world!&quot;&apos;</div><div class="line">&gt;&gt;&gt;print str</div><div class="line">hello </div><div class="line">free &quot;world!&quot;</div></pre></td></tr></table></figure></p>
-<h2 id="2-双引号-quot-quot"><a href="#2-双引号-quot-quot" class="headerlink" title="2. 双引号 &quot;&quot;"></a>2. 双引号 <code>&quot;&quot;</code></h2><p>2.1 被双引号<code>“”</code>括住的所有空或格制表符都保留。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt;str = &quot;hello\nfree world!&quot;</div><div class="line">&gt;&gt;&gt;print str</div><div class="line">hello </div><div class="line">free world!</div></pre></td></tr></table></figure></p>
-<p>2.2 双引号中可以使用单引号。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt;str = &quot;hello\nfree &apos;world!&apos;&quot;</div><div class="line">&gt;&gt;&gt;print str</div><div class="line">hello </div><div class="line">free &apos;world!&apos;</div></pre></td></tr></table></figure></p>
-<h2 id="3-三引号-39-39-39-39-39-39"><a href="#3-三引号-39-39-39-39-39-39" class="headerlink" title="3. 三引号&#39;&#39;&#39; &#39;&#39;&#39;"></a>3. 三引号<code>&#39;&#39;&#39; &#39;&#39;&#39;</code></h2><p>被三引号<code>&#39;&#39;&#39; &#39;&#39;&#39;</code>括住可以指示一个多行的字符串，也可以在三引号中使用单引号和双引号。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt;str = ‘‘‘this is a string</div><div class="line">...this is the second line</div><div class="line">...&quot;what&apos;s your name?&quot;</div><div class="line">...&apos;who are you?&apos;</div><div class="line">...’’’</div><div class="line">&gt;&gt;&gt;print str</div></pre></td></tr></table></figure></p>
-<p>输出结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">this is a string</div><div class="line">this is the second line</div><div class="line">&quot;what&apos;s your name?&quot;</div><div class="line">&apos;who are you?&apos;</div></pre></td></tr></table></figure></p>
-<h2 id="4-转义符"><a href="#4-转义符" class="headerlink" title="4. 转义符 \"></a>4. 转义符 <code>\</code></h2><p>4.1 用法一：转义符<code>\</code>可以转义单引号<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; s = &apos;what\&apos;s your name?&apos;</div><div class="line">&gt;&gt;&gt; print s</div><div class="line">what&apos;s your name?</div></pre></td></tr></table></figure></p>
-<p>4.2 用法二：在字符串中行末加一个反斜杠<code>\</code>表示字符串在下一行继续，而不是重新开始一个新的行。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; s = &apos;this is a string.\</div><div class="line">... what\&apos;s your name?\</div><div class="line">... who are you?&apos;</div><div class="line">&gt;&gt;&gt; print s</div><div class="line">this is a string.what&apos;s your name?who are you?</div></pre></td></tr></table></figure></p>
-<h2 id="5-自然字符串-r-R"><a href="#5-自然字符串-r-R" class="headerlink" title="5. 自然字符串 r R"></a>5. 自然字符串 <code>r</code> <code>R</code></h2><p>若想指示某些<strong>不需要如转义符</strong>那样的特别处理的字符串时，则需要指定一个自然字符串。<br>注：<strong>处理正则表达式时，一定要用自然字符串</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; s=r&apos;hello\nfree world!&apos;</div><div class="line">&gt;&gt;&gt; print s</div><div class="line">hello\nfree world!</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; s=R&apos;hello\nfree world!&apos;</div><div class="line">&gt;&gt;&gt; print s</div><div class="line">hello\nfree world!</div></pre></td></tr></table></figure>
-<h2 id="6-unicode字符串-u-U"><a href="#6-unicode字符串-u-U" class="headerlink" title="6. unicode字符串 u U"></a>6. unicode字符串 <code>u</code> <code>U</code></h2><p>6.1 若字符串中有非英文文本时，比如中文，则需要指定unicode字符串。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; s=u&apos;你好！&apos;</div><div class="line">&gt;&gt;&gt; print s</div><div class="line">你好！</div></pre></td></tr></table></figure></p>
-<p>6.2 变程序判断是否是字符串。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line">#filename:if_str.py</div><div class="line">#encoding:utf8</div><div class="line"> </div><div class="line">s=&quot;hello normal string&quot;</div><div class="line">u=u&apos;hello unicode&apos;</div><div class="line"></div><div class="line">if isinstance(s,unicode):</div><div class="line">    print s,u&apos;is unicode&apos;</div><div class="line">if isinstance(u,unicode):</div><div class="line">    print u,u&apos;is unicode&apos;</div></pre></td></tr></table></figure></p>
-<p>输出结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">→ python if_str.py</div><div class="line">hello unicode is unicode</div></pre></td></tr></table></figure></p>
-<p>（待续…………）</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://softwaretest.cn/2017/06/15/python-001/" data-id="cjp42i9sg001irtjy4mzu8y4p" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
 
     </footer>
   </div>
@@ -576,6 +562,10 @@
       <ul>
         
           <li>
+            <a href="/2018/11/30/python-010/">python——Requests（基础）</a>
+          </li>
+        
+          <li>
             <a href="/2018/11/29/python-008/">pytho——代码规范</a>
           </li>
         
@@ -584,15 +574,11 @@
           </li>
         
           <li>
-            <a href="/2018/08/25/git-002/">git-基本操作（二）</a>
+            <a href="/2018/11/27/python-011/">python-正则表达式1</a>
           </li>
         
           <li>
-            <a href="/2018/08/24/git-001/">git-基本操作（一）</a>
-          </li>
-        
-          <li>
-            <a href="/2018/08/23/Charles-001/">Charles 重定向功能——Map Local</a>
+            <a href="/2018/11/27/python-009/">python-requests.session</a>
           </li>
         
       </ul>

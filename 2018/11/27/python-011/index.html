@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>python-正则表达式1 | hannie&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="非打印字符123456789\n另起一行print(&amp;quot;hello\nworld&amp;quot;)helloworld\r回到这行的行首，会覆盖之前输入的字符print(&amp;quot;hello\tworld&amp;quot;)world
+特殊字符1234.匹配除了\n  \r 之外的任何单个字符若要匹配\n 在内的任何字符，需使用（.|\n）（）
+限定符12345678910111213141516">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python-正则表达式1">
+<meta property="og:url" content="http://softwaretest.cn/2018/11/27/python-011/index.html">
+<meta property="og:site_name" content="hannie's blog">
+<meta property="og:description" content="非打印字符123456789\n另起一行print(&amp;quot;hello\nworld&amp;quot;)helloworld\r回到这行的行首，会覆盖之前输入的字符print(&amp;quot;hello\tworld&amp;quot;)world
+特殊字符1234.匹配除了\n  \r 之外的任何单个字符若要匹配\n 在内的任何字符，需使用（.|\n）（）
+限定符12345678910111213141516">
+<meta property="og:updated_time" content="2018-11-30T14:05:05.723Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python-正则表达式1">
+<meta name="twitter:description" content="非打印字符123456789\n另起一行print(&amp;quot;hello\nworld&amp;quot;)helloworld\r回到这行的行首，会覆盖之前输入的字符print(&amp;quot;hello\tworld&amp;quot;)world
+特殊字符1234.匹配除了\n  \r 之外的任何单个字符若要匹配\n 在内的任何字符，需使用（.|\n）（）
+限定符12345678910111213141516">
+  
+    <link rel="alternate" href="/atom.xml" title="hannie&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">hannie&#39;s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://softwaretest.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-python-011" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/27/python-011/" class="article-date">
+  <time datetime="2018-11-27T13:42:49.000Z" itemprop="datePublished">2018-11-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      python-正则表达式1
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="非打印字符"><a href="#非打印字符" class="headerlink" title="非打印字符"></a>非打印字符</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">\n</div><div class="line">另起一行</div><div class="line">print(&quot;hello\nworld&quot;)</div><div class="line">hello</div><div class="line">world</div><div class="line">\r</div><div class="line">回到这行的行首，会覆盖之前输入的字符</div><div class="line">print(&quot;hello\tworld&quot;)</div><div class="line">world</div></pre></td></tr></table></figure>
+<h2 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">匹配除了\n  \r 之外的任何单个字符</div><div class="line">若要匹配\n 在内的任何字符，需使用（.|\n）</div><div class="line">（）</div></pre></td></tr></table></figure>
+<h2 id="限定符"><a href="#限定符" class="headerlink" title="限定符"></a>限定符</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">*</div><div class="line">匹配前面的子表达式0次或者多次</div><div class="line">+</div><div class="line">匹配前面的子表达式1次或者多次</div><div class="line">？</div><div class="line">匹配前面的子表达式0次或1次</div><div class="line">&#123; &#125;</div><div class="line">&#123;m, n &#125;</div><div class="line">最好匹配 m次，最多匹配 n 次</div><div class="line">&#123;n&#125;</div><div class="line">匹配确定的 n 次</div><div class="line">&#123;n,&#125;</div><div class="line">至少匹配 n 次</div><div class="line">&#123;0,&#125;    *</div><div class="line">&#123;1,&#125;    +</div><div class="line">&#123;0,1&#125;   ?</div><div class="line">[ ]</div><div class="line">[xyz]</div><div class="line">匹配所包含的任意一个字符</div><div class="line">[^xyz]</div><div class="line">匹配未包含的任意字符</div><div class="line">[a-z]</div><div class="line">匹配指定范围的任意字符</div><div class="line">[^a-z]</div><div class="line">匹配任意不再指定范围的任意字符</div></pre></td></tr></table></figure>
+<h2 id="定位符"><a href="#定位符" class="headerlink" title="定位符"></a>定位符</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">^</div><div class="line">匹配输入字符串的开始位置</div><div class="line">t2 = &apos;hello world hello boy boy&apos;</div><div class="line">s4 = r&apos;hello&apos;</div><div class="line">print(re.findall(s4, t2))</div><div class="line">[&apos;hello’,’hello’]</div><div class="line">t2 = &apos;hello world hello boy boy&apos;</div><div class="line">s5 = r&apos;^hello&apos;</div><div class="line">print(re.findall(s5, t2))</div><div class="line">[&apos;hello&apos;]</div><div class="line">$</div><div class="line">匹配输入字符全的结束位置</div><div class="line">t2 = &apos;hello world hello boy boy&apos;</div><div class="line">s6 = r&apos;boy&apos;</div><div class="line">print(re.findall(s6, t2)) </div><div class="line">[‘boy’,’boy’]</div><div class="line">t2 = &apos;hello world hello boy boy&apos;</div><div class="line">s7 = r&apos;boy$&apos;</div><div class="line">print(re.findall(s7, t2))</div><div class="line">[&apos;boy&apos;]</div></pre></td></tr></table></figure>
+<h2 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">(a|A)</div><div class="line">匹配 a 或者 A</div></pre></td></tr></table></figure>
+<h2 id="反向引用"><a href="#反向引用" class="headerlink" title="反向引用"></a>反向引用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">(apple)(orange)\2</div><div class="line">\</div><div class="line">将元字符转为普通字符</div><div class="line">\*</div><div class="line">\\</div><div class="line">将\后面加的字符表示不同的特殊意义</div><div class="line">\d</div><div class="line">[0-9]</div><div class="line">t3 = &quot;0 1 2 3 4 5 6 7 8 9 a b c d e f g h i j k l m n o p q r s t u v w x y z&quot;</div><div class="line">r1 = r&apos;\d&apos;</div><div class="line">print(re.findall(r1, t3))</div><div class="line">\D</div><div class="line">[^0-9]</div><div class="line">r2 = r&apos;\D&apos;</div><div class="line">print(re.findall(r2, t3))</div><div class="line">\s</div><div class="line">[\t\n\r\f\v]</div><div class="line">r3 = r&apos;\s&apos;</div><div class="line">print(re.findall(r3, t3))</div><div class="line">\S</div><div class="line">[^\t\n\r\f\v]</div><div class="line">r4 = r&apos;\S&apos; </div><div class="line">print(re.findall(r4, t3))</div><div class="line">\w</div><div class="line">[a-zA-Z0-9]</div><div class="line">r5 = r&apos;\w&apos;</div><div class="line">print(re.findall(r5, t3))</div><div class="line">\W</div><div class="line">[^a-zA-Z0-9]</div><div class="line">r6 = r&apos;\W&apos;</div><div class="line">print(re.findall(r6, t3))</div></pre></td></tr></table></figure>
+<h2 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">匹配正整数</div><div class="line">^[1-9]\d*$</div><div class="line">强密码(必须包含大小写字母和数字的组合，可以使用特殊字符，长度在8-10之间)</div><div class="line">^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).&#123;8,10&#125;$</div><div class="line">```	</div><div class="line">				\W</div><div class="line">								[^a-zA-Z0-9]</div><div class="line">													r6 = r&apos;\W&apos;</div><div class="line">																		print(re.findall(r6, t3))</div></pre></td></tr></table></figure>
+<h2 id="举例-1"><a href="#举例-1" class="headerlink" title="举例"></a>举例</h2><pre><code>```
+        匹配正整数
+                    ^[1-9]\d*$
+                        强密码(必须包含大小写字母和数字的组合，可以使用特殊字符，长度在8-10之间)
+        ^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,10}$
+        ```    
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://softwaretest.cn/2018/11/27/python-011/" data-id="cjp42zpic0024hojytd80pnyw" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/11/28/python-007/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          python——命名规范
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/11/27/python-009/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">python-requests.session</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APP测试/">APP测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Quality-Assurance/">Quality Assurance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VIM/">VIM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jMeter/">jMeter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安全测试/">安全测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/接口测试/">接口测试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/APP测试/" style="font-size: 18.33px;">APP测试</a> <a href="/tags/Charles/" style="font-size: 11.67px;">Charles</a> <a href="/tags/Data-Structure/" style="font-size: 10px;">Data Structure</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 16.67px;">Linux</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/Quality-Assurance/" style="font-size: 10px;">Quality Assurance</a> <a href="/tags/Shell/" style="font-size: 13.33px;">Shell</a> <a href="/tags/VIM/" style="font-size: 13.33px;">VIM</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/jMeter/" style="font-size: 13.33px;">jMeter</a> <a href="/tags/安全测试/" style="font-size: 10px;">安全测试</a> <a href="/tags/接口测试/" style="font-size: 16.67px;">接口测试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/30/python-010/">python——Requests（基础）</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/29/python-008/">pytho——代码规范</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/28/python-007/">python——命名规范</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/27/python-011/">python-正则表达式1</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/27/python-009/">python-requests.session</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 hannie<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
